@@ -1,15 +1,8 @@
 package org.example;
 
-public class Modificador extends Item{
-
-    private Int mejora;
-
-    public Modificador(Int mejora) { // Porcentaje de mejora de Ataque o Defensa
-        this.mejora = mejora;
-    }
-
+public class DefensaX extends Modificador{
     @Override
-    public void aplicarItem(Pokemon pokemon) {
-
+    public void aplicarItem(Pokemon pokemon) { //Implementar modificarDefensa() en Pokemon.java (puede ser cambiado)
+        pokemon.modificarDefensa(this.porcentaje);
     }
 }
