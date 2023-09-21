@@ -6,8 +6,6 @@ public class Juego {
     private int turnoDe;
 
     public int definirPrimerTurno(){ // Lo pense asi, puede cambiarse mas adelante
-        this.jugador1.elegirPokemon();
-        this.jugador2.elegirPokemon();
         pokemon1 = this.jugador1.pokemonActual();// Agregar a Jugador.java el atributo pokemonActual
         pokemon2 = this.jugador2.pokemonActual();
         return (pokemon1.getVelocidad() < pokemon2.getVelocidad());
