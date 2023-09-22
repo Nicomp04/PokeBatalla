@@ -1,9 +1,9 @@
 package org.example;
 
 abstract class Modificador extends Item{
-    protected Int porcentaje;
+    protected int porcentaje;
 
-    public Restaurador(Int porcentaje) {
+    public void Restaurador(int porcentaje) {
         this.porcentaje = porcentaje;
     }
 }

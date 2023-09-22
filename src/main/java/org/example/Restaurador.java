@@ -2,9 +2,9 @@ package org.example;
 
 public class Restaurador extends Item{
 
-    private Int hp;
+    private int hp;
 
-    public Restaurador(Int hp) {
+    public Restaurador(int hp) {
         this.hp = hp;
     }
 
