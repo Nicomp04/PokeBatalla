@@ -1,6 +1,6 @@
-package org.example;
+package org.example.Item;
 
-abstract class Modificador extends Item{
+abstract class ModificadorItem extends Item {
     protected int porcentaje;
 
     public void Restaurador(int porcentaje) {
