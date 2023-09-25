@@ -1,10 +1,13 @@
-package org.example;
+package org.example.Item;
 
-public class Restaurador extends Item{
+import org.example.Item.Item;
+import org.example.Pokemon.Pokemon;
 
-    private Int hp;
+public class Restaurador extends Item {
 
-    public Restaurador(Int hp) {
+    private int hp;
+
+    public Restaurador(int hp) {
         this.hp = hp;
     }
 

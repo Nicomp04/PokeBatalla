@@ -1,4 +1,6 @@
-package org.example;
+package org.example.Item;
+
+import org.example.Pokemon.Pokemon;
 
 abstract class Item {
     private String nombre;

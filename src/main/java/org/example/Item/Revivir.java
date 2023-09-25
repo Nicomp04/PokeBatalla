@@ -1,6 +1,9 @@
-package org.example;
+package org.example.Item;
 
-public class Revivir extends Item{
+import org.example.Item.Item;
+import org.example.Pokemon.Pokemon;
+
+public class Revivir extends Item {
 
     @Override
     public void aplicarItem(Pokemon pokemon) { //Implementar revivir() en Pokemon.java (puede ser cambiado)
