@@ -7,9 +7,15 @@ public class Juego {
     private Jugador jugador2;
     private boolean turnoDe1;
 
-    public Juego(Jugador jugador1, Jugador jugador2) {
+    public Juego() {
+        Generador gen = new Generador();
+
+        Jugador jugador1 = new Jugador("Juan", gen.generarSetPokemon1(1),gen.generarSetItems());
+        Jugador jugador2 = new Jugador("Pedro", gen.generarSetPokemon2(1),gen.generarSetItems());
+
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
+
         this.turnoDe1 = definirPrimerTurno();
     }
     public boolean definirPrimerTurno(){ // Lo pense asi, puede cambiarse mas adelante
