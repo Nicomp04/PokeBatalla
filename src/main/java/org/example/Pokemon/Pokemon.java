@@ -1,9 +1,7 @@
 package org.example.Pokemon;
-
 import org.example.Estado.Estado;
-import org.example.Habilidad.Habilidad;
+import org.example.Habilidades.Habilidad;
 import org.example.Tipo.Tipo;
-
 import java.util.List;
 
 public class Pokemon {
@@ -35,9 +33,7 @@ public class Pokemon {
     }
 
 
-    public void cambiarEstado(Estado estado) {
-        this.estado = estado;
-    }
+    public void cambiarEstado(Estado estado) { this.estado = estado; }
 
     public void modificarHp(int hp) {
         this.vidaMaxima = hp;
@@ -59,9 +55,7 @@ public class Pokemon {
         return this.velocidad;
     }
 
+    public int getDefensa(){ return this.defensa; }
 
-
-
-
-
+    public void modificarVelocidad(int valor) { this.velocidad += valor; }
 }
