@@ -6,10 +6,10 @@ import org.example.Pokemon.Pokemon;
 public class Efecto extends Habilidad{
     private Estado estado;
 
-    public Efecto(String nombre, int energia, Estado estado) {
-        this.estado = estado;
+    public Efecto(String nombre, int usosDisponibles, Estado estado) {
         this.nombre = nombre;
-        this.energia = energia;
+        this.usosDisponibles = usosDisponibles;
+        this.estado = estado;
     }
 
     public void usarHabilidad(Pokemon pokemon){

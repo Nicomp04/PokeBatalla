@@ -2,7 +2,7 @@ package org.example.Item;
 
 import org.example.Pokemon.Pokemon;
 
-abstract class Item {
+public abstract class Item {
     private String nombre;
 
     public String getNombre() {
