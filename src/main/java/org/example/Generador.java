@@ -5,7 +5,7 @@ import org.example.Pokemon.Bulbasur;
 import org.example.Pokemon.Charizard;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Fuego;
-import org.example.Estado.Normal
+import org.example.Estado.Normal;
 
 import java.util.ArrayList;
 import java.util.List;
