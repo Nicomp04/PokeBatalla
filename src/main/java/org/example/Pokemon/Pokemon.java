@@ -5,6 +5,8 @@ import org.example.Habilidades.Habilidad;
 import org.example.Tipo.Tipo;
 import java.util.List;
 
+
+
 public abstract class Pokemon {
     private String nombre;
     private int nivel;
@@ -18,7 +20,7 @@ public abstract class Pokemon {
     private Estado estado;
 
 
-    public Pokemon(String nombre, int nivel,  int vidaMaxima, int velocidad, int defensa, int ataque){
+    public Pokemon(String nombre, int nivel,Tipo tipo,  int vidaMaxima, int velocidad, int defensa, int ataque){
         this.nombre = nombre;
         this.nivel = nivel;
         this.tipo = tipo;

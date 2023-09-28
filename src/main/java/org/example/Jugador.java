@@ -21,4 +21,12 @@ public class Jugador {
     public Pokemon pokemonActual() {
         return pokemones.get(0);
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public List<Pokemon> getPokemones() {
+        return pokemones;
+    }
 }

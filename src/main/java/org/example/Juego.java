@@ -10,8 +10,10 @@ public class Juego {
     public Juego() {
         Generador gen = new Generador();
 
-        Jugador jugador1 = new Jugador("Juan", gen.generarSetPokemon1(1),gen.generarSetItems());
-        Jugador jugador2 = new Jugador("Pedro", gen.generarSetPokemon2(1),gen.generarSetItems());
+        System.out.println("Comenzaremos con la configuración del Jugador 1");
+        Jugador jugador1 = new Jugador(gen.generarNombreJugador(), gen.generarSetPokemon1(gen.generarCantidadPokemones()),gen.generarSetItems());
+        System.out.println("Seguiremos con la configuración del Jugador 2");
+        Jugador jugador2 = new Jugador(gen.generarNombreJugador(), gen.generarSetPokemon2(gen.generarCantidadPokemones()),gen.generarSetItems());
 
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
