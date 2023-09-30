@@ -1,6 +1,9 @@
 package org.example;
 
 import org.example.Pokemon.Pokemon;
+import org.example.Tipo.Tipo;
+
+import java.util.Map;
 
 public class Juego {
     private Jugador jugador1;

@@ -8,9 +8,11 @@ import org.example.Pokemon.Charizard;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Fuego;
 import org.example.Estado.Normal;
+import org.example.Tipo.Tipo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Generador {
 

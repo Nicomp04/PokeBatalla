@@ -4,12 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="980f763d-2256-4790-aac9-87030ca73654" name="Changes" comment="fixin">
+    <list default="true" id="980f763d-2256-4790-aac9-87030ca73654" name="Changes" comment="">
+      <changelist_data name="Nico" email="nicolasmp99@hotmail.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Agua.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Agua.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Bicho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Bicho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Dragon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Elecrico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Elecrico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Fantasma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Fantasma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Fuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Fuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Hielo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Hielo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Lucha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Lucha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Normal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Normal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Planta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Planta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Psiquio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Psiquio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Roca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Roca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tierra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tierra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Veneno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Veneno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Volador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Volador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +44,16 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2VlEnwaqd6zkp2bf5u4gO3XSTnQ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,13 +64,15 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "juancpuch",
     "last_opened_file_path": "C:/Users/nicol/OneDrive/Escritorio/Portfolio/PokeBatalla",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editor.preferences.appearance",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -77,6 +99,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -92,6 +115,9 @@
       <workItem from="1695405041549" duration="567000" />
       <workItem from="1695405623492" duration="4618000" />
       <workItem from="1695755869825" duration="6304000" />
+      <workItem from="1695937249514" duration="648000" />
+      <workItem from="1695944394342" duration="849000" />
+      <workItem from="1696036043983" duration="5217000" />
     </task>
     <task id="LOCAL-00001" summary="fixin">
       <option name="closed" value="true" />
@@ -108,11 +134,6 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="c162f3d7-f704-46c8-9f36-b7dc62e5433b" value="TOOL_WINDOW" />
-      </map>
-    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -152,16 +173,16 @@
             </State>
           </value>
         </entry>
-        <entry key="c162f3d7-f704-46c8-9f36-b7dc62e5433b">
-          <value>
-            <State />
-          </value>
-        </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixin" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixin" />
+    <MESSAGE value="juego inicializa y carga jugadores, pokemones e items" />
+    <option name="LAST_COMMIT_MESSAGE" value="juego inicializa y carga jugadores, pokemones e items" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
