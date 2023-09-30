@@ -4,6 +4,9 @@ import java.util.HashMap;
 
 public class Normal extends Tipo{
     private Normal(){
+
+        this.id = "Normal";
+
         this.efectividad = new HashMap<>();
         efectividad.put("Agua", 1.0);
         efectividad.put("Bicho", 1.0);

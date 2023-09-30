@@ -7,8 +7,7 @@
     <list default="true" id="980f763d-2256-4790-aac9-87030ca73654" name="Changes" comment="">
       <changelist_data name="Nico" email="nicolasmp99@hotmail.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataques/Ataque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataques/Ataque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Agua.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Agua.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Bicho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Bicho.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Dragon.java" afterDir="false" />
@@ -117,7 +116,7 @@
       <workItem from="1695755869825" duration="6304000" />
       <workItem from="1695937249514" duration="648000" />
       <workItem from="1695944394342" duration="849000" />
-      <workItem from="1696036043983" duration="5217000" />
+      <workItem from="1696036043983" duration="6844000" />
     </task>
     <task id="LOCAL-00001" summary="fixin">
       <option name="closed" value="true" />

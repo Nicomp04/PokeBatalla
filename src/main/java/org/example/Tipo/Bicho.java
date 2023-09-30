@@ -4,6 +4,9 @@ import java.util.HashMap;
 
 public class Bicho extends Tipo{
     private Bicho(){
+
+        this.id = "Bicho";
+
         this.efectividad = new HashMap<>();
         efectividad.put("Agua", 1.0);
         efectividad.put("Bicho", 1.0);
