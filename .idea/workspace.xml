@@ -7,7 +7,8 @@
     <list default="true" id="980f763d-2256-4790-aac9-87030ca73654" name="Changes" comment="">
       <changelist_data name="Nico" email="nicolasmp99@hotmail.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataques/Ataque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataques/Llamarada.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +104,7 @@
       <workItem from="1695944394342" duration="849000" />
       <workItem from="1696036043983" duration="7166000" />
       <workItem from="1696095379141" duration="914000" />
-      <workItem from="1696113707738" duration="4156000" />
+      <workItem from="1696113707738" duration="5572000" />
     </task>
     <task id="LOCAL-00001" summary="fixin">
       <option name="closed" value="true" />

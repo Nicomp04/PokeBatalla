@@ -1,4 +1,4 @@
-package org.example.Habilidades.Ataques;
+package org.example.Habilidades;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;

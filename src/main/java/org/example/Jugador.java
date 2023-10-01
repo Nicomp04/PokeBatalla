@@ -36,7 +36,6 @@ public class Jugador {
                 elegirPokemonActivo();
                 break;
             case 4:
-                rendirse();
                 break;
         }
     }
@@ -49,9 +48,6 @@ public class Jugador {
 
     private Pokemon elegirPokemonActivo() {  //falta implementar
         return pokemones.get(0);
-    }
-
-    private void rendirse() { //falta implementar
     }
 }
 
