@@ -7,23 +7,8 @@
     <list default="true" id="980f763d-2256-4790-aac9-87030ca73654" name="Changes" comment="">
       <changelist_data name="Nico" email="nicolasmp99@hotmail.com" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataques/Ataque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataques/Ataque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Agua.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Agua.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Bicho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Bicho.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Dragon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Elecrico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Elecrico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Fantasma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Fantasma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Fuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Fuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Hielo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Hielo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Lucha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Lucha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Normal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Normal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Planta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Planta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Psiquio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Psiquio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Roca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Roca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tierra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tierra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Veneno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Veneno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Volador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Volador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,24 +42,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "juancpuch",
-    "last_opened_file_path": "C:/Users/nicol/OneDrive/Escritorio/Portfolio/PokeBatalla",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.appearance",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;juancpuch&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicol/OneDrive/Escritorio/Portfolio/PokeBatalla&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.appearance&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.Habilidad" />
@@ -116,7 +101,9 @@
       <workItem from="1695755869825" duration="6304000" />
       <workItem from="1695937249514" duration="648000" />
       <workItem from="1695944394342" duration="849000" />
-      <workItem from="1696036043983" duration="6844000" />
+      <workItem from="1696036043983" duration="7166000" />
+      <workItem from="1696095379141" duration="914000" />
+      <workItem from="1696113707738" duration="4156000" />
     </task>
     <task id="LOCAL-00001" summary="fixin">
       <option name="closed" value="true" />
