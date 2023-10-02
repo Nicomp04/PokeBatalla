@@ -12,8 +12,12 @@ public class Charizard extends Pokemon{
     private Fuego fuego;
     private Normal normal;
 
-    public Charizard(String nombre, int nivel, Tipo tipo, int vidaMaxima, int velocidad, int defensa, int ataque) {
-        super(nombre, nivel,tipo, vidaMaxima, velocidad, defensa, ataque);
+    public Charizard(String nombre, int nivel, int vidaMaxima, int velocidad, int defensa, int ataque) {
+        super(nombre, nivel, vidaMaxima, velocidad, defensa, ataque);
+    }
+
+    public Charizard() {
+        super();
     }
 
     @Override

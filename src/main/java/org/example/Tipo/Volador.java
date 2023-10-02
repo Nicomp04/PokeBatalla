@@ -2,20 +2,20 @@ package org.example.Tipo;
 
 import java.util.HashMap;
 
-public class Fuego extends Tipo{
-    private Fuego(){
+public class Volador extends Tipo{
+    private Volador(){
 
-        this.id = "Fuego";
+        this.id = "Volador";
 
         this.efectividad = new HashMap<>();
-        efectividad.put("Agua", 0.5);
+        efectividad.put("Agua", 1.0);
         efectividad.put("Bicho", 2.0);
-        efectividad.put("Dragon", 0.5);
-        efectividad.put("Electico", 1.0);
+        efectividad.put("Dragon", 1.0);
+        efectividad.put("Electico", 0.5);
         efectividad.put("Fantasma", 1.0);
-        efectividad.put("Fuego", 0.5);
-        efectividad.put("Hielo", 2.0);
-        efectividad.put("Lucha", 1.0);
+        efectividad.put("Fuego", 1.0);
+        efectividad.put("Hielo", 1.0);
+        efectividad.put("Lucha", 2.0);
         efectividad.put("Normal", 1.0);
         efectividad.put("Planta", 2.0);
         efectividad.put("Psiquico", 1.0);

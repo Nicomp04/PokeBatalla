@@ -19,8 +19,10 @@ public abstract class Pokemon {
     private int ataque;
     private Estado estado;
 
+    private List<Habilidad> habilidades;
 
-    public Pokemon(String nombre, int nivel,Tipo tipo,  int vidaMaxima, int velocidad, int defensa, int ataque){
+
+    public Pokemon(String nombre, int nivel,  int vidaMaxima, int velocidad, int defensa, int ataque){
         this.nombre = nombre;
         this.nivel = nivel;
         this.tipo = tipo;
@@ -32,6 +34,7 @@ public abstract class Pokemon {
         this.estado = estado;
     }
 
+    public Pokemon() {}
 
     public void cambiarEstado(Estado estado) { this.estado = estado; }
 
@@ -52,6 +55,12 @@ public abstract class Pokemon {
     }
 
     public Tipo getTipo(){ return this.tipo;}
+
+    public void elegirHabilidad(int pos){
+        Habilidad habilidadElegida = habilidades.get(pos);
+        Pokemon objetivo = new Charizard();
+        usarHabilidad(habilidadElegida, objetivo);
+    }
 
     public abstract void usarHabilidad(Habilidad habilidad, Pokemon objetivo);
 

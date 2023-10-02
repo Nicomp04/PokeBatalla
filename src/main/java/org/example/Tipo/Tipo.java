@@ -1,5 +1,16 @@
 package org.example.Tipo;
 
-public enum Tipo{
-    Agua,Bicho,Dragón,Electrico,Fantasma,Fuego,Hielo,Lucha,Normal,Planta,Psiquico,Roca,Tierra,Veneno,Volador
+import java.util.HashMap;
+
+public abstract class Tipo {
+    protected String id;
+    protected HashMap efectividad;
+
+    public String getId() {
+        return id;
+    }
+
+    public double getEfectividad(String tipo) {
+        return (double) efectividad.get(tipo);
+    }
 }
