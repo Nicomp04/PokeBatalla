@@ -12,11 +12,13 @@ public class Jugador {
     private String nombre;
     private List<Pokemon> pokemones;
     private List<Item> items;
+    private int id;
 
-    public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items){
+    public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items, int id){
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.items = items;
+        this.id = id;
     }
 
     public void usarTurno(){
