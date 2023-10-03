@@ -3,6 +3,9 @@ package org.example;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Map;
 
 public class Juego {
@@ -12,6 +15,7 @@ public class Juego {
     private Jugador turnoActivo;
 
     public Juego() {
+        final Logger logger = LoggerFactory.getLogger(Juego.class);
         Generador gen = new Generador();
 
         System.out.println("Comenzaremos con la configuración del Jugador 1");
@@ -21,6 +25,8 @@ public class Juego {
 
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
+
+        logger.info("Juego inicializado con exito!");
 
         //this.turnoDe1 = definirPrimerTurno();
         this.turnoActivo = definirPrimerTurno();
