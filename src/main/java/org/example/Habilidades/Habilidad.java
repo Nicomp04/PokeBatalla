@@ -16,7 +16,7 @@ public abstract class Habilidad{
         return true;
     }
 
-    public boolean atacaEnemigo() {
+    public boolean atacaAEnemigo() {
         return true; //cambiar
     }
 

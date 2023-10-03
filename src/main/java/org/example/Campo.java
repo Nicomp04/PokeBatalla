@@ -40,7 +40,7 @@ public class Campo {
      */
     public void usarHabilidad (int habilidadElegida ){
         Habilidad habilidad = pokemonAtacante.getHabilidad(habilidadElegida);
-        if (habilidad.atacaEnemigo()){
+        if (habilidad.atacaAEnemigo()){
             habilidad.usarEnPokemon(pokemonAtacado, pokemonAtacante);
         }
         else if (habilidad.afectaAEnemigo()){

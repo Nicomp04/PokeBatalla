@@ -20,13 +20,13 @@ public class Modificacion extends Habilidad{
                 pokemon.modificarHp(this.valor);
                 break;
             case 2:
-                pokemon.modificarAtaque(this.valor);
+                pokemon.setAtaque(this.valor);
                 break;
             case 3:
-                pokemon.modificarDefensa(this.valor);
+                pokemon.setDefensa(this.valor);
                 break;
             case 4:
-                pokemon.modificarVelocidad(this.valor);
+                pokemon.setVelocidad(this.valor);
                 break;
         }
     }

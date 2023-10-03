@@ -1,7 +1,5 @@
 package org.example.Pokemon;
 import org.example.Estado.Estado;
-import org.example.Estado.Normal;
-import org.example.Habilidades.Ataque;
 import org.example.Habilidades.Habilidad;
 import org.example.Tipo.Tipo;
 
@@ -34,7 +32,7 @@ public class Pokemon {
         this.velocidad = velocidad;
         this.defensa = defensa;
         this.ataque = ataque;
-        this.estado = estado;
+        this.estado = null;
         habilidades = new ArrayList<>();
     }
 
@@ -58,27 +56,21 @@ public class Pokemon {
         this.vidaActual = vidaMaxima;
     }
 
-    public void modificarDefensa(int porcentaje) {
+    public void setDefensa(int porcentaje) {
         this.defensa = porcentaje;
     }
 
-    public void modificarAtaque(int porcentaje) {
+    public void setAtaque(int porcentaje) {
         this.ataque = porcentaje;
     }
 
     public Tipo getTipo(){ return this.tipo;}
 
-    public int elegirHabilidad(){ //IMPUT
+    public int elegirHabilidad(){ //INPUT
         //deberia elegir las habilidades
         return 0;
     }
 
-    public  void usarHabilidad(int habilidadElegida, Pokemon pokemonAtacante){
-
-    }
-    public  void usarHabilidad(int habilidadElegida, Pokemon pokemonObjetivo, Pokemon pokemonAtacante){
-
-    }
 
     public int getVelocidad() {
         return this.velocidad;
@@ -86,7 +78,7 @@ public class Pokemon {
 
     public int getDefensa(){ return this.defensa; }
 
-    public void modificarVelocidad(int valor) { this.velocidad += valor; }
+    public void setVelocidad(int valor) { this.velocidad += valor; }
 
     public int getNivel() {return this.nivel;}
 

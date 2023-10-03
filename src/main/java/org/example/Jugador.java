@@ -49,9 +49,9 @@ public class Jugador {
     }
 
     private void usarItem() {
-       // vamos a tener q hacer una funcion cn un input para q elija lo que quiera hacer.
-        int accionElegida = 0;
-        Pokemon objetivo = new Pokemon("cahrizard", 1, 1, 1, 1, 1); // FALTA CAMPO E NUEVA IMPLEMENTACION
+
+        int accionElegida = 0; //INPUT
+        Pokemon objetivo = null;
         Item itemElegido;
         switch (accionElegida){
             case 1:
@@ -77,12 +77,8 @@ public class Jugador {
     }
 
 
-    public Pokemon pokemonActual() {
+    public Pokemon getPokemonActual() {
         return pokemones.get(0);
-    }
-
-    public Pokemon getPokemonActivo() {
-        return getPokemonActivo();
     }
 
     public void entrarACampo(Campo campoDeBatalla) {
