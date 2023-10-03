@@ -3,7 +3,7 @@ package org.example.Tipo;
 import java.util.HashMap;
 
 public class Psiquio extends Tipo{
-    private Psiquio(){
+    public Psiquio(){
 
         this.id = "Psiquio";
 

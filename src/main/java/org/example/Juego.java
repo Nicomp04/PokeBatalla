@@ -18,9 +18,9 @@ public class Juego {
         final Logger logger = LoggerFactory.getLogger(Juego.class);
         Generador gen = new Generador();
 
-        System.out.println("Comenzaremos con la configuración del Jugador 1");
+        logger.info("Comenzaremos con la configuración del Jugador 1");
         Jugador jugador1 = new Jugador(gen.generarNombreJugador(), gen.generarSetPokemon1(gen.generarCantidadPokemones()),gen.generarSetItems(), 1);
-        System.out.println("Seguiremos con la configuración del Jugador 2");
+        logger.info("Seguiremos con la configuración del Jugador 2");
         Jugador jugador2 = new Jugador(gen.generarNombreJugador(), gen.generarSetPokemon2(gen.generarCantidadPokemones()),gen.generarSetItems(), 2);
 
         this.jugador1 = jugador1;

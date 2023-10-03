@@ -1,11 +1,11 @@
 package org.example.Pokemon;
 import org.example.Estado.Estado;
-import org.example.Estado.Normal;
 import org.example.Habilidades.Ataque;
 import org.example.Habilidades.Habilidad;
-import org.example.Tipo.Tipo;
+import org.example.Tipo.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -24,6 +24,8 @@ public abstract class Pokemon {
 
     private List<Habilidad> habilidades;
 
+    public HashMap<String, Tipo> especie = new HashMap<>();
+
 
     public Pokemon(String nombre, int nivel,  int vidaMaxima, int velocidad, int defensa, int ataque){
         this.nombre = nombre;
@@ -36,6 +38,22 @@ public abstract class Pokemon {
         this.ataque = ataque;
         this.estado = estado;
         habilidades = new ArrayList<>();
+
+        especie.put("Charizard", new Fuego());
+        especie.put("Bulbasaur", new Agua());
+        especie.put("Pikachu", new Electrico());
+        especie.put("Dragonite", new Dragon());
+        especie.put("Shuppet", new Fantasma());
+        especie.put("Caterpie", new Bicho());
+        especie.put("Vulpix", new Hielo());
+        especie.put("Machop", new Lucha());
+        especie.put("Rattata", new Normal());
+        especie.put("Chikorita", new Planta());
+        especie.put("Abra", new Psiquio());
+        especie.put("Nosepass", new Roca());
+        especie.put("Diglett", new Tierra());
+        especie.put("Ekans", new Veneno());
+        especie.put("Tornadus", new Volador());
     }
 
     public Pokemon() {}
@@ -60,20 +78,20 @@ public abstract class Pokemon {
 
     public Tipo getTipo(){ return this.tipo;}
 
-    public int elegirHabilidad(){
+    public Habilidad elegirHabilidad(){
         /*
         Habilidad habilidadElegida = habilidades.get(pos);
         Pokemon objetivo = new Charizard();
         usarHabilidad(habilidadElegida, objetivo);
          */
         //deberia elegir las habilidades
-        return 1;
+        return habilidades.get(1);
     }
 
     public abstract void usarHabilidad(Habilidad habilidad, Pokemon objetivo);
-    public abstract int usarHabilidad(Tipo tipoPokemonObjetivo){
+    /*public abstract int usarHabilidad(Tipo tipoPokemonObjetivo){
         return calcularDaño;
-    };
+    };*/
 
     public int getVelocidad() {
         return this.velocidad;

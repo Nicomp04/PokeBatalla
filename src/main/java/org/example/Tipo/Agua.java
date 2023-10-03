@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class Agua extends Tipo {
 
-    private Agua(){
+    public Agua(){
 
         this.id = "Agua";
 

@@ -11,24 +11,28 @@ public class Campo {
     private Pokemon pokemonAtacado;
     private List<Pokemon> pokemonesActivos;
 
+
     public void usarHabilidad (int idAtacante){
         //Pokemon pokemonAtacante = identificarAtacante(idAtacante);
         Pokemon pokemonAtacante = identificarAtacante(idAtacante);
-        Habilidad habilidad = pokemonAtacante.elegirHabilidad(0);
+        Habilidad habilidad = pokemonAtacante.elegirHabilidad();
 
     }
 
     public void elejirHablidad (Pokemon pokemonAtacante){
-        int habilidadElegida = pokemonAtacante.elegirHabilidad();
-    }
-    public int Usarhabilidad (int hablilidadElegida ){
-        if (pokemonAtacante.getHabilidad(hablilidadElegida).afectaAHpEnemigo() == true){
-            int hp = pokemonAtacante.usarHabilidad(pokemonAtacado.getTipo());
+       // int habilidadElegida = pokemonAtacante.elegirHabilidad();  // tenemos repetido este metodo
+     }
+
+    public int usarHabilidad2 (int hablilidadElegida ){
+
+        if (pokemonAtacante.getHabilidad(hablilidadElegida).afectaAHpEnemigo()){ // no entiendo mucho esto
+            //int hp = pokemonAtacante.usarHabilidad(pokemonAtacado.getTipo());
         }
-        else if (pokemonAtacante.elegirHabilidad())
+        //else if (pokemonAtacante.elegirHabilidad())
+        return 0;
     }
 
-    private void identificarPokemones(int id) {
+    private Pokemon identificarAtacante(int id) {
         if (id == 1 ){
             pokemonAtacado = pokemonesActivos.get(1);
             pokemonAtacante = pokemonesActivos.get(0);
@@ -37,5 +41,6 @@ public class Campo {
             pokemonAtacado = pokemonesActivos.get(0);
             pokemonAtacante = pokemonesActivos.get(1);
         }
+        return pokemonAtacante;
     }
 }

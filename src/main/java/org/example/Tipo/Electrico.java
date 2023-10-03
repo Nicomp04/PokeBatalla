@@ -2,8 +2,8 @@ package org.example.Tipo;
 
 import java.util.HashMap;
 
-public class Elecrico extends Tipo{
-    private Elecrico(){
+public class Electrico extends Tipo{
+    public Electrico(){
 
         this.id = "Electrico";
 
