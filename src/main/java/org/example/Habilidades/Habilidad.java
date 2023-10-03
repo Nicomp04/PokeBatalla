@@ -1,5 +1,4 @@
 package org.example.Habilidades;
-import org.example.Pokemon.Charizard;
 import org.example.Pokemon.Pokemon;
 
 public abstract class Habilidad{
@@ -8,11 +7,17 @@ public abstract class Habilidad{
 
     }
     protected int usosDisponibles; //cantidad de veces que se puede usar la habilidad
-    public void usarHabilidad(Pokemon pokemon){}
+    public void usarHabilidad(Pokemon pokemonAtacante, Pokemon pokemonAtacado){}
 
-    public void usarEnPokemon(Pokemon pokemon, Pokemon objetivo) {}
+    public abstract void usarEnPokemon(Pokemon pokemon, Pokemon objetivo);
+    public abstract void usarEnPokemon(Pokemon pokemon);
 
-    public boolean afectaAHpEnemigo() { //a implementar
+    public boolean afectaAEnemigo() { //a implementar
         return true;
     }
+
+    public boolean atacaEnemigo() {
+        return true; //cambiar
+    }
+
 }

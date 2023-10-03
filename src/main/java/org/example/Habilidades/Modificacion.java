@@ -13,7 +13,8 @@ public class Modificacion extends Habilidad{
         this.estadistica = estadistica;
     }
 
-    public void usarHabilidad(Pokemon pokemon){
+    @Override
+    public void usarEnPokemon(Pokemon pokemon){
         switch (this.estadistica){
             case 1:
                 pokemon.modificarHp(this.valor);
@@ -29,4 +30,10 @@ public class Modificacion extends Habilidad{
                 break;
         }
     }
+
+    @Override
+    public void usarEnPokemon(Pokemon pokemon, Pokemon objetivo) {
+
+    }
+
 }

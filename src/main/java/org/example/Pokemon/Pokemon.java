@@ -10,13 +10,13 @@ import java.util.List;
 
 
 
-public abstract class Pokemon {
+public class Pokemon {
     private String nombre;
     private int nivel;
     private Tipo tipo;
     private String historia;
-    private int vidaMaxima;
-    private int vidaActual;
+    private double vidaMaxima;
+    private double vidaActual;
     private int velocidad;
     private int defensa;
     private int ataque;
@@ -42,8 +42,16 @@ public abstract class Pokemon {
 
     public void cambiarEstado(Estado estado) { this.estado = estado; }
 
-    public void modificarHp(int hp) {
-        this.vidaMaxima = hp;
+    public void modificarHp(double hp) {
+        if (hp + vidaActual > vidaMaxima){
+            vidaActual = vidaMaxima;
+        }
+        else if (hp + vidaActual < 0){
+            vidaActual = 0;
+        }
+        else{
+            this.vidaActual = vidaActual + vidaMaxima;
+        }
     }
 
     public void revivir() {
@@ -60,20 +68,17 @@ public abstract class Pokemon {
 
     public Tipo getTipo(){ return this.tipo;}
 
-    public int elegirHabilidad(){
-        /*
-        Habilidad habilidadElegida = habilidades.get(pos);
-        Pokemon objetivo = new Charizard();
-        usarHabilidad(habilidadElegida, objetivo);
-         */
+    public int elegirHabilidad(){ //IMPUT
         //deberia elegir las habilidades
-        return 1;
+        return 0;
     }
 
-    public abstract void usarHabilidad(Habilidad habilidad, Pokemon objetivo);
-    public abstract int usarHabilidad(Tipo tipoPokemonObjetivo){
-        return calcularDaño;
-    };
+    public  void usarHabilidad(int habilidadElegida, Pokemon pokemonAtacante){
+
+    }
+    public  void usarHabilidad(int habilidadElegida, Pokemon pokemonObjetivo, Pokemon pokemonAtacante){
+
+    }
 
     public int getVelocidad() {
         return this.velocidad;
@@ -85,9 +90,12 @@ public abstract class Pokemon {
 
     public int getNivel() {return this.nivel;}
 
-    public int getAtaque() { return this.ataque; }
+    public double getAtaque() { return this.ataque; }
 
     public Habilidad getHabilidad(int hablilidadElegida) {
         return habilidades.get(hablilidadElegida);
+    }
+    public boolean tieneUnEstado() {
+        return (!(estado == null));
     }
 }

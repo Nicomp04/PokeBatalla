@@ -1,13 +1,8 @@
 package org.example;
 
-import org.example.Estado.Estado;
 import org.example.Item.Item;
 import org.example.Item.Revivir;
-import org.example.Pokemon.Bulbasur;
-import org.example.Pokemon.Charizard;
 import org.example.Pokemon.Pokemon;
-import org.example.Tipo.Fuego;
-import org.example.Estado.Normal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +12,7 @@ public class Generador {
 
     public List<Pokemon> generarSetPokemon1(int cantidadDePokemones){
         List<Pokemon> pokemones = new ArrayList<Pokemon>();
-        Pokemon pokemon = new Charizard("carlitos", 6, 70, 20, 10,15);
+        Pokemon pokemon = new Pokemon("Charisard", 6, 70, 20, 10,15);
         pokemones.add(pokemon);
 
         return pokemones;
@@ -25,7 +20,7 @@ public class Generador {
 
     public List<Pokemon> generarSetPokemon2(int cantidadDePokemones){
         List<Pokemon> pokemones = new ArrayList<Pokemon>();
-        Pokemon pokemon = new Bulbasur("tobi", 10,  150, 15, 25, 12);
+        Pokemon pokemon = new Pokemon("Bulbasur", 10,  150, 15, 25, 12);
         pokemones.add(pokemon);
 
         return pokemones;

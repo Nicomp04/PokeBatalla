@@ -12,7 +12,19 @@ public class Efecto extends Habilidad{
         this.estado = estado;
     }
 
-    public void usarHabilidad(Pokemon pokemon){
-        pokemon.cambiarEstado(this.estado);
+    @Override
+    public void usarEnPokemon(Pokemon pokemon, Pokemon objetivo) {
+
+    }
+
+    @Override
+    public void usarEnPokemon(Pokemon pokemon) {
+        if (pokemon.tieneUnEstado()) {
+            //supongo q hay algun mensaje.
+        }
+        else{
+            pokemon.cambiarEstado(this.estado);
+        }
+
     }
 }

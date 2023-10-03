@@ -10,6 +10,7 @@ public class Juego {
     private Jugador jugador2;
     private boolean turnoDe1;
     private Jugador turnoActivo;
+    private Campo campoDeBatalla;
 
     public Juego() {
         Generador gen = new Generador();
@@ -21,6 +22,11 @@ public class Juego {
 
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
+
+        this.campoDeBatalla = new Campo(jugador1.getPokemonActivo(), jugador2.getPokemonActivo());
+
+        jugador1.entrarACampo(campoDeBatalla);
+        jugador2.entrarACampo(campoDeBatalla);
 
         //this.turnoDe1 = definirPrimerTurno();
         this.turnoActivo = definirPrimerTurno();
