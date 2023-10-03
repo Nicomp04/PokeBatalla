@@ -3,8 +3,11 @@ package org.example;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
 import org.example.Campo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Jugador {
     private String nombre;
@@ -12,8 +15,11 @@ public class Jugador {
     private List<Item> items;
     private int id;
     private Campo campoDeBatalla;
+    final Logger logger = LoggerFactory.getLogger(Jugador.class);
 
     public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items, int id){
+
+
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.items = items;
@@ -21,7 +27,18 @@ public class Jugador {
     }
 
     public void usarTurno(){
-        int accionElegida = 0; //INPUT
+        int accionElegida = 0;
+        //INPUT
+        Scanner scanner = new Scanner(System.in);
+
+        logger.info("Es su turno ¿que accion quiere realizar?");
+        logger.info("\n 1: Usar Habilidad \n" +
+                    "2: Usar Item \n" +
+                    "3: Cambiar de Pokemon\n" +
+                    "4: Escapar de la batalla\n");
+        // Lee la entrada del usuario y almacenarla en una variable
+        accionElegida = scanner.nextInt();
+
         switch (accionElegida){
             case 1:
                 campoDeBatalla.elejirHabilidad(id);
@@ -33,6 +50,7 @@ public class Jugador {
                 elegirPokemonActivo();
                 break;
             case 4:
+               // escapar();
                 break;
         }
     }

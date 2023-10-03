@@ -1,12 +1,15 @@
 package org.example.Pokemon;
 import org.example.Estado.Estado;
 import org.example.Habilidades.Habilidad;
+import org.example.Jugador;
 import org.example.Tipo.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
+import java.util.Scanner;
 
 
 public class Pokemon {
@@ -21,12 +24,13 @@ public class Pokemon {
     private int ataque;
     private Estado estado;
 
-    private List<Habilidad> habilidades;
+    private List<Habilidad> habilidades = new ArrayList<>();
 
     public HashMap<String, Tipo> especie = new HashMap<>();
 
+    final Logger logger = LoggerFactory.getLogger(Pokemon.class);
 
-    public Pokemon(String nombre, int nivel,  int vidaMaxima, int velocidad, int defensa, int ataque){
+    public Pokemon(String nombre, int nivel,  int vidaMaxima, int velocidad, int defensa, int ataque,List<Habilidad> habilidades ){
         this.nombre = nombre;
         this.nivel = nivel;
         this.tipo = tipo;
@@ -36,7 +40,7 @@ public class Pokemon {
         this.defensa = defensa;
         this.ataque = ataque;
         this.estado = estado;
-        habilidades = new ArrayList<>();
+        this.habilidades = habilidades;
 
         especie.put("Charizard", new Fuego());
         especie.put("Bulbasaur", new Agua());
@@ -85,9 +89,29 @@ public class Pokemon {
 
     public Tipo getTipo(){ return this.tipo;}
 
-    public int elegirHabilidad(){ //INPUT
-        //deberia elegir las habilidades
-        return 0;
+    public Habilidad mostrarYelegirHabilidad(){
+        int habilidadElegida = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        logger.info("Es su turno ¿que Habilidad quiere realizar?");
+        logger.info(" \n1: Usar Llamarada \n" +
+                "2: Usar \n" +
+                "3: Cambiar de Pokemon \n" +
+                "4: Escapar de la batalla \n");
+        // Leer la entrada del usuario y almacenarla en una variable
+        habilidadElegida = scanner.nextInt();
+
+        switch (habilidadElegida){
+            case 1:
+                return this.habilidades.get(0);
+            case 2:
+                return this.habilidades.get(1);
+            case 3:
+                return this.habilidades.get(2);
+            case 4:
+                return this.habilidades.get(3);
+        }
+        return this.habilidades.get(0); //habria que poner una opcion de volver para atras
     }
 
 
@@ -106,7 +130,6 @@ public class Pokemon {
     public Habilidad getHabilidad(int hablilidadElegida) {
         return habilidades.get(hablilidadElegida);
     }
-    public boolean tieneUnEstado() {
-        return (!(estado == null));
-    }
+
+    public boolean tieneUnEstado() {return true;}
 }

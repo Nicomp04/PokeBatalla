@@ -27,6 +27,7 @@ public class Juego {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
 
+        this.turnoActivo = definirPrimerTurno();
 
         this.campoDeBatalla = new Campo(jugador1.getPokemonActual(), jugador2.getPokemonActual());
 
@@ -35,9 +36,7 @@ public class Juego {
 
         logger.info("Juego inicializado con exito!");
 
-
-        //this.turnoDe1 = definirPrimerTurno();
-        this.turnoActivo = definirPrimerTurno();
+        this.habilitarTurno();
     }
 
     public Jugador definirPrimerTurno(){ // Lo pense asi, puede cambiarse mas adelante
