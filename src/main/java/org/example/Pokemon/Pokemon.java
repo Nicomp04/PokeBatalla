@@ -1,8 +1,11 @@
 package org.example.Pokemon;
 import org.example.Estado.Estado;
 import org.example.Estado.Normal;
+import org.example.Habilidades.Ataque;
 import org.example.Habilidades.Habilidad;
 import org.example.Tipo.Tipo;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -32,6 +35,7 @@ public abstract class Pokemon {
         this.defensa = defensa;
         this.ataque = ataque;
         this.estado = estado;
+        habilidades = new ArrayList<>();
     }
 
     public Pokemon() {}
@@ -56,13 +60,20 @@ public abstract class Pokemon {
 
     public Tipo getTipo(){ return this.tipo;}
 
-    public void elegirHabilidad(int pos){
+    public int elegirHabilidad(){
+        /*
         Habilidad habilidadElegida = habilidades.get(pos);
         Pokemon objetivo = new Charizard();
         usarHabilidad(habilidadElegida, objetivo);
+         */
+        //deberia elegir las habilidades
+        return 1;
     }
 
     public abstract void usarHabilidad(Habilidad habilidad, Pokemon objetivo);
+    public abstract int usarHabilidad(Tipo tipoPokemonObjetivo){
+        return calcularDaño;
+    };
 
     public int getVelocidad() {
         return this.velocidad;
@@ -75,4 +86,8 @@ public abstract class Pokemon {
     public int getNivel() {return this.nivel;}
 
     public int getAtaque() { return this.ataque; }
+
+    public Habilidad getHabilidad(int hablilidadElegida) {
+        return habilidades.get(hablilidadElegida);
+    }
 }

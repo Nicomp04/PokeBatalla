@@ -8,6 +8,10 @@ PokeBatalla/.idea/modules.xml
 PokeBatalla/.idea/jarRepositories.xml
 PokeBatalla/.idea/compiler.xml
 PokeBatalla/.idea/libraries/
+PokeBatalla/.idea/codeStyles/Project.xml
+PokeBatalla/.idea/codeStyles/codeStyleConfig.xml
+PokeBatalla/.idea/vcs.xml
+
 *.iws
 *.iml
 *.ipr
