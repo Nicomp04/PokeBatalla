@@ -1,6 +1,5 @@
 package org.example.Pokemon;
 import org.example.Estado.Estado;
-import org.example.Habilidades.Ataque;
 import org.example.Habilidades.Habilidad;
 import org.example.Tipo.*;
 
@@ -10,13 +9,13 @@ import java.util.List;
 
 
 
-public abstract class Pokemon {
+public class Pokemon {
     private String nombre;
     private int nivel;
     private Tipo tipo;
     private String historia;
-    private int vidaMaxima;
-    private int vidaActual;
+    private double vidaMaxima;
+    private double vidaActual;
     private int velocidad;
     private int defensa;
     private int ataque;
@@ -60,38 +59,37 @@ public abstract class Pokemon {
 
     public void cambiarEstado(Estado estado) { this.estado = estado; }
 
-    public void modificarHp(int hp) {
-        this.vidaMaxima = hp;
+    public void modificarHp(double hp) {
+        if (hp + vidaActual > vidaMaxima){
+            vidaActual = vidaMaxima;
+        }
+        else if (hp + vidaActual < 0){
+            vidaActual = 0;
+        }
+        else{
+            this.vidaActual = vidaActual + vidaMaxima;
+        }
     }
 
     public void revivir() {
         this.vidaActual = vidaMaxima;
     }
 
-    public void modificarDefensa(int porcentaje) {
+    public void setDefensa(int porcentaje) {
         this.defensa = porcentaje;
     }
 
-    public void modificarAtaque(int porcentaje) {
+    public void setAtaque(int porcentaje) {
         this.ataque = porcentaje;
     }
 
     public Tipo getTipo(){ return this.tipo;}
 
-    public Habilidad elegirHabilidad(){
-        /*
-        Habilidad habilidadElegida = habilidades.get(pos);
-        Pokemon objetivo = new Charizard();
-        usarHabilidad(habilidadElegida, objetivo);
-         */
+    public int elegirHabilidad(){ //INPUT
         //deberia elegir las habilidades
-        return habilidades.get(1);
+        return 0;
     }
 
-    public abstract void usarHabilidad(Habilidad habilidad, Pokemon objetivo);
-    /*public abstract int usarHabilidad(Tipo tipoPokemonObjetivo){
-        return calcularDaño;
-    };*/
 
     public int getVelocidad() {
         return this.velocidad;
@@ -99,13 +97,16 @@ public abstract class Pokemon {
 
     public int getDefensa(){ return this.defensa; }
 
-    public void modificarVelocidad(int valor) { this.velocidad += valor; }
+    public void setVelocidad(int valor) { this.velocidad += valor; }
 
     public int getNivel() {return this.nivel;}
 
-    public int getAtaque() { return this.ataque; }
+    public double getAtaque() { return this.ataque; }
 
     public Habilidad getHabilidad(int hablilidadElegida) {
         return habilidades.get(hablilidadElegida);
+    }
+    public boolean tieneUnEstado() {
+        return (!(estado == null));
     }
 }

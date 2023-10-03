@@ -36,11 +36,40 @@ public class Campo {
         if (id == 1 ){
             pokemonAtacado = pokemonesActivos.get(1);
             pokemonAtacante = pokemonesActivos.get(0);
+            pokemonAtacado = pokemonesActivos.get(1);
         }
         else {
+            pokemonAtacante = pokemonesActivos.get(1);
             pokemonAtacado = pokemonesActivos.get(0);
             pokemonAtacante = pokemonesActivos.get(1);
         }
         return pokemonAtacante;
     }
+
+    /*
+    Identifica que habilidad se va a usar
+     */
+    public void elejirHabilidad (int idAtacante){
+        identificarPokemones(idAtacante);
+        int habilidad = pokemonAtacante.elegirHabilidad();
+        usarHabilidad(habilidad);
+    }
+
+    /*
+    Segurn si afecta al enemigo o al atacante se llama a la habilidad para que se active
+     */
+    public void usarHabilidad (int habilidadElegida ){
+        Habilidad habilidad = pokemonAtacante.getHabilidad(habilidadElegida);
+        if (habilidad.atacaAEnemigo()){
+            habilidad.usarEnPokemon(pokemonAtacado, pokemonAtacante);
+        }
+        else if (habilidad.afectaAEnemigo()){
+            habilidad.usarEnPokemon(pokemonAtacado);
+        }
+        else {
+            habilidad.usarEnPokemon(pokemonAtacante);
+        }
+    }
+
+
 }

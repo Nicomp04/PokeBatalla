@@ -1,11 +1,9 @@
 package org.example;
 
 import org.example.Item.Item;
-import org.example.Pokemon.Charizard;
 import org.example.Pokemon.Pokemon;
+import org.example.Campo;
 
-import java.awt.event.ItemEvent;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Jugador {
@@ -13,6 +11,7 @@ public class Jugador {
     private List<Pokemon> pokemones;
     private List<Item> items;
     private int id;
+    private Campo campoDeBatalla;
 
     public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items, int id){
         this.nombre = nombre;
@@ -22,10 +21,10 @@ public class Jugador {
     }
 
     public void usarTurno(){
-        int accionElegida = 0; //vamos a tener q hacer una funcion cn un input para q elija lo que quiera hacer.
+        int accionElegida = 0; //INPUT
         switch (accionElegida){
             case 1:
-                usarHabilidad();
+                campoDeBatalla.elejirHabilidad(id);
                 break;
             case 2:
                 usarItem();
@@ -50,9 +49,9 @@ public class Jugador {
     }
 
     private void usarItem() {
-       // vamos a tener q hacer una funcion cn un input para q elija lo que quiera hacer.
-        int accionElegida = 0;
-        Pokemon objetivo = new Charizard(); // FALTA CAMPO E NUEVA IMPLEMENTACION
+
+        int accionElegida = 0; //INPUT
+        Pokemon objetivo = null;
         Item itemElegido;
         switch (accionElegida){
             case 1:
@@ -77,29 +76,12 @@ public class Jugador {
 
     }
 
-    private void usarHabilidad() {
-        Pokemon pokemonActivo = pokemones.get(0);
-        int accionElegida = 0; // vamos a tener q hacer una funcion cn un input para q elija lo que quiera hacer. // IMPLEMENTACION CAMBIA CON CAMPO
-        switch (accionElegida){
-            case 1:
-                //pokemonActivo.usarHabilidad(0);
-                break;
-            case 2:
-                //pokemonActivo.usarHabilidad(1)
-                break;
-            case 3:
-                //pokemonActivo.usarHabilidad(3)
-                break;
-            case 4:
-                //pokemonActivo.usarHabilidad(4)
-                break;
-            case 5:
 
-                break;
-        }
+    public Pokemon getPokemonActual() {
+        return pokemones.get(0);
     }
 
-    public Pokemon pokemonActual() {
-        return pokemones.get(0);
+    public void entrarACampo(Campo campoDeBatalla) {
+        this.campoDeBatalla = campoDeBatalla;
     }
 }

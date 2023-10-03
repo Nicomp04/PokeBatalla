@@ -39,6 +39,13 @@ public class Ataque extends Habilidad {
         double danio = 2.0 * atacante.getNivel() * calcularCritico() * this.poder * (atacante.getAtaque()/objetivo.getDefensa()) ;
         danio = ( (danio / 5) + 2 ) / 50;
         danio = danio * mismoTipo(atacante.getTipo()) * tipoAtacante.getEfectividad(tipoObjetivo.getId()) * rand();
+
+        objetivo.modificarHp(-danio);
+    }
+
+    @Override
+    public void usarEnPokemon(Pokemon pokemon) {
+
     }
 
 
