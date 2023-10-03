@@ -1,9 +1,12 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println("Bienvendido a la PokeBatalla\n");
+        final Logger logger = LoggerFactory.getLogger(Main.class);
+        logger.info("Bienvenido a la Batalla");
         Juego juego = new Juego();
         /*Jugador j1 = juego.getJugador1();
         Jugador j2 = juego.getJugador2();
