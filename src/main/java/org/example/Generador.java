@@ -5,6 +5,7 @@ import org.example.Habilidades.Habilidad;
 import org.example.Item.Item;
 import org.example.Item.Revivir;
 import org.example.Pokemon.Pokemon;
+import org.example.Tipo.Agua;
 import org.example.Tipo.Fuego;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class Generador {
         List<Pokemon> pokemones = new ArrayList<Pokemon>();
         List<Habilidad> habilidades = new ArrayList<Habilidad>();
         habilidades.add(new Ataque("Llamarada",5, new Fuego(), 20));
-        Pokemon pokemon = new Pokemon("Charizard", 6, 70, 20, 10,15,habilidades);
+        Pokemon pokemon = new Pokemon("Charizard", 6, new Fuego(), 70, 20, 10,15,habilidades);
         pokemones.add(pokemon);
 
         return pokemones;
@@ -27,7 +28,7 @@ public class Generador {
         List<Pokemon> pokemones = new ArrayList<Pokemon>();
         List<Habilidad> habilidades = new ArrayList<Habilidad>();
         habilidades.add(new Ataque("Llamarada",5, new Fuego(), 20));
-        Pokemon pokemon = new Pokemon("Bulbasur", 10,  150, 15, 25, 12,habilidades);
+        Pokemon pokemon = new Pokemon("Bulbasur", 10, new Agua(), 150, 15, 25, 12,habilidades);
         pokemones.add(pokemon);
 
         return pokemones;

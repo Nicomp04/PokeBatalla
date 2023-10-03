@@ -30,7 +30,7 @@ public class Pokemon {
 
     final Logger logger = LoggerFactory.getLogger(Pokemon.class);
 
-    public Pokemon(String nombre, int nivel,  int vidaMaxima, int velocidad, int defensa, int ataque,List<Habilidad> habilidades ){
+    public Pokemon(String nombre, int nivel, Tipo tipo,  int vidaMaxima, int velocidad, int defensa, int ataque,List<Habilidad> habilidades ){
         this.nombre = nombre;
         this.nivel = nivel;
         this.tipo = tipo;
@@ -73,6 +73,7 @@ public class Pokemon {
         else{
             this.vidaActual = vidaActual + vidaMaxima;
         }
+        logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
     }
 
     public void revivir() {
@@ -94,7 +95,7 @@ public class Pokemon {
         Scanner scanner = new Scanner(System.in);
 
         logger.info("Es su turno ¿que Habilidad quiere realizar?");
-        logger.info(" \n1: Usar Llamarada \n" +
+        logger.info(" \n1: Usar {} \n", habilidades.get(0).getNombre() +
                 "2: Usar \n" +
                 "3: Cambiar de Pokemon \n" +
                 "4: Escapar de la batalla \n");
@@ -132,4 +133,9 @@ public class Pokemon {
     }
 
     public boolean tieneUnEstado() {return true;}
+
+    public void serAtacado(double danio) {
+        this.vidaActual = vidaActual - danio;
+        logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
+    }
 }

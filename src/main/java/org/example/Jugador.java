@@ -14,12 +14,11 @@ public class Jugador {
     private List<Pokemon> pokemones;
     private List<Item> items;
     private int id;
+    private boolean rendirse = false;
     private Campo campoDeBatalla;
     final Logger logger = LoggerFactory.getLogger(Jugador.class);
 
     public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items, int id){
-
-
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.items = items;
@@ -31,8 +30,8 @@ public class Jugador {
         //INPUT
         Scanner scanner = new Scanner(System.in);
 
-        logger.info("Es su turno ¿que accion quiere realizar?");
-        logger.info("\n 1: Usar Habilidad \n" +
+        logger.info("Es turno de {} ¿que accion quiere realizar?", this.nombre);
+        logger.info("\n1: Usar Habilidad \n" +
                     "2: Usar Item \n" +
                     "3: Cambiar de Pokemon\n" +
                     "4: Escapar de la batalla\n");
@@ -101,5 +100,13 @@ public class Jugador {
 
     public void entrarACampo(Campo campoDeBatalla) {
         this.campoDeBatalla = campoDeBatalla;
+    }
+
+    public boolean tienePokemones() {
+        return !pokemones.isEmpty();
+    }
+
+    public boolean seRindio() {
+        return this.rendirse;
     }
 }

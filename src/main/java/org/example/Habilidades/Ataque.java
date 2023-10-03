@@ -2,11 +2,17 @@ package org.example.Habilidades;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Random;
 
 public class Ataque extends Habilidad {
     private Tipo tipo;
     private int poder;
+
+    final Logger logger = LoggerFactory.getLogger(Ataque.class);
+
 
     public Ataque(String nombre, int usosDisponibles, Tipo tipo, int poder) {
         this.tipo = tipo;
@@ -35,12 +41,15 @@ public class Ataque extends Habilidad {
     public void usarEnPokemon(Pokemon atacante, Pokemon objetivo) {
         Tipo tipoAtacante = atacante.getTipo();
         Tipo tipoObjetivo = objetivo.getTipo();
+        logger.info("Calculando daño...");
 
         double danio = 2.0 * atacante.getNivel() * calcularCritico() * this.poder * (atacante.getAtaque()/objetivo.getDefensa()) ;
         danio = ( (danio / 5) + 2 ) / 50;
         danio = danio * mismoTipo(atacante.getTipo()) * tipoAtacante.getEfectividad(tipoObjetivo.getId()) * rand();
 
-        objetivo.modificarHp(-danio);
+        logger.info("El daño causado al oponente es de {}", danio);
+
+        objetivo.serAtacado(danio);
     }
 
     @Override

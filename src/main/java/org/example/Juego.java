@@ -68,10 +68,23 @@ public class Juego {
     }
 
     public void habilitarTurno(){
-        if (turnoActivo.equals(jugador1)){
-            jugador1.usarTurno();
+        while(quedanPokemones() && !seRindio()) {
+            if (turnoActivo.equals(jugador1)) {
+                jugador1.usarTurno();
+                turnoActivo = jugador2;
+            } else {
+                jugador2.usarTurno();
+                turnoActivo = jugador1;
+            }
         }
-        jugador2.usarTurno();
+    }
+
+    private boolean seRindio() {
+        return jugador1.seRindio() && jugador2.seRindio();
+    }
+
+    private boolean quedanPokemones() {
+        return jugador1.tienePokemones() && jugador2.tienePokemones();
     }
 }
 

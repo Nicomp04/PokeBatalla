@@ -20,4 +20,7 @@ public abstract class Habilidad{
         return true; //cambiar
     }
 
+    public String getNombre() {
+        return this.nombre;
+    }
 }
