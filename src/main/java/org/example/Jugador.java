@@ -43,10 +43,10 @@ public class Jugador {
                 campoDeBatalla.elejirHabilidad(id);
                 break;
             case 2:
-                usarItem();
+                this.usarItem();
                 break;
             case 3:
-                elegirPokemonActivo();
+                this.elegirPokemonActivo();
                 break;
             case 4:
                // escapar();
@@ -66,26 +66,33 @@ public class Jugador {
     }
 
     private void usarItem() {
-
+        Scanner scanner = new Scanner(System.in);
         int accionElegida = 0; //INPUT
-        Pokemon objetivo = null;
+        logger.info("Es su turno ¿que Item quiere utilizar?");
+        logger.info(" \n1: Usar {} ", items.get(0).getNombre() +
+                "\n2: Usar " +
+                "\n3: Cambiar de Pokemon " +
+                "\n4: Escapar de la batalla \n");
+        // Leer la entrada del usuario y almacenarla en una variable
+        accionElegida = scanner.nextInt();
+
         Item itemElegido;
         switch (accionElegida){
             case 1:
                 itemElegido = items.get(0);
-                itemElegido.aplicarItem(objetivo);
+                campoDeBatalla.aplicarItem(itemElegido,id);
                 break;
             case 2:
                 itemElegido = items.get(1);
-                itemElegido.aplicarItem(objetivo);
+                campoDeBatalla.aplicarItem(itemElegido,id);
                 break;
             case 3:
                 itemElegido = items.get(2);
-                itemElegido.aplicarItem(objetivo);
+                campoDeBatalla.aplicarItem(itemElegido,id);
                 break;
             case 4:
                 itemElegido = items.get(3);
-                itemElegido.aplicarItem(objetivo);
+                campoDeBatalla.aplicarItem(itemElegido,id);
                 break;
             case 5:
                 break;

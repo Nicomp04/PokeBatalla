@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.Habilidades.Habilidad;
+import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;
 
@@ -80,4 +81,8 @@ public class Campo {
 
     }
 
+    public void aplicarItem(Item itemElegido, int id) {
+        identificarAtacante(id);
+        itemElegido.aplicarItem(pokemonAtacante, pokemonAtacado);
+    }
 }

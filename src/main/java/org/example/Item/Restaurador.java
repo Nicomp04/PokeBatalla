@@ -9,10 +9,11 @@ public class Restaurador extends Item {
 
     public Restaurador(int hp) {
         this.hp = hp;
+        this.nombre = "Restaurador";
     }
 
     @Override
-    public void aplicarItem(Pokemon pokemon) { // Implementar curar() en Pokemon.java (puede ser cambiado)
-        pokemon.modificarHp(hp);
+    public void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo) { // Implementar curar() en Pokemon.java (puede ser cambiado)
+        pokemonPropio.modificarHp(hp);
     }
 }

@@ -67,14 +67,20 @@ public class Pokemon {
         if (hp + vidaActual > vidaMaxima){
             vidaActual = vidaMaxima;
         }
-        else if (hp + vidaActual < 0){
-            vidaActual = 0;
+        else if ( vidaActual < 0){
+            vidaActual = 0 + hp;
         }
         else{
-            this.vidaActual = vidaActual + vidaMaxima;
+            this.vidaActual += hp;
         }
         logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
+
+        if(vidaActual <= 0){
+            logger.info("Su {} a muerto", this.getNombre());
+           // Que hacemos con los muertos?
+        }
     }
+    private String getNombre() { return this.nombre;}
 
     public void revivir() {
         this.vidaActual = vidaMaxima;
@@ -95,8 +101,8 @@ public class Pokemon {
         Scanner scanner = new Scanner(System.in);
 
         logger.info("Es su turno ¿que Habilidad quiere realizar?");
-        logger.info(" \n1: Usar {} \n", habilidades.get(0).getNombre() +
-                "2: Usar \n" +
+        logger.info(" \n1: Usar {} ", habilidades.get(0).getNombre() +
+                "\n2: Usar \n" +
                 "3: Cambiar de Pokemon \n" +
                 "4: Escapar de la batalla \n");
         // Leer la entrada del usuario y almacenarla en una variable
