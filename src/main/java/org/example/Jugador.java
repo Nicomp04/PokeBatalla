@@ -1,8 +1,8 @@
 package org.example;
 
+import org.example.Estado.Estados;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
-import org.example.Campo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,6 +51,10 @@ public class Jugador {
             case 4:
                // escapar();
                 break;
+        }
+
+        if(getPokemonActual().getEstado() == Estados.ENVENENADO){
+            getPokemonActual().aplicarVeneno();
         }
     }
 
