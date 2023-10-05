@@ -19,6 +19,8 @@ public class Ataque extends Habilidad {
         this.poder = poder;
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
+        this.atacaAEnemigo = true;
+        this.afectaAEnemigo = false;
     }
 
     private int calcularCritico(){
@@ -42,10 +44,11 @@ public class Ataque extends Habilidad {
         Tipo tipoAtacante = atacante.getTipo();
         Tipo tipoObjetivo = objetivo.getTipo();
         logger.info("Calculando daño...");
+        double efectividad = tipoAtacante.getEfectividad(tipoObjetivo.getId());
 
         double danio = 2.0 * atacante.getNivel() * calcularCritico() * this.poder * (atacante.getAtaque()/objetivo.getDefensa()) ;
         danio = ( (danio / 5) + 2 ) / 50;
-        danio = danio * mismoTipo(atacante.getTipo()) * tipoAtacante.getEfectividad(tipoObjetivo.getId()) * rand();
+        danio = danio * mismoTipo(atacante.getTipo()) * efectividad * rand();
 
         logger.info("El daño causado al oponente es de {}", danio);
 

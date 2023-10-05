@@ -6,11 +6,13 @@ public class Modificacion extends Habilidad{
     private int estadistica;// 1-HP 2-ATAQUE 3-DEFENSA 4-VELOCIDAD
     private int valor;
 
-    public Modificacion(String nombre, int usosDisponibles, int estadistica, int valor) {
+    public Modificacion(String nombre, int usosDisponibles, int estadistica, int valor, boolean afectaAEnemigo) {
         this.valor = valor;
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
         this.estadistica = estadistica;
+        this.atacaAEnemigo = false;
+        this.afectaAEnemigo = afectaAEnemigo;
     }
 
     @Override

@@ -37,7 +37,6 @@ public class Pokemon {
         this.velocidad = velocidad;
         this.defensa = defensa;
         this.ataque = ataque;
-        this.estado = estado;
         this.habilidades = habilidades;
 
         especie.put("Charizard", new Fuego());
@@ -93,18 +92,20 @@ public class Pokemon {
 
     public Tipo getTipo(){ return this.tipo;}
 
-    public Habilidad mostrarYelegirHabilidad(){
+    public Habilidad mostrarYElegirHabilidad(){
         int habilidadElegida = 0;
+        Habilidad habilidad;
         Scanner scanner = new Scanner(System.in);
 
-        logger.info("Es su turno ¿que Habilidad quiere realizar?");
-        logger.info(" \n1: Usar {} \n", habilidades.get(0).getNombre() +
-                "2: Usar \n" +
-                "3: Cambiar de Pokemon \n" +
-                "4: Escapar de la batalla \n");
-        // Leer la entrada del usuario y almacenarla en una variable
+        logger.info("Es su turno ¿que Habilidad quiere realizar? \n");
+        logger.info(
+                "1: {} \n", habilidades.get(0).getNombre() +
+                "2: {} \n", habilidades.get(1).getNombre() +
+                "3: {} \n", habilidades.get(2).getNombre() +
+                "4: {} \n", habilidades.get(3).getNombre());
+        logger.info("Habilidad ->  ");
         habilidadElegida = scanner.nextInt();
-
+        logger.info("\n");
         switch (habilidadElegida){
             case 1:
                 return this.habilidades.get(0);
@@ -115,7 +116,8 @@ public class Pokemon {
             case 4:
                 return this.habilidades.get(3);
         }
-        return this.habilidades.get(0); //habria que poner una opcion de volver para atras
+        logger.info("La hablilidad {} es invalida ingresela nuevamente \n", habilidadElegida);
+        return mostrarYElegirHabilidad();
     }
 
 

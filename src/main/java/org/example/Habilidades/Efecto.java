@@ -14,6 +14,8 @@ public class Efecto extends Habilidad{
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
         this.estado = estado;
+        this.atacaAEnemigo = false;
+        this.afectaAEnemigo = true;
     }
 
     @Override

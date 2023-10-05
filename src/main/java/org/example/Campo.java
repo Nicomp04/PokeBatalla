@@ -1,7 +1,6 @@
 package org.example;
 
 import org.example.Estado.Estados;
-import org.example.Habilidades.Ataque;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.slf4j.Logger;
@@ -68,7 +67,7 @@ public class Campo {
      */
     public void elejirHabilidad (int idAtacante){
         identificarAtacante(idAtacante);
-        Habilidad habilidad = pokemonAtacante.mostrarYelegirHabilidad();
+        Habilidad habilidad = pokemonAtacante.mostrarYElegirHabilidad();
         validarEstadoDespierto(habilidad);
     }
 

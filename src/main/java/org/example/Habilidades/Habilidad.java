@@ -6,6 +6,8 @@ import java.util.Random;
 
 public abstract class Habilidad{
     protected String nombre;
+    protected boolean atacaAEnemigo;
+    protected boolean afectaAEnemigo;
     public Habilidad(){
 
     }

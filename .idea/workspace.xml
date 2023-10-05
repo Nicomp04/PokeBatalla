@@ -7,11 +7,10 @@
     <list default="true" id="397a9c3e-f212-43b9-99cf-280872365090" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Habilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Habilidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Modificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Modificacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +26,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Nico" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,7 +55,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Nico&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Franco&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -87,6 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696338176501</updated>
       <workItem from="1696338182338" duration="2221000" />
+      <workItem from="1696528777610" duration="1591000" />
     </task>
     <servers />
   </component>
