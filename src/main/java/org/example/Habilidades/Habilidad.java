@@ -1,8 +1,13 @@
 package org.example.Habilidades;
+import org.example.Estado.Estados;
 import org.example.Pokemon.Pokemon;
+
+import java.util.Random;
 
 public abstract class Habilidad{
     protected String nombre;
+    protected boolean atacaAEnemigo;
+    protected boolean afectaAEnemigo;
     public Habilidad(){
 
     }
@@ -22,5 +27,11 @@ public abstract class Habilidad{
 
     public String getNombre() {
         return this.nombre;
+    }
+
+    public boolean estadoParalizado(Pokemon pokemon){
+        Random random = new Random();
+        double valorAleatorio = random.nextDouble();
+        return ((pokemon.getEstado() == Estados.PARALIZADO) && (valorAleatorio < 0.005));
     }
 }
