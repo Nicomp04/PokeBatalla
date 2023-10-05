@@ -1,6 +1,6 @@
 package org.example.Estado;
 
-public enum EnumEstados {
+public enum Estados {
     DORMIDO,
     PARALIZADO,
     ENVENENADO
