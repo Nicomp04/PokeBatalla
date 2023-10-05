@@ -25,8 +25,8 @@ public class Pokemon {
 
     private List<Habilidad> habilidades = new ArrayList<>();
 
-    public HashMap<String, Tipo> especie = new HashMap<>();
-
+    public HashMap<String, Tipo> especie  new HashMap<>();
+=
     final Logger logger = LoggerFactory.getLogger(Pokemon.class);
 
     public Pokemon(String nombre, int nivel, Tipo tipo,  int vidaMaxima, int velocidad, int defensa, int ataque,List<Habilidad> habilidades ){
@@ -72,6 +72,7 @@ public class Pokemon {
         }
         else if (hp + vidaActual < 0){
             vidaActual = 0;
+            logger.info("El pokemon fue derrotado.");
         }
         else{
             this.vidaActual = vidaActual + vidaMaxima;
