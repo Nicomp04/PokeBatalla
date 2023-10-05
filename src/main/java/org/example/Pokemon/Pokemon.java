@@ -25,8 +25,7 @@ public class Pokemon {
 
     private List<Habilidad> habilidades = new ArrayList<>();
 
-    public HashMap<String, Tipo> especie  new HashMap<>();
-=
+    public HashMap<String, Tipo> especie = new HashMap<>();
     final Logger logger = LoggerFactory.getLogger(Pokemon.class);
 
     public Pokemon(String nombre, int nivel, Tipo tipo,  int vidaMaxima, int velocidad, int defensa, int ataque,List<Habilidad> habilidades ){
