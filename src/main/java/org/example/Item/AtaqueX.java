@@ -4,8 +4,12 @@ import org.example.Pokemon.Pokemon;
 
 public class AtaqueX extends ModificadorItem {
 
+    public AtaqueX(int porcentaje) {
+        super(porcentaje);
+    }
+
     @Override
-    public void aplicarItem(Pokemon pokemon) { //Implementar modificarAtaque() en Pokemon.java (puede ser cambiado)
+    public void aplicarItem(Pokemon pokemon) {
         pokemon.setAtaque(this.porcentaje);
     }
 }
