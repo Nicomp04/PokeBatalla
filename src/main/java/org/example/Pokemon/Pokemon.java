@@ -1,7 +1,6 @@
 package org.example.Pokemon;
-import org.example.Estado.Estado;
+import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
-import org.example.Jugador;
 import org.example.Tipo.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +21,7 @@ public class Pokemon {
     private int velocidad;
     private int defensa;
     private int ataque;
-    private Estado estado;
+    private Estados estado;
 
     private List<Habilidad> habilidades = new ArrayList<>();
 
@@ -61,7 +60,11 @@ public class Pokemon {
 
     public Pokemon() {}
 
-    public void cambiarEstado(Estado estado) { this.estado = estado; }
+    public void cambiarEstado(Estados estado) { this.estado = estado; }
+
+    public Estados getEstado(){
+        return this.estado;
+    }
 
     public void modificarHp(double hp) {
         if (hp + vidaActual > vidaMaxima){
@@ -132,10 +135,16 @@ public class Pokemon {
         return habilidades.get(hablilidadElegida);
     }
 
-    public boolean tieneUnEstado() {return true;}
+    public boolean tieneUnEstado() {return (estado != null);}
 
     public void serAtacado(double danio) {
         this.vidaActual = vidaActual - danio;
         logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
+    }
+
+    public void aplicarVeneno(){
+        int resto = (int) ((vidaMaxima * 5) / 100);
+        this.vidaActual = vidaActual - ((vidaMaxima * 5) / 100);
+        logger.info("El pokemon esta Envenenado, pierde {} de vida", resto);
     }
 }
