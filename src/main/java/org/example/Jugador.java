@@ -189,7 +189,7 @@ public class Jugador {
 
     public void usarTurno(){
         if (!(getPokemonActual().estaMuerto())){
-            usarTurno();
+            elegirAccion();
         }
         else {
             elegirPokemon();
