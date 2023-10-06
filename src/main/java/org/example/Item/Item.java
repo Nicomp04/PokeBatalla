@@ -13,5 +13,5 @@ public abstract class Item {
     }
 
     //public abstract void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo);
-    public abstract void aplicarItem(List<Pokemon> pokemones);
+    public abstract void aplicarItem(Pokemon pokemon);
 }

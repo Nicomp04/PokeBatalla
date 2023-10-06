@@ -133,55 +133,42 @@ public class Jugador {
     private void escapar() {this.rendirse = true;}
 
     private void usarItem() {
-        Scanner scanner = new Scanner(System.in);
-        int accionElegida = 0; //INPUT
+
+        //logger
         logger.info("Es su turno ¿que Item quiere utilizar?");
 
+        //Lista Items
         for(int i = 0; i < items.size(); i++){
-            logger.info("{}: {} \n",i + 1 ,items.get(i).getNombre());
-        }
-        accionElegida = scanner.nextInt();
-
-        Item itemElegido;
-        switch (accionElegida){
-            case 1:
-                itemElegido = items.get(0);
-                this.aplicarItem(itemElegido,id);
-                break;
-            case 2:
-                itemElegido = items.get(1);
-                this.aplicarItem(itemElegido,id);
-                break;
-            case 3:
-                itemElegido = items.get(2);
-                this.aplicarItem(itemElegido,id);
-                break;
-            case 4:
-                itemElegido = items.get(3);
-                this.aplicarItem(itemElegido,id);
-                break;
-            case 5:
-                break;
+            logger.info("{}: {} \n", (i + 1) ,items.get(i).getNombre());
         }
 
-    }
-
-    private void aplicarItem(Item itemElegido, int id) {
-        itemElegido.aplicarItem(pokemones);
-    }
-
-    private int elegirPokemon(Item item) {
-
-        int pokemonElegido = 0;
-
+        //Input
         Scanner scanner = new Scanner(System.in);
-        mostrarInfoPokemons();
+        int accionElegida = scanner.nextInt();
 
-        logger.info("Decidiste {} ¿en que Pokemon deseas utilizarlo?", item.getNombre());
+        //Item
+        Item itemAAplicar = items.get(accionElegida);
+
+        //Pokemon
+        logger.info("Elegiste el item {}. En que pokemon lo desea utilizar? ", itemAAplicar.getNombre());
+        Pokemon pokemonAAplicar = pokemones.get(elegirPokemon());
+
+        //Aplica
+        itemAAplicar.aplicarItem(pokemonAAplicar);
+    }
+
+
+    private int elegirPokemon() {
+
+
         mostrarInfoPokemons();
         logger.info("Pokemon ->  ");
-        pokemonElegido = scanner.nextInt();
+
+        Scanner scanner = new Scanner(System.in);
+        int pokemonElegido = scanner.nextInt();
+
         logger.info("\n");
+
         return pokemonElegido;
     }
 
@@ -194,7 +181,6 @@ public class Jugador {
                     "Tipo: {}    ", pokemon.getTipo().getId() +
                     "Estado: {}   ", pokemon.getEstadoString() +
                     "Vida: {}     \n", pokemon.getVidaActual() +
-
                     "Ataque: {}   ", pokemon.getAtaque() +
                     "Defensa: {}   ", pokemon.getDefensa() +
                     "Nivel: {}   ", pokemon.getNivel()
