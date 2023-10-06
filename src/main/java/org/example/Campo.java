@@ -62,7 +62,7 @@ public class Campo {
      */
     public void elejirHabilidad (int idAtacante){
         identificarAtacante(idAtacante);
-        Habilidad habilidad = pokemonAtacante.ElegirHabilidad();
+        Habilidad habilidad = pokemonAtacante.mostrarYElegirHabilidad();
         validarEstadoDespierto(habilidad);
     }
 

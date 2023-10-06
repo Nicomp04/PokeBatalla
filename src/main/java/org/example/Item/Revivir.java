@@ -35,7 +35,7 @@ public class Revivir extends Item {
             logger.info("¿Cual de tus pokemones quieres revivir? \n", this.nombre);
 
             for(int i = 0; i < pokemonesMuertos.size(); i++){
-                logger.info("{}: {} \n",i + 1 ,pokemones.get(i));
+                logger.info("{}: {} \n",i + 1 ,pokemones.get(i).getNombre());
             }
             //tenemos que hacerlo con un for para que solo muestre la cantidad de pokemon que tiene
             // Lee la entrada del usuario y almacenarla en una variable

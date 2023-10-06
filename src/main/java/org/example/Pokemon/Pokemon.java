@@ -140,17 +140,15 @@ public class Pokemon {
         logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
     }
 
-    public Habilidad ElegirHabilidad(){
+    public Habilidad mostrarYElegirHabilidad(){
         int habilidadElegida = 0;
         Habilidad habilidad;
         Scanner scanner = new Scanner(System.in);
 
         logger.info("Es su turno ¿que Habilidad quiere realizar? \n");
-        logger.info(
-                "1: {} \n", habilidades.get(0).getNombre() +
-                "2: {} \n", habilidades.get(1).getNombre() +
-                "3: {} \n", habilidades.get(2).getNombre() +
-                "4: {} \n", habilidades.get(3).getNombre());
+        for(int i = 0; i < habilidades.size(); i++){
+            logger.info("{}: {} \n",i + 1 , habilidades.get(i).getNombre());
+        }
         logger.info("Habilidad ->  ");
         habilidadElegida = scanner.nextInt();
 
@@ -165,8 +163,7 @@ public class Pokemon {
                 return this.habilidades.get(3);
         }
         logger.info("La hablilidad {} es invalida ingresela nuevamente \n", habilidadElegida);
-        return ElegirHabilidad();
+        return mostrarYElegirHabilidad();
     }
-
     public boolean estaMuerto() {return this.vidaActual <= 0;}
 }

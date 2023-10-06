@@ -46,14 +46,25 @@ public class Jugador {
     }
 
     private void elegirPokemonActivo() {
+        Scanner scanner = new Scanner(System.in);
+
         int pokemonAMover = 0; //vamos a tener q hacer una funcion cn un input para q elija lo que quiera hacer.
         int posicionAPoner = 0; //vamos a tener q hacer una funcion cn un input para q elija lo que quiera hacer.
         Pokemon pokemon1;
         Pokemon pokemon2;
-        pokemon1 = pokemones.get(pokemonAMover);
-        pokemon2 = pokemones.get(posicionAPoner);
-        pokemones.add(posicionAPoner,pokemon1);
-        pokemones.add(pokemonAMover,pokemon2);
+        while(pokemonAMover != -2){
+            logger.info("Es su turno ¿que Pokemon quiere cambiar de lugar? Ingrese -1 para terminar.");
+
+            for(int i = 0; i < pokemones.size(); i++){
+                logger.info("{}: {} \n",i + 1 ,pokemones.get(i).getNombre());
+            }
+            pokemonAMover = scanner.nextInt();
+            pokemonAMover = pokemonAMover - 1;
+            pokemon1 = pokemones.get(pokemonAMover);
+            pokemon2 = pokemones.get(posicionAPoner);
+            pokemones.add(posicionAPoner,pokemon1);
+            pokemones.add(pokemonAMover,pokemon2);
+        }
     }
 
     public void usarTurno(){
@@ -83,7 +94,7 @@ public class Jugador {
                 this.elegirPokemonActivo();
                 break;
             case 4:
-                // escapar();
+                this.escapar();
                 break;
         }
 
@@ -92,15 +103,16 @@ public class Jugador {
         }
     }
 
+    private void escapar() {this.rendirse = true;}
+
     private void usarItem() {
         Scanner scanner = new Scanner(System.in);
         int accionElegida = 0; //INPUT
         logger.info("Es su turno ¿que Item quiere utilizar?");
-        logger.info(" \n1: Usar {} ", items.get(0).getNombre() +
-                "\n2: Usar " +
-                "\n3: Cambiar de Pokemon " +
-                "\n4: Escapar de la batalla \n");
-        // Leer la entrada del usuario y almacenarla en una variable
+
+        for(int i = 0; i < items.size(); i++){
+            logger.info("{}: {} \n",i + 1 ,items.get(i).getNombre());
+        }
         accionElegida = scanner.nextInt();
 
         Item itemElegido;
