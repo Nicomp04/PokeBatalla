@@ -103,16 +103,20 @@ public class Pokemon {
     public boolean tieneUnEstado() {return (estado != null);}
 
     public String getEstadoString(){
-        if (estado == Estados.PARALIZADO){
-            return "Paralizado";
+        //if (estado == Estados.PARALIZADO){
+        //    return "Paralizado";
+        //}
+        //else if (estado == Estados.DORMIDO){
+        //    return "Dormido";
+        //}
+        //else if (estado == Estados.ENVENENADO){
+        //    return "Envenenado";
+        //}
+        //lo de abajo convierte el dato del enum en un string comun.
+        if (estado == null){
+            return "NORMAL";
         }
-        else if (estado == Estados.DORMIDO){
-            return "Dormido";
-        }
-        else if (estado == Estados.ENVENENADO){
-            return "Envenenado";
-        }
-        return "Normal";
+        return estado.toString();
     }
 
     public void serAtacado(double danio) {
@@ -149,21 +153,34 @@ public class Pokemon {
         for(int i = 0; i < habilidades.size(); i++){
             logger.info("{}: {} \n",i + 1 , habilidades.get(i).getNombre());
         }
+
         logger.info("Habilidad ->  ");
         habilidadElegida = scanner.nextInt();
-
-        switch (habilidadElegida){
-            case 1:
-                return this.habilidades.get(0);
-            case 2:
-                return this.habilidades.get(1);
-            case 3:
-                return this.habilidades.get(2);
-            case 4:
-                return this.habilidades.get(3);
-        }
-        logger.info("La hablilidad {} es invalida ingresela nuevamente \n", habilidadElegida);
-        return mostrarYElegirHabilidad();
+        //switch (habilidadElegida){
+        //    case 1:
+        //        return this.habilidades.get(0);
+        //    case 2:
+        //        return this.habilidades.get(1);
+        //    case 3:
+        //        return this.habilidades.get(2);
+        //    case 4:
+        //        return this.habilidades.get(3);
+        //}
+        //logger.info("La hablilidad {} es invalida ingresela nuevamente \n", habilidadElegida);
+        //return mostrarYElegirHabilidad();
+        return selectorDeHabilidad(habilidadElegida);
     }
     public boolean estaMuerto() {return this.vidaActual <= 0;}
+
+    private Habilidad selectorDeHabilidad(int indice){
+        if(indice > 0 && indice < 5){
+            return this.habilidades.get(indice);
+        }else{
+            Scanner scanner = new Scanner(System.in);
+            logger.info("La hablilidad {} es invalida ingresela nuevamente \n", indice);
+            logger.info("Habilidad ->  ");
+            int habilidadElegida = scanner.nextInt();
+            return selectorDeHabilidad(habilidadElegida);
+        }
+    }
 }
