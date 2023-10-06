@@ -1,8 +1,8 @@
 package org.example;
 
+import org.example.Estado.Estados;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
-import org.example.Campo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,6 +52,10 @@ public class Jugador {
                // escapar();
                 break;
         }
+
+        if(getPokemonActual().getEstado() == Estados.ENVENENADO){
+            getPokemonActual().aplicarVeneno();
+        }
     }
 
     private void elegirPokemonActivo() {
@@ -80,24 +84,28 @@ public class Jugador {
         switch (accionElegida){
             case 1:
                 itemElegido = items.get(0);
-                campoDeBatalla.aplicarItem(itemElegido,id);
+                this.aplicarItem(itemElegido,id);
                 break;
             case 2:
                 itemElegido = items.get(1);
-                campoDeBatalla.aplicarItem(itemElegido,id);
+                this.aplicarItem(itemElegido,id);
                 break;
             case 3:
                 itemElegido = items.get(2);
-                campoDeBatalla.aplicarItem(itemElegido,id);
+                this.aplicarItem(itemElegido,id);
                 break;
             case 4:
                 itemElegido = items.get(3);
-                campoDeBatalla.aplicarItem(itemElegido,id);
+                this.aplicarItem(itemElegido,id);
                 break;
             case 5:
                 break;
         }
 
+    }
+
+    private void aplicarItem(Item itemElegido, int id) {
+        itemElegido.aplicarItem(pokemones);
     }
 
 

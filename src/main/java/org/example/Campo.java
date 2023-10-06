@@ -1,17 +1,22 @@
 package org.example;
 
+import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
-import org.example.Tipo.Tipo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Campo {
     private Pokemon pokemonAtacante;
     private Pokemon pokemonAtacado;
     private List<Pokemon> pokemonesActivos = new ArrayList<>();
+
+    final Logger logger = LoggerFactory.getLogger(Campo.class);
 
     public Campo(Pokemon pokemon1, Pokemon pokemon2){
         pokemonesActivos.add(pokemon1);
@@ -52,13 +57,28 @@ public class Campo {
 
     }
 
+    public boolean validarEstadoParalizado(Pokemon pokemon){
+        Random random = new Random();
+        double valorAleatorio = random.nextDouble();
+        return ((pokemon.getEstado() == Estados.PARALIZADO) && (valorAleatorio < 0.005));
+    }
+
     /*
     Identifica que habilidad se va a usar
      */
     public void elejirHabilidad (int idAtacante){
         identificarAtacante(idAtacante);
-        Habilidad habilidad = pokemonAtacante.mostrarYelegirHabilidad();
-        aplicarHabilidad(habilidad);
+        Habilidad habilidad = pokemonAtacante.mostrarYElegirHabilidad();
+        validarEstadoDespierto(habilidad);
+    }
+
+    private void validarEstadoDespierto(Habilidad habilidad){
+        if(pokemonAtacante.getEstado() == Estados.DORMIDO){
+            logger.info("el pokemon esta Dormido, No Puede Atacar");
+            pokemonAtacante.cambiarEstado(null);// falta agregar lo del contador de turnos.
+        }else {
+            aplicarHabilidad(habilidad);
+        }
     }
 
     public void empezarTurno(Jugador turnoActivo) {
@@ -69,7 +89,10 @@ public class Campo {
     Segurn si afecta al enemigo o al atacante se llama a la habilidad para que se active
      */
     public void aplicarHabilidad (Habilidad habilidadElegida){
-        if (habilidadElegida.atacaAEnemigo()){
+        if(validarEstadoParalizado(pokemonAtacante)){
+            logger.info("el pokemon esta paralizado, No Puede Moverse!!!");
+        }
+        else if (habilidadElegida.atacaAEnemigo()){
             habilidadElegida.usarEnPokemon(pokemonAtacante, pokemonAtacado);
         }
         else if (habilidadElegida.afectaAEnemigo()){
@@ -81,8 +104,13 @@ public class Campo {
 
     }
 
-    public void aplicarItem(Item itemElegido, int id) {
+  /*  public void aplicarItem(Item itemElegido, int id) {
         identificarAtacante(id);
-        itemElegido.aplicarItem(pokemonAtacante, pokemonAtacado);
+        itemElegido.aplicarItem(pokemonAtacante);
+    }*/
+
+    public void cambiarPokemon(Pokemon pokemon, int id){
+        identificarAtacante(id);
+        this.pokemonAtacante = pokemon;
     }
 }

@@ -1,7 +1,6 @@
 package org.example.Pokemon;
-import org.example.Estado.Estado;
+import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
-import org.example.Jugador;
 import org.example.Tipo.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +21,7 @@ public class Pokemon {
     private int velocidad;
     private int defensa;
     private int ataque;
-    private Estado estado;
+    private Estados estado;
 
     private List<Habilidad> habilidades = new ArrayList<>();
 
@@ -61,24 +60,24 @@ public class Pokemon {
 
     public Pokemon() {}
 
-    public void cambiarEstado(Estado estado) { this.estado = estado; }
+    public void cambiarEstado(Estados estado) { this.estado = estado; }
+
+    public Estados getEstado(){
+        return this.estado;
+    }
 
     public void modificarHp(double hp) {
         if (hp + vidaActual > vidaMaxima){
             vidaActual = vidaMaxima;
         }
-        else if ( vidaActual < 0){
-            vidaActual = 0 + hp;
+        else if (hp + vidaActual < 0){
+            vidaActual = 0;
+            logger.info("El pokemon fue derrotado.");
         }
         else{
             this.vidaActual += hp;
         }
         logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
-
-        if(vidaActual <= 0){
-            logger.info("Su {} a muerto", this.getNombre());
-           // Que hacemos con los muertos?
-        }
     }
     private String getNombre() { return this.nombre;}
 
@@ -96,16 +95,16 @@ public class Pokemon {
 
     public Tipo getTipo(){ return this.tipo;}
 
-    public Habilidad mostrarYelegirHabilidad(){
+    public Habilidad mostrarYElegirHabilidad(){
         int habilidadElegida = 0;
+        Habilidad habilidad;
         Scanner scanner = new Scanner(System.in);
 
-        logger.info("Es su turno ¿que Habilidad quiere realizar?");
-        logger.info(" \n1: Usar {} ", habilidades.get(0).getNombre() +
-                "\n2: Usar \n" +
-                "3: Cambiar de Pokemon \n" +
-                "4: Escapar de la batalla \n");
-        // Leer la entrada del usuario y almacenarla en una variable
+        logger.info("Es su turno ¿que Habilidad quiere realizar? \n");
+        for(int i = 0; i < habilidades.size(); i++){
+            logger.info("{}: {} \n",i + 1 ,habilidades.get(i));
+        }
+        logger.info("Habilidad ->  ");
         habilidadElegida = scanner.nextInt();
 
         switch (habilidadElegida){
@@ -118,7 +117,8 @@ public class Pokemon {
             case 4:
                 return this.habilidades.get(3);
         }
-        return this.habilidades.get(0); //habria que poner una opcion de volver para atras
+        logger.info("La hablilidad {} es invalida ingresela nuevamente \n", habilidadElegida);
+        return mostrarYElegirHabilidad();
     }
 
 
@@ -138,10 +138,18 @@ public class Pokemon {
         return habilidades.get(hablilidadElegida);
     }
 
-    public boolean tieneUnEstado() {return true;}
+    public boolean tieneUnEstado() {return (estado != null);}
 
     public void serAtacado(double danio) {
         this.vidaActual = vidaActual - danio;
         logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
     }
+
+    public void aplicarVeneno(){
+        int resto = (int) ((vidaMaxima * 5) / 100);
+        this.vidaActual = vidaActual - ((vidaMaxima * 5) / 100);
+        logger.info("El pokemon esta Envenenado, pierde {} de vida", resto);
+    }
+
+    public boolean estaMuerto() {return this.vidaActual <= 0;}
 }
