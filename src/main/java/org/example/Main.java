@@ -13,5 +13,6 @@ public class Main {
         System.out.println(j1.getNombre());
         System.out.println(j2.getNombre());
         System.out.println(j1.getPokemones().toString()); testeo*/
+
     }
 }
