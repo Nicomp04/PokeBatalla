@@ -94,11 +94,10 @@ public class Jugador {
         }
     }
 
-    public void usarTurno(){
-        int accionElegida = 0;
-        //INPUT
-        Scanner scanner = new Scanner(System.in);
+    public void elegirAccion(){
 
+
+        //logger
         logger.info("Es turno de {} ¿que accion quiere realizar?", this.getNombre());
         logger.info("\n" +
                 "1: Usar Habilidad \n" +
@@ -107,9 +106,13 @@ public class Jugador {
                 "4: Escapar de la batalla\n"
         );
         logger.info("Accion ->  ");
-        // Lee la entrada del usuario y la almacena en una variable
-        accionElegida = scanner.nextInt();
+
+        //Input
+        Scanner scanner = new Scanner(System.in);
+        int accionElegida = scanner.nextInt();
         logger.info("\n");
+
+        //Realizar accion
         switch (accionElegida){
             case 1:
                 campoDeBatalla.elejirHabilidad(id);
@@ -123,10 +126,6 @@ public class Jugador {
             case 4:
                 this.escapar();
                 break;
-        }
-
-        if(this.getPokemonActual().getEstado() == Estados.ENVENENADO){
-            this.getPokemonActual().aplicarVeneno();
         }
     }
 
@@ -186,5 +185,15 @@ public class Jugador {
                     "Nivel: {}   ", pokemon.getNivel()
             );
         }
+    }
+
+    public void usarTurno(){
+        if (!(getPokemonActual().estaMuerto())){
+            usarTurno();
+        }
+        else {
+            elegirPokemon();
+        }
+        getPokemonActual().checkearEnvenenamiento();
     }
 }
