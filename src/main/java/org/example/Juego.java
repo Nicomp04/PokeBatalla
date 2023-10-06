@@ -14,9 +14,9 @@ public class Juego {
     private boolean turnoDe1;
     private Jugador turnoActivo;
     private Campo campoDeBatalla;
-
+    final Logger logger = LoggerFactory.getLogger(Juego.class);
     public Juego() {
-        final Logger logger = LoggerFactory.getLogger(Juego.class);
+
         Generador gen = new Generador();
 
         logger.info("Comenzaremos con la configuración del Jugador 1");
@@ -77,10 +77,12 @@ public class Juego {
                 turnoActivo = jugador1;
             }
         }
+        logger.info("El contrincante se ha escapado!");
+        logger.info("Contundente victoria de {} !!!",turnoActivo.getNombre());
     }
 
     private boolean seRindio() {
-        return jugador1.seRindio() && jugador2.seRindio();
+        return jugador1.seRindio() || jugador2.seRindio();
     }
 
     private boolean quedanPokemones() {

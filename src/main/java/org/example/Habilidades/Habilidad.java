@@ -15,14 +15,13 @@ public abstract class Habilidad{
     public void usarHabilidad(Pokemon pokemonAtacante, Pokemon pokemonAtacado){}
 
     public abstract void usarEnPokemon(Pokemon pokemon, Pokemon objetivo);
-    public abstract void usarEnPokemon(Pokemon pokemon);
 
-    public boolean afectaAEnemigo() { //a implementar
-        return true;
+    public boolean getAfectaAEnemigo() {
+        return afectaAEnemigo;
     }
 
-    public boolean atacaAEnemigo() {
-        return true; //cambiar
+    public boolean getAtacaAEnemigo() {
+        return atacaAEnemigo;
     }
 
     public String getNombre() {

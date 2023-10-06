@@ -121,9 +121,9 @@ public class Pokemon {
     }
 
     public void aplicarVeneno(){
-        int resto = (int) ((vidaMaxima * 5) / 100);
-        this.vidaActual = vidaActual - ((vidaMaxima * 5) / 100);
-        logger.info("El pokemon esta Envenenado, pierde {} de vida", resto);
+        double resto = ((vidaMaxima * 5) / 100);
+        this.vidaActual = vidaActual - resto;
+        logger.info("El pokemon {} esta Envenenado, pierde {} de vida", this.getNombre(), resto);
     }
 
     public void modificarHp(double hp) {

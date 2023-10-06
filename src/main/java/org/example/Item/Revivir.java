@@ -42,6 +42,8 @@ public class Revivir extends Item {
             pokemonElegido = scanner.nextInt();
             pokemonElegido = pokemonElegido - 1;
             pokemonesMuertos.get(pokemonElegido).revivir();
+            logger.info("{} ha sido revivido.", pokemonElegido);
+
         }
     }
 

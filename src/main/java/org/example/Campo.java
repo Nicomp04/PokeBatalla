@@ -38,22 +38,23 @@ public class Campo {
     }
 
     public boolean validarEstadoParalizado(Pokemon pokemon){
-
         if (pokemon.getEstado() == Estados.PARALIZADO){
             Random random = new Random();
             double valorAleatorio = random.nextDouble();
-            return (valorAleatorio < 0.005);
+            if (valorAleatorio < 0.005)
+                logger.info("el pokemon esta paralizado, No Puede Moverse!!!");
+            return true;
         }
         return false;
     }
 
-    private void validarEstadoDespierto(Habilidad habilidad){
-        if(pokemonAtacante.getEstado() == Estados.DORMIDO){
+    private boolean validarEstadoDespierto(Habilidad habilidad){
+        if(pokemonAtacante.getEstado() == Estados.DORMIDO) {
             logger.info("el pokemon esta Dormido, No Puede Atacar");
             pokemonAtacante.cambiarEstado(null);// falta agregar lo del contador de turnos.
-        }else {
-            aplicarHabilidad(habilidad);
+            return false;
         }
+        return true;
     }
 
 
@@ -61,28 +62,34 @@ public class Campo {
     Identifica que habilidad se va a usar
      */
     public void elejirHabilidad (int idAtacante){
+        boolean despierto;
+        boolean paralizado;
         identificarAtacante(idAtacante);
         Habilidad habilidad = pokemonAtacante.mostrarYElegirHabilidad();
-        validarEstadoDespierto(habilidad);
+        despierto = validarEstadoDespierto(habilidad);
+        paralizado = validarEstadoParalizado(pokemonAtacante);
+        if (despierto && !paralizado){
+            this.aplicarHabilidad(habilidad);
+        }
+
     }
 
-    /*
-    Segurn si afecta al enemigo o al atacante se llama a la habilidad para que se active
-     */
     public void aplicarHabilidad (Habilidad habilidadElegida){
-        if(validarEstadoParalizado(pokemonAtacante)){
-            logger.info("el pokemon esta paralizado, No Puede Moverse!!!");
-        }
-        else if (habilidadElegida.atacaAEnemigo()){
-            habilidadElegida.usarEnPokemon(pokemonAtacante, pokemonAtacado);
-        }
-        else if (habilidadElegida.afectaAEnemigo()){
-            habilidadElegida.usarEnPokemon(pokemonAtacado);
-        }
-        else {
-            habilidadElegida.usarEnPokemon(pokemonAtacante);
-        }
+        habilidadElegida.usarEnPokemon(pokemonAtacante, pokemonAtacado);
     }
+
+    /* Yo creo que el aplicarHabilidad de arriba esta mal, la idea de polimorfismo es justamente ahorrarse todos esos ifs, para mi puede ser asi
+    *
+    *  public void aplicarHabilidad (Habilidad habilidadElegida){
+    *       habilidadElegida(pokemonAtacante, pokemonPropio);
+    * }
+    *
+    * AL USAR DOBLE PARAMETRO NOS AHORRAMOS LOS IFS DE AFECTA A ENEMIGO O NO
+    *
+    *
+    *
+    * */
+
 
   /*  public void aplicarItem(Item itemElegido, int id) {
         identificarAtacante(id);
@@ -90,7 +97,6 @@ public class Campo {
     }*/
 
     public void cambiarPokemon(Pokemon pokemon, int id){
-        identificarAtacante(id);
-        this.pokemonAtacante = pokemon;
+        this.pokemonesActivos.set(id-1,pokemon);
     }
 }

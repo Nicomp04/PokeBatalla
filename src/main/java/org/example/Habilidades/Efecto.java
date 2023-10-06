@@ -10,27 +10,25 @@ public class Efecto extends Habilidad{
 
     final Logger logger = LoggerFactory.getLogger(Efecto.class);
 
-    public Efecto(String nombre, int usosDisponibles, Estados estado) {
+    public Efecto(String nombre, int usosDisponibles, Estados estado,boolean afectaAenemigo) {
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
         this.estado = estado;
         this.atacaAEnemigo = false;
-        this.afectaAEnemigo = true;
+        this.afectaAEnemigo = afectaAenemigo;
     }
 
     @Override
-    public void usarEnPokemon(Pokemon pokemon, Pokemon objetivo) {
-
-    }
-
-    @Override
-    public void usarEnPokemon(Pokemon pokemon) {
-        if (pokemon.tieneUnEstado()) {
-            logger.info("El pokemon ya tiene su estado alterado");
+    public void usarEnPokemon(Pokemon pokemonPropio, Pokemon objetivo) {
+        if(afectaAEnemigo){
+            if (objetivo.tieneUnEstado()) {
+                logger.info("El pokemon ya tiene su estado alterado");
+            }
+            else{
+                objetivo.cambiarEstado(this.estado);
+            }
+        }else{
+            pokemonPropio.cambiarEstado(this.estado);
         }
-        else{
-            pokemon.cambiarEstado(this.estado);
-        }
-
     }
 }

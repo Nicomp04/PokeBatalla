@@ -55,10 +55,6 @@ public class Ataque extends Habilidad {
         objetivo.serAtacado(danio);
     }
 
-    @Override
-    public void usarEnPokemon(Pokemon pokemon) {
-
-    }
 
 
     private double rand() {

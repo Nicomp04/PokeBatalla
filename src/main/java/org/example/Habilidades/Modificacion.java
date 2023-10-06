@@ -16,25 +16,38 @@ public class Modificacion extends Habilidad{
     }
 
     @Override
-    public void usarEnPokemon(Pokemon pokemon){
-        switch (this.estadistica){
-            case 1:
-                pokemon.modificarHp(this.valor);
-                break;
-            case 2:
-                pokemon.setAtaque(this.valor);
-                break;
-            case 3:
-                pokemon.setDefensa(this.valor);
-                break;
-            case 4:
-                pokemon.setVelocidad(this.valor);
-                break;
-        }
-    }
-
-    @Override
     public void usarEnPokemon(Pokemon pokemon, Pokemon objetivo) {
+        if (afectaAEnemigo){
+            switch (this.estadistica){
+                case 1:
+                    objetivo.modificarHp(this.valor);
+                    break;
+                case 2:
+                    objetivo.setAtaque(this.valor);
+                    break;
+                case 3:
+                    objetivo.setDefensa(this.valor);
+                    break;
+                case 4:
+                    objetivo.setVelocidad(this.valor);
+                    break;
+            }
+        }else{
+            switch (this.estadistica){
+                case 1:
+                    pokemon.modificarHp(this.valor);
+                    break;
+                case 2:
+                    pokemon.setAtaque(this.valor);
+                    break;
+                case 3:
+                    pokemon.setDefensa(this.valor);
+                    break;
+                case 4:
+                    pokemon.setVelocidad(this.valor);
+                    break;
+            }
+        }
 
     }
 

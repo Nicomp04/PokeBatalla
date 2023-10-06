@@ -1,12 +1,13 @@
 package org.example;
 
+import org.example.Estado.Estados;
 import org.example.Habilidades.Ataque;
+import org.example.Habilidades.Efecto;
 import org.example.Habilidades.Habilidad;
 import org.example.Item.Item;
 import org.example.Item.Revivir;
 import org.example.Pokemon.Pokemon;
-import org.example.Tipo.Agua;
-import org.example.Tipo.Fuego;
+import org.example.Tipo.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +19,13 @@ public class Generador {
         List<Pokemon> pokemones = new ArrayList<Pokemon>();
         List<Habilidad> habilidades = new ArrayList<Habilidad>();
         habilidades.add(new Ataque("Llamarada",5, new Fuego(), 20));
+        habilidades.add(new Efecto("Veneno",1, Estados.ENVENENADO, true));
         Pokemon pokemon = new Pokemon("Charizard", 6, new Fuego(), 7, 20, 10,15,habilidades);
+        Pokemon pokemon2 = new Pokemon("Vulpix", 6, new Hielo(), 10, 20, 15,15,habilidades);
+        Pokemon pokemon3 = new Pokemon("Pikachu", 2, new Electrico(), 10, 30, 10,25,habilidades);
         pokemones.add(pokemon);
+        pokemones.add(pokemon2);
+        pokemones.add(pokemon3);
 
         return pokemones;
     }

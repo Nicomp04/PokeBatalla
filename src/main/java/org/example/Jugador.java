@@ -37,6 +37,10 @@ public class Jugador {
         this.campoDeBatalla = campoDeBatalla;
     }
 
+    public String getNombre(){
+        return this.nombre;
+    }
+
     public boolean tienePokemones() {
         return !pokemones.isEmpty();
     }
@@ -48,22 +52,45 @@ public class Jugador {
     private void elegirPokemonActivo() {
         Scanner scanner = new Scanner(System.in);
 
-        int pokemonAMover = 0; //vamos a tener q hacer una funcion cn un input para q elija lo que quiera hacer.
-        int posicionAPoner = 0; //vamos a tener q hacer una funcion cn un input para q elija lo que quiera hacer.
+        int pokemonAMover = 0;
+        int posicionAPoner = 0;
         Pokemon pokemon1;
         Pokemon pokemon2;
-        while(pokemonAMover != -2){
-            logger.info("Es su turno ¿que Pokemon quiere cambiar de lugar? Ingrese -1 para terminar.");
 
-            for(int i = 0; i < pokemones.size(); i++){
-                logger.info("{}: {} \n",i + 1 ,pokemones.get(i).getNombre());
+        while (pokemonAMover != -1) {
+            logger.info("Es su turno, ¿qué Pokémon quiere cambiar de lugar? Ingrese -1 para terminar.");
+
+            for (int i = 0; i < pokemones.size(); i++) {
+                logger.info("{}: {}\n", i + 1, pokemones.get(i).getNombre());
             }
             pokemonAMover = scanner.nextInt();
-            pokemonAMover = pokemonAMover - 1;
+
+            if (pokemonAMover == -1) {
+                break;
+            }
+
+            logger.info("¿En qué posición quiere ubicarlo?");
+            for (int i = 0; i < pokemones.size(); i++) {
+                logger.info("Posición {}\n", i + 1);
+            }
+            posicionAPoner = scanner.nextInt();
+
+            if (pokemonAMover < 1 || pokemonAMover > pokemones.size() || posicionAPoner < 1 || posicionAPoner > pokemones.size()) {
+                logger.info("Entrada inválida. Asegúrese de elegir una posición válida.");
+                continue;
+            }
+
+            pokemonAMover--;
+            posicionAPoner--;
+
             pokemon1 = pokemones.get(pokemonAMover);
             pokemon2 = pokemones.get(posicionAPoner);
-            pokemones.add(posicionAPoner,pokemon1);
-            pokemones.add(pokemonAMover,pokemon2);
+
+            pokemones.set(pokemonAMover, pokemon2);
+            pokemones.set(posicionAPoner, pokemon1);
+            logger.info("{}", pokemones.get(0));
+
+            campoDeBatalla.cambiarPokemon(pokemones.get(0), id);
         }
     }
 
@@ -72,7 +99,7 @@ public class Jugador {
         //INPUT
         Scanner scanner = new Scanner(System.in);
 
-        logger.info("Es turno de {} ¿que accion quiere realizar?", this.nombre);
+        logger.info("Es turno de {} ¿que accion quiere realizar?", this.getNombre());
         logger.info("\n" +
                 "1: Usar Habilidad \n" +
                 "2: Usar Item \n" +
@@ -80,7 +107,7 @@ public class Jugador {
                 "4: Escapar de la batalla\n"
         );
         logger.info("Accion ->  ");
-        // Lee la entrada del usuario y almacenarla en una variable
+        // Lee la entrada del usuario y la almacena en una variable
         accionElegida = scanner.nextInt();
         logger.info("\n");
         switch (accionElegida){
@@ -98,8 +125,8 @@ public class Jugador {
                 break;
         }
 
-        if(getPokemonActual().getEstado() == Estados.ENVENENADO){
-            getPokemonActual().aplicarVeneno();
+        if(this.getPokemonActual().getEstado() == Estados.ENVENENADO){
+            this.getPokemonActual().aplicarVeneno();
         }
     }
 
