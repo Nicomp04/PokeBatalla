@@ -14,43 +14,23 @@ import java.util.Random;
 public class Campo {
     private Pokemon pokemonAtacante;
     private Pokemon pokemonAtacado;
-    private List<Pokemon> pokemonesActivos = new ArrayList<>();
+    private List<Pokemon> pokemonesActivos;
 
     final Logger logger = LoggerFactory.getLogger(Campo.class);
 
     public Campo(Pokemon pokemon1, Pokemon pokemon2){
+        pokemonesActivos = new ArrayList<>();
         pokemonesActivos.add(pokemon1);
         pokemonesActivos.add(pokemon2);
 
     }
 
-    public void usarHabilidad (int idAtacante){
-        //Pokemon pokemonAtacante = identificarAtacante(idAtacante);
-        //Habilidad habilidad = pokemonAtacante.elegirHabilidad();
-
-    }
-
-    public void elejirHablidad (Pokemon pokemonAtacante){
-       // int habilidadElegida = pokemonAtacante.elegirHabilidad();  // tenemos repetido este metodo
-     }
-
- /*   public int usarHabilidad2 (int hablilidadElegida ){
-
-        if (pokemonAtacante.getHabilidad(hablilidadElegida).afectaAHpEnemigo()){ // no entiendo mucho esto
-            //int hp = pokemonAtacante.usarHabilidad(pokemonAtacado.getTipo());
-        }
-        //else if (pokemonAtacante.elegirHabilidad())
-        return 0;
-    }*/
-
     private void identificarAtacante(int id) {
         if (id == 1 ){
-            pokemonAtacado = pokemonesActivos.get(1);
             pokemonAtacante = pokemonesActivos.get(0);
             pokemonAtacado = pokemonesActivos.get(1);
         }
         else {
-            pokemonAtacante = pokemonesActivos.get(1);
             pokemonAtacado = pokemonesActivos.get(0);
             pokemonAtacante = pokemonesActivos.get(1);
         }
@@ -58,18 +38,13 @@ public class Campo {
     }
 
     public boolean validarEstadoParalizado(Pokemon pokemon){
-        Random random = new Random();
-        double valorAleatorio = random.nextDouble();
-        return ((pokemon.getEstado() == Estados.PARALIZADO) && (valorAleatorio < 0.005));
-    }
 
-    /*
-    Identifica que habilidad se va a usar
-     */
-    public void elejirHabilidad (int idAtacante){
-        identificarAtacante(idAtacante);
-        Habilidad habilidad = pokemonAtacante.mostrarYElegirHabilidad();
-        validarEstadoDespierto(habilidad);
+        if (pokemon.getEstado() == Estados.PARALIZADO){
+            Random random = new Random();
+            double valorAleatorio = random.nextDouble();
+            return (valorAleatorio < 0.005);
+        }
+        return false;
     }
 
     private void validarEstadoDespierto(Habilidad habilidad){
@@ -81,8 +56,14 @@ public class Campo {
         }
     }
 
-    public void empezarTurno(Jugador turnoActivo) {
 
+    /*
+    Identifica que habilidad se va a usar
+     */
+    public void elejirHabilidad (int idAtacante){
+        identificarAtacante(idAtacante);
+        Habilidad habilidad = pokemonAtacante.ElegirHabilidad();
+        validarEstadoDespierto(habilidad);
     }
 
     /*
@@ -101,7 +82,6 @@ public class Campo {
         else {
             habilidadElegida.usarEnPokemon(pokemonAtacante);
         }
-
     }
 
   /*  public void aplicarItem(Item itemElegido, int id) {
