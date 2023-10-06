@@ -47,7 +47,6 @@ public class Juego {
         return jugador2;
     }
 
-
     public void avanzarTurno(){ // A implementar...
 
     }
@@ -85,5 +84,5 @@ public class Juego {
     private boolean quedanPokemones() {
         return jugador1.tienePokemones() && jugador2.tienePokemones();
     }
-}
 
+}

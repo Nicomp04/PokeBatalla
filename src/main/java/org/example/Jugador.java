@@ -1,6 +1,5 @@
 package org.example;
 
-import org.example.Estado.Estados;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
 import org.slf4j.Logger;
@@ -152,10 +151,30 @@ public class Jugador {
         logger.info("Elegiste el item {}. En que pokemon lo desea utilizar? ", itemAAplicar.getNombre());
         Pokemon pokemonAAplicar = pokemones.get(elegirPokemon());
 
-        //Aplica
-        itemAAplicar.aplicarItem(pokemonAAplicar);
+        //Si es que hay pokemones muertos hay loop hasta que el jugador elija uno muerto
+        //Aplicar item devuelve true si es q se aplico o false si no se pudo aplicar
+        if (!noHayPokemonesVivos()){
+            while (! (itemAAplicar.aplicarItem(pokemonAAplicar)) ) {
+                pokemonAAplicar = pokemones.get(elegirPokemon());
+            }
+        }
+        //Si no hay pokemones muertos no se aplica el item
+        else{
+            logger.info("Todos tus pokemones estan vivos ");
+        }
     }
 
+    private boolean noHayPokemonesVivos() {
+        boolean noHayPokemonesVivos = true;
+        int i = 0;
+        while (noHayPokemonesVivos){ //esta vivo
+
+            if (!pokemones.get(i).estaMuerto()){
+                noHayPokemonesVivos = false;
+            }
+        }
+        return noHayPokemonesVivos;
+    }
 
     private int elegirPokemon() {
 

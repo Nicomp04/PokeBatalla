@@ -13,5 +13,5 @@ public abstract class Item {
     }
 
     //public abstract void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo);
-    public abstract void aplicarItem(Pokemon pokemon);
+    public abstract boolean aplicarItem(Pokemon pokemon);
 }
