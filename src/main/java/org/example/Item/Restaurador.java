@@ -40,7 +40,7 @@ public class Restaurador extends Item {
             pokemonElegido = pokemonElegido - 1;
             pokemonesVivos.get(pokemonElegido).modificarHp(hp);
             logger.info("{} ha sido restaurado.", pokemonElegido);
-
+            this.setUsado(true);
         }
 
     }

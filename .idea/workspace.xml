@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b3575192-aa59-4d3f-bb6f-cedb3ae12378" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/AtaqueX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/AtaqueX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/DefensaX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/DefensaX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Restaurador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Restaurador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Revivir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Revivir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/curaTodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/curaTodo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+</project>

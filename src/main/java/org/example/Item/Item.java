@@ -9,11 +9,16 @@ import java.util.List;
 
 public abstract class Item {
     protected String nombre;
+    protected boolean usado = false;
 
     final Logger logger = LoggerFactory.getLogger(Revivir.class);
     public String getNombre() {
         return nombre;
     }
+
+    public boolean getUsado(){return this.usado;}
+
+    public void setUsado(boolean bolean){this.usado = bolean;}
 
    // public abstract void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo);
     public abstract void aplicarItem(List<Pokemon> pokemones);

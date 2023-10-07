@@ -13,5 +13,6 @@ public class DefensaX extends ModificadorItem {
     public void aplicarItem(List<Pokemon> pokemones) {
         Pokemon pokemon = pokemones.get(0);
         pokemon.setDefensa(this.porcentaje);
+        this.setUsado(true);
     }
 }

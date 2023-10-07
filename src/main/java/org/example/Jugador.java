@@ -51,8 +51,8 @@ public class Jugador {
     public void elegirPokemonActivo() {
         Scanner scanner = new Scanner(System.in);
 
-        int pokemonAMover = 0;
-        int posicionAPoner = 0;
+        int pokemonAMover=0;
+        int posicionAPoner;
         Pokemon pokemon1;
         Pokemon pokemon2;
 
@@ -94,8 +94,6 @@ public class Jugador {
     }
 
     public void elegirAccion(){
-
-
         //logger
         logger.info("Es turno de {} ¿que accion quiere realizar?", this.getNombre());
         logger.info("\n" +
@@ -199,6 +197,8 @@ public class Jugador {
     }
     private void aplicarItem(Item itemElegido, int id) {
         itemElegido.aplicarItem(pokemones);
+        if(itemElegido.getUsado())
+            this.items.remove(itemElegido);
     }
 
     private boolean noHayPokemonesVivos() {
