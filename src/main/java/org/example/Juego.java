@@ -1,12 +1,9 @@
 package org.example;
 
 import org.example.Pokemon.Pokemon;
-import org.example.Tipo.Tipo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Map;
 
 public class Juego {
     private Jugador jugador1;
@@ -50,7 +47,6 @@ public class Juego {
         return jugador2;
     }
 
-
     public void avanzarTurno(){ // A implementar...
 
     }
@@ -88,5 +84,5 @@ public class Juego {
     private boolean quedanPokemones() {
         return jugador1.tienePokemones() && jugador2.tienePokemones();
     }
-}
 
+}

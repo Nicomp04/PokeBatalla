@@ -66,4 +66,5 @@ public class Generador {
         }
         return cantidad;
     }
+
 }

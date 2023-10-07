@@ -125,6 +125,11 @@ public class Pokemon {
         this.vidaActual = vidaActual - resto;
         logger.info("El pokemon {} esta Envenenado, pierde {} de vida", this.getNombre(), resto);
     }
+    public void checkearEnvenenamiento() {
+        if(estado == Estados.ENVENENADO){
+            aplicarVeneno();
+        }
+    }
 
     public void modificarHp(double hp) {
         if (hp + vidaActual > vidaMaxima){
@@ -166,4 +171,6 @@ public class Pokemon {
         return mostrarYElegirHabilidad();
     }
     public boolean estaMuerto() {return this.vidaActual <= 0;}
+
+
 }

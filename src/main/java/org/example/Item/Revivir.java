@@ -11,17 +11,29 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Revivir extends Item {
-    final Logger logger = LoggerFactory.getLogger(Revivir.class);
+
     public Revivir(){
         this.nombre = "Revivir";
     }
 
+    /*
     @Override
+    public boolean aplicarItem(Pokemon pokemon){
+        if (pokemon.estaMuerto()){
+            logger.info("\nEl pokemon esta no esta muerto, no podes revivir\n"+
+                    "Elegi otro pokemon \n");
+            return false;
+        }
+        pokemon.revivir();
+        return true;
+    }
+    */
+
     public void aplicarItem(List<Pokemon> pokemones) { //Implementar revivir() en Pokemon.java (puede ser cambiado)
         Scanner scanner = new Scanner(System.in);
         List<Pokemon> pokemonesMuertos = new ArrayList<>();
         int pokemonElegido = 0;
-        Pokemon pokemon = new Pokemon();
+        Pokemon pokemon;
         for(int i = 0; i < pokemones.size(); i++){
             pokemon = pokemones.get(i);
             if(pokemon.estaMuerto()){
@@ -45,7 +57,9 @@ public class Revivir extends Item {
             logger.info("{} ha sido revivido.", pokemonesMuertos.get(pokemonElegido));
 
         }
-    }
+     }
+
+
 
     /*@Override
     public void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo) { //Implementar revivir() en Pokemon.java (puede ser cambiado)
