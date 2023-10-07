@@ -41,7 +41,7 @@ public class Jugador {
     }
 
     public boolean tienePokemones() {
-        return !pokemones.isEmpty();
+        return !noHayPokemonesVivos();
     }
 
     public boolean seRindio() {

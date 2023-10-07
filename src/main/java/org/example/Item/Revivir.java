@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Revivir extends Item {
-    final Logger logger = LoggerFactory.getLogger(Revivir.class);
+
     public Revivir(){
         this.nombre = "Revivir";
     }
@@ -33,7 +33,7 @@ public class Revivir extends Item {
         Scanner scanner = new Scanner(System.in);
         List<Pokemon> pokemonesMuertos = new ArrayList<>();
         int pokemonElegido = 0;
-        Pokemon pokemon = new Pokemon();
+        Pokemon pokemon;
         for(int i = 0; i < pokemones.size(); i++){
             pokemon = pokemones.get(i);
             if(pokemon.estaMuerto()){
