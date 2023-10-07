@@ -2,6 +2,7 @@ package org.example.Item;
 
 import org.example.Pokemon.Pokemon;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Item {
@@ -13,5 +14,5 @@ public abstract class Item {
     }
 
     //public abstract void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo);
-    public abstract boolean aplicarItem(Pokemon pokemon);
+    public abstract void aplicarItem(List<Pokemon> pokemon);
 }

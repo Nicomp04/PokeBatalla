@@ -147,21 +147,7 @@ public class Jugador {
         //Item
         Item itemAAplicar = items.get(accionElegida);
 
-        //Pokemon
-        logger.info("Elegiste el item {}. En que pokemon lo desea utilizar? ", itemAAplicar.getNombre());
-        Pokemon pokemonAAplicar = pokemones.get(elegirPokemon());
-
-        //Si es que hay pokemones muertos hay loop hasta que el jugador elija uno muerto
-        //Aplicar item devuelve true si es q se aplico o false si no se pudo aplicar
-        if (!noHayPokemonesVivos()){
-            while (! (itemAAplicar.aplicarItem(pokemonAAplicar)) ) {
-                pokemonAAplicar = pokemones.get(elegirPokemon());
-            }
-        }
-        //Si no hay pokemones muertos no se aplica el item
-        else{
-            logger.info("Todos tus pokemones estan vivos ");
-        }
+        itemAAplicar.aplicarItem(pokemones);
     }
 
     private boolean noHayPokemonesVivos() {

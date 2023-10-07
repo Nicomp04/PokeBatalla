@@ -16,6 +16,7 @@ public class Revivir extends Item {
         this.nombre = "Revivir";
     }
 
+    /*
     @Override
     public boolean aplicarItem(Pokemon pokemon){
         if (pokemon.estaMuerto()){
@@ -26,7 +27,8 @@ public class Revivir extends Item {
         pokemon.revivir();
         return true;
     }
-    /*
+    */
+
     public void aplicarItem(List<Pokemon> pokemones) { //Implementar revivir() en Pokemon.java (puede ser cambiado)
         Scanner scanner = new Scanner(System.in);
         List<Pokemon> pokemonesMuertos = new ArrayList<>();
@@ -57,7 +59,7 @@ public class Revivir extends Item {
         }
      }
 
-     */
+
 
     /*@Override
     public void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo) { //Implementar revivir() en Pokemon.java (puede ser cambiado)
