@@ -74,13 +74,11 @@ public class Pokemon {
         this.vidaActual = vidaMaxima;
     }
 
-    public void setDefensa(int porcentaje) {
-        this.defensa = porcentaje;
-    }
+    public void setDefensa(int valor) {this.defensa = valor;}
 
-    public void setAtaque(int porcentaje) {
-        this.ataque = this.ataque - ((this.ataque * (-porcentaje))/100);
-    }
+    public void setAtaque(int ataque) {this.ataque = ataque;}
+
+    public void modificarAtaque(int porcentaje){this.ataque = this.ataque - ((this.ataque * (-porcentaje))/100);}
 
     public Tipo getTipo(){ return this.tipo;}
 
@@ -172,5 +170,7 @@ public class Pokemon {
     }
     public boolean estaMuerto() {return this.vidaActual <= 0;}
 
+    public void modificarDefensa(int porcentaje) {this.defensa = this.defensa - ((this.defensa * (-porcentaje))/100);}
 
+    public void modificarVelocidad(int porcentaje) {this.velocidad = this.velocidad - ((this.velocidad * (-porcentaje))/100);}
 }

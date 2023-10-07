@@ -11,7 +11,7 @@ public class Planta extends Tipo{
         efectividad.put("Agua", 2.0);
         efectividad.put("Bicho", 0.5);
         efectividad.put("Dragon", 0.5);
-        efectividad.put("Electico", 1.0);
+        efectividad.put("Electrico", 1.0);
         efectividad.put("Fantasma", 1.0);
         efectividad.put("Fuego", 0.5);
         efectividad.put("Hielo", 1.0);

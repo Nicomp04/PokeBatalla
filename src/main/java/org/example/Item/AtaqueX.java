@@ -6,8 +6,8 @@ import java.util.List;
 
 public class AtaqueX extends ModificadorItem {
 
-    public AtaqueX(int porcentaje) {
-        super(porcentaje);
+    public AtaqueX(int valor) {
+        super(valor);
         this.nombre = "AtaqueX";
     }
     @Override

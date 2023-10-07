@@ -71,7 +71,6 @@ public class Campo {
         if (despierto && !paralizado){
             this.aplicarHabilidad(habilidad);
         }
-
     }
 
     public void aplicarHabilidad (Habilidad habilidadElegida){

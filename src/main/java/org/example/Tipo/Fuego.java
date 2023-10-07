@@ -11,7 +11,7 @@ public class Fuego extends Tipo{
         efectividad.put("Agua", 0.5);
         efectividad.put("Bicho", 2.0);
         efectividad.put("Dragon", 0.5);
-        efectividad.put("Electico", 1.0);
+        efectividad.put("Electrico", 1.0);
         efectividad.put("Fantasma", 1.0);
         efectividad.put("Fuego", 0.5);
         efectividad.put("Hielo", 2.0);

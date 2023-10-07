@@ -41,7 +41,7 @@ public class Jugador {
     }
 
     public boolean tienePokemones() {
-        return !noHayPokemonesVivos();
+        return HayPokemonesVivos();
     }
 
     public boolean seRindio() {
@@ -201,16 +201,15 @@ public class Jugador {
             this.items.remove(itemElegido);
     }
 
-    private boolean noHayPokemonesVivos() {
-        boolean noHayPokemonesVivos = true;
-        int i = 0;
-        while (noHayPokemonesVivos){ //esta vivo
-
+    private boolean HayPokemonesVivos() {
+        boolean HayPokemonesVivos = false;
+        for(int i = 0; i < pokemones.size(); i++){
             if (!pokemones.get(i).estaMuerto()){
-                noHayPokemonesVivos = false;
+                HayPokemonesVivos = true;
+
             }
         }
-        return noHayPokemonesVivos;
+        return HayPokemonesVivos;
     }
 
     private int elegirPokemon() {

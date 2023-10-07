@@ -41,7 +41,7 @@ public class Generador {
         List<Pokemon> pokemones = new ArrayList<Pokemon>();
         List<Habilidad> habilidades = new ArrayList<Habilidad>();
         habilidades.add(new Ataque("Llamarada",5, new Fuego(), 20));
-        Pokemon pokemon = new Pokemon("Bulbasur", 10, new Agua(), 15, 15, 25, 12,habilidades);
+        Pokemon pokemon = new Pokemon("Bulbasur", 10, new Bicho(), 15, 15, 25, 12,habilidades);
         pokemones.add(pokemon);
 
         return pokemones;
@@ -50,7 +50,7 @@ public class Generador {
     public List<Item> generarSetItems(){
         List<Item> items = new ArrayList<Item>();
         Item item = new Revivir();
-        Item item2 = new AtaqueX(5);
+        Item item2 = new AtaqueX(100);
         Item item3 = new Restaurador(5);
         Item item4 = new curaTodo();
         items.add(item);

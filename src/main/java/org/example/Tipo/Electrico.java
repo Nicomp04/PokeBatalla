@@ -11,7 +11,7 @@ public class Electrico extends Tipo{
         efectividad.put("Agua", 2.0);
         efectividad.put("Bicho", 1.0);
         efectividad.put("Dragon", 0.5);
-        efectividad.put("Electico", 0.5);
+        efectividad.put("Electrico", 0.5);
         efectividad.put("Fantasma", 1.0);
         efectividad.put("Fuego", 1.0);
         efectividad.put("Hielo", 1.0);

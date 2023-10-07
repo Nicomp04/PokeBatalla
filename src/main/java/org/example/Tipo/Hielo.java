@@ -11,7 +11,7 @@ public class Hielo extends Tipo{
         efectividad.put("Agua", 0.5);
         efectividad.put("Bicho", 1.0);
         efectividad.put("Dragon", 2.0);
-        efectividad.put("Electico", 1.0);
+        efectividad.put("Electrico", 1.0);
         efectividad.put("Fantasma", 1.0);
         efectividad.put("Fuego", 1.0);
         efectividad.put("Hielo", 0.5);

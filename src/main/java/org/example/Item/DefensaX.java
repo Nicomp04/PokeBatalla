@@ -5,8 +5,8 @@ import org.example.Pokemon.Pokemon;
 import java.util.List;
 
 public class DefensaX extends ModificadorItem {
-    public DefensaX(int porcentaje){
-        super(porcentaje);
+    public DefensaX(int valor){
+        super(valor);
         this.nombre = "DefensaX";
     }
 
