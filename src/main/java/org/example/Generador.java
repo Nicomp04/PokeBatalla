@@ -4,8 +4,8 @@ import org.example.Estado.Estados;
 import org.example.Habilidades.Ataque;
 import org.example.Habilidades.Efecto;
 import org.example.Habilidades.Habilidad;
-import org.example.Item.Item;
-import org.example.Item.Revivir;
+import org.example.Habilidades.Modificacion;
+import org.example.Item.*;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.*;
 
@@ -17,12 +17,16 @@ public class Generador {
 
     public List<Pokemon> generarSetPokemon1(int cantidadDePokemones){
         List<Pokemon> pokemones = new ArrayList<Pokemon>();
-        List<Habilidad> habilidades = new ArrayList<Habilidad>();
-        habilidades.add(new Ataque("Llamarada",5, new Fuego(), 20));
-        habilidades.add(new Efecto("Veneno",1, Estados.ENVENENADO, true));
-        Pokemon pokemon = new Pokemon("Charizard", 6, new Fuego(), 7, 20, 10,15,habilidades);
-        Pokemon pokemon2 = new Pokemon("Vulpix", 6, new Hielo(), 10, 20, 15,15,habilidades);
-        Pokemon pokemon3 = new Pokemon("Pikachu", 2, new Electrico(), 10, 30, 10,25,habilidades);
+        List<Habilidad> habilidades1 = new ArrayList<Habilidad>();
+        List<Habilidad> habilidades2 = new ArrayList<Habilidad>();
+        habilidades1.add(new Ataque("Llamarada",5, new Fuego(), 20));
+        habilidades1.add(new Efecto("Veneno",1, Estados.ENVENENADO, true));
+        habilidades1.add(new Modificacion("Modif. def", 1 , 3, 10,true));
+        habilidades2.add(new Modificacion("Modif. Salud", 1 , 1, 10,true));
+        habilidades2.add(new Ataque("Rayo", 3 , new Electrico(), 30));
+        Pokemon pokemon = new Pokemon("Charizard", 6, new Fuego(), 10, 20, 10,15,habilidades1);
+        Pokemon pokemon2 = new Pokemon("Vulpix", 6, new Hielo(), 12, 20, 15,15,habilidades2);
+        Pokemon pokemon3 = new Pokemon("Pikachu", 2, new Electrico(), 10, 30, 10,25,habilidades2);
         pokemones.add(pokemon);
         pokemones.add(pokemon2);
         pokemones.add(pokemon3);
@@ -43,7 +47,13 @@ public class Generador {
     public List<Item> generarSetItems(){
         List<Item> items = new ArrayList<Item>();
         Item item = new Revivir();
+        Item item2 = new AtaqueX(5);
+        Item item3 = new Restaurador(5);
+        Item item4 = new curaTodo();
         items.add(item);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
 
         return  items;
     }

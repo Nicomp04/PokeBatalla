@@ -24,12 +24,17 @@ public class Juego {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
 
-        this.turnoActivo = definirPrimerTurno();
+
 
         this.campoDeBatalla = new Campo(jugador1.getPokemonActual(), jugador2.getPokemonActual());
 
         jugador1.entrarACampo(campoDeBatalla);
         jugador2.entrarACampo(campoDeBatalla);
+
+        jugador1.elegirPokemonActivo();
+        jugador2.elegirPokemonActivo();
+
+        this.turnoActivo = definirPrimerTurno();
 
         logger.info("Juego inicializado con exito!");
 
@@ -41,7 +46,7 @@ public class Juego {
         Pokemon pokemon2 = this.jugador2.getPokemonActual();
 
         //return (pokemon1.getVelocidad() < pokemon2.getVelocidad());
-        if (pokemon1.getVelocidad() < pokemon2.getVelocidad()){
+        if (pokemon1.getVelocidad() > pokemon2.getVelocidad()){
             return jugador1;
         }
         return jugador2;
