@@ -48,7 +48,7 @@ public class Jugador {
         return this.rendirse;
     }
 
-    private void elegirPokemonActivo() {
+    public void elegirPokemonActivo() {
         Scanner scanner = new Scanner(System.in);
 
         int pokemonAMover = 0;
@@ -59,13 +59,16 @@ public class Jugador {
         while (pokemonAMover != -1) {
             logger.info("Es su turno, ¿qué Pokémon quiere cambiar de lugar? Ingrese -1 para terminar.");
 
-            for (int i = 0; i < pokemones.size(); i++) {
-                logger.info("{}: {}\n", i + 1, pokemones.get(i).getNombre());
-            }
+            this.mostrarInfoPokemons();
             pokemonAMover = scanner.nextInt();
 
             if (pokemonAMover == -1) {
                 break;
+            }
+
+            if (pokemones.get(pokemonAMover-1).estaMuerto()) {
+                logger.info("Entrada inválida. Asegúrese de elegir un pokemon vivo válida.");
+                continue;
             }
 
             logger.info("¿En qué posición quiere ubicarlo?");
@@ -74,10 +77,7 @@ public class Jugador {
             }
             posicionAPoner = scanner.nextInt();
 
-            if (pokemonAMover < 1 || pokemonAMover > pokemones.size() || posicionAPoner < 1 || posicionAPoner > pokemones.size()) {
-                logger.info("Entrada inválida. Asegúrese de elegir una posición válida.");
-                continue;
-            }
+
 
             pokemonAMover--;
             posicionAPoner--;
@@ -130,7 +130,7 @@ public class Jugador {
 
     private void escapar() {this.rendirse = true;}
 
-    private void usarItem() {
+ /*   private void usarItem() {
 
         //logger
         logger.info("Es su turno ¿que Item quiere utilizar?");
@@ -148,9 +148,11 @@ public class Jugador {
         Item itemAAplicar = items.get(accionElegida);
 
         //Pokemon
-        logger.info("Elegiste el item {}. En que pokemon lo desea utilizar? ", itemAAplicar.getNombre());
+        logger.info("Elegiste el item {}. En que pokemon lo desea utilizar?", itemAAplicar.getNombre());
+
         Pokemon pokemonAAplicar = pokemones.get(elegirPokemon());
 
+        itemAAplicar.aplicarItem();
         //Si es que hay pokemones muertos hay loop hasta que el jugador elija uno muerto
         //Aplicar item devuelve true si es q se aplico o false si no se pudo aplicar
         if (!noHayPokemonesVivos()){
@@ -162,6 +164,40 @@ public class Jugador {
         else{
             logger.info("Todos tus pokemones estan vivos ");
         }
+    }*/
+
+    private void usarItem() {
+        Scanner scanner = new Scanner(System.in);
+
+        logger.info("Es su turno ¿que Item quiere utilizar?");
+        for(int i = 0; i < items.size(); i++){
+            logger.info("{}: {} \n",i + 1 ,items.get(i).getNombre());
+        }
+        int accionElegida = scanner.nextInt();
+        Item itemElegido;
+        switch (accionElegida){
+            case 1:
+                itemElegido = items.get(0);
+                this.aplicarItem(itemElegido,id);
+                break;
+            case 2:
+                itemElegido = items.get(1);
+                this.aplicarItem(itemElegido,id);
+                break;
+            case 3:
+                itemElegido = items.get(2);
+                this.aplicarItem(itemElegido,id);
+                break;
+            case 4:
+                itemElegido = items.get(3);
+                this.aplicarItem(itemElegido,id);
+                break;
+            case 5:
+                break;
+        }
+    }
+    private void aplicarItem(Item itemElegido, int id) {
+        itemElegido.aplicarItem(pokemones);
     }
 
     private boolean noHayPokemonesVivos() {
@@ -178,7 +214,6 @@ public class Jugador {
 
     private int elegirPokemon() {
 
-
         mostrarInfoPokemons();
         logger.info("Pokemon ->  ");
 
@@ -193,16 +228,14 @@ public class Jugador {
     private void mostrarInfoPokemons() {
         for (int i = 0; i < pokemones.size(); i ++){
             Pokemon pokemon = pokemones.get(i);
-            logger.info("\n" +
-                    "{}: ", (i+1) +
-                    "Nombre: {} \n", pokemon.getNombre() +
-                    "Tipo: {}    ", pokemon.getTipo().getId() +
-                    "Estado: {}   ", pokemon.getEstadoString() +
-                    "Vida: {}     \n", pokemon.getVidaActual() +
-                    "Ataque: {}   ", pokemon.getAtaque() +
-                    "Defensa: {}   ", pokemon.getDefensa() +
-                    "Nivel: {}   ", pokemon.getNivel()
-            );
+            logger.info("{}: ", (i+1));
+            logger.info("Nombre: {} ", pokemones.get(i).getNombre());
+            logger.info("Tipo: {} ", pokemones.get(i).getTipo().getId());
+            logger.info("Estado: {} ", pokemones.get(i).getEstadoString());
+            logger.info("Vida: {} ", pokemones.get(i).getVidaActual());
+            logger.info("Ataque: {} ", pokemones.get(i).getAtaque());
+            logger.info("Defensa: {} ", pokemones.get(i).getDefensa());
+            logger.info("Nivel: {} \n", pokemones.get(i).getNivel());
         }
     }
 
@@ -211,7 +244,7 @@ public class Jugador {
             elegirAccion();
         }
         else {
-            elegirPokemon();
+            this.elegirPokemonActivo();
         }
         getPokemonActual().checkearEnvenenamiento();
     }

@@ -12,6 +12,6 @@ public abstract class Item {
         return nombre;
     }
 
-    //public abstract void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo);
-    public abstract boolean aplicarItem(Pokemon pokemon);
+   // public abstract void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo);
+    public abstract void aplicarItem(List<Pokemon> pokemones);
 }

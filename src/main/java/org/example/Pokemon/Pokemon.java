@@ -79,7 +79,7 @@ public class Pokemon {
     }
 
     public void setAtaque(int porcentaje) {
-        this.ataque = porcentaje;
+        this.ataque = this.ataque - ((this.ataque * (-porcentaje))/100);
     }
 
     public Tipo getTipo(){ return this.tipo;}
