@@ -16,11 +16,21 @@ public class Revivir extends Item {
         this.nombre = "Revivir";
     }
 
+
+   /* public boolean aplicarItem(Pokemon pokemon){
+        if (pokemon.estaMuerto()){
+            logger.info("\nEl pokemon esta no esta muerto, no podes revivir\n"+
+                    "Elegi otro pokemon \n");
+            return false;
+        }
+        pokemon.revivir();
+        return true;
+    }*/
     @Override
     public void aplicarItem(List<Pokemon> pokemones) { //Implementar revivir() en Pokemon.java (puede ser cambiado)
         Scanner scanner = new Scanner(System.in);
         List<Pokemon> pokemonesMuertos = new ArrayList<>();
-        int pokemonElegido = 0;
+
         Pokemon pokemon = new Pokemon();
         for(int i = 0; i < pokemones.size(); i++){
             pokemon = pokemones.get(i);
@@ -39,13 +49,15 @@ public class Revivir extends Item {
             }
             //tenemos que hacerlo con un for para que solo muestre la cantidad de pokemon que tiene
             // Lee la entrada del usuario y almacenarla en una variable
-            pokemonElegido = scanner.nextInt();
+            int pokemonElegido = scanner.nextInt();
             pokemonElegido = pokemonElegido - 1;
             pokemonesMuertos.get(pokemonElegido).revivir();
             logger.info("{} ha sido revivido.", pokemonElegido);
 
         }
-    }
+     }
+
+
 
     /*@Override
     public void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo) { //Implementar revivir() en Pokemon.java (puede ser cambiado)

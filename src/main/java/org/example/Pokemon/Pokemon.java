@@ -75,7 +75,7 @@ public class Pokemon {
         this.defensa = porcentaje;
     }
     public void setAtaque(int porcentaje) {
-        this.ataque = porcentaje;
+        this.ataque = this.ataque - ((this.ataque * (-porcentaje))/100);
     }
     public int getVelocidad() {
         return this.velocidad;
@@ -115,6 +115,11 @@ public class Pokemon {
         this.vidaActual = vidaActual - resto;
         logger.info("El pokemon {} esta Envenenado, pierde {} de vida", this.getNombre(), resto);
     }
+    public void checkearEnvenenamiento() {
+        if(estado == Estados.ENVENENADO){
+            aplicarVeneno();
+        }
+    }
 
     public void modificarHp(double hp) {
         if (hp + vidaActual > vidaMaxima){
@@ -137,4 +142,6 @@ public class Pokemon {
         }
     }
     public boolean estaMuerto() {return this.vidaActual <= 0;}
+
+
 }

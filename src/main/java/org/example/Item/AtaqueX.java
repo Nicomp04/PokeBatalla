@@ -10,10 +10,12 @@ public class AtaqueX extends ModificadorItem {
         super(porcentaje);
         this.nombre = "AtaqueX";
     }
-
     @Override
     public void aplicarItem(List<Pokemon> pokemones) {
         Pokemon pokemon = pokemones.get(0);
         pokemon.setAtaque(this.porcentaje);
     }
+    /*public boolean aplicarItem(Pokemon pokemon) {
+        return false;
+    }*/
 }

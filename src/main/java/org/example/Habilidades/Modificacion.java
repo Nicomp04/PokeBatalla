@@ -8,7 +8,7 @@ public class Modificacion extends Habilidad{
     private int valor;
 
     public Modificacion(String nombre, int usosDisponibles, int estadistica, int valor, boolean afectaAEnemigo) {
-        this.valor = valor;
+        this.valor = -valor;
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
         this.estadistica = estadistica;

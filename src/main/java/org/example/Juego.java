@@ -1,12 +1,9 @@
 package org.example;
 
 import org.example.Pokemon.Pokemon;
-import org.example.Tipo.Tipo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Map;
 
 public class Juego {
     private Jugador jugador1;
@@ -27,12 +24,17 @@ public class Juego {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
 
-        this.turnoActivo = definirPrimerTurno();
+
 
         this.campoDeBatalla = new Campo(jugador1.getPokemonActual(), jugador2.getPokemonActual());
 
         jugador1.entrarACampo(campoDeBatalla);
         jugador2.entrarACampo(campoDeBatalla);
+
+        jugador1.elegirPokemonActivo();
+        jugador2.elegirPokemonActivo();
+
+        this.turnoActivo = definirPrimerTurno();
 
         logger.info("Juego inicializado con exito!");
 
@@ -44,12 +46,11 @@ public class Juego {
         Pokemon pokemon2 = this.jugador2.getPokemonActual();
 
         //return (pokemon1.getVelocidad() < pokemon2.getVelocidad());
-        if (pokemon1.getVelocidad() < pokemon2.getVelocidad()){
+        if (pokemon1.getVelocidad() > pokemon2.getVelocidad()){
             return jugador1;
         }
         return jugador2;
     }
-
 
     public void avanzarTurno(){ // A implementar...
 
@@ -88,5 +89,5 @@ public class Juego {
     private boolean quedanPokemones() {
         return jugador1.tienePokemones() && jugador2.tienePokemones();
     }
-}
 
+}
