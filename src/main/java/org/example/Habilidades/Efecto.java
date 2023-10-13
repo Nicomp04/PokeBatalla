@@ -4,6 +4,7 @@ import org.example.Estado.Estados;
 import org.example.Pokemon.Pokemon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.example.Visitor;
 
 public class Efecto extends Habilidad{
     private Estados estado;
@@ -19,16 +20,20 @@ public class Efecto extends Habilidad{
     }
 
     @Override
+    public void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo) {
+        visitor.visitEfecto(this, atacante, objetivo);
+    }
+    @Override
     public void usarEnPokemon(Pokemon pokemonPropio, Pokemon objetivo) {
         if(afectaAEnemigo){
             if (objetivo.tieneUnEstado()) {
                 logger.info("El pokemon ya tiene su estado alterado");
             }
             else{
-                objetivo.cambiarEstado(this.estado);
+                objetivo.setEstado(this.estado);
             }
         }else{
-            pokemonPropio.cambiarEstado(this.estado);
+            pokemonPropio.setEstado(this.estado);
         }
     }
 }

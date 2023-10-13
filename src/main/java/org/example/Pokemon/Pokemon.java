@@ -55,51 +55,37 @@ public class Pokemon {
         especie.put("Tornadus", new Volador());
     }
 
-    public Pokemon() {}
+    public Pokemon() {
+
+    }
 
     public String getNombre(){
         return this.nombre;
     }
-
+    public void setNombre(String nombre){this.nombre = nombre;}
+    public int getNivel() {return this.nivel;}
+    public void setNivel(int nivel) {this.nivel = nivel;}
+    public Tipo getTipo(){ return this.tipo;}
     public double getVidaActual (){
         return this.vidaActual;
     }
-    public void cambiarEstado(Estados estado) { this.estado = estado; }
-
-    public Estados getEstado(){
-        return this.estado;
-    }
-
-    public void revivir() {
-        this.vidaActual = vidaMaxima;
-    }
-
+    public void setEstado(Estados estado) { this.estado = estado; }
+    public Estados getEstado(){return this.estado;}
     public void setDefensa(int porcentaje) {
         this.defensa = porcentaje;
     }
-
     public void setAtaque(int porcentaje) {
         this.ataque = porcentaje;
     }
-
-    public Tipo getTipo(){ return this.tipo;}
-
     public int getVelocidad() {
         return this.velocidad;
     }
-
     public int getDefensa(){ return this.defensa; }
-
-    public void setVelocidad(int valor) { this.velocidad += valor; }
-
-    public int getNivel() {return this.nivel;}
-
-    public double getAtaque() { return this.ataque; }
-
-    public Habilidad getHabilidad(int hablilidadElegida) {
+    public void setVelocidad(int valor) { this.velocidad = valor; }
+    public double getAtaque() { return this.ataque;}
+    public Habilidad getHabilidades(int hablilidadElegida) {
         return habilidades.get(hablilidadElegida);
     }
-
     public boolean tieneUnEstado() {return (estado != null);}
 
     public String getEstadoString(){
@@ -115,12 +101,16 @@ public class Pokemon {
         return "Normal";
     }
 
-    public void serAtacado(double danio) {
+    public void revivir() {
+        this.vidaActual = vidaMaxima;
+    }
+
+    public void serAtacado(double danio) { //se puede sacar de pokemon
         logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
         modificarHp(-danio);
     }
 
-    public void aplicarVeneno(){
+    public void aplicarVeneno(){ //se puede sacar de pokemon
         double resto = ((vidaMaxima * 5) / 100);
         this.vidaActual = vidaActual - resto;
         logger.info("El pokemon {} esta Envenenado, pierde {} de vida", this.getNombre(), resto);
@@ -140,30 +130,11 @@ public class Pokemon {
         logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
     }
 
-    public Habilidad mostrarYElegirHabilidad(){
-        int habilidadElegida = 0;
-        Habilidad habilidad;
-        Scanner scanner = new Scanner(System.in);
-
+    public void mostrarHabilidades(){
         logger.info("Es su turno ¿que Habilidad quiere realizar? \n");
         for(int i = 0; i < habilidades.size(); i++){
             logger.info("{}: {} \n",i + 1 , habilidades.get(i).getNombre());
         }
-        logger.info("Habilidad ->  ");
-        habilidadElegida = scanner.nextInt();
-
-        switch (habilidadElegida){
-            case 1:
-                return this.habilidades.get(0);
-            case 2:
-                return this.habilidades.get(1);
-            case 3:
-                return this.habilidades.get(2);
-            case 4:
-                return this.habilidades.get(3);
-        }
-        logger.info("La hablilidad {} es invalida ingresela nuevamente \n", habilidadElegida);
-        return mostrarYElegirHabilidad();
     }
     public boolean estaMuerto() {return this.vidaActual <= 0;}
 }

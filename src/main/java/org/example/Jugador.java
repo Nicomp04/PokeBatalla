@@ -112,7 +112,7 @@ public class Jugador {
         logger.info("\n");
         switch (accionElegida){
             case 1:
-                campoDeBatalla.elejirHabilidad(id);
+                campoDeBatalla.usarHabilidad(id);
                 break;
             case 2:
                 this.usarItem();

@@ -2,7 +2,6 @@ package org.example;
 
 import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
-import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,19 +9,17 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Campo {
     private Pokemon pokemonAtacante;
     private Pokemon pokemonAtacado;
     private List<Pokemon> pokemonesActivos;
-
     final Logger logger = LoggerFactory.getLogger(Campo.class);
-
     public Campo(Pokemon pokemon1, Pokemon pokemon2){
         pokemonesActivos = new ArrayList<>();
         pokemonesActivos.add(pokemon1);
         pokemonesActivos.add(pokemon2);
-
     }
 
     private void identificarAtacante(int id) {
@@ -34,7 +31,6 @@ public class Campo {
             pokemonAtacado = pokemonesActivos.get(0);
             pokemonAtacante = pokemonesActivos.get(1);
         }
-
     }
 
     public boolean validarEstadoParalizado(Pokemon pokemon){
@@ -51,52 +47,55 @@ public class Campo {
     private boolean validarEstadoDespierto(Habilidad habilidad){
         if(pokemonAtacante.getEstado() == Estados.DORMIDO) {
             logger.info("el pokemon esta Dormido, No Puede Atacar");
-            pokemonAtacante.cambiarEstado(null);// falta agregar lo del contador de turnos.
+            pokemonAtacante.setEstado(null);// falta agregar lo del contador de turnos.
             return false;
         }
         return true;
     }
 
-
-    /*
-    Identifica que habilidad se va a usar
-     */
-    public void elejirHabilidad (int idAtacante){
+    public void usarHabilidad(int idAtacante){
         boolean despierto;
         boolean paralizado;
+
         identificarAtacante(idAtacante);
-        Habilidad habilidad = pokemonAtacante.mostrarYElegirHabilidad();
+        pokemonAtacante.mostrarHabilidades();
+        Habilidad habilidad = this.elegirHabilidad(pokemonAtacante);
+
         despierto = validarEstadoDespierto(habilidad);
         paralizado = validarEstadoParalizado(pokemonAtacante);
+
         if (despierto && !paralizado){
             this.aplicarHabilidad(habilidad);
         }
 
     }
 
-    public void aplicarHabilidad (Habilidad habilidadElegida){
-        habilidadElegida.usarEnPokemon(pokemonAtacante, pokemonAtacado);
+    private Habilidad elegirHabilidad(Pokemon pokemonAtacante) {
+        logger.info("Habilidad ->  ");
+        Scanner scanner = new Scanner(System.in);
+        int habilidadElegida = scanner.nextInt();
+
+        if (habilidadElegida < 1 || habilidadElegida > 4){
+            logger.info("La hablilidad {} es invalida ingresela nuevamente \n", habilidadElegida);
+            return elegirHabilidad(pokemonAtacante);
+        }
+        return pokemonAtacante.getHabilidades(habilidadElegida - 1);
     }
 
-    /* Yo creo que el aplicarHabilidad de arriba esta mal, la idea de polimorfismo es justamente ahorrarse todos esos ifs, para mi puede ser asi
-    *
-    *  public void aplicarHabilidad (Habilidad habilidadElegida){
-    *       habilidadElegida(pokemonAtacante, pokemonPropio);
-    * }
-    *
-    * AL USAR DOBLE PARAMETRO NOS AHORRAMOS LOS IFS DE AFECTA A ENEMIGO O NO
-    *
-    *
-    *
-    * */
-
-
-  /*  public void aplicarItem(Item itemElegido, int id) {
-        identificarAtacante(id);
-        itemElegido.aplicarItem(pokemonAtacante);
+    /*public void aplicarHabilidad (Habilidad habilidadElegida){
+        habilidadElegida.usarEnPokemon(pokemonAtacante, pokemonAtacado);
     }*/
+    public void aplicarHabilidad(Habilidad habilidadElegida){
+        PokemonVisitor visitor = new PokemonVisitor();
+        habilidadElegida.aceptar(visitor, pokemonAtacante, pokemonAtacado);
+    }
 
     public void cambiarPokemon(Pokemon pokemon, int id){
         this.pokemonesActivos.set(id-1,pokemon);
     }
+
+   /* public void atacaA(Pokemon pokemon,double danio) {
+        logger.info("El pokemon {} tiene {} de vida.",pokemon.getNombre(),pokemon.getVidaActual());
+        pokemon.modificarHp(-danio);
+    }*/
 }

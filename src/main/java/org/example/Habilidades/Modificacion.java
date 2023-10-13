@@ -1,5 +1,6 @@
 package org.example.Habilidades;
 import org.example.Pokemon.Pokemon;
+import org.example.Visitor;
 
 public class Modificacion extends Habilidad{
 
@@ -13,6 +14,11 @@ public class Modificacion extends Habilidad{
         this.estadistica = estadistica;
         this.atacaAEnemigo = false;
         this.afectaAEnemigo = afectaAEnemigo;
+    }
+
+    @Override
+    public void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo) {
+        visitor.visitModificacion(this, atacante, objetivo);
     }
 
     @Override

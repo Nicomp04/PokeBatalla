@@ -4,6 +4,7 @@ import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.example.Visitor;
 
 import java.util.Random;
 
@@ -21,6 +22,11 @@ public class Ataque extends Habilidad {
         this.usosDisponibles = usosDisponibles;
         this.atacaAEnemigo = true;
         this.afectaAEnemigo = false;
+    }
+
+    @Override
+    public void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo) {
+        visitor.visitAtaque(this, atacante, objetivo);
     }
 
     private int calcularCritico(){
