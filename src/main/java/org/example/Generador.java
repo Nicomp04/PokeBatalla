@@ -19,11 +19,14 @@ public class Generador {
         List<Pokemon> pokemones = new ArrayList<Pokemon>();
         List<Habilidad> habilidades1 = new ArrayList<Habilidad>();
         List<Habilidad> habilidades2 = new ArrayList<Habilidad>();
+
         habilidades1.add(new Ataque("Llamarada",5, new Fuego(), 20));
         habilidades1.add(new Efecto("Veneno",1, Estados.ENVENENADO, true));
         habilidades1.add(new Modificacion("Modif. def", 1 , 3, 10,true));
+
         habilidades2.add(new Modificacion("Modif. Salud", 1 , 1, 10,true));
         habilidades2.add(new Ataque("Rayo", 3 , new Electrico(), 30));
+
         Pokemon pokemon = new Pokemon("Charizard", 6, new Fuego(), 10, 20, 10,15,habilidades1);
         Pokemon pokemon2 = new Pokemon("Vulpix", 6, new Hielo(), 12, 20, 15,15,habilidades2);
         Pokemon pokemon3 = new Pokemon("Pikachu", 2, new Electrico(), 10, 30, 10,25,habilidades2);
@@ -38,7 +41,7 @@ public class Generador {
         List<Pokemon> pokemones = new ArrayList<Pokemon>();
         List<Habilidad> habilidades = new ArrayList<Habilidad>();
         habilidades.add(new Ataque("Llamarada",5, new Fuego(), 20));
-        Pokemon pokemon = new Pokemon("Bulbasur", 10, new Agua(), 15, 15, 25, 12,habilidades);
+        Pokemon pokemon = new Pokemon("Bulbasur", 10, new Bicho(), 15, 15, 25, 12,habilidades);
         pokemones.add(pokemon);
 
         return pokemones;
@@ -47,7 +50,7 @@ public class Generador {
     public List<Item> generarSetItems(){
         List<Item> items = new ArrayList<Item>();
         Item item = new Revivir();
-        Item item2 = new AtaqueX(5);
+        Item item2 = new AtaqueX(100);
         Item item3 = new Restaurador(5);
         Item item4 = new curaTodo();
         items.add(item);

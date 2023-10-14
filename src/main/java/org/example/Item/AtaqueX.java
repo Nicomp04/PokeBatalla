@@ -6,14 +6,15 @@ import java.util.List;
 
 public class AtaqueX extends ModificadorItem {
 
-    public AtaqueX(int porcentaje) {
-        super(porcentaje);
+    public AtaqueX(int valor) {
+        super(valor);
         this.nombre = "AtaqueX";
     }
     @Override
     public void aplicarItem(List<Pokemon> pokemones) {
         Pokemon pokemon = pokemones.get(0);
         pokemon.setAtaque(this.porcentaje);
+        this.setUsado(true);
     }
     /*public boolean aplicarItem(Pokemon pokemon) {
         return false;

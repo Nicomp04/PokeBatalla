@@ -29,13 +29,13 @@ public class Modificacion extends Habilidad{
                     objetivo.modificarHp(this.valor);
                     break;
                 case 2:
-                    objetivo.setAtaque(this.valor);
+                    objetivo.modificarAtaque(this.valor);
                     break;
                 case 3:
-                    objetivo.setDefensa(this.valor);
+                    objetivo.modificarDefensa(this.valor);
                     break;
                 case 4:
-                    objetivo.setVelocidad(this.valor);
+                    objetivo.modificarVelocidad(this.valor);
                     break;
             }
         }else{

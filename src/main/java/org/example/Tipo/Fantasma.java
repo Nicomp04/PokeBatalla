@@ -11,7 +11,7 @@ public class Fantasma extends Tipo{
         efectividad.put("Agua", 1.0);
         efectividad.put("Bicho", 1.0);
         efectividad.put("Dragon", 1.0);
-        efectividad.put("Electico", 1.0);
+        efectividad.put("Electrico", 1.0);
         efectividad.put("Fantasma", 2.0);
         efectividad.put("Fuego", 1.0);
         efectividad.put("Hielo", 1.0);

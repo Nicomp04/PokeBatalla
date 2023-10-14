@@ -55,9 +55,7 @@ public class Pokemon {
         especie.put("Tornadus", new Volador());
     }
 
-    public Pokemon() {
-
-    }
+    public Pokemon() {}
 
     public String getNombre(){
         return this.nombre;
@@ -80,12 +78,14 @@ public class Pokemon {
     public int getVelocidad() {
         return this.velocidad;
     }
+
     public int getDefensa(){ return this.defensa; }
     public void setVelocidad(int valor) { this.velocidad = valor; }
     public double getAtaque() { return this.ataque;}
     public Habilidad getHabilidades(int hablilidadElegida) {
         return habilidades.get(hablilidadElegida);
     }
+
     public boolean tieneUnEstado() {return (estado != null);}
 
     public String getEstadoString(){

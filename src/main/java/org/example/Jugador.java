@@ -41,7 +41,7 @@ public class Jugador {
     }
 
     public boolean tienePokemones() {
-        return !pokemones.isEmpty();
+        return HayPokemonesVivos();
     }
 
     public boolean seRindio() {
@@ -51,8 +51,8 @@ public class Jugador {
     public void elegirPokemonActivo() {
         Scanner scanner = new Scanner(System.in);
 
-        int pokemonAMover = 0;
-        int posicionAPoner = 0;
+        int pokemonAMover=0;
+        int posicionAPoner;
         Pokemon pokemon1;
         Pokemon pokemon2;
 
@@ -94,8 +94,6 @@ public class Jugador {
     }
 
     public void elegirAccion(){
-
-
         //logger
         logger.info("Es turno de {} ¿que accion quiere realizar?", this.getNombre());
         logger.info("\n" +
@@ -147,6 +145,7 @@ public class Jugador {
         //Item
         Item itemAAplicar = items.get(accionElegida);
 
+        itemAAplicar.aplicarItem(pokemones);
         //Pokemon
         logger.info("Elegiste el item {}. En que pokemon lo desea utilizar?", itemAAplicar.getNombre());
 
@@ -198,18 +197,19 @@ public class Jugador {
     }
     private void aplicarItem(Item itemElegido, int id) {
         itemElegido.aplicarItem(pokemones);
+        if(itemElegido.getUsado())
+            this.items.remove(itemElegido);
     }
 
-    private boolean noHayPokemonesVivos() {
-        boolean noHayPokemonesVivos = true;
-        int i = 0;
-        while (noHayPokemonesVivos){ //esta vivo
-
+    private boolean HayPokemonesVivos() {
+        boolean HayPokemonesVivos = false;
+        for(int i = 0; i < pokemones.size(); i++){
             if (!pokemones.get(i).estaMuerto()){
-                noHayPokemonesVivos = false;
+                HayPokemonesVivos = true;
+
             }
         }
-        return noHayPokemonesVivos;
+        return HayPokemonesVivos;
     }
 
     private int elegirPokemon() {

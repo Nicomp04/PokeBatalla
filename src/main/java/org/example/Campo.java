@@ -67,7 +67,6 @@ public class Campo {
         if (despierto && !paralizado){
             this.aplicarHabilidad(habilidad);
         }
-
     }
 
     private Habilidad elegirHabilidad(Pokemon pokemonAtacante) {
