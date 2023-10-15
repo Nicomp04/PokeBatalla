@@ -22,7 +22,10 @@ public class Pokemon {
     private int defensa;
     private int ataque;
     private Estados estado;
-    private List<Habilidad> habilidades = new ArrayList<>();
+
+    private VistaPokemon vista;
+    private ControladorPokemon controlador;
+    public List<Habilidad> habilidades = new ArrayList<>();
     public HashMap<String, Tipo> especie = new HashMap<>();
 
     final Logger logger = LoggerFactory.getLogger(Pokemon.class);
@@ -60,6 +63,9 @@ public class Pokemon {
     public String getNombre(){
         return this.nombre;
     }
+
+    public void setVista(VistaPokemon vista){this.vista = vista;}
+    public void setControlador(ControladorPokemon controlador){this.controlador = controlador;}
     public void setNombre(String nombre){this.nombre = nombre;}
     public int getNivel() {return this.nivel;}
     public void setNivel(int nivel) {this.nivel = nivel;}
@@ -136,11 +142,12 @@ public class Pokemon {
     }
 
     public void mostrarHabilidades(){
-        logger.info("Es su turno ¿que Habilidad quiere realizar? \n");
-        for(int i = 0; i < habilidades.size(); i++){
-            logger.info("{}: {} \n",i + 1 , habilidades.get(i).getNombre());
-        }
+        vista.mostrarHabilidades(this.habilidades);
     }
+    public int getNumeroDeHabilidades() {
+        return this.habilidades.size();
+    }
+
     public boolean estaMuerto() {return this.vidaActual <= 0;}
 
 

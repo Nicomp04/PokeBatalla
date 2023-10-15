@@ -6,7 +6,9 @@ import org.example.Habilidades.Efecto;
 import org.example.Habilidades.Habilidad;
 import org.example.Habilidades.Modificacion;
 import org.example.Item.*;
+import org.example.Pokemon.ControladorPokemon;
 import org.example.Pokemon.Pokemon;
+import org.example.Pokemon.VistaPokemon;
 import org.example.Tipo.*;
 
 import java.util.ArrayList;
@@ -30,6 +32,13 @@ public class Generador {
         Pokemon pokemon = new Pokemon("Charizard", 6, new Fuego(), 10, 20, 10,15,habilidades1);
         Pokemon pokemon2 = new Pokemon("Vulpix", 6, new Hielo(), 12, 20, 15,15,habilidades2);
         Pokemon pokemon3 = new Pokemon("Pikachu", 2, new Electrico(), 10, 30, 10,25,habilidades2);
+        VistaPokemon vista = new VistaPokemon();
+        pokemon.setVista(vista);
+
+        pokemon2.setVista(vista);
+
+        pokemon3.setVista(vista);
+
         pokemones.add(pokemon);
         pokemones.add(pokemon2);
         pokemones.add(pokemon3);
@@ -42,6 +51,8 @@ public class Generador {
         List<Habilidad> habilidades = new ArrayList<Habilidad>();
         habilidades.add(new Ataque("Llamarada",5, new Fuego(), 20));
         Pokemon pokemon = new Pokemon("Bulbasur", 10, new Bicho(), 15, 15, 25, 12,habilidades);
+        VistaPokemon vista = new VistaPokemon();
+        pokemon.setVista(vista);
         pokemones.add(pokemon);
 
         return pokemones;
