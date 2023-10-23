@@ -21,6 +21,7 @@ public class Pokemon {
     private int velocidad;
     private int defensa;
     private int ataque;
+
     private Estados estado;
 
     private VistaPokemon vista;
@@ -29,7 +30,6 @@ public class Pokemon {
     public HashMap<String, Tipo> especie = new HashMap<>();
 
     final Logger logger = LoggerFactory.getLogger(Pokemon.class);
-
     public Pokemon(String nombre, int nivel, Tipo tipo,  int vidaMaxima, int velocidad, int defensa, int ataque,List<Habilidad> habilidades ){
         this.nombre = nombre;
         this.nivel = nivel;
@@ -65,10 +65,10 @@ public class Pokemon {
     }
 
     public void setVista(VistaPokemon vista){this.vista = vista;}
+
     public void setControlador(ControladorPokemon controlador){this.controlador = controlador;}
     public void setNombre(String nombre){this.nombre = nombre;}
     public int getNivel() {return this.nivel;}
-    public void setNivel(int nivel) {this.nivel = nivel;}
     public Tipo getTipo(){ return this.tipo;}
     public double getVidaActual (){
         return this.vidaActual;
@@ -84,14 +84,13 @@ public class Pokemon {
     public int getVelocidad() {
         return this.velocidad;
     }
-
     public int getDefensa(){ return this.defensa; }
+
     public void setVelocidad(int valor) { this.velocidad = valor; }
     public double getAtaque() { return this.ataque;}
     public Habilidad getHabilidades(int hablilidadElegida) {
         return habilidades.get(hablilidadElegida);
     }
-
     public boolean tieneUnEstado() {return (estado != null);}
 
     public String getEstadoString(){
@@ -111,22 +110,6 @@ public class Pokemon {
         this.vidaActual = vidaMaxima;
     }
 
-    public void serAtacado(double danio) { //se puede sacar de pokemon
-        logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
-        modificarHp(-danio);
-    }
-
-    public void aplicarVeneno(){ //se puede sacar de pokemon
-        double resto = ((vidaMaxima * 5) / 100);
-        this.vidaActual = vidaActual - resto;
-        logger.info("El pokemon {} esta Envenenado, pierde {} de vida", this.getNombre(), resto);
-    }
-    public void checkearEnvenenamiento() {
-        if(estado == Estados.ENVENENADO){
-            aplicarVeneno();
-        }
-    }
-
     public void modificarHp(double hp) {
         if (hp + vidaActual > vidaMaxima){
             vidaActual = vidaMaxima;
@@ -144,11 +127,31 @@ public class Pokemon {
     public void mostrarHabilidades(){
         vista.mostrarHabilidades(this.habilidades);
     }
-    public int getNumeroDeHabilidades() {
-        return this.habilidades.size();
-    }
-
     public boolean estaMuerto() {return this.vidaActual <= 0;}
 
+    //////////////////////////////////////////////////////////////////
+
+    private List<Estados> estado2;
+
+    public boolean estadoExistente(Estados estado){
+        if(this.estado2.contains(estado)){
+            logger.info("El pokemon ya esta {}.", estado);
+            return true;
+        }
+        return false;
+    }
+    public void agregarEstado(Estados estado) {
+        if (!estadoExistente(estado)){
+            this.estado2.add(estado);
+        }
+    }
+
+    public void resetEstado(){
+        this.estado2 = null;
+    }
+
+    public boolean hayEstados(){
+        return this.estado2.isEmpty();
+    }
 
 }

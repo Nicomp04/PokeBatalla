@@ -30,9 +30,4 @@ public abstract class Habilidad{
         return this.nombre;
     }
 
-    public boolean estadoParalizado(Pokemon pokemon){
-        Random random = new Random();
-        double valorAleatorio = random.nextDouble();
-        return ((pokemon.getEstado() == Estados.PARALIZADO) && (valorAleatorio < 0.005));
-    }
 }

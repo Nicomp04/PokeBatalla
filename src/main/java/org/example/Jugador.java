@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.Estado.ValidarEstados;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
 import org.slf4j.Logger;
@@ -246,6 +247,7 @@ public class Jugador {
         else {
             this.elegirPokemonActivo();
         }
-        getPokemonActual().checkearEnvenenamiento();
+        ValidarEstados verif = new ValidarEstados();
+        verif.validarEstadoEnvenenado(getPokemonActual());
     }
 }

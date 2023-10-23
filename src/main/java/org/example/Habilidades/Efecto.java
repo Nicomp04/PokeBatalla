@@ -30,10 +30,10 @@ public class Efecto extends Habilidad{
                 logger.info("El pokemon ya tiene su estado alterado");
             }
             else{
-                objetivo.setEstado(this.estado);
+                objetivo.agregarEstado(this.estado);
             }
         }else{
-            pokemonPropio.setEstado(this.estado);
+            pokemonPropio.agregarEstado(this.estado);
         }
     }
 }

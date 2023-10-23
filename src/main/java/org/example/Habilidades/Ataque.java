@@ -58,7 +58,7 @@ public class Ataque extends Habilidad {
 
         logger.info("El daño causado al oponente es de {}", danio);
 
-        objetivo.serAtacado(danio);
+        objetivo.modificarHp(-danio);
     }
 
 
