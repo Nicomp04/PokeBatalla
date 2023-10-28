@@ -56,6 +56,7 @@ public class Campo {
     public void usarHabilidad(int idAtacante){
         boolean despierto;
         boolean paralizado;
+        System.out.println(" turno activo 1-> id  " + idAtacante);
 
         identificarAtacante(idAtacante);
         pokemonAtacante.mostrarHabilidades();

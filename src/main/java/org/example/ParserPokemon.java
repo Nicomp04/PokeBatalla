@@ -41,7 +41,7 @@ public class ParserPokemon {
                     habilidades.add(habilidadesJSON.getInt(j));
                 }
 
-                Pokemon pokemon = new Pokemon(nombre, id, tipo, nivel, vidaMaxima, velocidad, defensa, ataque, habilidades,repositorioHabilidades);
+                Pokemon pokemon = new Pokemon(nombre, id, tipo, nivel, vidaMaxima, velocidad, defensa, ataque, habilidades, repositorioHabilidades);
 
                 pokemonesMap.put(id,pokemon);
 

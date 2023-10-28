@@ -7,20 +7,6 @@ public class JuegoVista {
     public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }
-
-    public String solicitarNombre() {
-        System.out.print("Por favor, ingrese su nombre: ");
-        return scanner.nextLine();
-    }
-
-    public int solicitarCantidadPokemones() {
-        System.out.print("Por favor, cantidad de Pokemones: ");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Ingrese una cantidad válida (1-6)");
-            scanner.next();
-        }
-        return scanner.nextInt();
-    }
     public void configuracionJugador() {
         mostrarMensaje("Comencemos con la configuracion");
 
@@ -35,5 +21,6 @@ public class JuegoVista {
     }
 
     public void mostrarCobarde(Jugador perdedor) {
+        mostrarMensaje("El enemigo se escapo!");
     }
 }

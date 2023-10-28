@@ -11,6 +11,39 @@
 
   },
   {
+    "nombre": "Rayo",
+    "id": 56,
+    "usos": 10,
+    "estilo": "Ataque",
+    "tipo": "electrico",
+    "estadistica": -1,
+    "valor": 25,
+    "estado": "PARALIZADO"
+
+  },
+  {
+    "nombre": "Tsunami",
+    "id":78,
+    "usos": 10,
+    "estilo": "Ataque",
+    "tipo": "agua",
+    "estadistica": -1,
+    "valor": 30,
+    "estado": "PARALIZADO"
+
+  },
+  {
+  "nombre": "Veneno",
+  "id": 24,
+  "usos": 10,
+  "estilo": "Efecto",
+  "tipo": "veneno",
+  "estadistica": -1,
+  "valor": 15,
+  "estado": "ENVENENADO"
+
+},
+  {
     "nombre": "Latigazo Cepa",
     "id": 2,
     "usos": 10,

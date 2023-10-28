@@ -19,9 +19,11 @@ public class Jugador {
     private int id;
     private boolean rendirse;
     private Campo campoDeBatalla;
+    private JugadorVista jugadorVista;
     final Logger logger = LoggerFactory.getLogger(Jugador.class);
 
     public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items, int id){
+        this.jugadorVista = new JugadorVista();
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.items = items;
@@ -111,22 +113,9 @@ public class Jugador {
     }
 
     public void elegirAccion(){
-        //logger
-        logger.info("Es turno de {} ¿que accion quiere realizar?", this.getNombre());
-        logger.info("\n" +
-                "1: Usar Habilidad \n" +
-                "2: Usar Item \n" +
-                "3: Cambiar de Pokemon\n" +
-                "4: Escapar de la batalla\n"
-        );
-        logger.info("Accion ->  ");
 
-        //Input
-        Scanner scanner = new Scanner(System.in);
-        int accionElegida = scanner.nextInt();
-        logger.info("\n");
+        int accionElegida = jugadorVista.mostrarOpciones(this);
 
-        //Realizar accion
         switch (accionElegida){
             case 1:
                 campoDeBatalla.usarHabilidad(id);

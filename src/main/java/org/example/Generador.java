@@ -130,7 +130,7 @@ public class Generador {
         List<Pokemon> pokemones2 = this.obtenerPokemones(jugador.getPokemonesParseo());
         List<Item> items2 = this.obtenerItems(jugador.getItemsParseo());
 
-        Jugador jugador2 = new Jugador(jugador.getNombre(),pokemones2,items2,1);
+        Jugador jugador2 = new Jugador(jugador.getNombre(),pokemones2,items2,2);
 
         List<Jugador> jugadores = new ArrayList<>();
         jugadores.add(jugador1);

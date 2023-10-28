@@ -49,27 +49,18 @@ public class Juego {
         }
         return jugador2;
     }
-/*
-    public Jugador getJugador1() {
-        return jugador1;
-    }
-
-    public Jugador getJugador2() {
-        return jugador2;
-    }
-
-    public boolean getTurnoDe1() {
-        return turnoDe1;
-    }*/
 
     public void habilitarTurno(){
         while(quedanPokemones() && !seRindio()) {
             if (turnoActivo.equals(jugador1)) {
                 jugador1.usarTurno();
                 turnoActivo = jugador2;
+
+
             } else {
                 jugador2.usarTurno();
                 turnoActivo = jugador1;
+
             }
         }
         Jugador perdedor = this.perdedor();
