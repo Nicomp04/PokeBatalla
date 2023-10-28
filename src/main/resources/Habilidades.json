@@ -1,0 +1,35 @@
+[
+  {
+    "nombre": "Lanzallamas",
+    "id": 3,
+    "usos": 10,
+    "estilo": "Ataque",
+    "tipo": "fuego",
+    "estadistica": -1,
+    "valor": 15,
+    "estado": "PARALIZADO"
+
+  },
+  {
+    "nombre": "Latigazo Cepa",
+    "id": 2,
+    "usos": 10,
+    "estilo": "Ataque",
+    "tipo": "normal",
+    "estadistica": -1,
+    "valor": 30,
+    "estado": "PARALIZADO"
+
+  },
+  {
+    "nombre": "Despejar Clima",
+    "id": 98,
+    "usos": 10,
+    "estilo": "Ataque",
+    "tipo": "fuego",
+    "estadistica": -1,
+    "valor": 15,
+    "estado": "PARALIZADO"
+
+  }
+]

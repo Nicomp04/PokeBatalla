@@ -7,7 +7,9 @@ import org.example.Pokemon.Pokemon;
 import java.util.List;
 
 public class curaTodo extends Item {
-    public curaTodo(){this.nombre = "curaEstado";}
+    public curaTodo(int id, String nombre){
+        this.id = id;
+        this.nombre = nombre;}
 
     @Override
     public void aplicarItem(List<Pokemon> pokemones) {

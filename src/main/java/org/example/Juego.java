@@ -5,27 +5,24 @@ import org.example.Pokemon.Pokemon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
 public class Juego {
     private Jugador jugador1;
     private Jugador jugador2;
     private boolean turnoDe1;
     private Jugador turnoActivo;
+    private    RepositorioHabilidades repositorioHabilidades;
     private Campo campoDeBatalla;
     final Logger logger = LoggerFactory.getLogger(Juego.class);
-    public Juego() {
 
+    private JuegoVista vista;
+    public Juego() {
         Generador gen = new Generador();
 
-        logger.info("Comenzaremos con la configuración del Jugador 1");
-        Jugador jugador1 = new Jugador(gen.generarNombreJugador(), gen.generarSetPokemon1(gen.generarCantidadPokemones()),gen.generarSetItems(), 1);
-        logger.info("Seguiremos con la configuración del Jugador 2");
-        Jugador jugador2 = new Jugador(gen.generarNombreJugador(), gen.generarSetPokemon2(gen.generarCantidadPokemones()),gen.generarSetItems(), 2);
-
-        this.jugador1 = jugador1;
-        this.jugador2 = jugador2;
-
-
-
+        List<Jugador> jugadores = gen.generarPartida();
+        Jugador jugador1 = jugadores.get(0);
+        Jugador jugador2 = jugadores.get(1);
         this.campoDeBatalla = new Campo(jugador1.getPokemonActual(), jugador2.getPokemonActual());
 
         jugador1.entrarACampo(campoDeBatalla);
@@ -36,7 +33,7 @@ public class Juego {
 
         this.turnoActivo = definirPrimerTurno();
 
-        logger.info("Juego inicializado con exito!");
+        vista.mostrarJuegoInicializado();
 
         this.habilitarTurno();
     }
@@ -45,17 +42,12 @@ public class Juego {
         Pokemon pokemon1 = this.jugador1.getPokemonActual();//
         Pokemon pokemon2 = this.jugador2.getPokemonActual();
 
-        //return (pokemon1.getVelocidad() < pokemon2.getVelocidad());
         if (pokemon1.getVelocidad() > pokemon2.getVelocidad()){
             return jugador1;
         }
         return jugador2;
     }
-
-    public void avanzarTurno(){ // A implementar...
-
-    }
-
+/*
     public Jugador getJugador1() {
         return jugador1;
     }
@@ -66,7 +58,7 @@ public class Juego {
 
     public boolean getTurnoDe1() {
         return turnoDe1;
-    }
+    }*/
 
     public void habilitarTurno(){
         while(quedanPokemones() && !seRindio()) {
@@ -78,10 +70,18 @@ public class Juego {
                 turnoActivo = jugador1;
             }
         }
-        logger.info("El contrincante se ha escapado!");
-        logger.info("Contundente victoria de {} !!!",turnoActivo.getNombre());
+        Jugador perdedor = this.perdedor();
+        if(perdedor.seRindio())
+            vista.mostrarCobarde(perdedor);
+        vista.mostarPerdedor(perdedor.getNombre());
     }
 
+    public Jugador perdedor(){
+        if (jugador1.seRindio() || !jugador1.tienePokemones()){
+            return jugador1;
+        }
+        return jugador2;
+    }
     private boolean seRindio() {
         return jugador1.seRindio() || jugador2.seRindio();
     }

@@ -2,6 +2,7 @@ package org.example.Habilidades;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;
+import org.example.Tipo.TipoFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.example.Visitor;
@@ -11,12 +12,12 @@ import java.util.Random;
 public class Ataque extends Habilidad {
     private Tipo tipo;
     private int poder;
-
+    private TipoFactory tipoFactory;
     final Logger logger = LoggerFactory.getLogger(Ataque.class);
 
-
-    public Ataque(String nombre, int usosDisponibles, Tipo tipo, int poder) {
-        this.tipo = tipo;
+    public Ataque(int id, String nombre, int usosDisponibles, String tipo, int poder) {
+        this.id = id;
+        this.tipo = TipoFactory.getTipo(tipo);
         this.poder = poder;
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;

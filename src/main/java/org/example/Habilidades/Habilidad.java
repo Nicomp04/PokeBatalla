@@ -1,14 +1,20 @@
 package org.example.Habilidades;
 import org.example.Estado.Estados;
 import org.example.Pokemon.Pokemon;
+import org.example.Tipo.Tipo;
+import org.example.Tipo.TipoFactory;
 import org.example.Visitor;
 
-import java.util.Random;
+import java.util.*;
 
 public abstract class Habilidad{
+    protected int id;
+
     protected String nombre;
     protected boolean atacaAEnemigo;
     protected boolean afectaAEnemigo;
+    protected TipoFactory tipoFactory;
+    private static Map<Integer, Habilidad> mapaHabilidades = new HashMap<>();
     public Habilidad(){}
 
     public abstract void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo);
@@ -35,4 +41,10 @@ public abstract class Habilidad{
         double valorAleatorio = random.nextDouble();
         return ((pokemon.getEstado() == Estados.PARALIZADO) && (valorAleatorio < 0.005));
     }
+
+    public void setMapaHabilidades(Map<Integer, Habilidad> mapaHabilidades) {
+        Habilidad.mapaHabilidades = mapaHabilidades;
+    }
+
+    public Integer getId() {return this.id;}
 }

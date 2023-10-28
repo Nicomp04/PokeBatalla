@@ -11,12 +11,12 @@ public class Efecto extends Habilidad{
 
     final Logger logger = LoggerFactory.getLogger(Efecto.class);
 
-    public Efecto(String nombre, int usosDisponibles, Estados estado,boolean afectaAenemigo) {
+    public Efecto(int id, String nombre, int usosDisponibles, Estados estado) {
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
         this.estado = estado;
         this.atacaAEnemigo = false;
-        this.afectaAEnemigo = afectaAenemigo;
+        this.afectaAEnemigo = true;
     }
 
     @Override

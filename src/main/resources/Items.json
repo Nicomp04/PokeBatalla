@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "Hyper Poción",
+    "id": 0,
+    "estilo": "Restaurador",
+    "valor": 10
+  },
+  {
+    "nombre": "Defensa X",
+    "id": 4,
+    "estilo": "DefensaX",
+    "valor": 1000
+  },
+  {
+    "nombre": "Cura Total",
+    "id": 67,
+    "estilo": "curaTodo",
+    "valor": -1
+  }
+]

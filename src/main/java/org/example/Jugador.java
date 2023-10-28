@@ -12,6 +12,8 @@ public class Jugador {
 
     int contadorDeTurnosDormido;
     private String nombre;
+    private List<Integer> itemsParseo;
+    private List<Integer> pokemonesParseo;
     private List<Pokemon> pokemones;
     private List<Item> items;
     private int id;
@@ -26,6 +28,24 @@ public class Jugador {
         this.id = id;
         this.contadorDeTurnosDormido = 0;
         this.rendirse = false;
+    }
+
+    public Jugador(String nombre, List<Integer> pokemones, List<Integer> items){
+        this.nombre = nombre;
+        this.pokemonesParseo = pokemones;
+        this.itemsParseo = items;
+    }
+
+    public List<Integer> getPokemonesParseo() {
+        return this.pokemonesParseo;
+    }
+
+    public List<Integer> getItemsParseo() {
+        return itemsParseo;
+    }
+
+    public Jugador() {
+
     }
 
     public Pokemon getPokemonActual() {

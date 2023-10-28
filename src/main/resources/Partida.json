@@ -1,0 +1,18 @@
+[
+  {
+    "nombre": "Ash",
+    "items": {
+      "0": 1,
+      "4": 3
+    },
+    "pokemons": [7]
+  },
+  {
+    "nombre": "Brook",
+    "items": {
+      "4": 1,
+      "67": 10
+    },
+    "pokemons": [10]
+  }
+]
