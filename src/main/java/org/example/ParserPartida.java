@@ -43,6 +43,7 @@ public class ParserPartida {
                 }
 
                 Jugador resultado = new Jugador(nombre, listaItems, listaPokemones);
+
                 resultados.add(resultado);
             }
         } catch (IOException e) {

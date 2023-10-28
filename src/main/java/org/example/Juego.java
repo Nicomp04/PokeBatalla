@@ -12,17 +12,19 @@ public class Juego {
     private Jugador jugador2;
     private boolean turnoDe1;
     private Jugador turnoActivo;
-    private    RepositorioHabilidades repositorioHabilidades;
+    private RepositorioHabilidades repositorioHabilidades;
     private Campo campoDeBatalla;
     final Logger logger = LoggerFactory.getLogger(Juego.class);
 
-    private JuegoVista vista;
+    private JuegoVista vista ;
     public Juego() {
+        vista = new JuegoVista();
         Generador gen = new Generador();
 
         List<Jugador> jugadores = gen.generarPartida();
-        Jugador jugador1 = jugadores.get(0);
-        Jugador jugador2 = jugadores.get(1);
+        this.jugador1 = jugadores.get(0);
+        this.jugador2 = jugadores.get(1);
+
         this.campoDeBatalla = new Campo(jugador1.getPokemonActual(), jugador2.getPokemonActual());
 
         jugador1.entrarACampo(campoDeBatalla);
@@ -38,7 +40,7 @@ public class Juego {
         this.habilitarTurno();
     }
 
-    public Jugador definirPrimerTurno(){ // Lo pense asi, puede cambiarse mas adelante
+    public Jugador definirPrimerTurno(){
         Pokemon pokemon1 = this.jugador1.getPokemonActual();//
         Pokemon pokemon2 = this.jugador2.getPokemonActual();
 

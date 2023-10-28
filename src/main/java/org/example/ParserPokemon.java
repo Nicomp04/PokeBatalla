@@ -42,7 +42,9 @@ public class ParserPokemon {
                 }
 
                 Pokemon pokemon = new Pokemon(nombre, id, tipo, nivel, vidaMaxima, velocidad, defensa, ataque, habilidades,repositorioHabilidades);
+
                 pokemonesMap.put(id,pokemon);
+
             }
         } catch (IOException e) {
             e.printStackTrace();

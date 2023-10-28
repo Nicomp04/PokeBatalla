@@ -37,8 +37,6 @@ public class ParserItems {
                 String estilo = jsonItem.getString("estilo");
                 int valor = jsonItem.getInt("valor");
 
-
-
                 Item item;
                 if (estilo.equals("Restaurador")) {
                     item = new Restaurador(id, nombre, valor);

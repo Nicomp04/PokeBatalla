@@ -141,8 +141,12 @@ public class Generador {
 
     private List<Item> obtenerItems(List<Integer> itemsParseo) {
         List<Item> items = new ArrayList<>();
-        for (int i = 0; i < itemsParseo.size(); i++){
-            items.add(obtenerItemPorId(itemsParseo.get(i)));
+
+        for (int i = 0; i < itemsParseo.size(); i += 2){
+            Item item = obtenerItemPorId(itemsParseo.get(i));
+            int cantidad = (itemsParseo.get(i+1));
+            for (int j = 0 ; j < cantidad; j++)
+                items.add(item);
         }
 
         return items;
@@ -157,7 +161,6 @@ public class Generador {
         for (int i = 0; i < pokemonesParseo.size(); i++){
             pokemones.add(obtenerPokemonPorId(pokemonesParseo.get(i)));
         }
-
         return pokemones;
     }
 

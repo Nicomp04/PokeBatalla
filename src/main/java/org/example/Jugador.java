@@ -30,7 +30,7 @@ public class Jugador {
         this.rendirse = false;
     }
 
-    public Jugador(String nombre, List<Integer> pokemones, List<Integer> items){
+    public Jugador(String nombre,  List<Integer> items,List<Integer> pokemones){
         this.nombre = nombre;
         this.pokemonesParseo = pokemones;
         this.itemsParseo = items;
@@ -44,9 +44,6 @@ public class Jugador {
         return itemsParseo;
     }
 
-    public Jugador() {
-
-    }
 
     public Pokemon getPokemonActual() {
         return pokemones.get(0);

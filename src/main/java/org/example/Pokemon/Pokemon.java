@@ -37,13 +37,15 @@ public class Pokemon {
         this.nombre = nombre;
         this.id = id;
         this.nivel = nivel;
-        this.tipo = tipoFactory.getTipo(tipo);
+        this.tipo = TipoFactory.getTipo(tipo);
         this.vidaMaxima = vidaMaxima;
         this.vidaActual = vidaMaxima;
         this.velocidad = velocidad;
         this.defensa = defensa;
         this.ataque = ataque;
         this.habilidades = repositorioHabilidades.cargarConjunto(habilidadesId);
+
+        this.vista = new VistaPokemon();
 
        /* especie.put("Charizard", new Fuego());
         especie.put("Bulbasaur", new Agua());
