@@ -2,9 +2,9 @@ package org.example.Pokemon;
 
 public class ControladorPokemon {
     private Pokemon pokemon;
-    private VistaPokemon vista;
+    private PokemonVista vista;
 
-    public ControladorPokemon(Pokemon pokemon, VistaPokemon vista) {
+    public ControladorPokemon(Pokemon pokemon, PokemonVista vista) {
         this.pokemon = pokemon;
         this.vista = vista;
     }

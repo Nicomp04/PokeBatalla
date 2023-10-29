@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/JugadorVista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Test/CampoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Test/JuegoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CampoVista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/HabildadVista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/PokemonVista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/JuegoVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/JuegoVista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParserPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParserPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/RepositorioHabilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/RepositorioHabilidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Habilidades.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Habilidades.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/JugadorVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/JugadorVista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/ControladorPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/ControladorPokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/VistaPokemon.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +73,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.CampoTest.campoCargadoCorrectamente">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="PokeBatalla" />
@@ -82,8 +87,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CampoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PokeBatalla" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.CampoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CampoTest.campoCargadoCorrectamente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PokeBatalla" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.CampoTest" />
+      <option name="METHOD_NAME" value="campoCargadoCorrectamente" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JuegoTest.seGeneraCargaEIniciaLaPartida" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PokeBatalla" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.JuegoTest" />
+      <option name="METHOD_NAME" value="seGeneraCargaEIniciaLaPartida" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CampoTest.campoCargadoCorrectamente" />
+        <item itemvalue="JUnit.CampoTest" />
+        <item itemvalue="JUnit.JuegoTest.seGeneraCargaEIniciaLaPartida" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -100,7 +155,8 @@
       <workItem from="1696600215421" duration="7817000" />
       <workItem from="1696624154812" duration="5224000" />
       <workItem from="1698433545133" duration="26049000" />
-      <workItem from="1698506833348" duration="4755000" />
+      <workItem from="1698506833348" duration="4966000" />
+      <workItem from="1698538356774" duration="6979000" />
     </task>
     <servers />
   </component>
@@ -109,20 +165,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>6</line>
-          <properties class="org.example.Main" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

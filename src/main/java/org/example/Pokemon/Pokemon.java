@@ -25,13 +25,11 @@ public class Pokemon {
     private int ataque;
     private Estados estado;
     private TipoFactory tipoFactory;
-    private VistaPokemon vista;
+    private PokemonVista vista;
 
     public List<Habilidad> habilidades = new ArrayList<>();
 
-    private RepositorioHabilidades repositorioHabilidades;
     public HashMap<String, Tipo> especie = new HashMap<>();
-    final Logger logger = LoggerFactory.getLogger(Pokemon.class);
 
     public Pokemon(String nombre, int id, String tipo, int nivel,   int vidaMaxima, int velocidad, int defensa, int ataque,List<Integer> habilidadesId, RepositorioHabilidades repositorioHabilidades ){
         this.nombre = nombre;
@@ -45,7 +43,7 @@ public class Pokemon {
         this.ataque = ataque;
         this.habilidades = repositorioHabilidades.cargarConjunto(habilidadesId);
 
-        this.vista = new VistaPokemon();
+        this.vista = new PokemonVista();
 
        /* especie.put("Charizard", new Fuego());
         especie.put("Bulbasaur", new Agua());
@@ -69,7 +67,7 @@ public class Pokemon {
         return this.nombre;
     }
 
-    public void setVista(VistaPokemon vista){this.vista = vista;}
+    public void setVista(PokemonVista vista){this.vista = vista;}
     public void setNombre(String nombre){this.nombre = nombre;}
     public int getNivel() {return this.nivel;}
     public void setNivel(int nivel) {this.nivel = nivel;}
@@ -114,14 +112,14 @@ public class Pokemon {
     }
 
     public void serAtacado(double danio) { //se puede sacar de pokemon
-        logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
+        vista.mostrarVida(this);
         modificarHp(-danio);
     }
 
     public void aplicarVeneno(){ //se puede sacar de pokemon
         double resto = ((vidaMaxima * 5) / 100);
         this.vidaActual = vidaActual - resto;
-        logger.info("El pokemon {} esta Envenenado, pierde {} de vida", this.getNombre(), resto);
+        vista.mostrarEnvenenado(this);
     }
     public void checkearEnvenenamiento() {
         if(estado == Estados.ENVENENADO){
@@ -135,12 +133,12 @@ public class Pokemon {
         }
         else if (hp + vidaActual < 0){
             vidaActual = 0;
-            logger.info("El pokemon fue derrotado.");
+            vista.mostrarDerrotado();
         }
         else{
             this.vidaActual += hp;
         }
-        logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
+        vista.mostrarVida(this);
     }
 
     public void mostrarHabilidades(){

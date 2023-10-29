@@ -5,7 +5,7 @@ import org.example.Habilidades.*;
 import org.example.Item.*;
 import org.example.Pokemon.ControladorPokemon;
 import org.example.Pokemon.Pokemon;
-import org.example.Pokemon.VistaPokemon;
+import org.example.Pokemon.PokemonVista;
 import org.example.Tipo.*;
 
 import java.util.ArrayList;
@@ -29,81 +29,6 @@ public class Generador {
     public Generador() {
         this.repositorioHabilidades = new RepositorioHabilidades();
     }
-/*
-    public List<Pokemon> generarSetPokemon1(int cantidadDePokemones){
-        List<Pokemon> pokemones = new ArrayList<Pokemon>();
-        List<Habilidad> habilidades1 = new ArrayList<Habilidad>();
-        List<Habilidad> habilidades2 = new ArrayList<Habilidad>();
-
-        habilidades1.add(new Ataque("Llamarada",5, new Fuego(), 20));
-        habilidades1.add(new Efecto("Veneno",1, Estados.ENVENENADO, true));
-        habilidades1.add(new Modificacion("Modif. def", 1 , 3, 80,true));
-
-        habilidades2.add(new Modificacion("Modif. Salud", 1 , 1, 10,true));
-        habilidades2.add(new Ataque("Rayo", 3 , new Electrico(), 30));
-
-        Pokemon pokemon = new Pokemon("Charizard", 6, new Fuego(), 10, 20, 10,15,habilidades1);
-        Pokemon pokemon2 = new Pokemon("Vulpix", 6, new Hielo(), 12, 20, 15,15,habilidades2);
-        Pokemon pokemon3 = new Pokemon("Pikachu", 2, new Electrico(), 10, 30, 10,25,habilidades2);
-        VistaPokemon vista = new VistaPokemon();
-        pokemon.setVista(vista);
-
-        pokemon2.setVista(vista);
-
-        pokemon3.setVista(vista);
-
-        pokemones.add(pokemon);
-        pokemones.add(pokemon2);
-        pokemones.add(pokemon3);
-
-        return pokemones;
-    }
-
-    public List<Pokemon> generarSetPokemon2(int cantidadDePokemones){
-        List<Pokemon> pokemones = new ArrayList<Pokemon>();
-        List<Habilidad> habilidades = new ArrayList<Habilidad>();
-        habilidades.add(new Ataque("Llamarada",5, new Fuego(), 20));
-        Pokemon pokemon = new Pokemon("Bulbasur", 10, new Bicho(), 15, 15, 25, 12,habilidades);
-        VistaPokemon vista = new VistaPokemon();
-        pokemon.setVista(vista);
-        pokemones.add(pokemon);
-
-        return pokemones;
-    }
-
-    public List<Item> generarSetItems(){
-        List<Item> items = new ArrayList<Item>();
-        Item item = new Revivir();
-        Item item2 = new AtaqueX(100);
-        Item item3 = new Restaurador(5);
-        Item item4 = new curaTodo();
-        items.add(item);
-        items.add(item2);
-        items.add(item3);
-        items.add(item4);
-
-        return  items;
-    }
-
-    public String generarNombreJugador(){
-        Scanner datoIngresado =  new Scanner(System.in);
-        System.out.println("Ingrese el nombre del Jugador: ");
-        String nombre = datoIngresado.next();
-        return nombre;
-    };
-
-    public Integer generarCantidadPokemones(){
-        Scanner datoIngresado = new Scanner(System.in);
-        System.out.println("Indique la cantidad de pokemones que desea guardar.El maximo es 6 ");
-        Integer cantidad = datoIngresado.nextInt();
-
-        if (cantidad < 0  || cantidad > 6 ){
-            System.out.println("Ingreso un dato inválido");
-            generarCantidadPokemones();
-        }
-        return cantidad;
-    }
-*/
 
     public List<Jugador> generarPartida(){
         ParserHabilidad parserHabilidad = new ParserHabilidad();

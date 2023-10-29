@@ -7,10 +7,6 @@ public class JuegoVista {
     public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }
-    public void configuracionJugador() {
-        mostrarMensaje("Comencemos con la configuracion");
-
-    }
 
     public void mostrarJuegoInicializado() {
         mostrarMensaje("Juego Inicializado con exito!");
