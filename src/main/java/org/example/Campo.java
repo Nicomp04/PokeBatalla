@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.Estado.ValidarEstados;
+import org.example.Estado.Estado;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.slf4j.Logger;
@@ -38,7 +38,7 @@ public class Campo {
         boolean paralizado;
         boolean confundido;
 
-        ValidarEstados verif = new ValidarEstados();
+        Estado verif = new Estado();
 
         identificarAtacante(idAtacante);
         pokemonAtacante.mostrarHabilidades();

@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.Estado.ValidarEstados;
+import org.example.Estado.Estado;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
 import org.slf4j.Logger;
@@ -232,7 +232,7 @@ public class Jugador {
             logger.info("{}: ", (i+1));
             logger.info("Nombre: {} ", pokemones.get(i).getNombre());
             logger.info("Tipo: {} ", pokemones.get(i).getTipo().getId());
-            logger.info("Estado: {} ", pokemones.get(i).getEstadoString());
+            logger.info("Estado: {} ", pokemones.get(i).getEstado().mostrarEstados());
             logger.info("Vida: {} ", pokemones.get(i).getVidaActual());
             logger.info("Ataque: {} ", pokemones.get(i).getAtaque());
             logger.info("Defensa: {} ", pokemones.get(i).getDefensa());
@@ -247,7 +247,7 @@ public class Jugador {
         else {
             this.elegirPokemonActivo();
         }
-        ValidarEstados verif = new ValidarEstados();
+        Estado verif = new Estado();
         verif.validarEstadoEnvenenado(getPokemonActual());
     }
 }

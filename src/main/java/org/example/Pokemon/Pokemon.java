@@ -1,4 +1,5 @@
 package org.example.Pokemon;
+import org.example.Estado.Estado;
 import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
 import org.example.Tipo.*;
@@ -8,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
 
 
 public class Pokemon {
@@ -21,8 +21,7 @@ public class Pokemon {
     private int velocidad;
     private int defensa;
     private int ataque;
-
-    private Estados estado;
+    private Estado estado;
 
     private VistaPokemon vista;
     private ControladorPokemon controlador;
@@ -30,6 +29,7 @@ public class Pokemon {
     public HashMap<String, Tipo> especie = new HashMap<>();
 
     final Logger logger = LoggerFactory.getLogger(Pokemon.class);
+
     public Pokemon(String nombre, int nivel, Tipo tipo,  int vidaMaxima, int velocidad, int defensa, int ataque,List<Habilidad> habilidades ){
         this.nombre = nombre;
         this.nivel = nivel;
@@ -65,7 +65,6 @@ public class Pokemon {
     }
 
     public void setVista(VistaPokemon vista){this.vista = vista;}
-
     public void setControlador(ControladorPokemon controlador){this.controlador = controlador;}
     public void setNombre(String nombre){this.nombre = nombre;}
     public int getNivel() {return this.nivel;}
@@ -73,8 +72,6 @@ public class Pokemon {
     public double getVidaActual (){
         return this.vidaActual;
     }
-    public void setEstado(Estados estado) { this.estado = estado; }
-    public Estados getEstado(){return this.estado;}
     public void setDefensa(int porcentaje) {
         this.defensa = porcentaje;
     }
@@ -85,25 +82,11 @@ public class Pokemon {
         return this.velocidad;
     }
     public int getDefensa(){ return this.defensa; }
-
     public void setVelocidad(int valor) { this.velocidad = valor; }
     public double getAtaque() { return this.ataque;}
+
     public Habilidad getHabilidades(int hablilidadElegida) {
         return habilidades.get(hablilidadElegida);
-    }
-    public boolean tieneUnEstado() {return (estado != null);}
-
-    public String getEstadoString(){
-        if (estado == Estados.PARALIZADO){
-            return "Paralizado";
-        }
-        else if (estado == Estados.DORMIDO){
-            return "Dormido";
-        }
-        else if (estado == Estados.ENVENENADO){
-            return "Envenenado";
-        }
-        return "Normal";
     }
 
     public void revivir() {
@@ -123,35 +106,12 @@ public class Pokemon {
         }
         logger.info("El pokemon {} tiene {} de vida.",this.nombre,this.vidaActual);
     }
-
     public void mostrarHabilidades(){
         vista.mostrarHabilidades(this.habilidades);
     }
     public boolean estaMuerto() {return this.vidaActual <= 0;}
-
-    //////////////////////////////////////////////////////////////////
-
-    private List<Estados> estado2;
-
-    public boolean estadoExistente(Estados estado){
-        if(this.estado2.contains(estado)){
-            logger.info("El pokemon ya esta {}.", estado);
-            return true;
-        }
-        return false;
-    }
-    public void agregarEstado(Estados estado) {
-        if (!estadoExistente(estado)){
-            this.estado2.add(estado);
-        }
-    }
-
-    public void resetEstado(){
-        this.estado2 = null;
-    }
-
-    public boolean hayEstados(){
-        return this.estado2.isEmpty();
+    public Estado getEstado() {
+        return this.estado;
     }
 
 }

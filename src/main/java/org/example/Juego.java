@@ -41,11 +41,10 @@ public class Juego {
         this.habilitarTurno();
     }
 
-    public Jugador definirPrimerTurno(){ // Lo pense asi, puede cambiarse mas adelante
-        Pokemon pokemon1 = this.jugador1.getPokemonActual();//
+    public Jugador definirPrimerTurno(){
+        Pokemon pokemon1 = this.jugador1.getPokemonActual();
         Pokemon pokemon2 = this.jugador2.getPokemonActual();
 
-        //return (pokemon1.getVelocidad() < pokemon2.getVelocidad());
         if (pokemon1.getVelocidad() > pokemon2.getVelocidad()){
             return jugador1;
         }

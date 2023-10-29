@@ -26,14 +26,14 @@ public class Efecto extends Habilidad{
     @Override
     public void usarEnPokemon(Pokemon pokemonPropio, Pokemon objetivo) {
         if(afectaAEnemigo){
-            if (objetivo.tieneUnEstado()) {
-                logger.info("El pokemon ya tiene su estado alterado");
+            if (objetivo.getEstado().estadoExistente(this.estado)) {
+                logger.info("El pokemon ya tiene este estado alterado");
             }
             else{
-                objetivo.agregarEstado(this.estado);
+                objetivo.getEstado().agregarEstado(this.estado);
             }
         }else{
-            pokemonPropio.agregarEstado(this.estado);
+            pokemonPropio.getEstado().agregarEstado(this.estado);
         }
     }
 }
