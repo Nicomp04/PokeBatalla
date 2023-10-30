@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Item {
+    protected int id;
+
     protected String nombre;
     protected boolean usado = false;
 

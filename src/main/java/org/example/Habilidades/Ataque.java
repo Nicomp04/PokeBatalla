@@ -2,6 +2,7 @@ package org.example.Habilidades;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;
+import org.example.Tipo.TipoFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.example.Visitor;
@@ -11,17 +12,21 @@ import java.util.Random;
 public class Ataque extends Habilidad {
     private Tipo tipo;
     private int poder;
+    private TipoFactory tipoFactory;
 
+    private HabildadVista habilidadVista;
     final Logger logger = LoggerFactory.getLogger(Ataque.class);
 
-
-    public Ataque(String nombre, int usosDisponibles, Tipo tipo, int poder) {
-        this.tipo = tipo;
+    public Ataque(int id, String nombre, int usosDisponibles, String tipo, int poder) {
+        this.id = id;
+        this.tipo = TipoFactory.getTipo(tipo);
         this.poder = poder;
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
         this.atacaAEnemigo = true;
         this.afectaAEnemigo = false;
+
+        this.habilidadVista = new HabildadVista();
     }
 
     @Override
@@ -49,16 +54,15 @@ public class Ataque extends Habilidad {
     public void usarEnPokemon(Pokemon atacante, Pokemon objetivo) {
         Tipo tipoAtacante = atacante.getTipo();
         Tipo tipoObjetivo = objetivo.getTipo();
-        logger.info("Calculando daño...");
+
         double efectividad = tipoAtacante.getEfectividad(tipoObjetivo.getId());
 
         double danio = 2.0 * atacante.getNivel() * calcularCritico() * this.poder * (atacante.getAtaque()/objetivo.getDefensa()) ;
         danio = ( (danio / 5) + 2 ) / 50;
         danio = danio * mismoTipo(atacante.getTipo()) * efectividad * rand();
 
-        logger.info("El daño causado al oponente es de {}", danio);
-
-        objetivo.modificarHp(-danio);
+        objetivo.serAtacado(danio);
+        habilidadVista.mostarDanio(danio);
     }
 
 

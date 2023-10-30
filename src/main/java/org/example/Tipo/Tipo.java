@@ -13,4 +13,5 @@ public abstract class Tipo {
     public double getEfectividad(String tipo) {
         return (double) efectividad.get(tipo);
     }
+
 }

@@ -1,0 +1,29 @@
+{
+  "pokemones": [
+    {
+      "nombre": "Bulbasaur",
+      "id": 10,
+      "nivel": 5,
+      "tipo": "planta",
+      "historia": "Esta es una historia",
+      "vidaMaxima": 100,
+      "velocidad": 20,
+      "defensa": 3,
+      "ataque": 10,
+      "habilidades": [56, 78, 2]
+    },
+    {
+      "nombre": "Charmander",
+      "id": 7,
+      "nivel": 6,
+      "tipo": "fuego",
+      "historia": "Esta es una historia",
+      "vidaMaxima": 85,
+      "velocidad": 15,
+      "defensa": 5,
+      "ataque": 15,
+      "habilidades": [3, 98, 24]
+    }
+  ]
+}
+

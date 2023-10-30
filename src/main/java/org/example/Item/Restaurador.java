@@ -11,9 +11,10 @@ public class Restaurador extends Item {
 
     private int hp;
 
-    public Restaurador(int hp) {
+    public Restaurador(int id, String nombre ,int hp) {
+        this.id = id;
         this.hp = hp;
-        this.nombre = "Restaurador";
+        this.nombre = nombre;
     }
 
     public void aplicarItem(List<Pokemon> pokemones) {

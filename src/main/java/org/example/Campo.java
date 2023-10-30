@@ -3,6 +3,8 @@ package org.example;
 import org.example.Estado.Estado;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
+import org.example.Pokemon.PokemonVista;
+import org.example.Pokemon.PokemonVista;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,11 +16,18 @@ public class Campo {
     private Pokemon pokemonAtacante;
     private Pokemon pokemonAtacado;
     private List<Pokemon> pokemonesActivos;
-    final Logger logger = LoggerFactory.getLogger(Campo.class);
+    private CampoVista campoVista;
+    private PokemonVista pokemonVista;
     public Campo(Pokemon pokemon1, Pokemon pokemon2){
         pokemonesActivos = new ArrayList<>();
         pokemonesActivos.add(pokemon1);
         pokemonesActivos.add(pokemon2);
+        this.campoVista = new CampoVista();
+        this.pokemonVista = new PokemonVista();
+    }
+
+    public Pokemon getPokemonesActivos(int num) {
+        return pokemonesActivos.get(num);
     }
 
     private void identificarAtacante(int id) {
@@ -54,20 +63,17 @@ public class Campo {
     }
 
     private Habilidad elegirHabilidad(Pokemon pokemonAtacante) {
-        logger.info("Habilidad ->  ");
+
         Scanner scanner = new Scanner(System.in);
         int habilidadElegida = scanner.nextInt();
 
-        if (habilidadElegida < 1 || habilidadElegida > 4){
-            logger.info("La hablilidad {} es invalida ingresela nuevamente \n", habilidadElegida);
+        if (habilidadElegida < 1 || habilidadElegida > pokemonAtacante.getNumeroDeHabilidades()){
+            campoVista.entradaInvalida();
             return elegirHabilidad(pokemonAtacante);
         }
         return pokemonAtacante.getHabilidades(habilidadElegida - 1);
     }
 
-    /*public void aplicarHabilidad (Habilidad habilidadElegida){
-        habilidadElegida.usarEnPokemon(pokemonAtacante, pokemonAtacado);
-    }*/
     public void aplicarHabilidad(Habilidad habilidadElegida){
         PokemonVisitor visitor = new PokemonVisitor();
         habilidadElegida.aceptar(visitor, pokemonAtacante, pokemonAtacado);
@@ -77,8 +83,4 @@ public class Campo {
         this.pokemonesActivos.set(id-1,pokemon);
     }
 
-   /* public void atacaA(Pokemon pokemon,double danio) {
-        logger.info("El pokemon {} tiene {} de vida.",pokemon.getNombre(),pokemon.getVidaActual());
-        pokemon.modificarHp(-danio);
-    }*/
 }
