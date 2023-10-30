@@ -63,7 +63,8 @@ public class Ataque extends Habilidad {
 
         objetivo.serAtacado(danio);
         habilidadVista.mostarDanio(danio);
-}
+    }
+
 
 
     private double rand() {

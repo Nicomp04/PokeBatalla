@@ -42,6 +42,7 @@ public class Juego {
 
     public Jugador definirPrimerTurno(){
         Pokemon pokemon1 = this.jugador1.getPokemonActual();//
+
         Pokemon pokemon2 = this.jugador2.getPokemonActual();
 
         if (pokemon1.getVelocidad() > pokemon2.getVelocidad()){

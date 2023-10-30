@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.Estado.Estados;
+import org.example.Estado.Estado;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Pokemon.PokemonVista;
@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Campo {
@@ -42,38 +41,23 @@ public class Campo {
         }
     }
 
-    public boolean validarEstadoParalizado(Pokemon pokemon){
-        if (pokemon.getEstado() == Estados.PARALIZADO){
-            Random random = new Random();
-            double valorAleatorio = random.nextDouble();
-            if (valorAleatorio < 0.005)
-                pokemonVista.mostrarParalizado();
-            return true;
-        }
-        return false;
-    }
-
-    private boolean validarEstadoDespierto(Habilidad habilidad){
-        if(pokemonAtacante.getEstado() == Estados.DORMIDO) {
-            pokemonVista.mostrarDormido();
-            pokemonAtacante.setEstado(null);
-            return false;
-        }
-        return true;
-    }
 
     public void usarHabilidad(int idAtacante){
         boolean despierto;
         boolean paralizado;
+        boolean confundido;
+
+        Estado verif = new Estado();
 
         identificarAtacante(idAtacante);
         pokemonAtacante.mostrarHabilidades();
         Habilidad habilidad = this.elegirHabilidad(pokemonAtacante);
 
-        despierto = validarEstadoDespierto(habilidad);
-        paralizado = validarEstadoParalizado(pokemonAtacante);
+        despierto = verif.validarEstadoDespierto(pokemonAtacante);
+        paralizado = verif.validarEstadoParalizado(pokemonAtacante);
+        confundido = verif.validarEstadoConfundido(pokemonAtacado);
 
-        if (despierto && !paralizado){
+        if (despierto && !paralizado && !confundido){
             this.aplicarHabilidad(habilidad);
         }
     }
