@@ -23,7 +23,7 @@ public class Pokemon {
     private int velocidad;
     private int defensa;
     private int ataque;
-    private Estado estado;
+    private Estado estado = new Estado();
     private TipoFactory tipoFactory;
     private PokemonVista vista;
 
@@ -75,7 +75,7 @@ public class Pokemon {
     public double getVidaActual (){
         return this.vidaActual;
     }
-    public Estados getEstado(){return this.estado;}
+    public Estado getEstado(){return this.estado;}
     public void setDefensa(int porcentaje) {this.defensa = this.defensa - ((this.defensa * (-porcentaje))/100);}
     public void setAtaque(int porcentaje) {
         this.ataque = this.ataque - ((this.ataque * (-porcentaje))/100);
@@ -100,10 +100,28 @@ public class Pokemon {
         modificarHp(-danio);
     }
 
+    public void modificarHp(double hp) {
+        if (hp + vidaActual > vidaMaxima){
+            vidaActual = vidaMaxima;
+        }
+        else if (hp + vidaActual < 0){
+            vidaActual = 0;
+            vista.mostrarDerrotado();
+        }
+        else{
+            this.vidaActual += hp;
+        }
+        vista.mostrarVida(this);
+    }
+
     
     public void mostrarHabilidades(){
         vista.mostrarHabilidades(this.habilidades);
     }
     public boolean estaMuerto() {return this.vidaActual <= 0;}
+
+    public int getNumeroDeHabilidades() {
+        return this.habilidades.size();
+    }
 
 }

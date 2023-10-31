@@ -5,12 +5,17 @@ import org.example.Pokemon.Pokemon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class Estado {
     private List<Estados> estados;
     final Logger logger = LoggerFactory.getLogger(Campo.class);
+
+    public Estado() {
+        this.estados = new ArrayList<>();
+    }
 
     public boolean estadoExistente(Estados estado){
         return this.estados.contains(estado);
@@ -29,7 +34,7 @@ public class Estado {
     }
 
     public void resetEstado(){
-        this.estados = null;
+        this.estados.clear();
     }
 
     public boolean hayEstados(){

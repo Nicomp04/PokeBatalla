@@ -47,15 +47,13 @@ public class Campo {
         boolean paralizado;
         boolean confundido;
 
-        Estado verif = new Estado();
-
         identificarAtacante(idAtacante);
         pokemonAtacante.mostrarHabilidades();
         Habilidad habilidad = this.elegirHabilidad(pokemonAtacante);
 
-        despierto = verif.validarEstadoDespierto(pokemonAtacante);
-        paralizado = verif.validarEstadoParalizado(pokemonAtacante);
-        confundido = verif.validarEstadoConfundido(pokemonAtacado);
+        despierto = pokemonAtacante.getEstado().validarEstadoDespierto(pokemonAtacante);
+        paralizado = pokemonAtacante.getEstado().validarEstadoParalizado(pokemonAtacante);
+        confundido = pokemonAtacante.getEstado().validarEstadoConfundido(pokemonAtacado);
 
         if (despierto && !paralizado && !confundido){
             this.aplicarHabilidad(habilidad);
