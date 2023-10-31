@@ -1,10 +1,13 @@
 package org.example;
 
+import org.example.Clima.Clima;
+import org.example.Clima.ClimaTempestuoso;
 import org.example.Estado.Estado;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Pokemon.PokemonVista;
 import org.example.Pokemon.PokemonVista;
+import org.example.Tipo.Tipo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +19,7 @@ public class Campo {
     private Pokemon pokemonAtacante;
     private Pokemon pokemonAtacado;
     private List<Pokemon> pokemonesActivos;
+    private Clima clima;
     private CampoVista campoVista;
     private PokemonVista pokemonVista;
     public Campo(Pokemon pokemon1, Pokemon pokemon2){
@@ -24,6 +28,8 @@ public class Campo {
         pokemonesActivos.add(pokemon2);
         this.campoVista = new CampoVista();
         this.pokemonVista = new PokemonVista();
+        List<Tipo> tipos = new ArrayList<Tipo>();
+        this.clima = new Clima("normal" ,tipos);
     }
 
     public Pokemon getPokemonesActivos(int num) {
@@ -51,8 +57,8 @@ public class Campo {
         pokemonAtacante.mostrarHabilidades();
         Habilidad habilidad = this.elegirHabilidad(pokemonAtacante);
 
-        despierto = pokemonAtacante.getEstado().validarEstadoDespierto(pokemonAtacante);
-        paralizado = pokemonAtacante.getEstado().validarEstadoParalizado(pokemonAtacante);
+        despierto = pokemonAtacante.getEstado().validarEstadoDespierto();
+        paralizado = pokemonAtacante.getEstado().validarEstadoParalizado();
         confundido = pokemonAtacante.getEstado().validarEstadoConfundido(pokemonAtacado);
 
         if (despierto && !paralizado && !confundido){
