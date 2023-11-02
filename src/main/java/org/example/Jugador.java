@@ -106,7 +106,6 @@ public class Jugador {
     }
 
     public void elegirAccion(){
-
         int accionElegida = jugadorVista.mostrarOpciones(this);
 
         switch (accionElegida){

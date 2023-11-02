@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public abstract class Tipo {
     protected String id;
+    protected String tipo;
     protected HashMap efectividad;
 
     public String getId() {
@@ -13,5 +14,6 @@ public abstract class Tipo {
     public double getEfectividad(String tipo) {
         return (double) efectividad.get(tipo);
     }
+
 
 }

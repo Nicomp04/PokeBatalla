@@ -73,7 +73,7 @@ public class JugadorVista {
     public void mostrarItems(List<Item> items) {
         mostrarMensaje("Es su turno ¿que Item quiere utilizar?");
         for(int i = 0; i < items.size(); i++){
-            mostrarMensaje((i + 1) + items.get(i).getNombre());
+            mostrarMensaje((i + 1) + ": "+ items.get(i).getNombre());
         }
     }
 }

@@ -21,11 +21,11 @@ public class Efecto extends Habilidad{
     }
 
     @Override
-    public void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo) {
-        visitor.visitEfecto(this, atacante, objetivo);
+    public void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo,Clima clima) {
+        visitor.visitEfecto(this, atacante, objetivo,clima);
     }
     @Override
-    public void usarEnPokemon(Pokemon pokemonPropio, Pokemon objetivo) {
+    public void usarEnPokemon(Pokemon pokemonPropio, Pokemon objetivo, Clima clima) {
         if(afectaAEnemigo){
             if (objetivo.getEstado().estadoExistente(this.estado)) {
                 logger.info("El pokemon ya tiene este estado alterado");

@@ -19,12 +19,12 @@ public class Modificacion extends Habilidad{
     }
 
     @Override
-    public void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo) {
-        visitor.visitModificacion(this, atacante, objetivo);
+    public void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo,Clima clima) {
+        visitor.visitModificacion(this, atacante, objetivo,clima);
     }
 
     @Override
-    public void usarEnPokemon(Pokemon pokemon, Pokemon objetivo) {
+    public void usarEnPokemon(Pokemon pokemon, Pokemon objetivo,Clima clima) {
         if (afectaAEnemigo){
             switch (this.estadistica){
                 case 1:

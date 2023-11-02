@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ClimaTempestuoso extends Clima{
     public ClimaTempestuoso(String clima, List<Tipo> tipos) {
-        super(clima, tipos);
+        super(clima);
     }
 
     public void herirPokemon(Pokemon pokemon){

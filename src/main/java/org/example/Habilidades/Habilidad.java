@@ -17,12 +17,12 @@ public abstract class Habilidad{
     private static Map<Integer, Habilidad> mapaHabilidades = new HashMap<>();
     public Habilidad(){}
 
-    public abstract void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo);
+    public abstract void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo, Clima clima);
 
     protected int usosDisponibles; //cantidad de veces que se puede usar la habilidad
     public void usarHabilidad(Pokemon pokemonAtacante, Pokemon pokemonAtacado){}
 
-    public abstract void usarEnPokemon(Pokemon pokemon, Pokemon objetivo);
+    public abstract void usarEnPokemon(Pokemon pokemon, Pokemon objetivo,Clima clima);
 
     public boolean getAfectaAEnemigo() {
         return afectaAEnemigo;
@@ -37,7 +37,4 @@ public abstract class Habilidad{
     }
 
     public Integer getId() {return this.id;}
-
-    public void aceptar(PokemonVisitor visitor, Pokemon pokemonAtacante, Pokemon pokemonAtacado, Clima clima) {
-    }
 }

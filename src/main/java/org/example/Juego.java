@@ -63,8 +63,6 @@ public class Juego {
                 turnoActivo = jugador1;
 
             }
-            campoDeBatalla.efectoDelClima(jugador1.getPokemonActual());
-            campoDeBatalla.efectoDelClima(jugador2.getPokemonActual());
         }
         Jugador perdedor = this.perdedor();
         if(perdedor.seRindio())

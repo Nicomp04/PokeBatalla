@@ -30,8 +30,8 @@ public class Ataque extends Habilidad {
     }
 
     @Override
-    public void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo) {
-        visitor.visitAtaque(this, atacante, objetivo);
+    public void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo, Clima clima) {
+        visitor.visitAtaque(this, atacante, objetivo,clima);
     }
 
     private int calcularCritico(){
@@ -51,7 +51,7 @@ public class Ataque extends Habilidad {
         return 1.0;
     }
     @Override
-    public void usarEnPokemon(Pokemon atacante, Pokemon objetivo) {
+    public void usarEnPokemon(Pokemon atacante, Pokemon objetivo,Clima clima) {
         Tipo tipoAtacante = atacante.getTipo();
         Tipo tipoObjetivo = objetivo.getTipo();
 
@@ -61,6 +61,7 @@ public class Ataque extends Habilidad {
         danio = ( (danio / 5) + 2 ) / 50;
         danio = danio * mismoTipo(atacante.getTipo()) * efectividad * rand();
 
+        danio = danio + clima.mejoraPorTipo(atacante,danio);
         objetivo.serAtacado(danio);
         habilidadVista.mostarDanio(danio);
     }

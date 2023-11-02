@@ -45,22 +45,6 @@ public class Pokemon {
         this.habilidades = repositorioHabilidades.cargarConjunto(habilidadesId);
 
         this.vista = new PokemonVista();
-
-       /* especie.put("Charizard", new Fuego());
-        especie.put("Bulbasaur", new Agua());
-        especie.put("Pikachu", new Electrico());
-        especie.put("Dragonite", new Dragon());
-        especie.put("Shuppet", new Fantasma());
-        especie.put("Caterpie", new Bicho());
-        especie.put("Vulpix", new Hielo());
-        especie.put("Machop", new Lucha());
-        especie.put("Rattata", new Normal());
-        especie.put("Chikorita", new Planta());
-        especie.put("Abra", new Psiquio());
-        especie.put("Nosepass", new Roca());
-        especie.put("Diglett", new Tierra());
-        especie.put("Ekans", new Veneno());
-        especie.put("Tornadus", new Volador());*/
     }
 
     public Pokemon() {}

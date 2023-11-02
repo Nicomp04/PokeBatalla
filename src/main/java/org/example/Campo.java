@@ -23,8 +23,8 @@ public class Campo {
         pokemonesActivos.add(pokemon2);
         this.campoVista = new CampoVista();
         this.pokemonVista = new PokemonVista();
-        List<Tipo> tipos = new ArrayList<Tipo>();
-        this.clima = new Clima("normal" ,tipos);
+
+        this.clima = new Clima("sin clima");
     }
 
     public Pokemon getPokemonesActivos(int num) {
@@ -59,6 +59,8 @@ public class Campo {
         if (despierto && !paralizado && !confundido){
             this.aplicarHabilidad(habilidad);
         }
+        campoVista.mostrarClima(clima);
+        clima.restarTurno();
     }
 
     private Habilidad elegirHabilidad(Pokemon pokemonAtacante) {

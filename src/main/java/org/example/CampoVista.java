@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Clima.Clima;
+
 import java.util.Scanner;
 
 public class CampoVista {
@@ -15,5 +17,9 @@ public class CampoVista {
 
     public void entradaInvalida() {
         mostrarMensaje("Entrada invalida, por favor ingrese un valor existente.");
+    }
+
+    public void mostrarClima(Clima clima){
+        mostrarMensaje(clima.getClima() + " -> " + clima.getTurno());
     }
 }
