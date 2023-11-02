@@ -5,12 +5,17 @@ import org.example.Pokemon.Pokemon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class Estado {
     private List<Estados> estados;
     final Logger logger = LoggerFactory.getLogger(Campo.class);
+
+    public Estado() {
+        this.estados = new ArrayList<>();
+    }
 
     public boolean estadoExistente(Estados estado){
         return this.estados.contains(estado);
@@ -29,7 +34,7 @@ public class Estado {
     }
 
     public void resetEstado(){
-        this.estados = null;
+        this.estados.clear();
     }
 
     public boolean hayEstados(){
@@ -44,17 +49,17 @@ public class Estado {
         return resultado.toString();
     }
 
-    public boolean validarEstadoDespierto(Pokemon pokemonAtacante){
-        if(pokemonAtacante.getEstado().estadoExistente(Estados.DORMIDO)) {
+    public boolean validarEstadoDespierto(){
+        if(estadoExistente(Estados.DORMIDO)) {
             logger.info("el pokemon esta Dormido, No Puede Atacar");
-            pokemonAtacante.getEstado().quitarEstado(Estados.DORMIDO);// falta agregar lo del contador de turnos.
+            quitarEstado(Estados.DORMIDO);// falta agregar lo del contador de turnos.
             return false;
         }
         return true;
     }
 
-    public boolean validarEstadoParalizado(Pokemon pokemon){
-        if (pokemon.getEstado().estadoExistente(Estados.PARALIZADO)){
+    public boolean validarEstadoParalizado(){
+        if (estadoExistente(Estados.PARALIZADO)){
             Random random = new Random();
             double valorAleatorio = random.nextDouble();
             if (valorAleatorio < 0.5)
@@ -67,7 +72,7 @@ public class Estado {
     public void validarEstadoEnvenenado(Pokemon pokemon){
         Random random = new Random();
         double valorAleatorio = random.nextDouble();
-        if(pokemon.getEstado().estadoExistente(Estados.ENVENENADO)){
+        if(estadoExistente(Estados.ENVENENADO)){
             double resto = ((pokemon.getVidaActual() * 5) / 100);
             pokemon.modificarHp(-resto);
             logger.info("El pokemon {} esta Envenenado, pierde {} de vida", pokemon.getNombre(), resto);
@@ -77,7 +82,7 @@ public class Estado {
     public boolean validarEstadoConfundido(Pokemon pokemon){
         Random random = new Random();
         double valorAleatorio = random.nextDouble();
-        if(pokemon.getEstado().estadoExistente(Estados.CONFUNDIDO)  && valorAleatorio < 0.3){
+        if(estadoExistente(Estados.CONFUNDIDO)  && valorAleatorio < 0.3){
             double resto = ((pokemon.getVidaActual() * 15) / 100);
             pokemon.modificarHp(-resto);
             logger.info("El pokemon {} esta Confundido, esta tan confundido que se hirio asi mismo y pierde {} de vida", pokemon.getNombre(), resto);

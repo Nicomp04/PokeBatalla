@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.Clima.Clima;
 import org.example.Habilidades.*;
 import org.example.Pokemon.Pokemon;
 

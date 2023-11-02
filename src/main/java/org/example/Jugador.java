@@ -168,13 +168,14 @@ public class Jugador {
     }
 
     public void usarTurno(){
-        if (!(getPokemonActual().estaMuerto())){
+        Pokemon pokemonActivo = getPokemonActual();
+
+        if (!(pokemonActivo.estaMuerto())){
             elegirAccion();
         }
         else {
             this.elegirPokemonActivo();
         }
-        Estado verif = new Estado();
-        verif.validarEstadoEnvenenado(getPokemonActual());
+        pokemonActivo.getEstado().validarEstadoEnvenenado(pokemonActivo);
     }
 }

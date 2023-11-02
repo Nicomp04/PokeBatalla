@@ -1,10 +1,13 @@
 package org.example;
 
+import org.example.Clima.Clima;
+import org.example.Clima.ClimaTempestuoso;
 import org.example.Estado.Estado;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Pokemon.PokemonVista;
 import org.example.Pokemon.PokemonVista;
+import org.example.Tipo.Tipo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +19,7 @@ public class Campo {
     private Pokemon pokemonAtacante;
     private Pokemon pokemonAtacado;
     private List<Pokemon> pokemonesActivos;
+    private Clima clima;
     private CampoVista campoVista;
     private PokemonVista pokemonVista;
     public Campo(Pokemon pokemon1, Pokemon pokemon2){
@@ -24,6 +28,8 @@ public class Campo {
         pokemonesActivos.add(pokemon2);
         this.campoVista = new CampoVista();
         this.pokemonVista = new PokemonVista();
+        List<Tipo> tipos = new ArrayList<Tipo>();
+        this.clima = new Clima("normal" ,tipos);
     }
 
     public Pokemon getPokemonesActivos(int num) {
@@ -47,15 +53,13 @@ public class Campo {
         boolean paralizado;
         boolean confundido;
 
-        Estado verif = new Estado();
-
         identificarAtacante(idAtacante);
         pokemonAtacante.mostrarHabilidades();
         Habilidad habilidad = this.elegirHabilidad(pokemonAtacante);
 
-        despierto = verif.validarEstadoDespierto(pokemonAtacante);
-        paralizado = verif.validarEstadoParalizado(pokemonAtacante);
-        confundido = verif.validarEstadoConfundido(pokemonAtacado);
+        despierto = pokemonAtacante.getEstado().validarEstadoDespierto();
+        paralizado = pokemonAtacante.getEstado().validarEstadoParalizado();
+        confundido = pokemonAtacante.getEstado().validarEstadoConfundido(pokemonAtacado);
 
         if (despierto && !paralizado && !confundido){
             this.aplicarHabilidad(habilidad);
@@ -76,11 +80,17 @@ public class Campo {
 
     public void aplicarHabilidad(Habilidad habilidadElegida){
         PokemonVisitor visitor = new PokemonVisitor();
-        habilidadElegida.aceptar(visitor, pokemonAtacante, pokemonAtacado);
+        habilidadElegida.aceptar(visitor, pokemonAtacante, pokemonAtacado, clima);
     }
 
     public void cambiarPokemon(Pokemon pokemon, int id){
         this.pokemonesActivos.set(id-1,pokemon);
     }
 
+
+    public void efectoDelClima(Pokemon pokemon) {
+        if(clima.compararTipos(pokemon)){
+            pokemon.modificarHp(- (pokemon.getVidaActual() * 3 / 100));
+        }
+    }
 }
