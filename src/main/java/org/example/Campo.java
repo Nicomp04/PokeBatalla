@@ -80,11 +80,17 @@ public class Campo {
 
     public void aplicarHabilidad(Habilidad habilidadElegida){
         PokemonVisitor visitor = new PokemonVisitor();
-        habilidadElegida.aceptar(visitor, pokemonAtacante, pokemonAtacado);
+        habilidadElegida.aceptar(visitor, pokemonAtacante, pokemonAtacado, clima);
     }
 
     public void cambiarPokemon(Pokemon pokemon, int id){
         this.pokemonesActivos.set(id-1,pokemon);
     }
 
+
+    public void efectoDelClima(Pokemon pokemon) {
+        if(clima.compararTipos(pokemon)){
+            pokemon.modificarHp(- (pokemon.getVidaActual() * 3 / 100));
+        }
+    }
 }
