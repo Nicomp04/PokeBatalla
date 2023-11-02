@@ -9,15 +9,17 @@ import org.example.Visitor;
 
 public class Efecto extends Habilidad{
     private Estados estado;
+    private String climaCambiar;
 
     final Logger logger = LoggerFactory.getLogger(Efecto.class);
 
-    public Efecto(int id, String nombre, int usosDisponibles, Estados estado) {
+    public Efecto(int id, String nombre, int usosDisponibles, Estados estado, boolean afectaAEnemigo, String tipo) {
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
         this.estado = estado;
         this.atacaAEnemigo = false;
-        this.afectaAEnemigo = true;
+        this.afectaAEnemigo = afectaAEnemigo;
+        this.climaCambiar = tipo;
     }
 
     @Override
@@ -34,7 +36,7 @@ public class Efecto extends Habilidad{
                 objetivo.getEstado().agregarEstado(this.estado);
             }
         }else{
-            pokemonPropio.getEstado().agregarEstado(this.estado);
+                clima.cambiar(this.climaCambiar);
         }
     }
 }

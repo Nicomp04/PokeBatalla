@@ -28,6 +28,7 @@ public class ParserHabilidad {
                 String estilo = jsonHabilidad.getString("estilo");
                 String tipo = jsonHabilidad.getString("tipo");
                 int estadistica = jsonHabilidad.getInt("estadistica");
+                boolean afectaAEnemigo = jsonHabilidad.getBoolean("afectaAEnemigo");
                 int valor = jsonHabilidad.getInt("valor");
                 String estadoInt = jsonHabilidad.getString("estado");
                 Estados estado = Estados.valueOf(estadoInt);
@@ -38,7 +39,7 @@ public class ParserHabilidad {
                 } else if (estilo.equals("Modificacion")) {
                     habilidad = new Modificacion(id, nombre, usos, estadistica, valor);
                 } else{
-                    habilidad = new Efecto(id, nombre, usos, estado);
+                    habilidad = new Efecto(id, nombre, usos, estado,afectaAEnemigo,tipo);
                 }
                 mapaHabilidades.put(id, habilidad);
             }

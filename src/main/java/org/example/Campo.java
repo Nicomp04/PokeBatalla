@@ -24,7 +24,7 @@ public class Campo {
         this.campoVista = new CampoVista();
         this.pokemonVista = new PokemonVista();
 
-        this.clima = new Clima("sin clima");
+        this.clima = new Clima("huracan");
     }
 
     public Pokemon getPokemonesActivos(int num) {
@@ -85,9 +85,19 @@ public class Campo {
     }
 
 
-    public void efectoDelClima(Pokemon pokemon) {
-        if(clima.compararTipos(pokemon)){
-            pokemon.modificarHp(- (pokemon.getVidaActual() * 3 / 100));
+    public void climaAfecta() {
+        if(climaPeligroso()){
+            for (Pokemon pokemon: pokemonesActivos)
+                if(!clima.compararTipos(pokemon)){
+                    pokemon.modificarHp(- (pokemon.getVidaActual() * 3 / 100));
+                }
         }
+
+    }
+
+    private boolean climaPeligroso() {
+        if (clima.getClima() == "tormenta de rayos" || clima.getClima() == "huracan")
+            return true;
+        return false;
     }
 }

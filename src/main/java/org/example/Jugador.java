@@ -107,7 +107,7 @@ public class Jugador {
 
     public void elegirAccion(){
         int accionElegida = jugadorVista.mostrarOpciones(this);
-
+        campoDeBatalla.climaAfecta();
         switch (accionElegida){
             case 1:
                 campoDeBatalla.usarHabilidad(id);

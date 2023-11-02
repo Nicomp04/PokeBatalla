@@ -6,6 +6,7 @@
     "estilo": "Ataque",
     "tipo": "fuego",
     "estadistica": -1,
+    "afectaAEnemigo": true,
     "valor": 15,
     "estado": "PARALIZADO"
 
@@ -17,6 +18,7 @@
     "estilo": "Ataque",
     "tipo": "electrico",
     "estadistica": -1,
+    "afectaAEnemigo": true,
     "valor": 25,
     "estado": "PARALIZADO"
 
@@ -28,6 +30,7 @@
     "estilo": "Ataque",
     "tipo": "agua",
     "estadistica": -1,
+    "afectaAEnemigo": true,
     "valor": 30,
     "estado": "PARALIZADO"
 
@@ -39,6 +42,7 @@
   "estilo": "Efecto",
   "tipo": "veneno",
   "estadistica": -1,
+    "afectaAEnemigo": true,
   "valor": 15,
   "estado": "ENVENENADO"
 
@@ -50,6 +54,7 @@
     "estilo": "Ataque",
     "tipo": "normal",
     "estadistica": -1,
+    "afectaAEnemigo": true,
     "valor": 30,
     "estado": "PARALIZADO"
 
@@ -58,9 +63,10 @@
     "nombre": "Despejar Clima",
     "id": 98,
     "usos": 10,
-    "estilo": "Ataque",
-    "tipo": "fuego",
+    "estilo": "Efecto",
+    "tipo": "sin clima",
     "estadistica": -1,
+    "afectaAEnemigo": false,
     "valor": 15,
     "estado": "PARALIZADO"
 
