@@ -1,7 +1,7 @@
 package org.example.Habilidades;
-import org.example.Estado.Estados;
+import org.example.Clima.Clima;
 import org.example.Pokemon.Pokemon;
-import org.example.Tipo.Tipo;
+import org.example.PokemonVisitor;
 import org.example.Tipo.TipoFactory;
 import org.example.Visitor;
 
@@ -37,4 +37,7 @@ public abstract class Habilidad{
     }
 
     public Integer getId() {return this.id;}
+
+    public void aceptar(PokemonVisitor visitor, Pokemon pokemonAtacante, Pokemon pokemonAtacado, Clima clima) {
+    }
 }
