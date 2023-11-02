@@ -64,6 +64,7 @@ public class Jugador {
     public String getNombre(){
         return this.nombre;
     }
+    public Item getItem(int pos){return this.items.get(pos);}
 
     public boolean tienePokemones() {
         return HayPokemonesVivos();

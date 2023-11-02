@@ -64,6 +64,19 @@ public class Pokemon {
     }
 
     public Pokemon() {}
+
+    public Pokemon(String nombre, int id, String tipo, int nivel, int vidaMaxima, int velocidad, int defensa, int ataque) {
+        this.nombre = nombre;
+        this.id = id;
+        this.nivel = nivel;
+        this.tipo = TipoFactory.getTipo(tipo);
+        this.vidaMaxima = vidaMaxima;
+        this.vidaActual = vidaMaxima;
+        this.velocidad = velocidad;
+        this.defensa = defensa;
+        this.ataque = ataque;
+    }
+
     public String getNombre(){
         return this.nombre;
     }
@@ -124,4 +137,7 @@ public class Pokemon {
         return this.habilidades.size();
     }
 
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
 }

@@ -1,15 +1,10 @@
 package org.example;
 
 import org.example.Clima.Clima;
-import org.example.Clima.ClimaTempestuoso;
-import org.example.Estado.Estado;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Pokemon.PokemonVista;
-import org.example.Pokemon.PokemonVista;
 import org.example.Tipo.Tipo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
