@@ -1,6 +1,8 @@
 package org.example;
 
 import org.example.Clima.Clima;
+import org.example.Estado.Estado;
+import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Pokemon.PokemonVista;
@@ -8,6 +10,7 @@ import org.example.Tipo.Tipo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Campo {
@@ -24,7 +27,7 @@ public class Campo {
         this.campoVista = new CampoVista();
         this.pokemonVista = new PokemonVista();
 
-        this.clima = new Clima("huracan");
+        this.clima = new Clima("sin clima");
     }
 
     public Pokemon getPokemonesActivos(int num) {
@@ -52,15 +55,45 @@ public class Campo {
         pokemonAtacante.mostrarHabilidades();
         Habilidad habilidad = this.elegirHabilidad(pokemonAtacante);
 
-        despierto = pokemonAtacante.getEstado().validarEstadoDespierto();
-        paralizado = pokemonAtacante.getEstado().validarEstadoParalizado();
-        confundido = pokemonAtacante.getEstado().validarEstadoConfundido(pokemonAtacado);
+        despierto = validarEstadoDespierto(pokemonAtacante.getEstados());
+        paralizado = validarEstadoParalizado(pokemonAtacante.getEstados());
 
-        if (despierto && !paralizado && !confundido){
+        if (pokemonAtacante.getEstados().contains(Estados.CONFUNDIDO))
+            this.verQueTanConfundido(pokemonAtacante);
+
+        if (despierto && !paralizado){
             this.aplicarHabilidad(habilidad);
         }
         campoVista.mostrarClima(clima);
         clima.restarTurno();
+    }
+
+    public void verQueTanConfundido(Pokemon pokemon) {
+        Random random = new Random();
+        double valorAleatorio = random.nextDouble();
+
+        if(valorAleatorio < 0.3){
+            double resto = ((pokemon.getVidaActual() * 15) / 100);
+            campoVista.mostrarConfundido(pokemon.getNombre(), resto);
+            pokemon.modificarHp(-resto);
+        }
+    }
+
+    public boolean validarEstadoParalizado(List<Estados> estados) {
+        return estados.contains(Estados.PARALIZADO);
+    }
+
+    public boolean validarEstadoDespierto(List<Estados> estados) {
+        return !estados.contains(Estados.DORMIDO);
+    }
+    public void validarEstadoEnvenenado(Pokemon pokemon) {
+        Random random = new Random();
+        double valorAleatorio = random.nextDouble();
+        if(pokemon.getEstados().contains((Estados.ENVENENADO))){
+            double resto = ((pokemon.getVidaActual() * 5) / 100);
+            pokemon.modificarHp(-resto);
+            campoVista.mostrarEnvenenado(pokemon.getNombre(), resto);
+        }
     }
 
     private Habilidad elegirHabilidad(Pokemon pokemonAtacante) {
@@ -86,18 +119,12 @@ public class Campo {
 
 
     public void climaAfecta() {
-        if(climaPeligroso()){
+        if(clima.climaPeligroso()){
             for (Pokemon pokemon: pokemonesActivos)
                 if(!clima.compararTipos(pokemon)){
                     pokemon.modificarHp(- (pokemon.getVidaActual() * 3 / 100));
                 }
         }
 
-    }
-
-    private boolean climaPeligroso() {
-        if (clima.getClima() == "tormenta de rayos" || clima.getClima() == "huracan")
-            return true;
-        return false;
     }
 }

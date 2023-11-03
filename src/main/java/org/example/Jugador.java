@@ -176,6 +176,7 @@ public class Jugador {
         else {
             this.elegirPokemonActivo();
         }
-        pokemonActivo.getEstado().validarEstadoEnvenenado(pokemonActivo);
+        campoDeBatalla.validarEstadoEnvenenado(pokemonActivo);
+        pokemonActivo.restarTurnoEstados();
     }
 }

@@ -1,5 +1,6 @@
 package org.example.Pokemon;
 
+import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
 
 import java.util.List;
@@ -37,8 +38,10 @@ public class PokemonVista {
     public void mostrarse(Pokemon pokemon, int num){
         mostrarMensaje("- " + String.valueOf(num));
         mostrarMensaje("Nombre: " + pokemon.getNombre());
-        mostrarMensaje("Tipo: " + pokemon.getTipo());
-        mostrarMensaje("Estado: " + pokemon.getEstado());
+        mostrarMensaje("Tipo: " + pokemon.getTipo().getId());
+        mostrarMensaje("Estados: ");
+        for (Estados estados : pokemon.getEstados())
+            mostrarMensaje(" - " + estados.name());
         mostrarMensaje("Vida: " + pokemon.getVidaActual());
         mostrarMensaje("Ataque: " + pokemon.getAtaque());
         mostrarMensaje("Defensa: " + pokemon.getDefensa());

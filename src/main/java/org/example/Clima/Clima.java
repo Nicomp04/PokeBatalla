@@ -102,4 +102,10 @@ public class Clima {
     public String getClima(){
         return this.clima;
     }
+
+    public boolean climaPeligroso() {
+        if (this.getClima() == "tormenta de rayos" || this.getClima() == "huracan")
+            return true;
+        return false;
+    }
 }

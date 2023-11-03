@@ -20,6 +20,15 @@ public class CampoVista {
     }
 
     public void mostrarClima(Clima clima){
+        mostrarMensaje("--------------------------");
         mostrarMensaje(clima.getClima() + " -> " + clima.getTurno());
+    }
+
+    public void mostrarEnvenenado(String nombre,double resto) {
+        mostrarMensaje("El pokemon " + nombre + " esta Envenenado, pierde " + resto + " de vida");
+    }
+
+    public void mostrarConfundido(String nombre, double resto) {
+        mostrarMensaje("El pokemon " + nombre + " esta Confundido, esta tan confundido que se hirio asi mismo y pierde " + resto + " de vida");
     }
 }

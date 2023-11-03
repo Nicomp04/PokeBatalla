@@ -14,7 +14,7 @@ public class curaTodo extends Item {
     @Override
     public void aplicarItem(List<Pokemon> pokemones) {
         Pokemon pokemon = pokemones.get(0);
-        pokemon.getEstado().resetEstado();
+        pokemon.getEstados().clear();
         this.setUsado(true);
     }
 }

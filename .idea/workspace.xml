@@ -7,10 +7,16 @@
     <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CampoVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CampoVista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Estado/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Estado/Estado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Estado/Estados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Estado/Estados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ParserHabilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ParserHabilidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/curaTodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/curaTodo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/PokemonVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/PokemonVista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Habilidades.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Habilidades.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pokemones.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pokemones.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

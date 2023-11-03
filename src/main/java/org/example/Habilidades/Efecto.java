@@ -17,6 +17,7 @@ public class Efecto extends Habilidad{
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
         this.estado = estado;
+        this.estado.setDuracion(usosDisponibles);
         this.atacaAEnemigo = false;
         this.afectaAEnemigo = afectaAEnemigo;
         this.climaCambiar = tipo;
@@ -29,11 +30,11 @@ public class Efecto extends Habilidad{
     @Override
     public void usarEnPokemon(Pokemon pokemonPropio, Pokemon objetivo, Clima clima) {
         if(afectaAEnemigo){
-            if (objetivo.getEstado().estadoExistente(this.estado)) {
+            if (objetivo.getEstados().contains(this.estado)) {
                 logger.info("El pokemon ya tiene este estado alterado");
             }
             else{
-                objetivo.getEstado().agregarEstado(this.estado);
+                objetivo.agregarEstado(this.estado);
             }
         }else{
                 clima.cambiar(this.climaCambiar);

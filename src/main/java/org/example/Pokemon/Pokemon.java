@@ -23,14 +23,12 @@ public class Pokemon {
     private int velocidad;
     private int defensa;
     private int ataque;
-    private Estado estado = new Estado();
+    private List<Estados> estados = new ArrayList<>();
+
     private TipoFactory tipoFactory;
     private PokemonVista vista;
 
-
     public List<Habilidad> habilidades = new ArrayList<>();
-
-    public HashMap<String, Tipo> especie = new HashMap<>();
 
     public Pokemon(String nombre, int id, String tipo, int nivel,   int vidaMaxima, int velocidad, int defensa, int ataque,List<Integer> habilidadesId, RepositorioHabilidades repositorioHabilidades ){
         this.nombre = nombre;
@@ -72,7 +70,7 @@ public class Pokemon {
     public double getVidaActual (){
         return this.vidaActual;
     }
-    public Estado getEstado(){return this.estado;}
+    public List<Estados> getEstados(){return this.estados;}
     public void setDefensa(int porcentaje) {this.defensa = this.defensa - ((this.defensa * (-porcentaje))/100);}
     public void setAtaque(int porcentaje) {
         this.ataque = this.ataque - ((this.ataque * (-porcentaje))/100);
@@ -121,7 +119,20 @@ public class Pokemon {
         return this.habilidades.size();
     }
 
-    public void setEstado(Estado estado) {
-        this.estado = estado;
+    public void restarTurnoEstados() {
+        for (int i = 0 ; i < estados.size() ; i++) {
+            estados.get(i).restarTurno();
+            System.out.println(estados.get(i).getNombre() + estados.get(i).getDuracion());
+            if(estados.get(i).seAgoto())
+                quitarEstado(estados.get(i));
+        }
+    }
+
+    public void quitarEstado(Estados estado){this.estados.remove(estado);}
+
+    public void agregarEstado(Estados estado) {
+        if (!getEstados().contains(estado)){
+            this.estados.add(estado);
+        }
     }
 }

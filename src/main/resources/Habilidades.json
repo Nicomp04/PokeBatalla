@@ -24,6 +24,18 @@
 
   },
   {
+    "nombre": "Confundir",
+    "id": 58,
+    "usos": 3,
+    "estilo": "Efecto",
+    "tipo": "electrico",
+    "estadistica": -1,
+    "afectaAEnemigo": true,
+    "valor": 25,
+    "estado": "CONFUNDIDO"
+
+  },
+  {
     "nombre": "Tsunami",
     "id":78,
     "usos": 10,

@@ -10,7 +10,7 @@
       "velocidad": 20,
       "defensa": 3,
       "ataque": 10,
-      "habilidades": [56, 78, 2]
+      "habilidades": [56,58, 78, 2]
     },
     {
       "nombre": "Charmander",
