@@ -11,8 +11,8 @@ public class Restaurador extends Item {
 
     private int hp;
 
-    public Restaurador(int id, String nombre ,int hp) {
-        this.id = id;
+    public Restaurador(String nombre ,int hp) {
+
         this.hp = hp;
         this.nombre = nombre;
     }
@@ -39,7 +39,16 @@ public class Restaurador extends Item {
             }
             pokemonElegido = scanner.nextInt();
             pokemonElegido = pokemonElegido - 1;
-            pokemonesVivos.get(pokemonElegido).modificarHp(hp);
+
+            Pokemon pokemonARestaurar = pokemonesVivos.get(pokemonElegido);
+
+            if (nombre.equals("Pocion Molesta Alumnos")){
+                pokemonARestaurar.modificarHp(hp * pokemonARestaurar.getVidaActual());
+            }
+            else {
+                pokemonesVivos.get(pokemonElegido).modificarHp(hp);
+            }
+
             logger.info("{} ha sido restaurado.", pokemonElegido);
             this.setUsado(true);
         }

@@ -6,15 +6,21 @@
     "valor": 10
   },
   {
-    "nombre": "Defensa X",
+    "nombre": "DefensaX",
     "id": 4,
     "estilo": "DefensaX",
     "valor": 1000
   },
   {
-    "nombre": "Cura Total",
+    "nombre": "CuraTodo",
     "id": 67,
-    "estilo": "curaTodo",
+    "estilo": "CuraTodo",
     "valor": -1
+  },
+  {
+    "nombre": "Pocion Molesta Alumnos",
+    "id": 67,
+    "estilo": "CuraTodo",
+    "valor": 0.33333
   }
 ]

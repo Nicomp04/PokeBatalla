@@ -1,5 +1,4 @@
 package org.example.Pokemon;
-import org.example.Estado.Estado;
 import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
 import org.example.RepositorioHabilidades;

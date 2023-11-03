@@ -4,10 +4,13 @@ import org.example.Pokemon.Pokemon;
 
 import java.util.List;
 
-public class AtaqueX extends ModificadorItem {
 
+
+public class AtaqueX extends Item {
+
+    private int porcentaje;
     public AtaqueX(int valor) {
-        super(valor);
+        this.porcentaje = valor;
         this.nombre = "AtaqueX";
     }
     @Override

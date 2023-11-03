@@ -6,17 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CampoVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CampoVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Estado/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Estado/Estado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Estado/Estados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Estado/Estados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/curaTodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/curaTodo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/JugadorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/AtaqueX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/AtaqueX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/DefensaX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/DefensaX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/ModificadorItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Restaurador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Restaurador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/curaTodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/CuraTodo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParserItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParserItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/PokemonVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/PokemonVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Habilidades.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Habilidades.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pokemones.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pokemones.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Items.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Items.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,20 +59,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;juancpuch3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -172,6 +172,7 @@
       <workItem from="1698433545133" duration="26049000" />
       <workItem from="1698506833348" duration="4966000" />
       <workItem from="1698538356774" duration="6979000" />
+      <workItem from="1699039340866" duration="6807000" />
     </task>
     <servers />
   </component>
@@ -200,7 +201,7 @@
     <SUITE FILE_PATH="coverage/PokeBatalla$JugadorTest.ic" NAME="JugadorTest Coverage Results" MODIFIED="1698941495405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PokeBatalla$CampoTest_campoCargadoCorrectamente.ic" NAME="CampoTest.campoCargadoCorrectamente Coverage Results" MODIFIED="1698941610286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PokeBatalla$CampoTest_campoCargadoCorrectamente.ic" NAME="CampoTest.campoCargadoCorrectamente Coverage Results" MODIFIED="1698941527153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
   </component>

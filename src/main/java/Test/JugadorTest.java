@@ -17,7 +17,7 @@ public class JugadorTest {
         List<Pokemon> pokemones = new ArrayList<>();
         Pokemon pokemon = new Pokemon("charizard",3,"fuego",20,200,40,50,80);
         pokemones.add(pokemon);
-        Item item = new Restaurador(4,"pocion",20);
+        Item item = new Restaurador("pocion",20);
         List<Item> items = new ArrayList<>();
         items.add(item);
 
@@ -33,7 +33,7 @@ public class JugadorTest {
         List<Pokemon> pokemones = new ArrayList<>();
         Pokemon pokemon = new Pokemon("charizard",3,"fuego",20,200,40,50,80);
         pokemones.add(pokemon);
-        Item item = new Restaurador(4,"pocion",20);
+        Item item = new Restaurador("pocion",20);
         List<Item> items = new ArrayList<>();
         items.add(item);
 
@@ -47,7 +47,7 @@ public class JugadorTest {
         List<Pokemon> pokemones = new ArrayList<>();
         Pokemon pokemon = new Pokemon("charizard",3,"fuego",20,0,40,50,80);
         pokemones.add(pokemon);
-        Item item = new Restaurador(4,"pocion",20);
+        Item item = new Restaurador("pocion",20);
         List<Item> items = new ArrayList<>();
         items.add(item);
 

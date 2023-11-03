@@ -1,6 +1,5 @@
 package org.example;
 
-import org.example.Estado.Estado;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
 import org.slf4j.Logger;

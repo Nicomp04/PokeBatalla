@@ -1,22 +1,13 @@
 package org.example;
 
-import org.example.Habilidades.Ataque;
-import org.example.Habilidades.Efecto;
-import org.example.Habilidades.Habilidad;
-import org.example.Habilidades.Modificacion;
-import org.example.Item.DefensaX;
-import org.example.Item.Item;
-import org.example.Item.Restaurador;
-import org.example.Item.curaTodo;
+import org.example.Item.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ParserItems {
@@ -39,12 +30,19 @@ public class ParserItems {
 
                 Item item;
                 if (estilo.equals("Restaurador")) {
-                    item = new Restaurador(id, nombre, valor);
-                } else if (estilo.equals("curaTodo")) {
-                    item = new curaTodo(id, nombre);
+                    item = new Restaurador(nombre, valor);
+                } else if (estilo.equals("CuraTodo")) {
+                    item = new CuraTodo();
+                } else if (estilo.equals("Revivir")){
+                    item = new Revivir();
+                } else if (estilo.equals("DefensaX")) {
+                    item = new DefensaX(valor);
+                } else if (estilo.equals("AtaqueX")){
+                    item = new AtaqueX(valor);
                 } else{
-                    item = new DefensaX(id, valor);
+                    item = null;
                 }
+
                 mapaItem.put(id, item);
             }
         } catch (IOException e) {
