@@ -46,9 +46,9 @@ public class Generador {
         jugador = resultados.get(0);
 
         List<Pokemon> pokemones = this.obtenerPokemones(jugador.getPokemonesParseo());
-        List<Item> items = this.obtenerItems(jugador.getItemsParseo());
+        List<Item> items1 = this.obtenerItems(jugador.getItemsParseo());
 
-        Jugador jugador1 = new Jugador(jugador.getNombre(),pokemones,items,1);
+        Jugador jugador1 = new Jugador(jugador.getNombre(),pokemones,items1,1);
 
         jugador = resultados.get(1);
 
@@ -70,11 +70,24 @@ public class Generador {
         for (int i = 0; i < itemsParseo.size(); i += 2){
             Item item = obtenerItemPorId(itemsParseo.get(i));
             int cantidad = (itemsParseo.get(i+1));
-            for (int j = 0 ; j < cantidad; j++)
-                items.add(item);
+            boolean sePuedeAgregarItem = true;
+            for (int j = 0 ; j < cantidad; j++) {
+                if (sePuedeAgregarItem) {
+                    items.add(item);
+                    sePuedeAgregarItem = chekearItem(item);
+                }
+            }
+            sePuedeAgregarItem = true;
         }
 
         return items;
+    }
+
+    private boolean chekearItem(Item item){
+        if (item.getNombre() == "Pocion Molesta Alumnos"){
+            return false;
+        }
+        return true;
     }
 
     private Item obtenerItemPorId(int id) {
