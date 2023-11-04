@@ -1,4 +1,4 @@
-package org.example.Habilidades;
+package org.example.Vista;
 
 import java.util.Scanner;
 

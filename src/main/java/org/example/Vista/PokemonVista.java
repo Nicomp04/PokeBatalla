@@ -1,7 +1,8 @@
-package org.example.Pokemon;
+package org.example.Vista;
 
 import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
+import org.example.Pokemon.Pokemon;
 
 import java.util.List;
 
@@ -15,20 +16,8 @@ public class PokemonVista {
             mostrarMensaje((i + 1) + ": " + habilidades.get(i).getNombre());
         }
     }
-    public void mostrarParalizado(){
-        mostrarMensaje("El pokemon esta Paralizado");
-    }
-    public void mostrarDormido(){
-        mostrarMensaje("El pokemon esta Dormido");
-    }
-
     public void mostrarVida(Pokemon pokemon) {
         mostrarMensaje("El pokemon " + pokemon.getNombre() + " tiene " + pokemon.getVidaActual() + " de vida.");
-    }
-
-    public void mostrarEnvenenado(Pokemon pokemon) {
-        mostrarMensaje(pokemon.getNombre() + " ha sido envenenado");
-        mostrarVida(pokemon);
     }
 
     public void mostrarDerrotado() {

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Vista;
 
 public class GeneradorVista {
 }

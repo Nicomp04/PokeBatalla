@@ -1,17 +1,16 @@
 package org.example;
 
-import org.example.Estado.Estados;
 import org.example.Habilidades.*;
 import org.example.Item.*;
-import org.example.Pokemon.ControladorPokemon;
+import org.example.Parsers.ParserHabilidad;
+import org.example.Parsers.ParserItems;
+import org.example.Parsers.ParserPartida;
+import org.example.Parsers.ParserPokemon;
 import org.example.Pokemon.Pokemon;
-import org.example.Pokemon.PokemonVista;
-import org.example.Tipo.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
 public class Generador {
 

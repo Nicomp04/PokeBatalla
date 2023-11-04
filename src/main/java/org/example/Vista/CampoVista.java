@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Vista;
 
 import org.example.Clima.Clima;
 

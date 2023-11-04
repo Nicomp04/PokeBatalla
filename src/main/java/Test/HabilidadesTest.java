@@ -4,15 +4,13 @@ import org.example.Clima.Clima;
 import org.example.Estado.Estados;
 import org.example.Habilidades.*;
 import org.example.Pokemon.Pokemon;
-import org.example.Pokemon.PokemonVista;
+import org.example.Vista.PokemonVista;
 import org.example.Tipo.*;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class HabilidadesTest {
 

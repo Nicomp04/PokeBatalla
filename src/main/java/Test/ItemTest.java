@@ -2,19 +2,16 @@ package Test;
 import org.example.Item.Item;
 import org.example.Item.*;
 import org.example.Pokemon.Pokemon;
-import org.example.Pokemon.PokemonVista;
+import org.example.Vista.PokemonVista;
 import org.junit.Test;
-import org.mockito.Mock;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 
 public class ItemTest {

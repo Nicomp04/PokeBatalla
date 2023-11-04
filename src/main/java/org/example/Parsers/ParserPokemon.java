@@ -1,6 +1,7 @@
-package org.example;
+package org.example.Parsers;
 
 import org.example.Pokemon.Pokemon;
+import org.example.Habilidades.RepositorioHabilidades;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

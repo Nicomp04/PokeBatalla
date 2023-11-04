@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Habilidades;
 import org.example.Habilidades.Habilidad;
 
 import java.util.ArrayList;

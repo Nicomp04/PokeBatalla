@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Parsers;
 
 import org.example.Item.*;
 import org.json.JSONArray;

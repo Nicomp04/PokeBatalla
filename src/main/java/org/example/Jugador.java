@@ -2,11 +2,9 @@ package org.example;
 
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.example.Vista.JugadorVista;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class Jugador {
 
@@ -22,7 +20,7 @@ public class Jugador {
     private JugadorVista jugadorVista;
 
 
-    public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items, int id){
+    public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items, int id) {
         this.nombre = nombre;
         this.pokemones = pokemones;
         this.items = items;
@@ -33,14 +31,13 @@ public class Jugador {
         this.jugadorVista = new JugadorVista();
     }
 
-    public Jugador(String nombre,  List<Integer> items,List<Integer> pokemones){
+    public Jugador(String nombre, List<Integer> items, List<Integer> pokemones) {
         this.nombre = nombre;
         this.pokemonesParseo = pokemones;
         this.itemsParseo = items;
     }
 
     public Jugador() {
-
     }
 
     public List<Integer> getPokemonesParseo() {
@@ -50,7 +47,6 @@ public class Jugador {
     public List<Integer> getItemsParseo() {
         return itemsParseo;
     }
-
 
     public Pokemon getPokemonActual() {
         return pokemones.get(0);

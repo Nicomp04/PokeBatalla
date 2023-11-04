@@ -1,5 +1,9 @@
-package org.example.Habilidades;
+package org.example.Parsers;
 import org.example.Estado.Estados;
+import org.example.Habilidades.Ataque;
+import org.example.Habilidades.Efecto;
+import org.example.Habilidades.Habilidad;
+import org.example.Habilidades.Modificacion;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

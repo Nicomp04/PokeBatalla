@@ -4,8 +4,9 @@ import org.example.Clima.Clima;
 import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
-import org.example.Pokemon.PokemonVista;
-import org.example.Tipo.Tipo;
+import org.example.Pokemon.PokemonVisitor;
+import org.example.Vista.PokemonVista;
+import org.example.Vista.CampoVista;
 
 import java.util.ArrayList;
 import java.util.List;

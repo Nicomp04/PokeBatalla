@@ -1,8 +1,9 @@
-package org.example;
+package org.example.Vista;
 
 import org.example.Item.Item;
+import org.example.Jugador;
+import org.example.JugadorController;
 import org.example.Pokemon.Pokemon;
-import org.example.Pokemon.PokemonVista;
 
 import java.util.List;
 import java.util.Scanner;
@@ -11,6 +12,7 @@ public class JugadorVista {
     private Scanner scanner;
 
     private PokemonVista pokemonVista;
+    private JugadorController jugadorController;
     public JugadorVista(){
         this.scanner = new Scanner(System.in);
         this.pokemonVista = new PokemonVista();
@@ -21,8 +23,9 @@ public class JugadorVista {
     }
 
     public int solicitarOpcion() {
-        System.out.print("Ingrese accion: ");
-        return scanner.nextInt();
+        mostrarMensaje("Ingrese opcion: ");
+        return jugadorController.solicitarOpcion();
+
     }
 
     public int mostrarOpciones(Jugador jugador){
@@ -39,7 +42,7 @@ public class JugadorVista {
 
     public int elegirPokemones(List<Pokemon> pokemones){
         mostrarPokemones(pokemones);
-        return scanner.nextInt();
+        return this.solicitarOpcion();
     }
 
     public void mostrarPokemones(List<Pokemon> pokemones) {
@@ -56,7 +59,7 @@ public class JugadorVista {
 
     public int elegirPosiciones(int max){
         this.mostrarPosiciones(max);
-        return scanner.nextInt();
+        return this.solicitarOpcion();
     }
     public void mostrarPosiciones(int max) {
         mostrarMensaje("¿En que posicion quiere ubicarlo?");
@@ -67,7 +70,7 @@ public class JugadorVista {
 
     public int elegirItem(List<Item> items){
         mostrarItems(items);
-        return scanner.nextInt();
+        return solicitarOpcion();
     }
 
     public void mostrarItems(List<Item> items) {

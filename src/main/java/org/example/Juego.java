@@ -1,7 +1,9 @@
 package org.example;
 
+import org.example.Habilidades.RepositorioHabilidades;
 import org.example.Pokemon.Pokemon;
 
+import org.example.Vista.JuegoVista;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

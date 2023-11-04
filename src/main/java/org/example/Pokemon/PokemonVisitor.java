@@ -1,8 +1,9 @@
-package org.example;
+package org.example.Pokemon;
 
 import org.example.Clima.Clima;
 import org.example.Habilidades.*;
 import org.example.Pokemon.Pokemon;
+import org.example.Visitor;
 
 public class PokemonVisitor implements Visitor {
     @Override

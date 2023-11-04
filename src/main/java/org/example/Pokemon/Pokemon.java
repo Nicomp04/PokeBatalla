@@ -1,13 +1,11 @@
 package org.example.Pokemon;
 import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
-import org.example.RepositorioHabilidades;
+import org.example.Habilidades.RepositorioHabilidades;
 import org.example.Tipo.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.example.Vista.PokemonVista;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 

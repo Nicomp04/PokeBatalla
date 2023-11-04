@@ -1,5 +1,6 @@
-package org.example;
+package org.example.Parsers;
 
+import org.example.Jugador;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;

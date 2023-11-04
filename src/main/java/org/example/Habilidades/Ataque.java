@@ -3,6 +3,7 @@ import org.example.Clima.Clima;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;
 import org.example.Tipo.TipoFactory;
+import org.example.Vista.HabildadVista;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.example.Visitor;
