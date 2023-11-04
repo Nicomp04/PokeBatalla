@@ -54,8 +54,4 @@ public class Restaurador extends Item {
         }
 
     }
-  /*  @Override
-    public void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo) { // Implementar curar() en Pokemon.java (puede ser cambiado)
-        pokemonPropio.modificarHp(hp);
-    }*/
 }

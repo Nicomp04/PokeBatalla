@@ -1,7 +1,6 @@
 package Test;
 
 import org.example.Campo;
-import org.example.Estado.Estado;
 import org.example.Habilidades.Ataque;
 import org.example.Habilidades.Habilidad;
 import org.example.Jugador;
