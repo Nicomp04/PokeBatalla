@@ -13,7 +13,7 @@ public abstract class Item {
     protected String nombre;
     protected boolean usado = false;
 
-    final Logger logger = LoggerFactory.getLogger(Revivir.class);
+    public final Logger logger = LoggerFactory.getLogger(Revivir.class);
     public String getNombre() {
         return nombre;
     }

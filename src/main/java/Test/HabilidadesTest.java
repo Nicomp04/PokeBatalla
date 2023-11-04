@@ -57,7 +57,7 @@ public class HabilidadesTest {
         Clima clima = new Clima("Normal");
 
         habilidadTest.usarEnPokemon(pokemonAtacante, pokemonAtacado, clima);
-        boolean estadoEsperado = pokemonAtacado.getEstado().estadoExistente(Estados.CONFUNDIDO);
+        boolean estadoEsperado = pokemonAtacado.getEstados().contains(Estados.CONFUNDIDO);
 
         assertTrue(estadoEsperado);
 
