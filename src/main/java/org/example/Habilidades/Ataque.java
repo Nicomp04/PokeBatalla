@@ -25,7 +25,6 @@ public class Ataque extends Habilidad {
         this.usosDisponibles = usosDisponibles;
         this.atacaAEnemigo = true;
         this.afectaAEnemigo = false;
-
         this.habilidadVista = new HabildadVista();
     }
 
@@ -73,6 +72,7 @@ public class Ataque extends Habilidad {
         int randomNum = random.nextInt(39) + 217;
         double resultado = randomNum * 1.0;
         resultado = resultado / 255.0;
+
         return resultado;
     }
 }

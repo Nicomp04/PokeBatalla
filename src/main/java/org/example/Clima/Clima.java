@@ -14,7 +14,6 @@ public class Clima {
 
     public Clima(String clima) {
         this.clima = clima;
-        this.tipos = tipos;
         this.turnos = 5;
 
         List<String> tipos1 = new ArrayList<>();

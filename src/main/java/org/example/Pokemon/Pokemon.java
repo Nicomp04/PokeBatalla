@@ -61,7 +61,6 @@ public class Pokemon {
     public String getNombre(){
         return this.nombre;
     }
-
     public void setVista(PokemonVista vista){this.vista = vista;}
     public void setNombre(String nombre){this.nombre = nombre;}
     public int getNivel() {return this.nivel;}
@@ -80,11 +79,9 @@ public class Pokemon {
     public int getDefensa(){ return this.defensa; }
     public void setVelocidad(int valor) { this.velocidad = valor; }
     public double getAtaque() { return this.ataque;}
-
     public Habilidad getHabilidades(int hablilidadElegida) {
         return habilidades.get(hablilidadElegida);
     }
-
     public void revivir() {
         this.vidaActual = vidaMaxima;
     }
@@ -113,7 +110,6 @@ public class Pokemon {
         vista.mostrarHabilidades(this.habilidades);
     }
     public boolean estaMuerto() {return this.vidaActual <= 0;}
-
     public int getNumeroDeHabilidades() {
         return this.habilidades.size();
     }

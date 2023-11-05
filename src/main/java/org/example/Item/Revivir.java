@@ -48,8 +48,7 @@ public class Revivir extends Item {
             for(int i = 0; i < pokemonesMuertos.size(); i++){
                 logger.info("{}: {} \n",i + 1 ,pokemones.get(i).getNombre());
             }
-            //tenemos que hacerlo con un for para que solo muestre la cantidad de pokemon que tiene
-            // Lee la entrada del usuario y almacenarla en una variable
+
             int pokemonElegido = scanner.nextInt();
             pokemonElegido = pokemonElegido - 1;
             pokemonesMuertos.get(pokemonElegido).revivir();
@@ -59,10 +58,4 @@ public class Revivir extends Item {
 
      }
 
-
-
-    /*@Override
-    public void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo) { //Implementar revivir() en Pokemon.java (puede ser cambiado)
-        pokemonPropio.revivir();
-    }*/
 }

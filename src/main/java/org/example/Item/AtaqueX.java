@@ -19,7 +19,4 @@ public class AtaqueX extends Item {
         pokemon.setAtaque(this.porcentaje);
         this.setUsado(true);
     }
-    /*public boolean aplicarItem(Pokemon pokemon) {
-        return false;
-    }*/
 }

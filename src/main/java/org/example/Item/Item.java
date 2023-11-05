@@ -22,6 +22,5 @@ public abstract class Item {
 
     public void setUsado(boolean bolean){this.usado = bolean;}
 
-   // public abstract void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo);
     public abstract void aplicarItem(List<Pokemon> pokemones);
 }
