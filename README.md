@@ -25,10 +25,11 @@ Proporciona instrucciones detalladas sobre cómo instalar el programa. Incluye t
 git clone https://github.com/Nicomp04/PokeBatalla.git
 cd PokeBatalla
 
+```
 ```bash
 mvn clean install
-
+```
 ```bash
 cd ../PokeBatalla/target
 java -jar PokeBatalla.jar
-
+```
