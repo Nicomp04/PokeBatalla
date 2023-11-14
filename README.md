@@ -13,6 +13,8 @@ Asegúrate de cumplir con los siguientes requisitos previos antes de ejecutar es
 
 3. **Slf4j (Simple Logging Facade for Java):** Este proyecto utiliza SLF4J para la gestión de registros. No es necesario realizar ninguna configuración adicional, ya que las dependencias se manejan automáticamente a través de Maven.
 
+4. **Googlecode json-simple:** Es necesario para que el parser lea correctamente los archivos JSON.
+
 Una vez que hayas instalado y configurado estos requisitos previos, podrás construir y ejecutar el proyecto sin problemas.
 
 ## Instalación
@@ -22,3 +24,11 @@ Proporciona instrucciones detalladas sobre cómo instalar el programa. Incluye t
 ```bash
 git clone https://github.com/Nicomp04/PokeBatalla.git
 cd PokeBatalla
+
+```bash
+mvn clean install
+
+```bash
+cd ../PokeBatalla/target
+java -jar PokeBatalla.jar
+
