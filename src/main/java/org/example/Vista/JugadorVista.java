@@ -46,11 +46,13 @@ public class JugadorVista {
     }
 
     public void mostrarPokemones(List<Pokemon> pokemones) {
-        mostrarMensaje("Es su turno, ¿qué Pokémon quiere cambiar de lugar? Ingrese -1 para terminar.");
+       /* mostrarMensaje("Es su turno, ¿qué Pokémon quiere cambiar de lugar? Ingrese -1 para terminar.");
         for (int i = 0; i < pokemones.size(); i ++){
             Pokemon pokemon = pokemones.get(i);
             this.pokemonVista.mostrarse(pokemon,i+1);
-        }
+        }*/
+        PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
+        pantallaCambiarPokemones.mostrar(pokemones);
     }
 
     public void mostrarPokemonInvalido() {
@@ -78,5 +80,9 @@ public class JugadorVista {
         for(int i = 0; i < items.size(); i++){
             mostrarMensaje((i + 1) + ": "+ items.get(i).getNombre());
         }
+    }
+
+    public void setController(JugadorController jugadorControllerMock) {
+        this.jugadorController = jugadorControllerMock;
     }
 }

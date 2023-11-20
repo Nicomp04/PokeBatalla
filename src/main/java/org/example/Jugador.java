@@ -3,6 +3,7 @@ package org.example;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.JugadorVista;
+import org.example.Vista.PantallaCambiarPokemones;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class Jugador {
     private boolean rendirse;
     private Campo campoDeBatalla;
     private JugadorVista jugadorVista;
+    private JugadorController jugadorController;
 
 
     public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items, int id) {
@@ -29,6 +31,7 @@ public class Jugador {
         this.rendirse = false;
 
         this.jugadorVista = new JugadorVista();
+        this.jugadorController = new JugadorController(jugadorVista);
     }
 
     public Jugador(String nombre, List<Integer> items, List<Integer> pokemones) {
@@ -76,7 +79,7 @@ public class Jugador {
         Pokemon pokemon2;
 
         while (pokemonAMover != -1) {
-            pokemonAMover = jugadorVista.elegirPokemones(pokemones);
+            pokemonAMover = jugadorController.pokemonAMover(pokemones);
 
             if (pokemonAMover == -1) {
                 break;
@@ -173,5 +176,13 @@ public class Jugador {
         }
         campoDeBatalla.validarEstadoEnvenenado(pokemonActivo);
         pokemonActivo.restarTurnoEstados();
+    }
+
+    public void setController(JugadorController jugadorControllerMock) {
+        jugadorVista.setController(jugadorControllerMock);
+    }
+
+    public void setNombre(String j2) {
+        this.nombre = j2;
     }
 }

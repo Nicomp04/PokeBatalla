@@ -19,6 +19,11 @@ public class Juego {
     final Logger logger = LoggerFactory.getLogger(Juego.class);
 
     private JuegoVista vista ;
+
+    public Juego(Jugador j1, Jugador j2){
+        this.jugador1 = j1;
+        this.jugador2 = j2;
+    }
     public Juego() {
         vista = new JuegoVista();
         Generador gen = new Generador();
@@ -82,8 +87,7 @@ public class Juego {
         return jugador1.seRindio() || jugador2.seRindio();
     }
 
-    private boolean quedanPokemones() {
+    public boolean quedanPokemones() {
         return jugador1.tienePokemones() && jugador2.tienePokemones();
     }
-
 }
