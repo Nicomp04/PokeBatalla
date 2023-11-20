@@ -16,6 +16,7 @@ public class JugadorVista {
     public JugadorVista(){
         this.scanner = new Scanner(System.in);
         this.pokemonVista = new PokemonVista();
+        this.jugadorController = new JugadorController();
     }
 
     public void mostrarMensaje(String mensaje) {
