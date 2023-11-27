@@ -90,4 +90,11 @@ public class Juego {
     public boolean quedanPokemones() {
         return jugador1.tienePokemones() && jugador2.tienePokemones();
     }
+
+    public Jugador getJugador1() {
+        return this.jugador1;
+    }
+    public Jugador getJugador2(){
+        return this.jugador2;
+    }
 }
