@@ -1,64 +1,107 @@
 package org.example;
 
-import org.example.Estado.Estado;
-import org.example.Item.Item;
-import org.example.Item.Revivir;
-import org.example.Pokemon.Bulbasur;
-import org.example.Pokemon.Charizard;
+import org.example.Habilidades.*;
+import org.example.Item.*;
+import org.example.Parsers.ParserHabilidad;
+import org.example.Parsers.ParserItems;
+import org.example.Parsers.ParserPartida;
+import org.example.Parsers.ParserPokemon;
 import org.example.Pokemon.Pokemon;
-import org.example.Tipo.*;
-import org.example.Estado.Normal;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.Map;
 
 public class Generador {
 
-    public String generarNombreJugador(){
-        Scanner datoIngresado =  new Scanner(System.in);
-        System.out.println("Ingrese el nombre del Jugador: ");
-        String nombre = datoIngresado.next();
-        return nombre;
-    };
+    private ParserHabilidad parserHabilidad;
+    private ParserPokemon parserPokemon;
+    private ParserItems parserItems;
+    private ParserPartida parserPartida;
 
-    public Integer generarCantidadPokemones(){
-        Scanner datoIngresado = new Scanner(System.in);
-        System.out.println("Indique la cantidad de pokemones que desea guardar.El maximo es 6 ");
-        Integer cantidad = datoIngresado.nextInt();
+    public Map<Integer, Pokemon> pokemonMap;
+    public Map<Integer, Habilidad> habilidadMap;
+    public Map<Integer, Item> itemMap;
 
-        if (cantidad < 0  || cantidad > 6 ){
-            System.out.println("Ingreso un dato inválido");
-            generarCantidadPokemones();
-        }
-        return cantidad;
+    public RepositorioHabilidades repositorioHabilidades;
+
+    public Generador() {
+        this.repositorioHabilidades = new RepositorioHabilidades();
     }
 
-    public List<Pokemon> generarSetPokemon1(int cantidadDePokemones){
-        List<Pokemon> pokemones = new ArrayList<Pokemon>();
-        Pokemon pokemon = new Charizard("carlitos", 6,Tipo.Fuego,100,  10, 10, 30);
-        pokemones.add(pokemon);
+    public List<Jugador> generarPartida(){
+        ParserHabilidad parserHabilidad = new ParserHabilidad();
+        ParserItems parserItems = new ParserItems();
+        ParserPokemon parserPokemon = new ParserPokemon();
+        ParserPartida parserPartida = new ParserPartida();
+        this.habilidadMap = parserHabilidad.parsearHabilidades("src/main/resources/Habilidades.json");
+        this.repositorioHabilidades.cargarMapa(habilidadMap);
+        this.itemMap = parserItems.parsearItems("src/main/resources/Items.json");
+        this.pokemonMap = parserPokemon.parsearPokemones("src/main/resources/pokemones.json",repositorioHabilidades);
+        List<Jugador> resultados = new ArrayList<>();
+        resultados = parserPartida.parsearJugadores("src/main/resources/Partida.json");
 
+        Jugador jugador;
+        jugador = resultados.get(0);
+
+        List<Pokemon> pokemones = this.obtenerPokemones(jugador.getPokemonesParseo());
+        List<Item> items1 = this.obtenerItems(jugador.getItemsParseo());
+
+        Jugador jugador1 = new Jugador(jugador.getNombre(),pokemones,items1,1);
+
+        jugador = resultados.get(1);
+
+        List<Pokemon> pokemones2 = this.obtenerPokemones(jugador.getPokemonesParseo());
+        List<Item> items2 = this.obtenerItems(jugador.getItemsParseo());
+
+        Jugador jugador2 = new Jugador(jugador.getNombre(),pokemones2,items2,2);
+
+        List<Jugador> jugadores = new ArrayList<>();
+        jugadores.add(jugador1);
+        jugadores.add(jugador2);
+
+        return jugadores;
+    }
+
+    private List<Item> obtenerItems(List<Integer> itemsParseo) {
+        List<Item> items = new ArrayList<>();
+
+        for (int i = 0; i < itemsParseo.size(); i += 2){
+            Item item = obtenerItemPorId(itemsParseo.get(i));
+            int cantidad = (itemsParseo.get(i+1));
+            boolean sePuedeAgregarItem = true;
+            for (int j = 0 ; j < cantidad; j++) {
+                if (sePuedeAgregarItem) {
+                    items.add(item);
+                    sePuedeAgregarItem = chekearItem(item);
+                }
+            }
+            sePuedeAgregarItem = true;
+        }
+
+        return items;
+    }
+
+    private boolean chekearItem(Item item){
+        if (item.getNombre() == "Pocion Molesta Alumnos"){
+            return false;
+        }
+        return true;
+    }
+
+    private Item obtenerItemPorId(int id) {
+        return itemMap.get(id);
+    }
+
+    private List<Pokemon> obtenerPokemones(List<Integer> pokemonesParseo){
+        List<Pokemon> pokemones = new ArrayList<>();
+        for (int i = 0; i < pokemonesParseo.size(); i++){
+            pokemones.add(obtenerPokemonPorId(pokemonesParseo.get(i)));
+        }
         return pokemones;
     }
 
-    public List<Pokemon> generarSetPokemon2(int cantidadDePokemones){
-        List<Pokemon> pokemones = new ArrayList<Pokemon>();
-
-        for (int i = 1 ; i <= cantidadDePokemones;i++) {
-            Pokemon pokemon = new Bulbasur("tobi", 10, Tipo.Agua, 120, 6, 30, 15);
-            pokemones.add(pokemon);
-        }
-
-
-        return pokemones;
-    }
-
-    public List<Item> generarSetItems(){
-        List<Item> items = new ArrayList<Item>();
-        Item item = new Revivir();
-        items.add(item);
-
-        return  items;
+    public Pokemon obtenerPokemonPorId(int id) {
+        return pokemonMap.get(id);
     }
 }

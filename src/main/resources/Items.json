@@ -1,0 +1,26 @@
+[
+  {
+    "nombre": "Hyper Poción",
+    "id": 0,
+    "estilo": "Restaurador",
+    "valor": 10
+  },
+  {
+    "nombre": "DefensaX",
+    "id": 4,
+    "estilo": "DefensaX",
+    "valor": 1000
+  },
+  {
+    "nombre": "CuraTodo",
+    "id": 67,
+    "estilo": "CuraTodo",
+    "valor": -1
+  },
+  {
+    "nombre": "Pocion Molesta Alumnos",
+    "id": 67,
+    "estilo": "CuraTodo",
+    "valor": 0.33333
+  }
+]

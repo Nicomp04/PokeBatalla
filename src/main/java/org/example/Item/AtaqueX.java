@@ -1,12 +1,25 @@
 package org.example.Item;
 
-import org.example.Item.ModificadorItem;
 import org.example.Pokemon.Pokemon;
 
-public class AtaqueX extends ModificadorItem {
+import java.util.List;
 
-    @Override
-    public void aplicarItem(Pokemon pokemon) { //Implementar modificarAtaque() en Pokemon.java (puede ser cambiado)
-        pokemon.modificarAtaque(this.porcentaje);
+
+
+public class AtaqueX extends Item {
+
+    private int porcentaje;
+    public AtaqueX(int valor) {
+        this.porcentaje = valor;
+        this.nombre = "AtaqueX";
     }
+    @Override
+    public void aplicarItem(List<Pokemon> pokemones) {
+        Pokemon pokemon = pokemones.get(0);
+        pokemon.setAtaque(this.porcentaje);
+        this.setUsado(true);
+    }
+    /*public boolean aplicarItem(Pokemon pokemon) {
+        return false;
+    }*/
 }

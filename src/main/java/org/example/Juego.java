@@ -1,45 +1,118 @@
 package org.example;
 
+import org.example.Habilidades.RepositorioHabilidades;
 import org.example.Pokemon.Pokemon;
+
+import org.example.Vista.JuegoVista;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 public class Juego {
     private Jugador jugador1;
     private Jugador jugador2;
     private boolean turnoDe1;
+    private Jugador turnoActivo;
+    private RepositorioHabilidades repositorioHabilidades;
+    private Campo campoDeBatalla;
+    final Logger logger = LoggerFactory.getLogger(Juego.class);
 
+    private JuegoVista vista ;
+
+    public Juego(Jugador j1, Jugador j2){
+        this.jugador1 = j1;
+        this.jugador2 = j2;
+    }
     public Juego() {
         Generador gen = new Generador();
 
-        System.out.println("Comenzaremos con la configuración del Jugador 1");
-        Jugador jugador1 = new Jugador(gen.generarNombreJugador(), gen.generarSetPokemon1(gen.generarCantidadPokemones()),gen.generarSetItems());
-        System.out.println("Seguiremos con la configuración del Jugador 2");
-        Jugador jugador2 = new Jugador(gen.generarNombreJugador(), gen.generarSetPokemon2(gen.generarCantidadPokemones()),gen.generarSetItems());
+        List<Jugador> jugadores = gen.generarPartida();
+        this.jugador1 = jugadores.get(0);
+        this.jugador2 = jugadores.get(1);
 
-        this.jugador1 = jugador1;
-        this.jugador2 = jugador2;
+        this.campoDeBatalla = new Campo(jugador1.getPokemonActual(), jugador2.getPokemonActual());
 
-        this.turnoDe1 = definirPrimerTurno();
-    }
-    public boolean definirPrimerTurno(){ // Lo pense asi, puede cambiarse mas adelante
-        Pokemon pokemon1 = this.jugador1.pokemonActual();//
-        Pokemon pokemon2 = this.jugador2.pokemonActual();
+        jugador1.entrarACampo(campoDeBatalla);
+        jugador2.entrarACampo(campoDeBatalla);
 
-        return (pokemon1.getVelocidad() < pokemon2.getVelocidad());
+        //jugador1.elegirPokemonActivo();
+        //jugador2.elegirPokemonActivo();
+
+        this.turnoActivo = definirPrimerTurno();
     }
 
-    public void avanzarTurno(){ // A implementar...
+    /*public Juego() {
+        vista = new JuegoVista();
+        Generador gen = new Generador();
 
-    }
+        List<Jugador> jugadores = gen.generarPartida();
+        this.jugador1 = jugadores.get(0);
+        this.jugador2 = jugadores.get(1);
 
-    public Jugador getJugador1() {
-        return jugador1;
-    }
+        this.campoDeBatalla = new Campo(jugador1.getPokemonActual(), jugador2.getPokemonActual());
 
-    public Jugador getJugador2() {
+        jugador1.entrarACampo(campoDeBatalla);
+        jugador2.entrarACampo(campoDeBatalla);
+
+        //jugador1.elegirPokemonActivo();
+        //jugador2.elegirPokemonActivo();
+
+        this.turnoActivo = definirPrimerTurno();
+
+        vista.mostrarJuegoInicializado();
+
+        this.habilitarTurno();
+    }*/
+
+    public Jugador definirPrimerTurno(){
+        Pokemon pokemon1 = this.jugador1.getPokemonActual();//
+
+        Pokemon pokemon2 = this.jugador2.getPokemonActual();
+
+        if (pokemon1.getVelocidad() > pokemon2.getVelocidad()){
+            return jugador1;
+        }
         return jugador2;
     }
 
-    public boolean getTurnoDe1() {
-        return turnoDe1;
+    public void habilitarTurno(){
+        while(quedanPokemones() && !seRindio()) {
+            if (turnoActivo.equals(jugador1)) {
+                jugador1.usarTurno();
+                turnoActivo = jugador2;
+
+
+            } else {
+                jugador2.usarTurno();
+                turnoActivo = jugador1;
+
+            }
+        }
+        Jugador perdedor = this.perdedor();
+        if(perdedor.seRindio())
+            vista.mostrarCobarde(perdedor);
+        vista.mostarPerdedor(perdedor.getNombre());
+    }
+
+    public Jugador perdedor(){
+        if (jugador1.seRindio() || !jugador1.tienePokemones()){
+            return jugador1;
+        }
+        return jugador2;
+    }
+    private boolean seRindio() {
+        return jugador1.seRindio() || jugador2.seRindio();
+    }
+
+    public boolean quedanPokemones() {
+        return jugador1.tienePokemones() && jugador2.tienePokemones();
+    }
+
+    public Jugador getJugador1() {
+        return this.jugador1;
+    }
+    public Jugador getJugador2(){
+        return this.jugador2;
     }
 }

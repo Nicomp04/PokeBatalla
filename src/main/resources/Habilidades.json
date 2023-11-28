@@ -1,0 +1,86 @@
+[
+  {
+    "nombre": "Lanzallamas",
+    "id": 3,
+    "usos": 10,
+    "estilo": "Ataque",
+    "tipo": "fuego",
+    "estadistica": -1,
+    "afectaAEnemigo": true,
+    "valor": 15,
+    "estado": "PARALIZADO"
+
+  },
+  {
+    "nombre": "Rayo",
+    "id": 56,
+    "usos": 10,
+    "estilo": "Ataque",
+    "tipo": "electrico",
+    "estadistica": -1,
+    "afectaAEnemigo": true,
+    "valor": 25,
+    "estado": "PARALIZADO"
+
+  },
+  {
+    "nombre": "Confundir",
+    "id": 58,
+    "usos": 3,
+    "estilo": "Efecto",
+    "tipo": "electrico",
+    "estadistica": -1,
+    "afectaAEnemigo": true,
+    "valor": 25,
+    "estado": "CONFUNDIDO"
+
+  },
+  {
+    "nombre": "Tsunami",
+    "id":78,
+    "usos": 10,
+    "estilo": "Ataque",
+    "tipo": "agua",
+    "estadistica": -1,
+    "afectaAEnemigo": true,
+    "valor": 30,
+    "estado": "PARALIZADO"
+
+  },
+  {
+  "nombre": "Veneno",
+  "id": 24,
+  "usos": 10,
+  "estilo": "Efecto",
+  "tipo": "veneno",
+  "estadistica": -1,
+    "afectaAEnemigo": true,
+  "valor": 15,
+  "estado": "ENVENENADO"
+
+},
+  {
+    "nombre": "Latigazo Cepa",
+    "id": 2,
+    "usos": 10,
+    "estilo": "Ataque",
+    "tipo": "normal",
+    "estadistica": -1,
+    "afectaAEnemigo": true,
+    "valor": 30,
+    "estado": "PARALIZADO"
+
+  },
+  {
+    "nombre": "Despejar Clima",
+    "id": 98,
+    "usos": 10,
+    "estilo": "Efecto",
+    "tipo": "sin clima",
+    "estadistica": -1,
+    "afectaAEnemigo": false,
+    "valor": 15,
+    "estado": "PARALIZADO"
+
+  }
+]
