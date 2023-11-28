@@ -59,16 +59,19 @@ public class ParserClima{
     }
 
     public Clima getClima(String tipo){
+
+        Clima climaResultado = new Clima();
+
         Collection<Clima> valores = mapaClimaParser.values();
 
         List<Clima> ListaValores = new ArrayList<>(valores);
 
         for (Clima clima: ListaValores){
-            if(clima.getNombre() == tipo){
-                return clima;
+            if(Objects.equals(clima.getNombre(), tipo)){
+                climaResultado = clima;
             }
         }
-        return null;
+        return climaResultado;
 
     }
 

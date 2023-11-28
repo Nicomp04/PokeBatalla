@@ -15,7 +15,6 @@ public class Clima {
     private TipoClima tipoClima;
     private int turnos;
 
-    ParserClima parser = new ParserClima("src/main/resources/Clima.json");
 
     public Clima(String nombre, TipoClima tipoClima, List<Tipo> tipos) {
         this.nombre = nombre;
@@ -42,6 +41,7 @@ public class Clima {
 
 
     public void cambiar(String clima){
+        ParserClima parser = new ParserClima("src/main/resources/Clima.json");
         Clima nuevoClima = parser.getClima(clima);
         this.nombre = nuevoClima.getNombre();
         this.tipos = nuevoClima.getTipos();
@@ -56,10 +56,11 @@ public class Clima {
 
     public Clima sortearInicial(){
         Random random = new Random();
+        ParserClima parser = new ParserClima("src/main/resources/Clima.json");
         double probabilidad = random.nextDouble();
 
         if (probabilidad < 2.0 / 3.0) {
-            return parser.getMapaClimaParser().get(0);
+            return parser.getClima("Normal");
         } else {
             return  parser.climaAleatorio();
         }

@@ -24,7 +24,7 @@ public class ClimaTest {
 
         clima.cambiar("Soleado");
 
-        assertEquals("Soleado", clima.getTipoClima().name());
+        assertEquals("Soleado", clima.getNombre());
     }
     @Test
     public void climaGastaTurnos(){
