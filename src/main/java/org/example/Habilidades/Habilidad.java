@@ -10,7 +10,6 @@ public abstract class Habilidad{
     protected int id;
 
     protected String nombre;
-    protected boolean atacaAEnemigo;
     protected boolean afectaAEnemigo;
     protected TipoFactory tipoFactory;
     private static Map<Integer, Habilidad> mapaHabilidades = new HashMap<>();
@@ -19,16 +18,11 @@ public abstract class Habilidad{
     public abstract void aceptar(Visitor visitor, Pokemon atacante, Pokemon objetivo, Clima clima);
 
     protected int usosDisponibles; //cantidad de veces que se puede usar la habilidad
-    public void usarHabilidad(Pokemon pokemonAtacante, Pokemon pokemonAtacado){}
 
     public abstract void usarEnPokemon(Pokemon pokemon, Pokemon objetivo,Clima clima);
 
     public boolean getAfectaAEnemigo() {
         return afectaAEnemigo;
-    }
-
-    public boolean getAtacaAEnemigo() {
-        return atacaAEnemigo;
     }
 
     public String getNombre() {

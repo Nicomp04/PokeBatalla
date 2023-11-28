@@ -24,7 +24,6 @@ public class Ataque extends Habilidad {
         this.poder = poder;
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
-        this.atacaAEnemigo = true;
         this.afectaAEnemigo = false;
 
         this.habilidadVista = new HabildadVista();

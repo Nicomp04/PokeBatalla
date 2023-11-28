@@ -6,7 +6,8 @@ import org.slf4j.LoggerFactory;
 
 public class Main {
     public static void main(String[] args) {
-        javafx.application.Application.launch(JuegoInicio.class, args);
-        //Juego juego = new Juego();
+        final Logger logger = LoggerFactory.getLogger(Main.class);
+        logger.info("Bienvenido a la Batalla");
+        Juego juego = new Juego();
     }
 }

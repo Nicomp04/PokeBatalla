@@ -1,63 +1,83 @@
 package org.example.Clima;
 
+import org.example.Parsers.ParserClima;
 import org.example.Pokemon.Pokemon;
-import org.example.Tipo.*;
+import org.example.Tipo.Tipo;
 
-import java.util.*;
+import java.util.List;
+import java.util.Objects;
+import java.util.Random;
 
 public class Clima {
-    private String clima;
+
+    public String nombre;
+    public List<Tipo> tipos;
+    private TipoClima tipoClima;
     private int turnos;
-    private List<String> tipos = new ArrayList<>();
-    private static final Map<String, List<String>> map = new HashMap<>();
 
+    ParserClima parser = new ParserClima("src/main/resources/Clima.json");
 
-    public Clima(String clima) {
-        this.clima = clima;
+    public Clima(String nombre, TipoClima tipoClima, List<Tipo> tipos) {
+        this.nombre = nombre;
         this.tipos = tipos;
+        this.tipoClima = tipoClima;
         this.turnos = 5;
+    }
 
-        List<String> tipos1 = new ArrayList<>();
-        tipos1.add("Fuego");
+    public Clima() {
 
-        List<String> tipos2 = new ArrayList<>();
-        tipos2.add("Agua");
-        tipos2.add("Planta");
+    }
 
-        List<String> tipos3 = new ArrayList<>();
-        tipos3.add("Tierra");
-        tipos3.add("Roca");
+    public int getTurno() {
+        return turnos;
+    }
 
-        List<String> tipos4 = new ArrayList<>();
-        tipos4.add("Fantasma");
-        tipos4.add("Psiquio");
+    public String getNombre() {
+        return nombre;
+    }
 
-        List<String> tipos5 = new ArrayList<>();
-        tipos5.add("Electrico");
+    public TipoClima getTipoClima() {
+        return tipoClima;
+    }
 
-        List<String> tipos6 = new ArrayList<>();
-        tipos6.add("Volador");
 
-        List<String> tiposnull = new ArrayList<>();
+    public void cambiar(String clima){
+        Clima nuevoClima = parser.getClima(clima);
+        this.nombre = nuevoClima.getNombre();
+        this.tipos = nuevoClima.getTipos();
+        this.tipoClima = nuevoClima.getTipoClima();
+        this.turnos = 5;
+    }
 
-        map.put("soleado", tipos1);
-        map.put("lluvia", tipos2);
-        map.put("arena", tipos3);
-        map.put("niebla", tipos4);
-        map.put("tormenta de rayos", tipos5 );
-        map.put("huracan", tipos6);
-        map.put("sin clima",tiposnull);
+    private List<Tipo> getTipos() {
+        return this.tipos;
+    }
 
-        this.tipos = map.get(clima);
+
+    public Clima sortearInicial(){
+        Random random = new Random();
+        double probabilidad = random.nextDouble();
+
+        if (probabilidad < 2.0 / 3.0) {
+            return parser.getMapaClimaParser().get(0);
+        } else {
+            return  parser.climaAleatorio();
+        }
+    }
+
+    public void restarTurno(){
+        if(turnos > 0) {
+            this.turnos--;
+        }
     }
 
     public boolean compararTipos(Pokemon pokemon){
-        this.tipos = map.get(clima);
-        if (tipos == null) {
-
-            return false;
+        for(Tipo tp: tipos){
+            if(Objects.equals(tp.getId(), pokemon.getTipo().getId())){
+                return true;
+            }
         }
-        return tipos.contains(pokemon.getTipo().getId());
+        return false;
     }
 
     public double mejoraPorTipo(Pokemon pokemon, double ataque){
@@ -67,45 +87,9 @@ public class Clima {
         return 0;
     }
 
-    public void restarTurno(){
-        if(turnos > 0) {
-            this.turnos--;
-        }
-        if (turnos <= 0){
-            sortearInicial();
-        }
+    public boolean esClimaPeligroso(){
+        return tipoClima == TipoClima.PELIGROSO;
     }
 
-    public void sortearInicial(){
-        Random random = new Random();
-        double probabilidad = random.nextDouble();
-
-        if (probabilidad < 2.0 / 3.0) {
-            this.clima = "sin clima";
-            this.cambiar(clima);
-        } else {
-            String[] otrosClimas = {"soleado","lluvia", "arena", "niebla", "tormenta de rayos", "huracan"};
-            int indiceClima = random.nextInt(otrosClimas.length);
-             this.clima = otrosClimas[indiceClima];
-             cambiar(clima);
-        }
-    }
-
-    public void cambiar(String clima){
-        this.clima = clima;
-        this.turnos = 5;
-    }
-
-    public int getTurno() { return this.turnos;
-    }
-
-    public String getClima(){
-        return this.clima;
-    }
-
-    public boolean climaPeligroso() {
-        if (this.getClima() == "tormenta de rayos" || this.getClima() == "huracan")
-            return true;
-        return false;
-    }
 }
+

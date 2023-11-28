@@ -21,7 +21,7 @@ public class CampoVista {
 
     public void mostrarClima(Clima clima){
         mostrarMensaje("--------------------------");
-        mostrarMensaje(clima.getClima() + " -> " + clima.getTurno());
+        mostrarMensaje(clima.getTipoClima().name() + " -> " + clima.getTurno());
     }
 
     public void mostrarEnvenenado(String nombre,double resto) {
