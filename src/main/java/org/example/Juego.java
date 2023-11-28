@@ -25,6 +25,24 @@ public class Juego {
         this.jugador2 = j2;
     }
     public Juego() {
+        Generador gen = new Generador();
+
+        List<Jugador> jugadores = gen.generarPartida();
+        this.jugador1 = jugadores.get(0);
+        this.jugador2 = jugadores.get(1);
+
+        this.campoDeBatalla = new Campo(jugador1.getPokemonActual(), jugador2.getPokemonActual());
+
+        jugador1.entrarACampo(campoDeBatalla);
+        jugador2.entrarACampo(campoDeBatalla);
+
+        //jugador1.elegirPokemonActivo();
+        //jugador2.elegirPokemonActivo();
+
+        this.turnoActivo = definirPrimerTurno();
+    }
+
+    /*public Juego() {
         vista = new JuegoVista();
         Generador gen = new Generador();
 
@@ -37,15 +55,15 @@ public class Juego {
         jugador1.entrarACampo(campoDeBatalla);
         jugador2.entrarACampo(campoDeBatalla);
 
-        jugador1.elegirPokemonActivo();
-        jugador2.elegirPokemonActivo();
+        //jugador1.elegirPokemonActivo();
+        //jugador2.elegirPokemonActivo();
 
         this.turnoActivo = definirPrimerTurno();
 
         vista.mostrarJuegoInicializado();
 
         this.habilitarTurno();
-    }
+    }*/
 
     public Jugador definirPrimerTurno(){
         Pokemon pokemon1 = this.jugador1.getPokemonActual();//

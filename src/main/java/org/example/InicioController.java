@@ -21,11 +21,11 @@ public class InicioController {
         this.stage = stage;
     }
 
-    @FXML
-    private void onHelloButtonClick() throws IOException {
-        welcomeText.setText("¡Iniciando Juego!");
+    //@FXML
+   // private void onHelloButtonClick() throws IOException {
+      //  welcomeText.setText("¡Iniciando Juego2!");
         //cambiarAPantallaJuego();
-    }
+    //}
 
    /* private void cambiarAPantallaJuego() throws IOException {
         FXMLLoader loader = new FXMLLoader(PokemonApp.class.getResource("/org/example/pantallaJuego.fxml"));

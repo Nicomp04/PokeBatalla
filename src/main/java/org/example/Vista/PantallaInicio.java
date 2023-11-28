@@ -23,6 +23,7 @@ public class PantallaInicio extends VBox {
 
     public PantallaInicio(Stage stage) {
         super();
+        this.stage = stage;
 
         btnInicio = new Button("Iniciar Juego");
         btnInicio.setOnAction(e -> {
@@ -41,16 +42,16 @@ public class PantallaInicio extends VBox {
     private void cambiarAPantallaJuego() throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/pantallaJuego1.fxml"));
-            Parent root = loader.load();
+            Parent root = (Parent) loader.load();
 
             // Obtén el controlador de la pantalla de juego y establece el Stage y juego
             PantallaBatallaController pantallaBatallaController = loader.getController();
             pantallaBatallaController.setStage(stage);
-            Juego juego = new Juego();
-            pantallaBatallaController.setJuego(juego);
 
-            Scene scene = new Scene(root, 320, 240);
+            Scene scene = new Scene(root);
+
             stage.setTitle("Pantalla de Juego");
+            stage.setFullScreen(true);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

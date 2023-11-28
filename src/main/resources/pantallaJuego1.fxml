@@ -9,10 +9,20 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.Font?>
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaBatallaController" style="-fx-background-color: blue;">
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaBatallaController" style="-fx-background-color: grey;">
     <!-- Parte inferior e izquierda -->
-    <ProgressBar fx:id="jugadorPokemonHealthBar" layoutX="50.0" layoutY="360.0" prefWidth="150.0"/>
-    <Text fx:id="jugadorPokemonName" layoutX="50.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jugador Pokémon">
+    <ImageView fx:id="jugadorPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="75.0" layoutY="500.0"/>
+    <ProgressBar fx:id="jugadorSaludBar" layoutX="80.0" layoutY="660.0" prefWidth="150.0"/>
+    <Text fx:id="jugadorPokemonNombre" layoutX="110.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Text>
+
+    <!-- Parte Sup e Der -->
+    <ImageView fx:id="enemigoPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="1300.0" layoutY="30.0"/>
+    <ProgressBar fx:id="enemigoSaludBar" layoutX="1300.0" layoutY="200.0" prefWidth="150.0"/>
+    <Text fx:id="enemigoPokemonNombre" layoutX="1350.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0">
         <font>
             <Font name="System Bold" size="14.0" />
         </font>

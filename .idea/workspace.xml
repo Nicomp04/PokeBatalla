@@ -5,40 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_sdk_21_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/com/example/demo/hello-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/InicioController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaPelea.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/bulbaaaa.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/chari.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/oster.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/inicio1.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org.example/inicio.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org.example/pantallaJuego.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pantallaJuego1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_sdk_20_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javaf.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_10_23_19_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2_10_23_19_02__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InicioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/JuegoInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/JugadorVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/JugadorVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/chari.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/chari.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pantallaJuego1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pantallaJuego1.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +93,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources" />
+      <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources\images" />
       <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources\org.example" />
     </key>
   </component>
@@ -249,7 +225,8 @@
       <workItem from="1701105575479" duration="441000" />
       <workItem from="1701106030014" duration="593000" />
       <workItem from="1701106664326" duration="4212000" />
-      <workItem from="1701111432044" duration="3814000" />
+      <workItem from="1701111432044" duration="4115000" />
+      <workItem from="1701138847008" duration="3493000" />
     </task>
     <servers />
   </component>
@@ -259,6 +236,16 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PokeBatalla$Test_in_PokeBatalla.ic" NAME="Test in PokeBatalla Coverage Results" MODIFIED="1699065262565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -10,6 +10,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.example.Pokemon.Pokemon;
 
+import java.util.Objects;
+
 public class PantallaBatallaController {
     @FXML
     private Stage stage;
@@ -43,29 +45,24 @@ public class PantallaBatallaController {
         // Lógica del segundo ataque
     }
 
-    public void setJuego(Juego juego){
-        this.juego = juego;
-        inicializar();
-    }
 
-    public void inicializar() {
-        //Pokemon jugadorPokemon = juego.getJugador1().getPokemonActual();
-        //Pokemon enemigoPokemon = juego.getJugador2().getPokemonActual();
+    public void initialize() {
+        this.juego = new Juego();
+        Pokemon jugadorPokemon = juego.getJugador1().getPokemonActual();
+        Pokemon enemigoPokemon = juego.getJugador2().getPokemonActual();
 
         // Ruta relativa al directorio de recursos
-        String rutaImagen = "/chari.gif";
-        //String rutaimagen2 = "/oster.gif";
+        String rutaImagen = "/resources/chari.gif";
+        String rutaimagen2 = "/resources/oster.gif";
 
         // Cargar la imagen desde el ClassLoader
-        Image imagen = new Image(getClass().getResourceAsStream(rutaImagen));
-        jugadorPokemonImage.setImage(imagen);
-        jugadorSaludBar.setProgress(75);
-        jugadorPokemonNombre.setText("juan");
+        this.jugadorPokemonImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif"))));
+        this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
+        this.jugadorPokemonNombre.setText(jugadorPokemon.getNombre());
 
-        //Image imagen2 = new Image(getClass().getResourceAsStream(rutaimagen2));
-        //enemigoPokemonImage.setImage(imagen2);
-        //enemigoSaludBar.setProgress(enemigoPokemon.getVidaActual());
-        //enemigoPokemonNombre.setText(enemigoPokemon.getNombre());
+        enemigoPokemonImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/oster.gif"))));
+        enemigoSaludBar.setProgress((double)enemigoPokemon.getVidaActual() / enemigoPokemon.getVidaMaxima());
+        enemigoPokemonNombre.setText(enemigoPokemon.getNombre());
 
     }
 

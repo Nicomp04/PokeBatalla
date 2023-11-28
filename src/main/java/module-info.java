@@ -1,4 +1,5 @@
 module PokeBatalla {
+    opens org.example;
     requires org.json;
     requires javafx.graphics;
     requires javafx.fxml;
