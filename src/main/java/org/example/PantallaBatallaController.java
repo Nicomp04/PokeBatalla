@@ -22,6 +22,7 @@ import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.PantallaCambiarPokemones;
 import org.example.Vista.PantallaItems;
+import org.example.Vista.PantallaCambiarPokemones;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -148,6 +149,7 @@ public class PantallaBatallaController {
         if (habilidadSeleccionada != null) {
             this.juego.getCampo().identificarAtacante(juego.getTurnoActivo().getId());
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
+            this.juego.habilitarTurno();
             ordenarEstados();
         }
     }
@@ -165,8 +167,7 @@ public class PantallaBatallaController {
     private void cambiarPokemones(){
         PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
         pantallaCambiarPokemones.setStage(this.stage);
-        pantallaCambiarPokemones.mostrar(this.juego.getTurnoActivo());
-        ordenarEstados();
+        pantallaCambiarPokemones.mostrar(this.juego.getTurnoActivo().getPokemones());
     }
 
     @FXML
