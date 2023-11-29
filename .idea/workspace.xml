@@ -5,25 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaDerrotaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pantallaDerrota.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<<<< Temporary merge branch 1
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Clima/Clima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Clima/Clima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/TipoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/TipoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pokemones.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pokemones.json" afterDir="false" />
-=========
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaCambiarPokemones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaCambiarPokemones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" afterDir="false" />
->>>>>>>>> Temporary merge branch 2
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,28 +60,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<<<< Temporary merge branch 1
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_directory_selection": "C:/Users/nicol/OneDrive/Escritorio/Portfolio/PokeBatalla/src/main/java/org/example",
-    "last_opened_file_path": "C:/Users/nicol/Downloads/openjfx-21.0.1_windows-x64_bin-sdk/javafx-sdk-21.0.1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.31839082",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
-=========
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
@@ -103,8 +67,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;juancpuch4&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/nicol/OneDrive/Escritorio/Portfolio/PokeBatalla/src/main/java/org/example&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/nicol/Downloads/openjfx-21.0.1_windows-x64_bin-sdk/javafx-sdk-21.0.1&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -115,9 +80,8 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.31839082&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
->>>>>>>>> Temporary merge branch 2
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example" />
@@ -136,6 +100,11 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.example" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
   </component>
   <component name="RunManager" selected="Application.main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -237,17 +206,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.main" />
-<<<<<<<<< Temporary merge branch 1
         <item itemvalue="JUnit.HabilidadesTest.testCambioDeEstadoDeUnPokemonPorHabilidad" />
         <item itemvalue="JUnit.HabilidadesTest.testCambioDeDefenzaDeUnPokemonPorHabilidad" />
         <item itemvalue="Application.PokemonApp" />
         <item itemvalue="Application.Main" />
-=========
-        <item itemvalue="JUnit.JuegoTest.determinaPerdedorCorrectamente" />
-        <item itemvalue="Application.PokemonApp" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.JuegoInicio" />
->>>>>>>>> Temporary merge branch 2
       </list>
     </recent_temporary>
   </component>

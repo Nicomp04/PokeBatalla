@@ -173,6 +173,7 @@ public class PantallaBatallaController {
         pantallaCambiarPokemones.setStage(this.stage);
         pantallaCambiarPokemones.mostrar(jugadorActivo);
 
+
     }
 
     @FXML
@@ -290,23 +291,4 @@ public class PantallaBatallaController {
         }
     }
 
-
-   /* public void usaSuTurnoContra(Jugador jugadorNoActivo) {
-        jugadorPokemon = juego.getTurnoActivo().getPokemonActual();
-        enemigoPokemon = jugadorNoActivo.getPokemonActual();
-
-        // Cargar la imagen desde el ClassLoader
-        //this.jugadorPokemonImage.setImage(this.imagen2);
-        this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
-        this.jugadorPokemonNombre.setText(jugadorPokemon.getNombre());
-
-        //enemigoPokemonImage.setImage(this.imagen1);
-        enemigoSaludBar.setProgress((double)enemigoPokemon.getVidaActual() / enemigoPokemon.getVidaMaxima());
-        enemigoPokemonNombre.setText(enemigoPokemon.getNombre());
-
-        habilidadesListView.setItems(FXCollections.observableArrayList());
-        descripcionVBox.requestFocus();
-    }*/
-
-    // Puedes agregar más métodos y lógica según sea necesario
 }

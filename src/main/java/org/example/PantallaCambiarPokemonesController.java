@@ -44,14 +44,17 @@ public class PantallaCambiarPokemonesController {
     @FXML
     private VBox listaPokemonsVBox = new VBox();
 
+    private Jugador jugador;
+
 
     public void setStage(Stage stage) {
         this.listaPokemones = new StackPane[3];
         this.stage = stage;
     }
 
-    public void crearListaDePokemonesViewer(String nombreJugador, List<Pokemon> pokemones){
-        this.jugadorNombre.setText(nombreJugador);
+    public void crearListaDePokemonesViewer(Jugador jugador, List<Pokemon> pokemones){
+        this.jugador = jugador;
+        this.jugadorNombre.setText(jugador.getNombre());
         Image imagen = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif")));
         this.jugadorImagen.setImage(imagen);
         this.pokemonNombre.setText(pokemones.get(0).getNombre());
@@ -80,14 +83,19 @@ public class PantallaCambiarPokemonesController {
 
 
 
-    public int handleMouseClicked(MouseEvent mouseEvent) {
+    public void handleMouseClicked(MouseEvent mouseEvent) {
+        int pos = -1;
         StackPane stackPane = (StackPane) mouseEvent.getSource();
         String identificador = stackPane.getId();
-        if (identificador.equals("0")){return 0;}
-        else if (identificador.equals("1")){return 1;}
-        else if (identificador.equals("2")){return 2;}
-        else if (identificador.equals("3")){return 3;}
+        if (identificador.equals("0")){pos = 0;}
+        else if (identificador.equals("1")){pos = 1;}
+        else if (identificador.equals("2")){pos = 2;}
+        else if (identificador.equals("3")){pos = 3;}
 
-        return -1;
+        System.out.println("Entro");
+        jugador.elegirPokemon(pos);
+        System.out.println(jugador.getPokemones().get(0).getNombre());
+        System.out.println(jugador.getPokemones().get(1).getNombre());
+
     }
 }

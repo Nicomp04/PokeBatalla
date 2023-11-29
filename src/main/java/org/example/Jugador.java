@@ -192,4 +192,19 @@ public class Jugador {
     }
 
     public List<Item> getItems() {return this.items;}
+
+    public void elegirPokemon(int posicion) {
+        if (posicion != -1){
+            if(!pokemones.get(posicion).estaMuerto() || !(pokemones.size() < posicion)){
+
+                Pokemon pokemonActivar = pokemones.get(posicion);
+                Pokemon pokemonDesactivar = pokemones.get(0);
+
+                pokemones.set(0, pokemonActivar);
+                pokemones.set(posicion, pokemonDesactivar);
+
+                campoDeBatalla.cambiarPokemon(pokemones.get(0), id);
+            }
+        }
+    }
 }

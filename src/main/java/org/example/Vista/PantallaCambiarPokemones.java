@@ -44,7 +44,7 @@ public class PantallaCambiarPokemones {
             // Obtén el controlador de la pantalla de juego y establece el Stage
             PantallaCambiarPokemonesController pantallaCambiarPokemonesController = loader.getController();
             pantallaCambiarPokemonesController.setStage(stage);
-            pantallaCambiarPokemonesController.crearListaDePokemonesViewer(j.getNombre(), j.getPokemones());
+            pantallaCambiarPokemonesController.crearListaDePokemonesViewer(j, j.getPokemones());
 
             Scene scene = new Scene(root);
 
