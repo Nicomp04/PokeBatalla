@@ -1,16 +1,9 @@
 package org.example;
 
 import javafx.application.Application;
-
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.example.Vista.PantallaInicio;
-
-
-import java.io.IOException;
 
 public class main extends Application {
     @Override

@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.Clima.Clima;
+import org.example.Clima.TipoClima;
 import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
@@ -27,7 +28,8 @@ public class Campo {
         this.campoVista = new CampoVista();
         this.pokemonVista = new PokemonVista();
 
-        this.clima = new Clima("sin clima");
+        Clima clima = new Clima();
+        this.clima = clima.sortearInicial();
     }
 
     public Pokemon getPokemonesActivos(int num) {
@@ -137,7 +139,7 @@ public class Campo {
 
 
     public void climaAfecta() {
-        if(clima.climaPeligroso()){
+        if(clima.esClimaPeligroso()){
             for (Pokemon pokemon: pokemonesActivos)
                 if(!clima.compararTipos(pokemon)){
                     pokemon.modificarHp(- (pokemon.getVidaActual() * 3 / 100));

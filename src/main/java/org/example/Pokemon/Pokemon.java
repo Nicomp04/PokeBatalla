@@ -1,9 +1,12 @@
 package org.example.Pokemon;
 import org.example.Estado.Estados;
+import org.example.Habilidades.Efecto;
 import org.example.Habilidades.Habilidad;
 import org.example.Habilidades.RepositorioHabilidades;
 import org.example.Tipo.*;
 import org.example.Vista.PokemonVista;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +24,7 @@ public class Pokemon {
     private int defensa;
     private int ataque;
     private List<Estados> estados = new ArrayList<>();
+    final Logger logger = LoggerFactory.getLogger(Pokemon.class);
 
     private TipoFactory tipoFactory;
     private PokemonVista vista;
@@ -134,6 +138,8 @@ public class Pokemon {
     public void agregarEstado(Estados estado) {
         if (!getEstados().contains(estado)){
             this.estados.add(estado);
+        }else{
+            logger.info("El pokemon ya tiene este estado alterado");
         }
     }
 }

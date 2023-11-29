@@ -1,6 +1,7 @@
 package org.example.Habilidades;
 
 import org.example.Clima.Clima;
+import org.example.Clima.TipoClima;
 import org.example.Estado.Estados;
 import org.example.Pokemon.Pokemon;
 import org.example.Visitor;
@@ -15,7 +16,6 @@ public class Efecto extends Habilidad{
         this.usosDisponibles = usosDisponibles;
         this.estado = estado;
         this.estado.setDuracion(usosDisponibles);
-        this.atacaAEnemigo = false;
         this.afectaAEnemigo = afectaAEnemigo;
         this.climaCambiar = tipo;
         this.tipo = tipo;
@@ -28,14 +28,9 @@ public class Efecto extends Habilidad{
     @Override
     public void usarEnPokemon(Pokemon pokemonPropio, Pokemon objetivo, Clima clima) {
         if(afectaAEnemigo){
-            if (objetivo.getEstados().contains(this.estado)) {
-
-            }
-            else{
-                objetivo.agregarEstado(this.estado);
-            }
+            objetivo.agregarEstado(this.estado);
         }else{
-                clima.cambiar(this.climaCambiar);
+            clima.cambiar(this.climaCambiar);
         }
     }
 }

@@ -1,12 +1,11 @@
 package org.example.Parsers;
+import org.example.Clima.Clima;
 import org.example.Estado.Estados;
-import org.example.Habilidades.Ataque;
-import org.example.Habilidades.Efecto;
-import org.example.Habilidades.Habilidad;
-import org.example.Habilidades.Modificacion;
+import org.example.Habilidades.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+//import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -37,13 +36,19 @@ public class ParserHabilidad {
                 String estadoInt = jsonHabilidad.getString("estado");
                 Estados estado = Estados.valueOf(estadoInt);
 
-                Habilidad habilidad;
+                Habilidad habilidad; // ver de cambiar a algo mas escalable
                 if (estilo.equals("Ataque")) {
                     habilidad = new Ataque(id, nombre, usos, tipo, valor);
-                } else if (estilo.equals("Modificacion")) {
-                    habilidad = new Modificacion(id, nombre, usos, estadistica, valor,tipo);
+                } else if (estilo.equals("ModificacionDeAtaque")) {
+                    habilidad = new ModificarAtaque(id, nombre, usos, estadistica, valor,tipo);
+                } else if (estilo.equals("ModificacionDeVida")) {
+                    habilidad = new ModificarHp(id, nombre, usos, estadistica, valor,tipo);
+                } else if (estilo.equals("ModificacionDeDefensa")) {
+                    habilidad = new ModificarDefensa(id, nombre, usos, estadistica, valor,tipo);
+                } else if (estilo.equals("ModificacionDeVelocidad")) {
+                    habilidad = new ModificarVelocidad(id, nombre, usos, estadistica, valor,tipo);
                 } else{
-                    habilidad = new Efecto(id, nombre, usos, estado,afectaAEnemigo,tipo);
+                    habilidad = new Efecto(id, nombre, usos, estado, afectaAEnemigo, tipo);
                 }
                 mapaHabilidades.put(id, habilidad);
             }
