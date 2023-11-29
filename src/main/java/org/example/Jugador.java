@@ -25,6 +25,9 @@ public class Jugador {
     public int getId() {
         return id;
     }
+    public List<Pokemon> getPokemones() {
+        return pokemones;
+    }
 
     public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items, int id) {
         this.nombre = nombre;
