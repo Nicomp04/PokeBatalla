@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaDerrotaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/pantallaDerrota.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Clima/Clima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Clima/Clima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/TipoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/TipoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pokemones.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pokemones.json" afterDir="false" />
-    </list>
+    <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -235,7 +224,7 @@
       <workItem from="1701106664326" duration="4212000" />
       <workItem from="1701111432044" duration="4115000" />
       <workItem from="1701138847008" duration="5501000" />
-      <workItem from="1701193059731" duration="25811000" />
+      <workItem from="1701193059731" duration="26155000" />
     </task>
     <servers />
   </component>
