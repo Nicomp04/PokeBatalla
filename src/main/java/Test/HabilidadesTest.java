@@ -64,7 +64,7 @@ public class HabilidadesTest {
     @Test
     public void testCambioDeDefenzaDeUnPokemonPorHabilidad(){
         // Arrange:
-        Modificacion habilidadTest = new Modificacion(17, "Surf", 5, 3, 10);
+        Modificacion habilidadTest = new Modificacion(17, "Surf", 5, 3, 10,"fuego");
 
         Pokemon pokemonAtacante = new Pokemon("Blastoise",2,"Agua",20,200,40,50,80);
 

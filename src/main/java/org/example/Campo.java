@@ -34,7 +34,7 @@ public class Campo {
         return pokemonesActivos.get(num);
     }
 
-    private void identificarAtacante(int id) {
+    public void identificarAtacante(int id) {
         if (id == 1 ){
             pokemonAtacante = pokemonesActivos.get(0);
             pokemonAtacado = pokemonesActivos.get(1);
@@ -46,7 +46,7 @@ public class Campo {
     }
 
 
-    public void usarHabilidad(int idAtacante){
+    /*public void usarHabilidad(int idAtacante){
         boolean despierto;
         boolean paralizado;
         boolean confundido;
@@ -63,6 +63,24 @@ public class Campo {
 
         if (despierto && !paralizado){
             this.aplicarHabilidad(habilidad);
+        }
+        campoVista.mostrarClima(clima);
+        clima.restarTurno();
+    }*/
+
+    public void usarHabilidad(Habilidad habilidad){
+        boolean despierto;
+        boolean paralizado;
+        boolean confundido;
+        despierto = validarEstadoDespierto(pokemonAtacante.getEstados());
+        paralizado = validarEstadoParalizado(pokemonAtacante.getEstados());
+
+        if (pokemonAtacante.getEstados().contains(Estados.CONFUNDIDO))
+            this.verQueTanConfundido(pokemonAtacante);
+
+        if (despierto && !paralizado){
+            this.aplicarHabilidad(habilidad);
+
         }
         campoVista.mostrarClima(clima);
         clima.restarTurno();
@@ -105,7 +123,7 @@ public class Campo {
             campoVista.entradaInvalida();
             return elegirHabilidad(pokemonAtacante);
         }
-        return pokemonAtacante.getHabilidades(habilidadElegida - 1);
+        return pokemonAtacante.getHabilidad(habilidadElegida - 1);
     }
 
     public void aplicarHabilidad(Habilidad habilidadElegida){

@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.Habilidades.Habilidad;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.JugadorVista;
@@ -21,6 +22,9 @@ public class Jugador {
     private JugadorVista jugadorVista;
     private JugadorController jugadorController;
 
+    public int getId() {
+        return id;
+    }
 
     public Jugador(String nombre, List<Pokemon> pokemones, List<Item> items, int id) {
         this.nombre = nombre;
@@ -108,7 +112,7 @@ public class Jugador {
         campoDeBatalla.climaAfecta();
         switch (accionElegida){
             case 1:
-                campoDeBatalla.usarHabilidad(id);
+                //campoDeBatalla.usarHabilidad();
                 break;
             case 2:
                 this.usarItem();

@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaBatallaController" style="-fx-background-color: grey;">
     <!-- Parte inferior e izquierda -->
-    <ImageView fx:id="jugadorPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="75.0" layoutY="500.0"/>
-    <ProgressBar fx:id="jugadorSaludBar" layoutX="80.0" layoutY="660.0" prefWidth="150.0"/>
-    <Text fx:id="jugadorPokemonNombre" layoutX="110.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0">
+    <ImageView fx:id="jugadorPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="75.0" layoutY="400.0"/>
+    <ProgressBar fx:id="jugadorSaludBar" layoutX="80.0" layoutY="550.0" prefWidth="150.0"/>
+    <Text fx:id="jugadorPokemonNombre" layoutX="110.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0">
         <font>
             <Font name="System Bold" size="14.0" />
         </font>
@@ -27,4 +27,38 @@
             <Font name="System Bold" size="14.0" />
         </font>
     </Text>
+<!-- BOOTONERA -->
+    <!-- Parte Inferior: Descripción y Botonera -->
+    <HBox fx:id="parteInferiorHBox" spacing="400.0" alignment="CENTER"  prefWidth="1800" prefHeight="160.0" layoutY="650.0" style="-fx-background-color: #333333;">
+
+        <!-- Descripción (Parte Izquierda) -->
+        <VBox fx:id="descripcionVBox" spacing="400.0" alignment="CENTER" layoutX="300">
+            <Text text="Charizard esta listo para atacar"  fill="white" layoutX="200"/>
+        </VBox>
+        <VBox fx:id="habilidadesVBox" visible="false" spacing="200.0" alignment="CENTER" layoutX="300">
+            <ListView fx:id="habilidadesListView" onMouseClicked="#usarHabilidad"></ListView>
+        </VBox>
+
+        <!-- Botonera (Parte Derecha) -->
+        <VBox fx:id="botoneraVBox" spacing="100.0" alignment="CENTER_RIGHT">
+              <HBox spacing="20.0" alignment="CENTER">
+                  <VBox spacing="10.0" alignment="CENTER">
+                      <Button fx:id="luchaButton" text=" Lucha " prefWidth="80.0" onAction="#elegirHabilidades" />
+                      <Button fx:id="mochilaButton" text=" Mochila " prefWidth="80.0" onAction="#elegirItems" />
+                  </VBox>
+
+                  <!--Segundo bloque de botones (3 y 4)-->
+               <VBox spacing="10.0" alignment="CENTER">
+                   <Button fx:id="pokemonButton" text=" Pokemon " prefWidth="80.0" onAction="#cambiarPokemones" />
+                   <Button fx:id="huirButton" text=" Huir " prefWidth="80.0" onAction="#huir"/>
+               </VBox>
+           </HBox>
+       </VBox>
+        <VBox fx:id="detallesHabilidadVBox" visible="false" spacing="10.0" alignment="CENTER_RIGHT">
+            <Label fx:id="usosLabel" text="Usos restantes: "/>
+            <Label fx:id="tipoLabel" text="Tipo: " />
+        </VBox>
+
+    </HBox>
+
 </AnchorPane>

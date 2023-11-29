@@ -54,6 +54,7 @@ public class PantallaInicio extends VBox {
             stage.setFullScreen(true);
             stage.setScene(scene);
             stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -82,9 +82,10 @@ public class Pokemon {
     public void setVelocidad(int valor) { this.velocidad = valor; }
     public double getAtaque() { return this.ataque;}
 
-    public Habilidad getHabilidades(int hablilidadElegida) {
+    public Habilidad getHabilidad(int hablilidadElegida) {
         return habilidades.get(hablilidadElegida);
     }
+    public List<Habilidad> getHabilidades(){return this.habilidades;}
 
     public void revivir() {
         this.vidaActual = vidaMaxima;

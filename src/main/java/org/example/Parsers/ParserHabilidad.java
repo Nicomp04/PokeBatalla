@@ -41,7 +41,7 @@ public class ParserHabilidad {
                 if (estilo.equals("Ataque")) {
                     habilidad = new Ataque(id, nombre, usos, tipo, valor);
                 } else if (estilo.equals("Modificacion")) {
-                    habilidad = new Modificacion(id, nombre, usos, estadistica, valor);
+                    habilidad = new Modificacion(id, nombre, usos, estadistica, valor,tipo);
                 } else{
                     habilidad = new Efecto(id, nombre, usos, estado,afectaAEnemigo,tipo);
                 }

@@ -18,6 +18,7 @@ public class Efecto extends Habilidad{
         this.atacaAEnemigo = false;
         this.afectaAEnemigo = afectaAEnemigo;
         this.climaCambiar = tipo;
+        this.tipo = tipo;
     }
 
     @Override
