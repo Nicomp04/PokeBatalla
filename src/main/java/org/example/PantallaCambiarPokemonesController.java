@@ -51,6 +51,9 @@ public class PantallaCambiarPokemonesController {
 
     public void crearListaDePokemonesViewer(String nombreJugador, List<Pokemon> pokemones){
         this.jugadorNombre.setText(nombreJugador);
+        Image imagen = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif")));
+        this.jugadorImagen.setImage(imagen);
+
         Integer j = listaPokemonsVBox.getChildren().size();
         Integer tamanoVBox = j != null ? j : 0;
         for (int i = 0; i < tamanoVBox && i < pokemones.size(); i++){
@@ -65,9 +68,15 @@ public class PantallaCambiarPokemonesController {
             Label pokemonNombre = new Label();
             pokemonNombre.setText(pokemones.get(i).getNombre());
 
-            this.listaPokemones[i].getChildren().add(pokemosnSaludBar);
-            this.listaPokemones[i].getChildren().add(pokemonNombre);
+            listaPokemonsVBox = new VBox();
+            listaPokemonsVBox.getChildren().add(pokemosnSaludBar);
+            listaPokemonsVBox.getChildren();
+
+            //this.listaPokemones[i].getChildren().add(pokemosnSaludBar);
+            //this.listaPokemones[i].getChildren().add(pokemonNombre);
         }
+
+
     }
 
 

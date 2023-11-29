@@ -19,8 +19,11 @@
             <ImageView fx:id="jugadorImagen" fitHeight="300.0" fitWidth="300.0" layoutX="75.0" layoutY="500.0"/>
             <StackPane>
                 <children>
-                    <Label fx:id="jugadorNombre"  prefHeight="100" prefWidth= "300" alignment="BOTTOM_CENTER"  />
-                    <Rectangle  height="100" width="300" fill="blue" AnchorPane.topAnchor="0.0" />
+                    <Rectangle  height="100" width="300" fill="indianred" AnchorPane.topAnchor="0.0" />
+                    <VBox alignment="CENTER">
+                        <Label fx:id="jugadorNombre" alignment="BOTTOM_CENTER" maxHeight="100" minWidth="300"/>
+                        <ProgressBar fx:id="vidaPokemon" />
+                    </VBox>
                 </children>
             </StackPane>
         </VBox>
@@ -28,30 +31,30 @@
         <VBox fx:id="listaPokemonsVBox">
             <!-- Parte derecha con rectángulos en posiciones específicas -->
             <!-- Rectángulo en la parte superior -->
-            <StackPane>
+            <StackPane onMouseClicked="#handleMouseClicked">
                 <children>
-                    <Rectangle  height="100" width="300" fill="yellow" AnchorPane.topAnchor="0.0" />
+                    <Rectangle  height="100" width="300" fill="grey" AnchorPane.topAnchor="0.0" />
                 </children>
             </StackPane>
 
             <!-- Rectángulo en el centro -->
-            <StackPane>
+            <StackPane onMouseClicked="#handleMouseClicked">
                 <children>
-                    <Rectangle  height="100" width="300" fill="orange"/>
+                    <Rectangle  height="100" width="300" fill="whitesmoke"/>
                 </children>
             </StackPane>
 
             <!-- Rectángulo en el centro -->
-            <StackPane>
+            <StackPane onMouseClicked="#handleMouseClicked">
                 <children>
-                    <Rectangle  height="100" width="300" fill="purple" AnchorPane.bottomAnchor="0.0" />
+                    <Rectangle  height="100" width="300" fill="grey" AnchorPane.bottomAnchor="0.0" />
                 </children>
             </StackPane>
 
             <!-- Rectángulo en la parte inferior -->
-            <StackPane>
+            <StackPane onMouseClicked="#handleMouseClicked">
                 <children>
-                    <Rectangle  height="100" width="300" fill="red" AnchorPane.bottomAnchor="0.0" />
+                    <Rectangle  height="100" width="300" fill="whitesmoke" AnchorPane.bottomAnchor="0.0" />
                 </children>
             </StackPane>
         </VBox>
