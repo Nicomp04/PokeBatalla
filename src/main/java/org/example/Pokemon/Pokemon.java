@@ -71,6 +71,9 @@ public class Pokemon {
     public double getVidaActual (){
         return this.vidaActual;
     }
+    public double getVidaMaxima(){
+        return this.vidaMaxima;
+    }
     public List<Estados> getEstados(){return this.estados;}
     public void setDefensa(int porcentaje) {this.defensa = this.defensa - ((this.defensa * (-porcentaje))/100);}
     public void setAtaque(int porcentaje) {

@@ -4,15 +4,12 @@ import org.example.Clima.Clima;
 import org.example.Clima.TipoClima;
 import org.example.Estado.Estados;
 import org.example.Pokemon.Pokemon;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.example.Visitor;
 
 public class Efecto extends Habilidad{
     private Estados estado;
     private String climaCambiar;
 
-    final Logger logger = LoggerFactory.getLogger(Efecto.class);
 
     public Efecto(int id, String nombre, int usosDisponibles, Estados estado, boolean afectaAEnemigo, String tipo) {
         this.nombre = nombre;

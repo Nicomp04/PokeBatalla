@@ -4,8 +4,6 @@ import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;
 import org.example.Tipo.TipoFactory;
 import org.example.Vista.HabildadVista;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.example.Visitor;
 
 import java.util.Random;
@@ -16,7 +14,7 @@ public class Ataque extends Habilidad {
     private TipoFactory tipoFactory;
 
     private HabildadVista habilidadVista;
-    final Logger logger = LoggerFactory.getLogger(Ataque.class);
+
 
     public Ataque(int id, String nombre, int usosDisponibles, String tipo, int poder) {
         this.id = id;
