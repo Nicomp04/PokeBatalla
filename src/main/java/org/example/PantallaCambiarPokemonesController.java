@@ -26,8 +26,7 @@ public class PantallaCambiarPokemonesController {
 
     private ImageView pokemonImage = new ImageView();
 
-
-    //private ProgressBar pokemosnSaludBar = new ProgressBar();
+    private ProgressBar pokemosnSaludBar = new ProgressBar();
 
     @FXML
     private Label jugadorNombre;
@@ -77,13 +76,6 @@ public class PantallaCambiarPokemonesController {
             this.listaPokemones[i].getChildren().add(informacionPokemon);
 
         }
-    }
-
-    public void crearPokemonViewer(Pokemon pokemon) {
-
-        this.pokemonImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif"))));
-        this.pokemosnSaludBar.setProgress((double) pokemon.getVidaActual() /pokemon.getVidaMaxima());
-        this.pokemonNombre.setText(pokemon.getNombre());
     }
 
 
