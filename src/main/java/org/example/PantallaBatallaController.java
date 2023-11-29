@@ -20,6 +20,8 @@ import javafx.stage.Stage;
 import javafx.scene.layout.*;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
+import org.example.Vista.PantallaCambiarPokemones;
+import org.example.Vista.PantallaItems;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -146,17 +148,26 @@ public class PantallaBatallaController {
         if (habilidadSeleccionada != null) {
             this.juego.getCampo().identificarAtacante(juego.getTurnoActivo().getId());
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
-            this.juego.habilitarTurno();
+            ordenarEstados();
         }
     }
 
     @FXML
     private void elegirItems() {
+        Stage stage = new Stage();
+        PantallaItems pantallaItems = new PantallaItems();
+        pantallaItems.setStage(stage);
+        pantallaItems.mostar(this.juego);
 
     }
 
     @FXML
-    private void cambiarPokemones(){}
+    private void cambiarPokemones(){
+        PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
+        pantallaCambiarPokemones.setStage(this.stage);
+        pantallaCambiarPokemones.mostrar(this.juego.getTurnoActivo());
+        ordenarEstados();
+    }
 
     @FXML
     private void huir(){
@@ -197,8 +208,11 @@ public class PantallaBatallaController {
         habilidadesListView.setItems(FXCollections.observableArrayList());
         descripcionVBox.requestFocus();
         }
-
-
+        public void ordenarEstados(){
+            this.juego.getCampo().validarEstadoEnvenenado(jugadorPokemon);
+            this.jugadorPokemon.restarTurnoEstados();
+            this.juego.habilitarTurno();
+        }
     @FXML
     private void handleKeyPress(KeyEvent event) {
         if (event.getCode() == KeyCode.RIGHT) {

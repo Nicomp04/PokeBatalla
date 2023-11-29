@@ -14,6 +14,6 @@ public class DefensaX extends Item {
     public void aplicarItem(List<Pokemon> pokemones) {
         Pokemon pokemon = pokemones.get(0);
         pokemon.setDefensa(this.porcentaje);
-        this.setUsado(true);
+        this.setUsos(this.usos - 1);
     }
 }

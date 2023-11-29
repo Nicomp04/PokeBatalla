@@ -89,14 +89,34 @@ public class Juego {
         return jugador2;
     }
 
+    public void ordenarEstados(){
+        Pokemon jugadorPokemon = this.getTurnoActivo().getPokemonActual();
+        this.campoDeBatalla.validarEstadoEnvenenado(jugadorPokemon);
+        jugadorPokemon.restarTurnoEstados();
+        limpiarItems();
+        this.habilitarTurno();
+
+    }
+
+    private void limpiarItems() {
+        for(int i = 0 ; i < jugador1.getItems().size(); i++){
+            if (jugador1.getItem(i).seAcabo()){
+                jugador1.getItems().remove(i);
+            }
+        }
+        for (int j = 0 ; j < jugador2.getItems().size(); j++) {
+            if (jugador2.getItem(j).seAcabo()) {
+                jugador2.getItems().remove(j);
+            }
+        }
+    }
+
     public void habilitarTurno(){
         if (turnoActivo.equals(jugador1)) {
-            System.out.println("jug1");
             turnoActivo = jugador2;
             turnoNoActivo = jugador1;
             notificarCambio(turnoNoActivo);
         } else {
-            System.out.println("jug222");
             turnoActivo = jugador1;
             turnoNoActivo = jugador2;
             notificarCambio(turnoNoActivo);

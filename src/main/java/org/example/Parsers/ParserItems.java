@@ -31,14 +31,19 @@ public class ParserItems {
                 Item item;
                 if (estilo.equals("Restaurador")) {
                     item = new Restaurador(nombre, valor);
+                    item.setUsos(2);
                 } else if (estilo.equals("CuraTodo")) {
                     item = new CuraTodo();
+                    item.setUsos(2);
                 } else if (estilo.equals("Revivir")){
                     item = new Revivir();
+                    item.setUsos(1);
                 } else if (estilo.equals("DefensaX")) {
                     item = new DefensaX(valor);
+                    item.setUsos(1);
                 } else if (estilo.equals("AtaqueX")){
                     item = new AtaqueX(valor);
+                    item.setUsos(1);
                 } else{
                     item = null;
                 }

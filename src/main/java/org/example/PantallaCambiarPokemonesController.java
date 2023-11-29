@@ -18,9 +18,22 @@ import java.util.List;
 import java.util.Objects;
 
 public class PantallaCambiarPokemonesController {
+    @FXML
+    public Label jugadorPokemonNombreLabel;
+    @FXML
+    public Label jugadorPokemonNivelLabel;
+    @FXML
+    public ProgressBar jugadorPokemonSaludBar;
+    @FXML
+    public Label jugadorPokemonVidaLabel;
 
     @FXML
     private Stage stage;
+
+    @FXML
+    private void initialize() {
+        this.listaPokemonsVBox = new VBox();
+    }
 
     @FXML
     private ImageView pokemonImage;
@@ -48,7 +61,13 @@ public class PantallaCambiarPokemonesController {
     }
 
     public void crearListaDePokemonesViewer(String nombreJugador, List<Pokemon> pokemones){
-        this.jugadorNombre.setText(nombreJugador);
+        //this.jugadorNombre.setText(nombreJugador);
+
+        jugadorPokemonNivelLabel.setText(String.valueOf(pokemones.get(0).getNivel()));
+        jugadorPokemonNombreLabel.setText(pokemones.get(0).getNombre());
+        jugadorPokemonSaludBar.setProgress(pokemones.get(0).getVidaActual() / pokemones.get(0).getVidaMaxima());
+        jugadorPokemonVidaLabel.setText(String.valueOf(pokemones.get(0).getVidaActual() / pokemones.get(0).getVidaMaxima()));
+
         Integer j = listaPokemonsVBox.getChildren().size();
         Integer tamanoVBox = j != null ? j : 0;
 

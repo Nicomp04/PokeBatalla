@@ -32,13 +32,7 @@ public class Restaurador extends Item {
             logger.info("No tienes Pokemones a restaurar, el turno se consumio igual.");
         }
         else {
-            logger.info("¿Cual de tus pokemones quieres restaurar? \n", this.nombre);
-
-            for(int i = 0; i < pokemonesVivos.size(); i++){
-                logger.info("{}: {} \n",i + 1 ,pokemones.get(i).getNombre());
-            }
-            pokemonElegido = scanner.nextInt();
-            pokemonElegido = pokemonElegido - 1;
+            pokemonElegido = 0;
 
             Pokemon pokemonARestaurar = pokemonesVivos.get(pokemonElegido);
 
@@ -50,7 +44,7 @@ public class Restaurador extends Item {
             }
 
             logger.info("{} ha sido restaurado.", pokemonElegido);
-            this.setUsado(true);
+            this.setUsos(this.usos - 1);
         }
 
     }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.util.Callback?>
+<?import javafx.util.StringConverter?>
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaItemsController" style="-fx-background-color: grey;">
+
+    <!-- Sección Central -->
+    <VBox spacing="20" alignment="CENTER" layoutX="50" layoutY="50">
+
+        <!-- Lista de Items -->
+        <ListView fx:id="itemsListView" prefWidth="300.0" prefHeight="400.0">
+
+        </ListView>
+
+        <!-- Botones de Confirmar y Cancelar -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="aplicarItemBoton" text="Aplicar Item" onAction="#aplicarItem"/>
+            <Button fx:id="cancelarBoton" text="Cancelar" onAction="#cancelarAccion"/>
+        </HBox>
+
+    </VBox>
+
+    <!-- Sección Inferior -->
+    <VBox spacing="10" alignment="CENTER" layoutX="400" layoutY="500">
+        <Text fx:id="descripcionItemText" fill="white"/>
+    </VBox>
+
+    <!-- Sección Central Izquierda (creatividad del grupo) -->
+    <VBox spacing="20" alignment="CENTER" layoutX="50" layoutY="500">
+        <!-- Puedes agregar tus elementos aquí según la creatividad del grupo -->
+    </VBox>
+
+</AnchorPane>

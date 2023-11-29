@@ -17,7 +17,7 @@ public class AtaqueX extends Item {
     public void aplicarItem(List<Pokemon> pokemones) {
         Pokemon pokemon = pokemones.get(0);
         pokemon.setAtaque(this.porcentaje);
-        this.setUsado(true);
+        this.setUsos(this.usos - 1);
     }
     /*public boolean aplicarItem(Pokemon pokemon) {
         return false;

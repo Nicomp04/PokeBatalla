@@ -13,6 +13,7 @@ import javafx.geometry.Insets;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.example.Jugador;
 import org.example.PantallaBatallaController;
 import org.example.PantallaCambiarPokemonesController;
 import org.example.Pokemon.Pokemon;
@@ -34,16 +35,16 @@ public class PantallaCambiarPokemones {
         this.stage = stage;
     }
 
-    public void mostrar(List<Pokemon> pokemones) {
+    public void mostrar(Jugador j) {
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/listaDePokemons.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/listaDePokemos.fxml"));
             Parent root = (Parent) loader.load();
 
             // Obtén el controlador de la pantalla de juego y establece el Stage
             PantallaCambiarPokemonesController pantallaCambiarPokemonesController = loader.getController();
             pantallaCambiarPokemonesController.setStage(stage);
-            pantallaCambiarPokemonesController.crearListaDePokemonesViewer("jorge", pokemones);
+            pantallaCambiarPokemonesController.crearListaDePokemonesViewer(j.getNombre(), j.getPokemones());
 
             Scene scene = new Scene(root);
 

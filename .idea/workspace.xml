@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="" />
+    <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaItemsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaItems.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pantallaItems.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/AtaqueX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/AtaqueX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/CuraTodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/CuraTodo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/DefensaX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/DefensaX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Restaurador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Restaurador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Revivir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Revivir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaCambiarPokemones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaCambiarPokemones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Items.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Items.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Partida.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Partida.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pokemones.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pokemones.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,10 +41,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="Class" />
         <option value="module-info" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>

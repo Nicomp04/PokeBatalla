@@ -13,6 +13,6 @@ public class CuraTodo extends Item {
     public void aplicarItem(List<Pokemon> pokemones) {
         Pokemon pokemon = pokemones.get(0);
         pokemon.getEstados().clear();
-        this.setUsado(true);
+        this.setUsos(this.usos - 1);
     }
 }

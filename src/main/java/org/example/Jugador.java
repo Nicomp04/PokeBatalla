@@ -157,7 +157,7 @@ public class Jugador {
     }
     private void aplicarItem(Item itemElegido, int id) {
         itemElegido.aplicarItem(pokemones);
-        if(itemElegido.getUsado())
+        if(itemElegido.seAcabo())
             this.items.remove(itemElegido);
     }
 
@@ -192,4 +192,6 @@ public class Jugador {
     public void setNombre(String j2) {
         this.nombre = j2;
     }
+
+    public List<Item> getItems() {return this.items;}
 }

@@ -9,6 +9,7 @@ import java.util.List;
 
 public abstract class Item {
 
+    protected int usos;
 
     protected String nombre;
     protected boolean usado = false;
@@ -18,10 +19,12 @@ public abstract class Item {
         return nombre;
     }
 
-    public boolean getUsado(){return this.usado;}
-
-    public void setUsado(boolean bolean){this.usado = bolean;}
+    public boolean seAcabo(){return this.usos <= 0;}
 
    // public abstract void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo);
     public abstract void aplicarItem(List<Pokemon> pokemones);
+
+    public int getUsos() {return this.usos;}
+
+    public void setUsos(int usos) {this.usos = usos;}
 }
