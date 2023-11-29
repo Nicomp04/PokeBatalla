@@ -1,6 +1,7 @@
 package org.example;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -25,7 +26,6 @@ public class PantallaCambiarPokemonesController {
 
     private ImageView pokemonImage = new ImageView();
 
-    private Label pokemonNombre = new Label();
 
     //private ProgressBar pokemosnSaludBar = new ProgressBar();
 
@@ -35,17 +35,19 @@ public class PantallaCambiarPokemonesController {
     @FXML
     private ImageView jugadorImagen;
 
+    @FXML
+    private Label pokemonNombre;
+
     private StackPane[] listaPokemones;
 
-    private HBox[] informacionPokemon;
+    private HBox informacionPokemon;
 
     @FXML
-    private VBox listaPokemonsVBox;
+    private VBox listaPokemonsVBox = new VBox();
 
 
     public void setStage(Stage stage) {
         this.listaPokemones = new StackPane[3];
-        this.informacionPokemon = new HBox[2];
         this.stage = stage;
     }
 
@@ -53,27 +55,27 @@ public class PantallaCambiarPokemonesController {
         this.jugadorNombre.setText(nombreJugador);
         Image imagen = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif")));
         this.jugadorImagen.setImage(imagen);
+        this.pokemonNombre.setText(pokemones.get(0).getNombre());
 
         Integer j = listaPokemonsVBox.getChildren().size();
         Integer tamanoVBox = j != null ? j : 0;
         for (int i = 0; i < tamanoVBox && i < pokemones.size(); i++){
 
-            System.out.println(i);
             listaPokemones[i] = (StackPane) listaPokemonsVBox.getChildren().get(i);
-            //listaPokemones[i].getChildren().add(pokemonImage);
-
-            ProgressBar pokemosnSaludBar = new ProgressBar();
-            pokemosnSaludBar.setProgress((double) pokemones.get(i).getVidaActual() /pokemones.get(i).getVidaMaxima());
 
             Label pokemonNombre = new Label();
             pokemonNombre.setText(pokemones.get(i).getNombre());
 
-            listaPokemonsVBox = new VBox();
-            listaPokemonsVBox.getChildren().add(pokemosnSaludBar);
-            listaPokemonsVBox.getChildren();
+            ProgressBar pokemosnSaludBar = new ProgressBar();
+            pokemosnSaludBar.setProgress((double) pokemones.get(i).getVidaActual() /pokemones.get(i).getVidaMaxima());
 
-            //this.listaPokemones[i].getChildren().add(pokemosnSaludBar);
-            //this.listaPokemones[i].getChildren().add(pokemonNombre);
+            this.informacionPokemon = new HBox();
+
+            informacionPokemon.setAlignment(Pos.CENTER);
+            informacionPokemon.getChildren().add(pokemonNombre);
+            informacionPokemon.getChildren().add(pokemosnSaludBar);
+            this.listaPokemones[i].getChildren().add(informacionPokemon);
+
         }
 
 
@@ -81,6 +83,14 @@ public class PantallaCambiarPokemonesController {
 
 
 
-    public void handleMouseClicked(MouseEvent mouseEvent) {
+    public int handleMouseClicked(MouseEvent mouseEvent) {
+        StackPane stackPane = (StackPane) mouseEvent.getSource();
+        String identificador = stackPane.getId();
+        if (identificador.equals("0")){return 0;}
+        else if (identificador.equals("1")){return 1;}
+        else if (identificador.equals("2")){return 2;}
+        else if (identificador.equals("3")){return 3;}
+
+        return -1;
     }
 }

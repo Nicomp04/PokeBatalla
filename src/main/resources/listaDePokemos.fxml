@@ -22,6 +22,7 @@
                     <Rectangle  height="100" width="300" fill="indianred" AnchorPane.topAnchor="0.0" />
                     <VBox alignment="CENTER">
                         <Label fx:id="jugadorNombre" alignment="BOTTOM_CENTER" maxHeight="100" minWidth="300"/>
+                        <Label fx:id="pokemonNombre" alignment="BOTTOM_CENTER" maxHeight="100" minWidth="300" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
                         <ProgressBar fx:id="vidaPokemon" />
                     </VBox>
                 </children>
@@ -31,28 +32,28 @@
         <VBox fx:id="listaPokemonsVBox">
             <!-- Parte derecha con rectángulos en posiciones específicas -->
             <!-- Rectángulo en la parte superior -->
-            <StackPane onMouseClicked="#handleMouseClicked">
+            <StackPane onMouseClicked="#handleMouseClicked" fx:id="0">
                 <children>
                     <Rectangle  height="100" width="300" fill="grey" AnchorPane.topAnchor="0.0" />
                 </children>
             </StackPane>
 
             <!-- Rectángulo en el centro -->
-            <StackPane onMouseClicked="#handleMouseClicked">
+            <StackPane onMouseClicked="#handleMouseClicked" fx:id="1">
                 <children>
                     <Rectangle  height="100" width="300" fill="whitesmoke"/>
                 </children>
             </StackPane>
 
             <!-- Rectángulo en el centro -->
-            <StackPane onMouseClicked="#handleMouseClicked">
+            <StackPane onMouseClicked="#handleMouseClicked" fx:id="2">
                 <children>
                     <Rectangle  height="100" width="300" fill="grey" AnchorPane.bottomAnchor="0.0" />
                 </children>
             </StackPane>
 
             <!-- Rectángulo en la parte inferior -->
-            <StackPane onMouseClicked="#handleMouseClicked">
+            <StackPane onMouseClicked="#handleMouseClicked" fx:id="3">
                 <children>
                     <Rectangle  height="100" width="300" fill="whitesmoke" AnchorPane.bottomAnchor="0.0" />
                 </children>
