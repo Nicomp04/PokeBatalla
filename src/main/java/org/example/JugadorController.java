@@ -5,6 +5,7 @@ import org.example.Vista.JugadorVista;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class JugadorController {
     Scanner scanner = new Scanner(System.in);
     JugadorVista jugadorVista;
