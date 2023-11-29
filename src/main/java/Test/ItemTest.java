@@ -42,7 +42,7 @@ public class ItemTest {
 
         //Act
 
-        pocion.aplicarItem(pokemones);
+        pocion.aplicarItem(pokemones.get(0));
 
         //Assert
 

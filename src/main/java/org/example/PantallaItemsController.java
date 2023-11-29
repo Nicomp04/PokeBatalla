@@ -2,12 +2,21 @@ package org.example;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Callback;
+import javafx.util.StringConverter;
 import org.example.Item.Item;
+import org.example.Pokemon.Pokemon;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 public class PantallaItemsController {
 
@@ -16,6 +25,10 @@ public class PantallaItemsController {
     public Button aplicarItemBoton;
     @FXML
     public Button cancelarBoton;
+    @FXML
+    public Text descripcionItemText;
+    public ListView<Pokemon> pokemonesListView = new ListView<Pokemon>();
+    public ImageView mochi;
     @FXML
     private ListView<Item> itemsListView = new ListView<>();
 
@@ -44,10 +57,10 @@ public class PantallaItemsController {
     @FXML
     public void actualizar() {
             this.jugador = this.juego.getTurnoActivo();
+            this.mochi.setImage(new Image("/mochi.png"));
             // Configurar el StringConverter para la ListView
             itemsListView.setCellFactory(param -> new ItemListCell());
 
-            // Puedes agregar elementos directamente desde el código Java
             itemsListView.getItems().addAll(this.jugador.getItems());
             aplicarItemBoton.setDisable(true);
 
@@ -55,6 +68,7 @@ public class PantallaItemsController {
                 System.out.println("Item seleccionado: " + newValue);
                 itemSeleccionado = newValue;
                 if (itemSeleccionado != null) {
+                    descripcionItemText.setText(itemSeleccionado.getDesc());
                     aplicarItemBoton.setDisable(false);
                 } else {
                     aplicarItemBoton.setDisable(true);
@@ -64,17 +78,73 @@ public class PantallaItemsController {
             aplicarItemBoton.setOnAction(event -> aplicarItem());
             cancelarBoton.setOnAction(event -> cancelarAccion());
     }
+
+    private void actualizarListaPokemones(List<Pokemon> pokemones) {
+        if (itemSeleccionado != null) {
+            pokemonesListView.setCellFactory(param -> new pokeListCell());
+            pokemonesListView.getItems().addAll(pokemones);
+        } else {
+            pokemonesListView.getItems().clear();
+        }
+    }
+
     @FXML
     public void aplicarItem() {
         if (itemSeleccionado != null) {
             System.out.println("Aplicando item: " + itemSeleccionado.getNombre());
-
-            itemSeleccionado.aplicarItem(this.jugador.getPokemones());
+            actualizarListaPokemones(itemSeleccionado.posiblesPokemonesAAplicar(this.jugador.getPokemones()));
+            Pokemon pokemon = eleccionPokemon();
+            itemSeleccionado.aplicarItem(pokemon);
             if(itemSeleccionado.seAcabo())
                 this.jugador.getItems().remove(itemSeleccionado);
             stage.close();
         }
         this.juego.ordenarEstados();
+    }
+    private Pokemon eleccionPokemon() {
+        if (pokemonesListView.getItems().isEmpty()) {
+            return null;
+        }
+
+        ComboBox<Pokemon> comboBox = new ComboBox<>();
+
+        // Configura el StringConverter
+        comboBox.setConverter(new StringConverter<>() {
+            @Override
+            public String toString(Pokemon pokemon) {
+                if (pokemon == null) {
+                    return null;
+                } else {
+                    // Utiliza la lógica de la CellFactory para mostrar la información
+                    return pokemon.getNombre() + " - Vida: " + pokemon.getVidaActual() + "/" + pokemon.getVidaMaxima();
+                }
+            }
+
+            @Override
+            public Pokemon fromString(String string) {
+                // No es necesario implementar este método en este caso
+                return null;
+            }
+        });
+
+// Configura la CellFactory del ComboBox
+        comboBox.setCellFactory(param -> new pokeListCell());
+
+// Agrega los Pokémon al ComboBox
+        comboBox.getItems().addAll(pokemonesListView.getItems());
+
+// Configurar el diálogo de alerta
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Seleccionar Pokémon");
+        alert.setHeaderText("Selecciona un Pokémon para aplicar el ítem:");
+        alert.setGraphic(null);
+        alert.getDialogPane().setContent(comboBox);
+
+// Mostrar el diálogo y esperar la selección del usuario
+        Optional<ButtonType> result = alert.showAndWait();
+
+// Devolver el Pokémon seleccionado o null si el usuario cancela
+        return result.map(buttonType -> comboBox.getSelectionModel().getSelectedItem()).orElse(null);
     }
 
     @FXML
@@ -105,6 +175,19 @@ public class PantallaItemsController {
         }
     }
 
+    private static class pokeListCell extends ListCell<Pokemon> {
+        @Override
+        protected void updateItem(Pokemon pokemon, boolean empty) {
+            super.updateItem(pokemon, empty);
+            if (empty || pokemon == null) {
+                setText(null);
+            } else {
+                setText(pokemon.getNombre() + " - Vida: " + pokemon.getVidaActual() +"/" + pokemon.getVidaMaxima());
+            }
+        }
+    }
+
 
 
 }
+

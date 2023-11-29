@@ -17,8 +17,7 @@ public class Restaurador extends Item {
         this.nombre = nombre;
     }
 
-    public void aplicarItem(List<Pokemon> pokemones) {
-        Scanner scanner = new Scanner(System.in);
+    public List<Pokemon> posiblesPokemonesAAplicar(List<Pokemon> pokemones){
         List<Pokemon> pokemonesVivos = new ArrayList<>();
         int pokemonElegido = 0;
         Pokemon pokemon;
@@ -31,21 +30,20 @@ public class Restaurador extends Item {
         if(pokemonesVivos.isEmpty()){
             logger.info("No tienes Pokemones a restaurar, el turno se consumio igual.");
         }
-        else {
-            pokemonElegido = 0;
+        return pokemonesVivos;
+    }
+    public void aplicarItem(Pokemon pokemon) {
 
-            Pokemon pokemonARestaurar = pokemonesVivos.get(pokemonElegido);
+            Pokemon pokemonARestaurar = pokemon;
 
             if (nombre.equals("Pocion Molesta Alumnos")){
                 pokemonARestaurar.modificarHp(hp * pokemonARestaurar.getVidaActual());
             }
             else {
-                pokemonesVivos.get(pokemonElegido).modificarHp(hp);
+                pokemonARestaurar.modificarHp(hp);
             }
 
-            logger.info("{} ha sido restaurado.", pokemonElegido);
+            logger.info("{} ha sido restaurado.", pokemonARestaurar);
             this.setUsos(this.usos - 1);
-        }
-
     }
 }

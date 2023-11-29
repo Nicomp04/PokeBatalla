@@ -10,10 +10,14 @@ public class DefensaX extends Item {
         this.porcentaje = valor;
         this.nombre = "DefensaX";
     }
-
-    public void aplicarItem(List<Pokemon> pokemones) {
-        Pokemon pokemon = pokemones.get(0);
+    @Override
+    public void aplicarItem(Pokemon pokemon) {
         pokemon.setDefensa(this.porcentaje);
         this.setUsos(this.usos - 1);
+    }
+
+    @Override
+    public List<Pokemon> posiblesPokemonesAAplicar(List<Pokemon> pokemones) {
+        return pokemones;
     }
 }

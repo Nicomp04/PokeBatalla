@@ -37,12 +37,13 @@ public class ParserPokemon {
                 int defensa = jsonPokemon.getInt("defensa");
                 int ataque = jsonPokemon.getInt("ataque");
                 JSONArray habilidadesJSON = jsonPokemon.getJSONArray("habilidades");
+                String url = jsonPokemon.getString("url");
                 List<Integer> habilidades = new ArrayList<>();
                 for (int j = 0; j < habilidadesJSON.length(); j++) {
                     habilidades.add(habilidadesJSON.getInt(j));
                 }
 
-                Pokemon pokemon = new Pokemon(nombre, id, tipo, nivel, vidaMaxima, velocidad, defensa, ataque, habilidades, repositorioHabilidades);
+                Pokemon pokemon = new Pokemon(nombre, id, tipo, nivel, vidaMaxima, velocidad, defensa, ataque, habilidades, repositorioHabilidades, url);
 
                 pokemonesMap.put(id,pokemon);
 

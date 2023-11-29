@@ -1,4 +1,5 @@
 package org.example.Pokemon;
+import javafx.scene.image.Image;
 import org.example.Estado.Estados;
 import org.example.Habilidades.Efecto;
 import org.example.Habilidades.Habilidad;
@@ -10,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class Pokemon {
@@ -28,10 +30,11 @@ public class Pokemon {
 
     private TipoFactory tipoFactory;
     private PokemonVista vista;
+    private String url;
 
     public List<Habilidad> habilidades = new ArrayList<>();
 
-    public Pokemon(String nombre, int id, String tipo, int nivel,   int vidaMaxima, int velocidad, int defensa, int ataque,List<Integer> habilidadesId, RepositorioHabilidades repositorioHabilidades ){
+    public Pokemon(String nombre, int id, String tipo, int nivel,   int vidaMaxima, int velocidad, int defensa, int ataque,List<Integer> habilidadesId, RepositorioHabilidades repositorioHabilidades, String url ){
         this.nombre = nombre;
         this.id = id;
         this.nivel = nivel;
@@ -42,6 +45,7 @@ public class Pokemon {
         this.defensa = defensa;
         this.ataque = ataque;
         this.habilidades = repositorioHabilidades.cargarConjunto(habilidadesId);
+        this.url = url;
 
         this.vista = new PokemonVista();
     }
@@ -142,4 +146,7 @@ public class Pokemon {
             logger.info("El pokemon ya tiene este estado alterado");
         }
     }
+    public String getUrl(){return this.url;}
+
+    public Image getImage() { return new Image(Objects.requireNonNull(getClass().getResourceAsStream(this.getUrl())));}
 }

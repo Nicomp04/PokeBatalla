@@ -10,7 +10,8 @@
       "velocidad": 20,
       "defensa": 3,
       "ataque": 10,
-      "habilidades": [56,58, 78, 2]
+      "habilidades": [56,58, 78, 2],
+      "url": "/bulba.gif"
     },
     {
       "nombre": "Charmander",
@@ -22,7 +23,8 @@
       "velocidad": 15,
       "defensa": 5,
       "ataque": 15,
-      "habilidades": [3, 98, 24]
+      "habilidades": [3, 98, 24],
+      "url": "/chari.gif"
     },
     {
       "nombre": "Oster",
@@ -34,7 +36,8 @@
       "velocidad": 15,
       "defensa": 5,
       "ataque": 30,
-      "habilidades": [3, 98, 24]
+      "habilidades": [3, 98, 24],
+      "url": "/oster.gif"
     }
   ]
 }

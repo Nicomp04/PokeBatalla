@@ -137,29 +137,29 @@ public class Jugador {
         switch (accionElegida){
             case 1:
                 itemElegido = items.get(0);
-                this.aplicarItem(itemElegido,id);
+              //  this.aplicarItem(itemElegido,id);
                 break;
             case 2:
                 itemElegido = items.get(1);
-                this.aplicarItem(itemElegido,id);
+               // this.aplicarItem(itemElegido,id);
                 break;
             case 3:
                 itemElegido = items.get(2);
-                this.aplicarItem(itemElegido,id);
+               // this.aplicarItem(itemElegido,id);
                 break;
             case 4:
                 itemElegido = items.get(3);
-                this.aplicarItem(itemElegido,id);
+               // this.aplicarItem(itemElegido,id);
                 break;
             case 5:
                 break;
         }
     }
-    private void aplicarItem(Item itemElegido, int id) {
-        itemElegido.aplicarItem(pokemones);
+   /* private void aplicarItem(Item itemElegido, int id) {
+        itemElegido.aplicarItem(pokemon);
         if(itemElegido.seAcabo())
             this.items.remove(itemElegido);
-    }
+    }*/
 
     private boolean HayPokemonesVivos() {
         boolean HayPokemonesVivos = false;

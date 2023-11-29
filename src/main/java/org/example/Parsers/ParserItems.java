@@ -26,24 +26,30 @@ public class ParserItems {
                 String nombre = jsonItem.getString("nombre");
                 int id = jsonItem.getInt("id");
                 String estilo = jsonItem.getString("estilo");
+                String desc = jsonItem.getString("desc");
                 int valor = jsonItem.getInt("valor");
 
                 Item item;
                 if (estilo.equals("Restaurador")) {
                     item = new Restaurador(nombre, valor);
                     item.setUsos(2);
+                    item.setDesc(desc);
                 } else if (estilo.equals("CuraTodo")) {
                     item = new CuraTodo();
                     item.setUsos(2);
+                    item.setDesc(desc);
                 } else if (estilo.equals("Revivir")){
                     item = new Revivir();
                     item.setUsos(1);
+                    item.setDesc(desc);
                 } else if (estilo.equals("DefensaX")) {
                     item = new DefensaX(valor);
                     item.setUsos(1);
+                    item.setDesc(desc);
                 } else if (estilo.equals("AtaqueX")){
                     item = new AtaqueX(valor);
                     item.setUsos(1);
+                    item.setDesc(desc);
                 } else{
                     item = null;
                 }

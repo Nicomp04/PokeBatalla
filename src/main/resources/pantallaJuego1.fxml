@@ -9,7 +9,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.Font?>
-<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaBatallaController" style="-fx-background-color: grey;">
+<?import java.net.URL?>
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaBatallaController" style="-fx-background-image:  url('/backgroundpoke.jpg');">
     <!-- Parte inferior e izquierda -->
     <ImageView fx:id="jugadorPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="75.0" layoutY="400.0"/>
     <ProgressBar fx:id="jugadorSaludBar" layoutX="80.0" layoutY="550.0" prefWidth="150.0"/>
@@ -60,5 +61,4 @@
         </VBox>
 
     </HBox>
-
 </AnchorPane>

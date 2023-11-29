@@ -9,13 +9,15 @@
 
 <?import javafx.util.Callback?>
 <?import javafx.util.StringConverter?>
-<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaItemsController" style="-fx-background-color: grey;">
+<?import javafx.scene.image.ImageView?>
+<AnchorPane id="AnchorPane" prefHeight="400" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaItemsController" style="-fx-background-color: grey;">
 
+    <ImageView fx:id="mochi" layoutY="100"/>
     <!-- Sección Central -->
-    <VBox spacing="20" alignment="CENTER" layoutX="50" layoutY="50">
+    <VBox spacing="20" alignment="CENTER" layoutX="400" layoutY="50">
 
         <!-- Lista de Items -->
-        <ListView fx:id="itemsListView" prefWidth="300.0" prefHeight="400.0">
+        <ListView fx:id="itemsListView"  prefWidth="300.0"  prefHeight="400.0">
 
         </ListView>
 
@@ -30,6 +32,8 @@
     <!-- Sección Inferior -->
     <VBox spacing="10" alignment="CENTER" layoutX="400" layoutY="500">
         <Text fx:id="descripcionItemText" fill="white"/>
+        <ListView fx:id="pokemonesListView" prefWidth="300.0" visible="false" prefHeight="400.0">
+        </ListView>
     </VBox>
 
     <!-- Sección Central Izquierda (creatividad del grupo) -->

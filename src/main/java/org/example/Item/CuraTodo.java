@@ -9,10 +9,15 @@ public class CuraTodo extends Item {
         this.nombre = "CuraTodo";
     }
 
+
     @Override
-    public void aplicarItem(List<Pokemon> pokemones) {
-        Pokemon pokemon = pokemones.get(0);
+    public void aplicarItem(Pokemon pokemon) {
         pokemon.getEstados().clear();
         this.setUsos(this.usos - 1);
+    }
+
+    @Override
+    public List<Pokemon> posiblesPokemonesAAplicar(List<Pokemon> pokemones) {
+        return pokemones;
     }
 }

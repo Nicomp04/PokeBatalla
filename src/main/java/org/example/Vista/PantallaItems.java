@@ -30,7 +30,7 @@ public class PantallaItems {
             pantallaItemsController.setJuego(juego);
             pantallaItemsController.mostar();
 
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(root,750,520);
 
             stage.setTitle("Pantalla Items");
             stage.setScene(scene);

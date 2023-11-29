@@ -23,6 +23,7 @@ import org.example.Pokemon.Pokemon;
 import org.example.Vista.PantallaCambiarPokemones;
 import org.example.Vista.PantallaItems;
 
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -96,6 +97,8 @@ public class PantallaBatallaController {
     private int selectedOptionIndex = 0;
 
     private Juego juego;
+    @FXML
+    private AnchorPane anchorPane;
 
     @FXML
     private void elegirHabilidades() {
@@ -192,7 +195,7 @@ public class PantallaBatallaController {
         jugadorPokemon = juego.getTurnoActivo().getPokemonActual();
 
         // Cargar la imagen desde el ClassLoader
-        this.jugadorPokemonImage.setImage(this.imagen2);
+        this.jugadorPokemonImage.setImage(jugadorPokemon.getImage());
         this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
         this.jugadorPokemonNombre.setText(jugadorPokemon.getNombre());
 

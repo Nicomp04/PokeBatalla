@@ -15,6 +15,8 @@ public abstract class Item {
     protected boolean usado = false;
 
     public final Logger logger = LoggerFactory.getLogger(Revivir.class);
+    protected String desc;
+
     public String getNombre() {
         return nombre;
     }
@@ -22,9 +24,16 @@ public abstract class Item {
     public boolean seAcabo(){return this.usos <= 0;}
 
    // public abstract void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo);
-    public abstract void aplicarItem(List<Pokemon> pokemones);
+    public abstract void aplicarItem(Pokemon pokemon);
+    public abstract List<Pokemon> posiblesPokemonesAAplicar(List<Pokemon> pokemones);
 
     public int getUsos() {return this.usos;}
 
     public void setUsos(int usos) {this.usos = usos;}
+
+    public String getDesc() {return this.desc;
+    }
+
+    public void setDesc(String desc) { this.desc = desc;
+    }
 }
