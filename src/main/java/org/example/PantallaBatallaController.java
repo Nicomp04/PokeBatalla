@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import javafx.scene.layout.*;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
+import org.example.Vista.PantallaCambiarPokemones;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -156,7 +157,11 @@ public class PantallaBatallaController {
     }
 
     @FXML
-    private void cambiarPokemones(){}
+    private void cambiarPokemones(){
+        PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
+        pantallaCambiarPokemones.setStage(this.stage);
+        pantallaCambiarPokemones.mostrar(this.juego.getTurnoActivo().getPokemones());
+    }
 
     @FXML
     private void huir(){

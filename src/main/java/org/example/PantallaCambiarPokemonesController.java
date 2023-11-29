@@ -7,6 +7,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -22,14 +23,11 @@ public class PantallaCambiarPokemonesController {
     @FXML
     private Stage stage;
 
-    @FXML
-    private ImageView pokemonImage;
+    private ImageView pokemonImage = new ImageView();
 
-    @FXML
-    private Label pokemonNombre;
+    private Label pokemonNombre = new Label();
 
-    @FXML
-    private ProgressBar pokemosnSaludBar;
+    //private ProgressBar pokemosnSaludBar = new ProgressBar();
 
     @FXML
     private Label jugadorNombre;
@@ -38,12 +36,16 @@ public class PantallaCambiarPokemonesController {
     private ImageView jugadorImagen;
 
     private StackPane[] listaPokemones;
+
+    private HBox[] informacionPokemon;
+
     @FXML
     private VBox listaPokemonsVBox;
 
 
     public void setStage(Stage stage) {
         this.listaPokemones = new StackPane[3];
+        this.informacionPokemon = new HBox[2];
         this.stage = stage;
     }
 
@@ -51,23 +53,23 @@ public class PantallaCambiarPokemonesController {
         this.jugadorNombre.setText(nombreJugador);
         Integer j = listaPokemonsVBox.getChildren().size();
         Integer tamanoVBox = j != null ? j : 0;
-
         for (int i = 0; i < tamanoVBox && i < pokemones.size(); i++){
 
+            System.out.println(i);
             listaPokemones[i] = (StackPane) listaPokemonsVBox.getChildren().get(i);
-            crearPokemonViewer(pokemones.get(i));
-            listaPokemones[i].getChildren().add(pokemonImage);
-            listaPokemones[i].getChildren().add(pokemosnSaludBar);
-            listaPokemones[i].getChildren().add(pokemonNombre);
+            //listaPokemones[i].getChildren().add(pokemonImage);
+
+            ProgressBar pokemosnSaludBar = new ProgressBar();
+            pokemosnSaludBar.setProgress((double) pokemones.get(i).getVidaActual() /pokemones.get(i).getVidaMaxima());
+
+            Label pokemonNombre = new Label();
+            pokemonNombre.setText(pokemones.get(i).getNombre());
+
+            this.listaPokemones[i].getChildren().add(pokemosnSaludBar);
+            this.listaPokemones[i].getChildren().add(pokemonNombre);
         }
     }
 
-    public void crearPokemonViewer(Pokemon pokemon) {
-
-        this.pokemonImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif"))));
-        this.pokemosnSaludBar.setProgress((double) pokemon.getVidaActual() /pokemon.getVidaMaxima());
-        this.pokemonNombre.setText(pokemon.getNombre());
-    }
 
 
     public void handleMouseClicked(MouseEvent mouseEvent) {

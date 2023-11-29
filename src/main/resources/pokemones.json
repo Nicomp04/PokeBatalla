@@ -23,6 +23,18 @@
       "defensa": 5,
       "ataque": 15,
       "habilidades": [3, 98, 24]
+    },
+    {
+      "nombre": "pikachu",
+      "id": 9,
+      "nivel": 6,
+      "tipo": "Fuego",
+      "historia": "Esta es una historia",
+      "vidaMaxima": 10,
+      "velocidad": 15,
+      "defensa": 5,
+      "ataque": 15,
+      "habilidades": [3, 98, 24]
     }
   ]
 }

@@ -37,7 +37,7 @@ public class PantallaCambiarPokemones {
     public void mostrar(List<Pokemon> pokemones) {
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/listaDePokemons.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/listaDePokemos.fxml"));
             Parent root = (Parent) loader.load();
 
             // Obtén el controlador de la pantalla de juego y establece el Stage
