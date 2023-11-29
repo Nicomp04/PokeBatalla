@@ -14,30 +14,36 @@
             fx:controller="org.example.PantallaCambiarPokemonesController"
             prefHeight="400.0" prefWidth="600.0">
     <HBox>
-        <HBox>
+        <VBox>
             <!-- Parte izquierda con imagen -->
-            <ImageView fx:id="PokemonImage" fitHeight="400.0" fitWidth="300.0" layoutX="75.0" layoutY="500.0"/>
-        </HBox>
+            <ImageView fx:id="jugadorImagen" fitHeight="300.0" fitWidth="300.0" layoutX="75.0" layoutY="500.0"/>
+            <children>
+                <Label fx:id="jugadorNombre"  prefHeight="100" prefWidth= "300" alignment="BOTTOM_CENTER"  />
+                <Rectangle  height="100" width="300" fill="blue" AnchorPane.topAnchor="0.0" />
+            </children>
+        </VBox>
 
         <VBox>
             <!-- Parte derecha con rectángulos en posiciones específicas -->
             <!-- Rectángulo en la parte superior -->
-            <Rectangle  height="100" width="300" fill="yellow" AnchorPane.topAnchor="0.0" />
+            <children>
+                <Rectangle  height="100" width="300" fill="yellow" AnchorPane.topAnchor="0.0" />
+            </children>
 
             <!-- Rectángulo en el centro -->
-            <Rectangle  height="100" width="300" fill="orange"/>
+            <children>
+                <Rectangle  height="100" width="300" fill="orange"/>
+            </children>
 
             <!-- Rectángulo en el centro -->
-            <Rectangle  height="100" width="300" fill="purple" AnchorPane.bottomAnchor="0.0" />
+            <children>
+                <Rectangle  height="100" width="300" fill="purple" AnchorPane.bottomAnchor="0.0" />
+            </children>
 
             <!-- Rectángulo en la parte inferior -->
-            <Rectangle  height="100" width="300" fill="red" AnchorPane.bottomAnchor="0.0" />
-
-            <StackPane GridPane.columnIndex="1" onMouseClicked="#handleMouseClicked">
-                <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000006e" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                </children>
-            </StackPane>
+            <children>
+                <Rectangle  height="100" width="300" fill="red" AnchorPane.bottomAnchor="0.0" />
+            </children>
         </VBox>
     </HBox>
 </AnchorPane>

@@ -30,11 +30,32 @@ public class PantallaCambiarPokemones {
     public PantallaCambiarPokemones() {
     }
 
-    public Scene getScene() {
-        return scene;
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 
     public void mostrar(List<Pokemon> pokemones) {
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/listaDePokemons.fxml"));
+            Parent root = (Parent) loader.load();
+
+            // Obtén el controlador de la pantalla de juego y establece el Stage
+            PantallaCambiarPokemonesController pantallaCambiarPokemonesController = loader.getController();
+            pantallaCambiarPokemonesController.setStage(stage);
+            pantallaCambiarPokemonesController.crearListaDePokemonesViewer("jorge", pokemones);
+
+            Scene scene = new Scene(root);
+
+            stage.setTitle("Lista de Pokemones");
+            stage.setFullScreen(true);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
         /*
         // Crear un VBox principal para organizar los elementos
         VBox vbox = new VBox();
@@ -84,26 +105,4 @@ public class PantallaCambiarPokemones {
         stage.show();
 
          */
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/listaDePokemons.fxml"));
-            Parent root = (Parent) loader.load();
-
-            // Obtén el controlador de la pantalla de juego y establece el Stage y juego
-            PantallaBatallaController pantallaBatallaController = loader.getController();
-
-
-            PantallaCambiarPokemonesController pantallaCambiarPokemonesController = loader.getController();
-            pantallaCambiarPokemonesController.setStage(stage);
-
-            Scene scene = new Scene(root);
-
-            stage.setTitle("Lista de Pokemones");
-            stage.setFullScreen(true);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 }
