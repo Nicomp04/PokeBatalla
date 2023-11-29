@@ -126,7 +126,7 @@ public class Jugador {
         }
     }
 
-    private void escapar() {this.rendirse = true;}
+    public void escapar() {this.rendirse = true;}
 
     private void usarItem() {
         int accionElegida = jugadorVista.elegirItem(items);

@@ -4,6 +4,7 @@ import org.example.Parsers.ParserClima;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
@@ -11,7 +12,7 @@ import java.util.Random;
 public class Clima {
 
     public String nombre;
-    public List<Tipo> tipos;
+    public List<Tipo> tipos = new ArrayList<>();
     private TipoClima tipoClima;
     private int turnos;
 
@@ -73,8 +74,8 @@ public class Clima {
     }
 
     public boolean compararTipos(Pokemon pokemon){
-        for(Tipo tp: tipos){
-            if(Objects.equals(tp.getId(), pokemon.getTipo().getId())){
+        for(int i  = 0 ; i< tipos.size(); i++ ){
+            if(Objects.equals(tipos.get(i).getId(), pokemon.getTipo().getId())){
                 return true;
             }
         }

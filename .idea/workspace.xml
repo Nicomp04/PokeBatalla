@@ -5,65 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Clima/ClimaRefactor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Clima/TipoClima.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Controllers/JuegoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarAtaque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarDefensa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarHp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarVelocidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserClima.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Clima.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Backgrounds/Game Boy Advance - Pokemon FireRed LeafGreen - Battle Backgrounds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Backgrounds/bk1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Backgrounds/bk2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Backgrounds/bk3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Backgrounds/bk4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Backgrounds/bk5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Backgrounds/bk6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Backgrounds/bk7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Backgrounds/bk8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Backgrounds/bk9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Bag/BagItemSelect.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Bag/CloseBag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Bag/Game Boy Advance - Pokemon FireRed LeafGreen - Interface _ Bag Screens.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Bag/bag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/BattleMenu/BattleMenu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/BattleMenu/Game Boy Advance - Pokemon FireRed LeafGreen - HP Bars _ In-battle Menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/BattleMenu/HabilitySelectBattle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/BattleMenu/PokemonStatus1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/BattleMenu/PokemonStatus2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/BattleMenu/TextBattle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/PokemonMenu/Game Boy Advance - Pokemon FireRed LeafGreen - Pokemon Menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/PokemonMenu/PokemonButton1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/PokemonMenu/PokemonButton2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/PokemonMenu/PokemonMenuBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/PokemonMenu/PokemonNameBar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/PokemonMenu/PokemonSelection.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Pokemons/000 Game Boy Advance - Pokemon FireRed LeafGreen - Pokemon 1st 3rd Generation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Pokemons/CharmanderB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Pokemons/CharmanderF.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Pokemons/SquirtleB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Pokemons/SquirtleF.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Pokemons/bullbasaurB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites/Pokemons/bullbasaurF.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/battleMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaDerrotaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pantallaDerrota.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test/ClimaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/ClimaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test/HabilidadesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/HabilidadesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Clima/Clima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Clima/Clima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Modificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Modificacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserHabilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserHabilidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/CampoVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/CampoVista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Habilidades.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Habilidades.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/Tipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tipo/TipoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tipo/TipoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pokemones.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pokemones.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,9 +31,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="Class" />
         <option value="module-info" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -121,8 +72,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
+    "last_directory_selection": "C:/Users/nicol/OneDrive/Escritorio/Portfolio/PokeBatalla/src/main/java/org/example",
     "last_opened_file_path": "C:/Users/nicol/Downloads/openjfx-21.0.1_windows-x64_bin-sdk/javafx-sdk-21.0.1",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -283,7 +235,7 @@
       <workItem from="1701106664326" duration="4212000" />
       <workItem from="1701111432044" duration="4115000" />
       <workItem from="1701138847008" duration="5501000" />
-      <workItem from="1701193059731" duration="23530000" />
+      <workItem from="1701193059731" duration="25811000" />
     </task>
     <servers />
   </component>

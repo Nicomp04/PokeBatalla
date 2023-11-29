@@ -3,6 +3,9 @@ package org.example;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -18,6 +21,7 @@ import javafx.scene.layout.*;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -108,7 +112,6 @@ public class PantallaBatallaController {
 
         habilidadesListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                System.out.println("hia");
                 mostrarDetallesHabilidad(obtenerHabilidadPorNombre(newValue, habilidades));
             }
         });
@@ -149,7 +152,7 @@ public class PantallaBatallaController {
 
     @FXML
     private void elegirItems() {
-        // Lógica del segundo ataque
+
     }
 
     @FXML
@@ -157,7 +160,9 @@ public class PantallaBatallaController {
 
     @FXML
     private void huir(){
-
+        this.juego.getTurnoActivo().escapar();
+        this.juego.habilitarTurno();
+        this.stage.close();
     }
     public void initialize() {
         this.juego = new Juego(this);
@@ -245,6 +250,24 @@ public class PantallaBatallaController {
 
     public void setStage(Stage stage) {
         this.stage = stage;
+    }
+
+    public void mostrarDerrota(Jugador perdedor) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/pantallaDerrota.fxml"));
+            Parent root = loader.load();
+
+            PantallaDerrotaController derrotaController = loader.getController();
+            derrotaController.setDatosDerrota(perdedor);
+
+            Scene scene = new Scene(root, 600, 400);
+            Stage derrotaStage = new Stage();
+            derrotaStage.setTitle("Pantalla de Derrota");
+            derrotaStage.setScene(scene);
+            derrotaStage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Manejar la excepción según tus necesidades
+        }
     }
 
 

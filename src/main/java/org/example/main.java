@@ -8,7 +8,7 @@ import org.example.Vista.PantallaInicio;
 public class main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        PantallaInicio pantallaInicio = new PantallaInicio(primaryStage);
+        PantallaInicio pantallaInicio = new PantallaInicio();
 
         // Create a scene and set it to the stage
         Scene scene = new Scene(pantallaInicio, 400, 300);

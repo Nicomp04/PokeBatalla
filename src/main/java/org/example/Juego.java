@@ -100,8 +100,18 @@ public class Juego {
             turnoActivo = jugador1;
             turnoNoActivo = jugador2;
             notificarCambio(turnoNoActivo);
-            }
         }
+        if(!quedanPokemones() || seRindio()){
+            Jugador perdedor = this.perdedor();
+            notificarDerrota(perdedor);
+        }
+    }
+
+    private void notificarDerrota(Jugador perdedor) {
+        if (observador != null) {
+            observador.mostrarDerrota(perdedor);
+        }
+    }
         /*Jugador perdedor = this.perdedor();
         if(perdedor.seRindio())
             vista.mostrarCobarde(perdedor);

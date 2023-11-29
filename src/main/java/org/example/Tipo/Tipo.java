@@ -8,7 +8,7 @@ public abstract class Tipo {
     protected HashMap efectividad;
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public double getEfectividad(String tipo) {
