@@ -76,10 +76,22 @@
     "id": 98,
     "usos": 10,
     "estilo": "Efecto",
-    "tipo": "sin clima",
+    "tipo": "Normal",
     "estadistica": -1,
     "afectaAEnemigo": false,
     "valor": 15,
+    "estado": "PARALIZADO"
+
+  },
+  {
+    "nombre": "Gruñido",
+    "id": 15,
+    "usos": 25,
+    "estilo": "ModificacionDeDefensa",
+    "tipo": "Normal",
+    "estadistica": -1,
+    "afectaAEnemigo": true,
+    "valor": 20,
     "estado": "PARALIZADO"
 
   }

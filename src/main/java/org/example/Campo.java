@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.Clima.Clima;
+import org.example.Clima.TipoClima;
 import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
@@ -27,14 +28,15 @@ public class Campo {
         this.campoVista = new CampoVista();
         this.pokemonVista = new PokemonVista();
 
-        this.clima = new Clima("sin clima");
+        Clima clima = new Clima();
+        this.clima = clima.sortearInicial();
     }
 
     public Pokemon getPokemonesActivos(int num) {
         return pokemonesActivos.get(num);
     }
 
-    private void identificarAtacante(int id) {
+    public void identificarAtacante(int id) {
         if (id == 1 ){
             pokemonAtacante = pokemonesActivos.get(0);
             pokemonAtacado = pokemonesActivos.get(1);
@@ -46,7 +48,7 @@ public class Campo {
     }
 
 
-    public void usarHabilidad(int idAtacante){
+    /*public void usarHabilidad(int idAtacante){
         boolean despierto;
         boolean paralizado;
         boolean confundido;
@@ -63,6 +65,24 @@ public class Campo {
 
         if (despierto && !paralizado){
             this.aplicarHabilidad(habilidad);
+        }
+        campoVista.mostrarClima(clima);
+        clima.restarTurno();
+    }*/
+
+    public void usarHabilidad(Habilidad habilidad){
+        boolean despierto;
+        boolean paralizado;
+        boolean confundido;
+        despierto = validarEstadoDespierto(pokemonAtacante.getEstados());
+        paralizado = validarEstadoParalizado(pokemonAtacante.getEstados());
+
+        if (pokemonAtacante.getEstados().contains(Estados.CONFUNDIDO))
+            this.verQueTanConfundido(pokemonAtacante);
+
+        if (despierto && !paralizado){
+            this.aplicarHabilidad(habilidad);
+
         }
         campoVista.mostrarClima(clima);
         clima.restarTurno();
@@ -105,7 +125,7 @@ public class Campo {
             campoVista.entradaInvalida();
             return elegirHabilidad(pokemonAtacante);
         }
-        return pokemonAtacante.getHabilidades(habilidadElegida - 1);
+        return pokemonAtacante.getHabilidad(habilidadElegida - 1);
     }
 
     public void aplicarHabilidad(Habilidad habilidadElegida){
@@ -119,7 +139,7 @@ public class Campo {
 
 
     public void climaAfecta() {
-        if(clima.climaPeligroso()){
+        if(clima.esClimaPeligroso()){
             for (Pokemon pokemon: pokemonesActivos)
                 if(!clima.compararTipos(pokemon)){
                     pokemon.modificarHp(- (pokemon.getVidaActual() * 3 / 100));

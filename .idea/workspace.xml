@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaDerrotaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pantallaDerrota.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaCambiarPokemones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaCambiarPokemones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InicioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InicioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/chari.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/chari.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pantallaJuego1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pantallaJuego1.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +49,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -66,7 +73,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;juancpuch4&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/nicol/Downloads/openjfx-21.0.1_windows-x64_bin-sdk/javafx-sdk-21.0.1&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -79,7 +86,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example" />
@@ -100,19 +107,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.main">
-    <configuration name="JuegoInicio" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Vista.JuegoInicio" />
-      <module name="PokeBatalla" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.Vista.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="PokeBatalla" />
@@ -153,7 +147,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JuegoTest.determinaPerdedorCorrectamente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HabilidadesTest.testCambioDeDefenzaDeUnPokemonPorHabilidad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PokeBatalla" />
       <extension name="coverage">
         <pattern>
@@ -162,8 +156,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.JuegoTest" />
-      <option name="METHOD_NAME" value="determinaPerdedorCorrectamente" />
+      <option name="MAIN_CLASS_NAME" value="Test.HabilidadesTest" />
+      <option name="METHOD_NAME" value="testCambioDeDefenzaDeUnPokemonPorHabilidad" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HabilidadesTest.testCambioDeEstadoDeUnPokemonPorHabilidad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PokeBatalla" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.HabilidadesTest" />
+      <option name="METHOD_NAME" value="testCambioDeEstadoDeUnPokemonPorHabilidad" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -187,19 +197,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.main" />
-      <item itemvalue="Application.JuegoInicio" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.PokemonApp" />
       <item itemvalue="JUnit.org.example.Parsers in PokeBatalla" />
-      <item itemvalue="JUnit.JuegoTest.determinaPerdedorCorrectamente" />
+      <item itemvalue="JUnit.HabilidadesTest.testCambioDeDefenzaDeUnPokemonPorHabilidad" />
+      <item itemvalue="JUnit.HabilidadesTest.testCambioDeEstadoDeUnPokemonPorHabilidad" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.main" />
-        <item itemvalue="JUnit.JuegoTest.determinaPerdedorCorrectamente" />
         <item itemvalue="Application.PokemonApp" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.JuegoInicio" />
+        <item itemvalue="JUnit.JuegoTest.determinaPerdedorCorrectamente" />
       </list>
     </recent_temporary>
   </component>
@@ -228,12 +238,24 @@
       <workItem from="1701106030014" duration="593000" />
       <workItem from="1701106664326" duration="4212000" />
       <workItem from="1701111432044" duration="4115000" />
-      <workItem from="1701138847008" duration="3493000" />
+      <workItem from="1701138847008" duration="5501000" />
+      <workItem from="1701193059731" duration="25811000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

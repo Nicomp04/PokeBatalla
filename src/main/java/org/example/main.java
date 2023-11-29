@@ -1,21 +1,14 @@
 package org.example;
 
 import javafx.application.Application;
-
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.example.Vista.PantallaInicio;
-
-
-import java.io.IOException;
 
 public class main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        PantallaInicio pantallaInicio = new PantallaInicio(primaryStage);
+        PantallaInicio pantallaInicio = new PantallaInicio();
 
         // Create a scene and set it to the stage
         Scene scene = new Scene(pantallaInicio, 400, 300);

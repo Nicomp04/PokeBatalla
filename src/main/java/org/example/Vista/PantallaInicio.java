@@ -21,9 +21,9 @@ public class PantallaInicio extends VBox {
     Stage stage;
     Button btnInicio;
 
-    public PantallaInicio(Stage stage) {
+    public PantallaInicio() {
         super();
-        this.stage = stage;
+        this.stage = new Stage();
 
         btnInicio = new Button("Iniciar Juego");
         btnInicio.setOnAction(e -> {
@@ -54,6 +54,7 @@ public class PantallaInicio extends VBox {
             stage.setFullScreen(true);
             stage.setScene(scene);
             stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

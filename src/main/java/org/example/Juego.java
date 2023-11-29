@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.Habilidades.Habilidad;
 import org.example.Habilidades.RepositorioHabilidades;
 import org.example.Pokemon.Pokemon;
 
@@ -7,6 +8,7 @@ import org.example.Vista.JuegoVista;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.temporal.JulianFields;
 import java.util.List;
 
 public class Juego {
@@ -19,12 +21,21 @@ public class Juego {
     final Logger logger = LoggerFactory.getLogger(Juego.class);
 
     private JuegoVista vista ;
+    private PantallaBatallaController observador;
+    private Jugador turnoNoActivo;
+
+    public void notificarCambio(Jugador noActivo) {
+        if (observador != null) {
+            observador.actualizarInterfaz(noActivo);
+        }
+    }
 
     public Juego(Jugador j1, Jugador j2){
         this.jugador1 = j1;
         this.jugador2 = j2;
     }
-    public Juego() {
+    public Juego(PantallaBatallaController pantalla) {
+        this.observador = pantalla;
         Generador gen = new Generador();
 
         List<Jugador> jugadores = gen.generarPartida();
@@ -41,6 +52,8 @@ public class Juego {
 
         this.turnoActivo = definirPrimerTurno();
     }
+
+    public Jugador getTurnoActivo(){return this.turnoActivo;}
 
     /*public Juego() {
         vista = new JuegoVista();
@@ -77,23 +90,33 @@ public class Juego {
     }
 
     public void habilitarTurno(){
-        while(quedanPokemones() && !seRindio()) {
-            if (turnoActivo.equals(jugador1)) {
-                jugador1.usarTurno();
-                turnoActivo = jugador2;
-
-
-            } else {
-                jugador2.usarTurno();
-                turnoActivo = jugador1;
-
-            }
+        if (turnoActivo.equals(jugador1)) {
+            System.out.println("jug1");
+            turnoActivo = jugador2;
+            turnoNoActivo = jugador1;
+            notificarCambio(turnoNoActivo);
+        } else {
+            System.out.println("jug222");
+            turnoActivo = jugador1;
+            turnoNoActivo = jugador2;
+            notificarCambio(turnoNoActivo);
         }
-        Jugador perdedor = this.perdedor();
+        if(!quedanPokemones() || seRindio()){
+            Jugador perdedor = this.perdedor();
+            notificarDerrota(perdedor);
+        }
+    }
+
+    private void notificarDerrota(Jugador perdedor) {
+        if (observador != null) {
+            observador.mostrarDerrota(perdedor);
+        }
+    }
+        /*Jugador perdedor = this.perdedor();
         if(perdedor.seRindio())
             vista.mostrarCobarde(perdedor);
-        vista.mostarPerdedor(perdedor.getNombre());
-    }
+        vista.mostarPerdedor(perdedor.getNombre());*/
+
 
     public Jugador perdedor(){
         if (jugador1.seRindio() || !jugador1.tienePokemones()){
@@ -101,7 +124,7 @@ public class Juego {
         }
         return jugador2;
     }
-    private boolean seRindio() {
+    public boolean seRindio() {
         return jugador1.seRindio() || jugador2.seRindio();
     }
 
@@ -115,4 +138,9 @@ public class Juego {
     public Jugador getJugador2(){
         return this.jugador2;
     }
+
+    public Campo getCampo() {return this.campoDeBatalla;}
+
+    public void setTurnoActivo(Jugador jugador2) {this.turnoActivo = jugador2;}
+
 }

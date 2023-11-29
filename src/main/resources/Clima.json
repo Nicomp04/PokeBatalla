@@ -1,0 +1,37 @@
+[
+  {
+    "nombre": "Normal",
+    "tipoClima": "NORMAL",
+    "tipos": []
+  },
+  {
+    "nombre": "Soleado",
+    "tipoClima": "NORMAL",
+    "tipos": ["Fuego"]
+  },
+  {
+    "nombre": "Lluvia",
+    "tipoClima": "NORMAL",
+    "tipos": ["Agua", "Planta"]
+  },
+  {
+    "nombre": "Tormenta de arena",
+    "tipoClima": "PELIGROSO",
+    "tipos": ["Tierra", "Roca"]
+  },
+  {
+    "nombre": "Niebla",
+    "tipoClima": "NORMAL",
+    "tipos": ["Fantasma", "Psiquico"]
+  },
+  {
+    "nombre": "Tormenta de rayos",
+    "tipoClima": "PELIGROSO",
+    "tipos": ["Electrico"]
+  },
+  {
+    "nombre": "Huracan",
+    "tipoClima": "PELIGROSO",
+    "tipos": ["Volador"]
+  }
+]
