@@ -82,7 +82,6 @@ public class PantallaCambiarPokemonesController {
     }
 
 
-
     public void handleMouseClicked(MouseEvent mouseEvent) {
         int pos = -1;
         StackPane stackPane = (StackPane) mouseEvent.getSource();
@@ -97,5 +96,6 @@ public class PantallaCambiarPokemonesController {
         System.out.println(jugador.getPokemones().get(0).getNombre());
         System.out.println(jugador.getPokemones().get(1).getNombre());
 
+        this.stage.close();
     }
 }

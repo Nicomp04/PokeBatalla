@@ -170,10 +170,11 @@ public class PantallaBatallaController {
     private void cambiarPokemones(){
         Jugador jugadorActivo = this.juego.getTurnoActivo();
         PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
-        pantallaCambiarPokemones.setStage(this.stage);
+
+        Stage stage2 = new Stage();
+        pantallaCambiarPokemones.setStage(stage2);
         pantallaCambiarPokemones.mostrar(jugadorActivo);
-
-
+        actualizarInterfaz(jugadorActivo);
     }
 
     @FXML
@@ -203,7 +204,7 @@ public class PantallaBatallaController {
         this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
         this.jugadorPokemonNombre.setText(jugadorPokemon.getNombre());
 
-        enemigoPokemonImage.setImage(this.imagen1);
+        enemigoPokemonImage.setImage(this.enemigoPokemon.getImage());
         enemigoSaludBar.setProgress((double)enemigoPokemon.getVidaActual() / enemigoPokemon.getVidaMaxima());
         enemigoPokemonNombre.setText(enemigoPokemon.getNombre());
 
@@ -214,12 +215,13 @@ public class PantallaBatallaController {
 
         habilidadesListView.setItems(FXCollections.observableArrayList());
         descripcionVBox.requestFocus();
-        }
-        public void ordenarEstados(){
-            this.juego.getCampo().validarEstadoEnvenenado(jugadorPokemon);
-            this.jugadorPokemon.restarTurnoEstados();
-            this.juego.habilitarTurno();
-        }
+    }
+
+    public void ordenarEstados(){
+        this.juego.getCampo().validarEstadoEnvenenado(jugadorPokemon);
+        this.jugadorPokemon.restarTurnoEstados();
+    }
+
     @FXML
     private void handleKeyPress(KeyEvent event) {
         if (event.getCode() == KeyCode.RIGHT) {

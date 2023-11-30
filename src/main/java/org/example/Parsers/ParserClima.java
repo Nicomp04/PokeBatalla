@@ -1,7 +1,6 @@
 package org.example.Parsers;
 
 import org.example.Clima.Clima;
-import org.example.Clima.ClimaRefactor;
 import org.example.Clima.TipoClima;
 import org.example.Tipo.Tipo;
 import org.example.Tipo.TipoFactory;

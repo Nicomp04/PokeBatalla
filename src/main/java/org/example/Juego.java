@@ -1,10 +1,12 @@
 package org.example;
 
+import javafx.stage.Stage;
 import org.example.Habilidades.Habilidad;
 import org.example.Habilidades.RepositorioHabilidades;
 import org.example.Pokemon.Pokemon;
 
 import org.example.Vista.JuegoVista;
+import org.example.Vista.PantallaCambiarPokemones;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -115,12 +117,24 @@ public class Juego {
         if (turnoActivo.equals(jugador1)) {
             turnoActivo = jugador2;
             turnoNoActivo = jugador1;
+
             notificarCambio(turnoNoActivo);
         } else {
             turnoActivo = jugador1;
             turnoNoActivo = jugador2;
+
             notificarCambio(turnoNoActivo);
         }
+
+        if(turnoActivo.getPokemonActual().estaMuerto()){
+            PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
+
+            Stage stage2 = new Stage();
+            pantallaCambiarPokemones.setStage(stage2);
+            pantallaCambiarPokemones.mostrar(turnoActivo);
+        }
+
+
         if(!quedanPokemones() || seRindio()){
             Jugador perdedor = this.perdedor();
             notificarDerrota(perdedor);
