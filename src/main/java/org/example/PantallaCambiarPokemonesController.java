@@ -55,7 +55,7 @@ public class PantallaCambiarPokemonesController {
     public void crearListaDePokemonesViewer(Jugador jugador, List<Pokemon> pokemones){
         this.jugador = jugador;
         this.jugadorNombre.setText(jugador.getNombre());
-        Image imagen = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif")));
+        Image imagen = new Image(jugador.getPokemonActual().getUrl());
         this.jugadorImagen.setImage(imagen);
         this.pokemonNombre.setText(pokemones.get(0).getNombre());
 

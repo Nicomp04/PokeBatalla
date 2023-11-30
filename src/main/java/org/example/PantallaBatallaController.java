@@ -183,6 +183,7 @@ public class PantallaBatallaController {
         this.juego.habilitarTurno();
         this.stage.close();
     }
+
     public void initialize() {
         this.juego = new Juego(this);
         this.imagen1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif")));
