@@ -1,0 +1,51 @@
+[
+  {
+    "nombre": "Normal",
+    "tipoClima": "NORMAL",
+    "tipos": [],
+    "id": 1,
+    "url": "/nada.png"
+  },
+  {
+    "nombre": "Soleado",
+    "tipoClima": "NORMAL",
+    "tipos": ["Fuego"],
+    "id": 2,
+    "url": "/sol.png"
+  },
+  {
+    "nombre": "Lluvia",
+    "tipoClima": "NORMAL",
+    "tipos": ["Agua", "Planta"],
+    "id": 3,
+    "url": "/Lluvia.gif"
+  },
+  {
+    "nombre": "Tormenta de arena",
+    "tipoClima": "PELIGROSO",
+    "tipos": ["Tierra", "Roca"],
+    "id": 4,
+    "url": "/arena.gif"
+  },
+  {
+    "nombre": "Niebla",
+    "tipoClima": "NORMAL",
+    "tipos": ["Fantasma", "Psiquico"],
+    "id": 5,
+    "url": "/niebla.png"
+  },
+  {
+    "nombre": "Tormenta de rayos",
+    "tipoClima": "PELIGROSO",
+    "tipos": ["Electrico"],
+    "id": 6,
+    "url": "/rayos.gif"
+  },
+  {
+    "nombre": "Huracan",
+    "tipoClima": "PELIGROSO",
+    "tipos": ["Volador"],
+    "id": 7,
+    "url": "/viento.gif"
+  }
+]

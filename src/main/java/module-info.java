@@ -8,6 +8,7 @@ module PokeBatalla {
     requires javafx.controls;
     requires junit;
     requires org.mockito;
+    requires javafx.media;
 
     exports org.example;
 }

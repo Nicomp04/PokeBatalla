@@ -25,7 +25,7 @@ public class HabilidadesTest {
 
         Pokemon pokemonAtacado = new Pokemon("charizard",3,"fuego",20,200,40,50,80);
 
-        Clima clima = new ParserClima("src/main/resources/Clima.json").getClima("Normal");
+        Clima clima = new ParserClima("src/main/resources/Climas.json").getClima("Normal");
 
         PokemonVista vista = new PokemonVista();
 
@@ -53,7 +53,7 @@ public class HabilidadesTest {
 
         Pokemon pokemonAtacado = new Pokemon("charizard",3,"fuego",20,200,40,50,80);
 
-        Clima clima = new ParserClima("src/main/resources/Clima.json").getClima("Normal");
+        Clima clima = new ParserClima("src/main/resources/Climas.json").getClima("Normal");
 
         habilidadTest.usarEnPokemon(pokemonAtacante, pokemonAtacado, clima);
         boolean estadoEsperado = pokemonAtacado.getEstados().contains(Estados.CONFUNDIDO);
@@ -71,7 +71,7 @@ public class HabilidadesTest {
 
         Pokemon pokemonAtacado = new Pokemon("charizard",3,"fuego",20,200,40,50,80);
 
-        Clima clima = new ParserClima("src/main/resources/Clima.json").getClima("Normal");
+        Clima clima = new ParserClima("src/main/resources/Climas.json").getClima("Normal");
 
         // Act:
         int EstadisticaOriginal = pokemonAtacado.getDefensa();

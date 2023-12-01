@@ -18,13 +18,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.layout.*;
+import org.example.Clima.Clima;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.PantallaCambiarPokemones;
 import org.example.Vista.PantallaItems;
 import org.example.Vista.PantallaCambiarPokemones;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +51,12 @@ public class PantallaBatallaController {
 
     @FXML
     private ImageView jugadorPokemonImage;
+
+    @FXML
+    private Clima climaActual;
+
+    @FXML
+    private ImageView ClimaActualImage;
 
     @FXML
     private ProgressBar jugadorSaludBar;
@@ -184,6 +194,20 @@ public class PantallaBatallaController {
         this.stage.close();
     }
 
+    private void reproducirMusica(String url){
+        // Crear un objeto Media con el archivo de audio
+        Media sonido = new Media(new File(url).toURI().toString());
+
+        // Crear un reproductor de medios (MediaPlayer)
+        MediaPlayer mediaPlayer = new MediaPlayer(sonido);
+
+        // Configurar el MediaPlayer para reproducir de manera continua (si se desea)
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+
+        mediaPlayer.play();
+
+    }
+
     public void initialize() {
         this.juego = new Juego(this);
         this.imagen1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif")));
@@ -194,9 +218,11 @@ public class PantallaBatallaController {
         }else{
             actualizarInterfaz(juego.getJugador1());
         }
+        reproducirMusica("src/main/resources/BattleTheme.mp3");
     }
 
     public void actualizarInterfaz(Jugador noActivo) {
+        climaActual = juego.getCampo().getClima();
         enemigoPokemon = noActivo.getPokemonActual();
         jugadorPokemon = juego.getTurnoActivo().getPokemonActual();
 
@@ -204,6 +230,10 @@ public class PantallaBatallaController {
         this.jugadorPokemonImage.setImage(jugadorPokemon.getImage());
         this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
         this.jugadorPokemonNombre.setText(jugadorPokemon.getNombre());
+
+        ClimaActualImage.setImage(this.climaActual.getImage());
+        System.out.println(this.climaActual.nombre);
+        System.out.println(this.climaActual.getUrl());
 
         enemigoPokemonImage.setImage(this.enemigoPokemon.getImage());
         enemigoSaludBar.setProgress((double)enemigoPokemon.getVidaActual() / enemigoPokemon.getVidaMaxima());

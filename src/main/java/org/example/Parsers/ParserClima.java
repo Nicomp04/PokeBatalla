@@ -31,12 +31,14 @@ public class ParserClima{
                 String nombre = jsonClima.getString("nombre");
                 TipoClima tipo = TipoClima.valueOf(jsonClima.getString("tipoClima"));
                 JSONArray tipoJSON = jsonClima.getJSONArray("tipos");
+                int id = jsonClima.getInt("id");
+                String url = jsonClima.getString("url");
                 List<Tipo> tipos = new ArrayList<>();
                 for (int j = 0; j < tipoJSON.length(); j++) {
                     tipos.add(TipoFactory.getTipo(tipoJSON.getString(j)));
                 }
 
-                Clima clima = new Clima(nombre, tipo, tipos);
+                Clima clima = new Clima(nombre, tipo, tipos, url);
                 this.mapaClimaParser.put(i, clima);
             }
         } catch (IOException e) {

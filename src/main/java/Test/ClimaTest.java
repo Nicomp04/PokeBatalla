@@ -20,7 +20,7 @@ import static org.mockito.Mockito.when;
 public class ClimaTest {
     @Test
     public void cambiarClima(){
-        Clima clima = new Clima("Normal", TipoClima.NORMAL, null);
+        Clima clima = new Clima("Normal", TipoClima.NORMAL, null, null);
 
         clima.cambiar("Soleado");
 
@@ -28,7 +28,7 @@ public class ClimaTest {
     }
     @Test
     public void climaGastaTurnos(){
-        Clima clima = new Clima("Normal", TipoClima.NORMAL, null);
+        Clima clima = new Clima("Normal", TipoClima.NORMAL, null, null);
 
         clima.restarTurno();
 
@@ -37,7 +37,7 @@ public class ClimaTest {
 
     @Test
     public void climaEsPeligroso(){
-        Clima clima = new Clima("Huracan", TipoClima.PELIGROSO, null);
+        Clima clima = new Clima("Huracan", TipoClima.PELIGROSO, null, null);
 
         assertTrue(clima.esClimaPeligroso());
     }
@@ -48,7 +48,7 @@ public class ClimaTest {
         List<Tipo> list = new ArrayList<>();
         list.add(tipo);
 
-        Clima clima = new Clima("Soleado", TipoClima.NORMAL, list);
+        Clima clima = new Clima("Soleado", TipoClima.NORMAL, list, null);
 
         Pokemon pokemon = new Pokemon("charizard",1,"fuego",10,10,10,10,10);
         double esperado = 100 + clima.mejoraPorTipo(pokemon,100);

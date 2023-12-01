@@ -19,6 +19,9 @@
             <Font name="System Bold" size="14.0" />
         </font>
     </Text>
+    <!-- ImageView para mostrar la imagen del clima -->
+
+    <ImageView fx:id="ClimaActualImage" fitWidth="1500" fitHeight="1000" pickOnBounds="true" preserveRatio="true"/>
 
     <!-- Parte Sup e Der -->
     <ImageView fx:id="enemigoPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="1300.0" layoutY="30.0"/>

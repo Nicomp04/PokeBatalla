@@ -1,5 +1,6 @@
 package org.example;
 
+import javafx.scene.image.ImageView;
 import org.example.Clima.Clima;
 import org.example.Clima.TipoClima;
 import org.example.Estado.Estados;
@@ -146,5 +147,9 @@ public class Campo {
                 }
         }
 
+    }
+
+    public Clima getClima() {
+        return this.clima;
     }
 }
