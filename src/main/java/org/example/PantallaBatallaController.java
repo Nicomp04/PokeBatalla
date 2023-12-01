@@ -53,6 +53,9 @@ public class PantallaBatallaController {
     private ImageView jugadorPokemonImage;
 
     @FXML
+    private Text jugadorPokemonName;
+
+    @FXML
     private Clima climaActual;
 
     @FXML
@@ -225,6 +228,7 @@ public class PantallaBatallaController {
         climaActual = juego.getCampo().getClima();
         enemigoPokemon = noActivo.getPokemonActual();
         jugadorPokemon = juego.getTurnoActivo().getPokemonActual();
+        this.jugadorPokemonName.setText("Es el turno de " + juego.getTurnoActivo().getNombre() + ", Vamos " + juego.getTurnoActivo().getPokemonActual().getNombre() + "!!!");
 
         // Cargar la imagen desde el ClassLoader
         this.jugadorPokemonImage.setImage(jugadorPokemon.getImage());

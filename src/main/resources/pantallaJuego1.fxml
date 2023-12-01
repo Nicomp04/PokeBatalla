@@ -37,7 +37,7 @@
 
         <!-- Descripción (Parte Izquierda) -->
         <VBox fx:id="descripcionVBox" spacing="400.0" alignment="CENTER" layoutX="300">
-            <Text text="Charizard esta listo para atacar"  fill="white" layoutX="200"/>
+            <Text fx:id="jugadorPokemonName"  fill="white" layoutX="200"/>
         </VBox>
         <VBox fx:id="habilidadesVBox" visible="false" spacing="200.0" alignment="CENTER" layoutX="300">
             <ListView fx:id="habilidadesListView" onMouseClicked="#usarHabilidad"></ListView>
