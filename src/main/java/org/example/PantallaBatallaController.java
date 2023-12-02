@@ -1,16 +1,14 @@
 package org.example;
 
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.image.Image;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -18,12 +16,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.layout.*;
+import javafx.util.Duration;
 import org.example.Clima.Clima;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.PantallaCambiarPokemones;
 import org.example.Vista.PantallaItems;
-import org.example.Vista.PantallaCambiarPokemones;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -38,10 +36,6 @@ public class PantallaBatallaController {
     @FXML
     private Stage stage;
 
-    private Image imagen1;
-
-    private Image imagen2;
-
     private List<Habilidad> habilidades = new ArrayList<>();
 
     @FXML
@@ -53,7 +47,7 @@ public class PantallaBatallaController {
     private ImageView jugadorPokemonImage;
 
     @FXML
-    private Text jugadorPokemonName;
+    private Text textoDescripcion;
 
     @FXML
     private Clima climaActual;
@@ -167,6 +161,7 @@ public class PantallaBatallaController {
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
             this.juego.habilitarTurno();
             ordenarEstados();
+            mostrarTextoTemporalmente(enemigoPokemon.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
         }
     }
 
@@ -213,8 +208,7 @@ public class PantallaBatallaController {
 
     public void initialize() {
         this.juego = new Juego(this);
-        this.imagen1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif")));
-        this.imagen2 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/oster.gif")));
+        this.textoDescripcion.setText(datosJugador());
         if ( Objects.equals(juego.getTurnoActivo(), juego.getJugador1())){
             jugadorPokemon = juego.getJugador2().getPokemonActual();
             actualizarInterfaz(juego.getJugador2());
@@ -228,7 +222,6 @@ public class PantallaBatallaController {
         climaActual = juego.getCampo().getClima();
         enemigoPokemon = noActivo.getPokemonActual();
         jugadorPokemon = juego.getTurnoActivo().getPokemonActual();
-        this.jugadorPokemonName.setText("Es el turno de " + juego.getTurnoActivo().getNombre() + ", Vamos " + juego.getTurnoActivo().getPokemonActual().getNombre() + "!!!");
 
         // Cargar la imagen desde el ClassLoader
         this.jugadorPokemonImage.setImage(jugadorPokemon.getImage());
@@ -251,6 +244,31 @@ public class PantallaBatallaController {
         habilidadesListView.setItems(FXCollections.observableArrayList());
         descripcionVBox.requestFocus();
     }
+
+    public void actualizarTexto(String nuevoTexto) {
+        this.textoDescripcion.setText(nuevoTexto);
+        descripcionVBox.setVisible(true);
+    }
+
+    public void mostrarTextoTemporalmente(String nuevoTexto) {
+        int duracionEnSegundos = 5;
+        actualizarTexto(nuevoTexto);
+        // Configuración de la animación para mostrar y ocultar el texto en la ventana
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, event -> {
+                    textoDescripcion.setText(nuevoTexto);
+                    botoneraVBox.setVisible(false);
+                }),
+                new KeyFrame(Duration.seconds(duracionEnSegundos), event -> {
+                    textoDescripcion.setText(datosJugador());
+                    botoneraVBox.setVisible(true);
+                })
+        );
+        timeline.setCycleCount(1); // La animación se ejecutará una vez
+        timeline.play();
+    }
+
+    private String datosJugador(){return ("Es el turno de " + juego.getTurnoActivo().getNombre() + ", Vamos " + juego.getTurnoActivo().getPokemonActual().getNombre() + "!!!");}
 
     public void ordenarEstados(){
         this.juego.getCampo().validarEstadoEnvenenado(jugadorPokemon);

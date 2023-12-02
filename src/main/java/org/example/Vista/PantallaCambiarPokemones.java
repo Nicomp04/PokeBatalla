@@ -49,7 +49,6 @@ public class PantallaCambiarPokemones {
             Scene scene = new Scene(root);
 
             stage.setTitle("Lista de Pokemones");
-            stage.setFullScreen(true);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

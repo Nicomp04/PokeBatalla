@@ -29,16 +29,4 @@ public class main extends Application {
         launch();
     }
 
-    private void reproducirMusica(String url){
-        // Crear un objeto Media con el archivo de audio
-        Media sonido = new Media(new File(url).toURI().toString());
-
-        // Crear un reproductor de medios (MediaPlayer)
-        MediaPlayer mediaPlayer = new MediaPlayer(sonido);
-
-        // Configurar el MediaPlayer para reproducir de manera continua (si se desea)
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-
-        mediaPlayer.play();
-    }
 }
