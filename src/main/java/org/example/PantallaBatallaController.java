@@ -175,14 +175,15 @@ public class PantallaBatallaController {
     }
 
     @FXML
-    private void cambiarPokemones(){
+    public void cambiarPokemones(){
         Jugador jugadorActivo = this.juego.getTurnoActivo();
+        Jugador jugadorNoActivo = this.juego.getTurnoNoActivo();
         PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
 
         Stage stage2 = new Stage();
-        pantallaCambiarPokemones.setStage(stage2);
+        pantallaCambiarPokemones.setStage(stage2, juego);
         pantallaCambiarPokemones.mostrar(jugadorActivo);
-        actualizarInterfaz(jugadorActivo);
+
     }
 
     @FXML

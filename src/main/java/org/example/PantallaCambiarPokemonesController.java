@@ -23,33 +23,28 @@ public class PantallaCambiarPokemonesController {
 
     @FXML
     private Stage stage;
-
-    private ImageView pokemonImage = new ImageView();
-
-    private ProgressBar pokemosnSaludBar = new ProgressBar();
-
     @FXML
     private Label jugadorNombre;
-
     @FXML
     private ImageView jugadorImagen;
-
     @FXML
     private Label pokemonNombre;
-
-    private StackPane[] listaPokemones;
-
-    private HBox informacionPokemon;
-
     @FXML
     private VBox listaPokemonsVBox = new VBox();
-
+    private ImageView pokemonImage = new ImageView();
+    private ProgressBar pokemosnSaludBar = new ProgressBar();
+    private StackPane[] listaPokemones;
+    private HBox informacionPokemon;
     private Jugador jugador;
+    private int pos;
+    private Juego juego;
 
 
-    public void setStage(Stage stage) {
+    public void setStage(Stage stage, Juego juego ) {
         this.listaPokemones = new StackPane[3];
         this.stage = stage;
+        this.pos = -1;
+        this.juego = juego;
     }
 
     public void crearListaDePokemonesViewer(Jugador jugador, List<Pokemon> pokemones){
@@ -81,21 +76,20 @@ public class PantallaCambiarPokemonesController {
         }
     }
 
-
     public void handleMouseClicked(MouseEvent mouseEvent) {
-        int pos = -1;
+
         StackPane stackPane = (StackPane) mouseEvent.getSource();
         String identificador = stackPane.getId();
-        if (identificador.equals("0")){pos = 0;}
-        else if (identificador.equals("1")){pos = 1;}
-        else if (identificador.equals("2")){pos = 2;}
-        else if (identificador.equals("3")){pos = 3;}
+        if (identificador.equals("0")){this.pos = 0;}
+        else if (identificador.equals("1")){this.pos = 1;}
+        else if (identificador.equals("2")){this.pos = 2;}
+        else if (identificador.equals("3")){this.pos = 3;}
 
-        System.out.println("Entro");
-        jugador.elegirPokemon(pos);
-        System.out.println(jugador.getPokemones().get(0).getNombre());
-        System.out.println(jugador.getPokemones().get(1).getNombre());
-
-        this.stage.close();
+        if (pos < jugador.getPokemones().size() || pos != -1){
+            this.stage.close();
+            jugador.elegirPokemon(pos);
+            stage.close();
+            juego.habilitarTurno();
+        }
     }
 }

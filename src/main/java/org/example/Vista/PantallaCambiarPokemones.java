@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.example.Jugador;
+import org.example.Juego;
 import org.example.PantallaBatallaController;
 import org.example.PantallaCambiarPokemonesController;
 import org.example.Pokemon.Pokemon;
@@ -26,13 +27,16 @@ public class PantallaCambiarPokemones {
 
     private Scene scene;
 
+    private Juego juego;
+
     Stage stage;
 
     public PantallaCambiarPokemones() {
     }
 
-    public void setStage(Stage stage) {
+    public void setStage(Stage stage, Juego juego) {
         this.stage = stage;
+        this.juego = juego;
     }
 
     public void mostrar(Jugador j) {
@@ -43,7 +47,7 @@ public class PantallaCambiarPokemones {
 
             // Obtén el controlador de la pantalla de juego y establece el Stage
             PantallaCambiarPokemonesController pantallaCambiarPokemonesController = loader.getController();
-            pantallaCambiarPokemonesController.setStage(stage);
+            pantallaCambiarPokemonesController.setStage(stage, juego);
             pantallaCambiarPokemonesController.crearListaDePokemonesViewer(j, j.getPokemones());
 
             Scene scene = new Scene(root);

@@ -102,16 +102,15 @@ public class Juego {
         } else {
             turnoActivo = jugador1;
             turnoNoActivo = jugador2;
-
             notificarCambio(turnoNoActivo);
         }
 
         if(turnoActivo.getPokemonActual().estaMuerto()){
-            PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
 
             Stage stage2 = new Stage();
-            pantallaCambiarPokemones.setStage(stage2);
-            pantallaCambiarPokemones.mostrar(turnoActivo);
+            observador.cambiarPokemones();
+            turnoActivo = jugador1;
+            turnoNoActivo = jugador2;
         }
 
 
