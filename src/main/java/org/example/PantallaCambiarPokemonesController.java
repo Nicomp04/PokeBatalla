@@ -11,6 +11,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.example.Pokemon.Pokemon;
@@ -31,6 +33,16 @@ public class PantallaCambiarPokemonesController {
     private Label pokemonNombre;
     @FXML
     private VBox listaPokemonsVBox = new VBox();
+    @FXML
+    private ProgressBar vidaPokemon;
+    @FXML
+    private Rectangle colorRectangulo0;
+    @FXML
+    private Rectangle colorRectangulo1;
+    @FXML
+    private Rectangle colorRectangulo2;
+    @FXML
+    private Rectangle colorRectangulo3;
     private ImageView pokemonImage = new ImageView();
     private ProgressBar pokemosnSaludBar = new ProgressBar();
     private StackPane[] listaPokemones;
@@ -53,6 +65,8 @@ public class PantallaCambiarPokemonesController {
         Image imagen = new Image(jugador.getPokemonActual().getUrl());
         this.jugadorImagen.setImage(imagen);
         this.pokemonNombre.setText(pokemones.get(0).getNombre());
+        double porcentajeVidaActual = (jugador.getPokemonActual().getVidaActual() / jugador.getPokemonActual().getVidaMaxima());
+        this.vidaPokemon.setProgress(porcentajeVidaActual);
 
         Integer j = listaPokemonsVBox.getChildren().size();
         Integer tamanoVBox = j != null ? j : 0;
@@ -62,15 +76,27 @@ public class PantallaCambiarPokemonesController {
 
             Label pokemonNombre = new Label();
             pokemonNombre.setText(pokemones.get(i).getNombre());
+            pokemonNombre.setStyle("-fx-font-size: 15px; -fx-font-weight: bold;");
+
+            Label espacio = new Label();
+            espacio.setText("  ");
 
             ProgressBar pokemosnSaludBar = new ProgressBar();
             pokemosnSaludBar.setProgress((double) pokemones.get(i).getVidaActual() /pokemones.get(i).getVidaMaxima());
+
+            Label porcentajeVida = new Label();
+            double vida = (pokemones.get(i).getVidaActual() / pokemones.get(i).getVidaMaxima()) * 100;
+            String porcentaje = String.format("%.0f", vida);
+            porcentajeVida.setText("  " + porcentaje + " %");
+            porcentajeVida.setStyle("-fx-font-size: 10px; -fx-font-weight: bold;");
 
             this.informacionPokemon = new HBox();
 
             informacionPokemon.setAlignment(Pos.CENTER);
             informacionPokemon.getChildren().add(pokemonNombre);
+            informacionPokemon.getChildren().add(espacio);
             informacionPokemon.getChildren().add(pokemosnSaludBar);
+            informacionPokemon.getChildren().add(porcentajeVida);
             this.listaPokemones[i].getChildren().add(informacionPokemon);
 
         }
@@ -80,16 +106,47 @@ public class PantallaCambiarPokemonesController {
 
         StackPane stackPane = (StackPane) mouseEvent.getSource();
         String identificador = stackPane.getId();
-        if (identificador.equals("0")){this.pos = 0;}
-        else if (identificador.equals("1")){this.pos = 1;}
-        else if (identificador.equals("2")){this.pos = 2;}
-        else if (identificador.equals("3")){this.pos = 3;}
+        identificarPocision(identificador);
 
-        if (pos < jugador.getPokemones().size() || pos != -1){
+        if (pos < jugador.getPokemones().size() && pos != -1 && !jugador.getPokemones().get(pos).estaMuerto()){
             this.stage.close();
             jugador.elegirPokemon(pos);
             stage.close();
             juego.habilitarTurno();
         }
     }
+
+    public void handleMouseEntered(MouseEvent mouseEvent){
+        StackPane stackPane = (StackPane) mouseEvent.getSource();
+        String identificador = stackPane.getId();
+        identificarPocision(identificador);
+
+        if (pos == 0) {colorRectangulo0.setFill(Color.LIGHTBLUE);}
+        else if (pos == 1) {colorRectangulo1.setFill(Color.LIGHTBLUE);}
+        else if (pos == 2) {colorRectangulo2.setFill(Color.LIGHTBLUE);}
+        else if (pos == 3) {colorRectangulo3.setFill(Color.LIGHTBLUE);}
+
+    }
+
+    public void handelMouseExited(MouseEvent mouseEvent) {
+        StackPane stackPane = (StackPane) mouseEvent.getSource();
+        String identificador = stackPane.getId();
+        identificarPocision(identificador);
+
+        if (pos == 0) {colorRectangulo0.setFill(Color.GREY);}
+        else if (pos == 1) {colorRectangulo1.setFill(Color.DIMGRAY);}
+        else if (pos == 2) {colorRectangulo2.setFill(Color.GREY);}
+        else if (pos == 3) {colorRectangulo3.setFill(Color.DIMGRAY);}
+    }
+
+
+    private void identificarPocision(String identificador){
+        if (identificador.equals("0")){this.pos = 0;}
+        else if (identificador.equals("1")){this.pos = 1;}
+        else if (identificador.equals("2")){this.pos = 2;}
+        else if (identificador.equals("3")){this.pos = 3;}
+        else{this.pos = -1;}
+    }
+
+
 }

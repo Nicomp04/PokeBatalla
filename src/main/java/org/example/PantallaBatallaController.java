@@ -177,7 +177,6 @@ public class PantallaBatallaController {
     @FXML
     public void cambiarPokemones(){
         Jugador jugadorActivo = this.juego.getTurnoActivo();
-        Jugador jugadorNoActivo = this.juego.getTurnoNoActivo();
         PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
 
         Stage stage2 = new Stage();
@@ -231,7 +230,6 @@ public class PantallaBatallaController {
 
         ClimaActualImage.setImage(this.climaActual.getImage());
         System.out.println(this.climaActual.nombre);
-        System.out.println(this.climaActual.getUrl());
 
         enemigoPokemonImage.setImage(this.enemigoPokemon.getImage());
         enemigoSaludBar.setProgress((double)enemigoPokemon.getVidaActual() / enemigoPokemon.getVidaMaxima());
@@ -252,7 +250,7 @@ public class PantallaBatallaController {
     }
 
     public void mostrarTextoTemporalmente(String nuevoTexto) {
-        int duracionEnSegundos = 5;
+        int duracionEnSegundos = 3;
         actualizarTexto(nuevoTexto);
         // Configuración de la animación para mostrar y ocultar el texto en la ventana
         Timeline timeline = new Timeline(

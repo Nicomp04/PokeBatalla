@@ -107,7 +107,6 @@ public class Juego {
 
         if(turnoActivo.getPokemonActual().estaMuerto()){
 
-            Stage stage2 = new Stage();
             observador.cambiarPokemones();
             turnoActivo = jugador1;
             turnoNoActivo = jugador2;
