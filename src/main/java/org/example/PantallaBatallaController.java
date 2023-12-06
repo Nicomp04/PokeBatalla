@@ -152,7 +152,7 @@ public class PantallaBatallaController {
         if (habilidadSeleccionada != null) {
             this.juego.getCampo().identificarAtacante(juego.getTurnoActivo().getId());
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
-            this.juego.habilitarTurno();
+
             ordenarEstados();
         }
     }
@@ -170,7 +170,7 @@ public class PantallaBatallaController {
     private void cambiarPokemones(){
         PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
         pantallaCambiarPokemones.setStage(this.stage);
-        pantallaCambiarPokemones.mostrar(this.juego.getTurnoActivo().getPokemones());
+        pantallaCambiarPokemones.mostrar(this.juego.getTurnoActivo());
     }
 
     @FXML
@@ -184,7 +184,6 @@ public class PantallaBatallaController {
         this.imagen1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif")));
         this.imagen2 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/oster.gif")));
         if ( Objects.equals(juego.getTurnoActivo(), juego.getJugador1())){
-            jugadorPokemon = juego.getJugador2().getPokemonActual();
             actualizarInterfaz(juego.getJugador2());
         }else{
             actualizarInterfaz(juego.getJugador1());
@@ -195,12 +194,11 @@ public class PantallaBatallaController {
         enemigoPokemon = noActivo.getPokemonActual();
         jugadorPokemon = juego.getTurnoActivo().getPokemonActual();
 
-        // Cargar la imagen desde el ClassLoader
         this.jugadorPokemonImage.setImage(jugadorPokemon.getImage());
         this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
         this.jugadorPokemonNombre.setText(jugadorPokemon.getNombre());
 
-        enemigoPokemonImage.setImage(this.imagen1);
+        enemigoPokemonImage.setImage(enemigoPokemon.getImage());
         enemigoSaludBar.setProgress((double)enemigoPokemon.getVidaActual() / enemigoPokemon.getVidaMaxima());
         enemigoPokemonNombre.setText(enemigoPokemon.getNombre());
 

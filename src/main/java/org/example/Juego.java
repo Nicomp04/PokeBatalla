@@ -95,7 +95,6 @@ public class Juego {
         jugadorPokemon.restarTurnoEstados();
         limpiarItems();
         this.habilitarTurno();
-
     }
 
     private void limpiarItems() {

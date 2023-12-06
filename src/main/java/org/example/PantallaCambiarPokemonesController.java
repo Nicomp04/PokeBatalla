@@ -82,7 +82,7 @@ public class PantallaCambiarPokemonesController {
     public void crearPokemonViewer(Pokemon pokemon) {
 
         this.pokemonImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif"))));
-        this.pokemosnSaludBar.setProgress((double) pokemon.getVidaActual() /pokemon.getVidaMaxima());
+       // this.pokemosnSaludBar.setProgress((double) pokemon.getVidaActual() /pokemon.getVidaMaxima());
         this.pokemonNombre.setText(pokemon.getNombre());
     }
 
