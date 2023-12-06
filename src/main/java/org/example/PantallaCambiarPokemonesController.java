@@ -23,37 +23,34 @@ public class PantallaCambiarPokemonesController {
 
     @FXML
     private Stage stage;
-
-    private ImageView pokemonImage = new ImageView();
-
-
-    //private ProgressBar pokemosnSaludBar = new ProgressBar();
-
     @FXML
     private Label jugadorNombre;
-
     @FXML
     private ImageView jugadorImagen;
-
     @FXML
     private Label pokemonNombre;
-
-    private StackPane[] listaPokemones;
-
-    private HBox informacionPokemon;
-
     @FXML
     private VBox listaPokemonsVBox = new VBox();
+    private ImageView pokemonImage = new ImageView();
+    private ProgressBar pokemosnSaludBar = new ProgressBar();
+    private StackPane[] listaPokemones;
+    private HBox informacionPokemon;
+    private Jugador jugador;
+    private int pos;
+    private Juego juego;
 
 
-    public void setStage(Stage stage) {
+    public void setStage(Stage stage, Juego juego ) {
         this.listaPokemones = new StackPane[3];
         this.stage = stage;
+        this.pos = -1;
+        this.juego = juego;
     }
 
-    public void crearListaDePokemonesViewer(String nombreJugador, List<Pokemon> pokemones){
-        this.jugadorNombre.setText(nombreJugador);
-        Image imagen = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif")));
+    public void crearListaDePokemonesViewer(Jugador jugador, List<Pokemon> pokemones){
+        this.jugador = jugador;
+        this.jugadorNombre.setText(jugador.getNombre());
+        Image imagen = new Image(jugador.getPokemonActual().getUrl());
         this.jugadorImagen.setImage(imagen);
         this.pokemonNombre.setText(pokemones.get(0).getNombre());
 
@@ -79,23 +76,20 @@ public class PantallaCambiarPokemonesController {
         }
     }
 
-    public void crearPokemonViewer(Pokemon pokemon) {
+    public void handleMouseClicked(MouseEvent mouseEvent) {
 
-        this.pokemonImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif"))));
-       // this.pokemosnSaludBar.setProgress((double) pokemon.getVidaActual() /pokemon.getVidaMaxima());
-        this.pokemonNombre.setText(pokemon.getNombre());
-    }
-
-
-
-    public int handleMouseClicked(MouseEvent mouseEvent) {
         StackPane stackPane = (StackPane) mouseEvent.getSource();
         String identificador = stackPane.getId();
-        if (identificador.equals("0")){return 0;}
-        else if (identificador.equals("1")){return 1;}
-        else if (identificador.equals("2")){return 2;}
-        else if (identificador.equals("3")){return 3;}
+        if (identificador.equals("0")){this.pos = 0;}
+        else if (identificador.equals("1")){this.pos = 1;}
+        else if (identificador.equals("2")){this.pos = 2;}
+        else if (identificador.equals("3")){this.pos = 3;}
 
-        return -1;
+        if (pos < jugador.getPokemones().size() || pos != -1){
+            this.stage.close();
+            jugador.elegirPokemon(pos);
+            stage.close();
+            juego.habilitarTurno();
+        }
     }
 }

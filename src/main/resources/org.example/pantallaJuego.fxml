@@ -18,7 +18,7 @@
     <!-- Parte inferior e izquierda -->
     <ImageView fx:id="jugadorPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="50.0" layoutY="200.0"/>
     <ProgressBar fx:id="jugadorPokemonHealthBar" layoutX="50.0" layoutY="360.0" prefWidth="150.0"/>
-    <Text fx:id="jugadorPokemonName" layoutX="50.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jugador Pokémon">
+    <Text fx:id="textoDescripcion" layoutX="50.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jugador Pokémon">
         <font>
             <Font name="System Bold" size="14.0" />
         </font>

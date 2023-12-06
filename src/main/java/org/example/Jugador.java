@@ -1,10 +1,8 @@
 package org.example;
 
-import org.example.Habilidades.Habilidad;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.JugadorVista;
-import org.example.Vista.PantallaCambiarPokemones;
 
 import java.util.List;
 
@@ -194,4 +192,19 @@ public class Jugador {
     }
 
     public List<Item> getItems() {return this.items;}
+
+    public void elegirPokemon(int posicion) {
+        if (posicion != -1){
+            if(!pokemones.get(posicion).estaMuerto() || !(pokemones.size() < posicion)){
+
+                Pokemon pokemonActivar = pokemones.get(posicion);
+                Pokemon pokemonDesactivar = pokemones.get(0);
+
+                pokemones.set(0, pokemonActivar);
+                pokemones.set(posicion, pokemonDesactivar);
+
+                campoDeBatalla.cambiarPokemon(pokemones.get(0), id);
+            }
+        }
+    }
 }

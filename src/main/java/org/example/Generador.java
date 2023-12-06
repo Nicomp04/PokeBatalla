@@ -34,12 +34,13 @@ public class Generador {
         ParserItems parserItems = new ParserItems();
         ParserPokemon parserPokemon = new ParserPokemon();
         ParserPartida parserPartida = new ParserPartida();
+
         this.habilidadMap = parserHabilidad.parsearHabilidades("src/main/resources/Habilidades.json");
         this.repositorioHabilidades.cargarMapa(habilidadMap);
+
         this.itemMap = parserItems.parsearItems("src/main/resources/Items.json");
         this.pokemonMap = parserPokemon.parsearPokemones("src/main/resources/pokemones.json",repositorioHabilidades);
-        List<Jugador> resultados = new ArrayList<>();
-        resultados = parserPartida.parsearJugadores("src/main/resources/Partida.json");
+        List<Jugador> resultados = parserPartida.parsearJugadores("src/main/resources/Partida.json");
 
         Jugador jugador;
         jugador = resultados.get(0);
@@ -63,45 +64,36 @@ public class Generador {
         return jugadores;
     }
 
-    private List<Item> obtenerItems(List<Integer> itemsParseo) {
+    private Jugador construirJugador(Jugador datos) {
+        List<Pokemon> pokemones = this.obtenerPokemones(datos.getPokemonesParseo());
+        List<Item> items = this.obtenerItems(datos.getItemsParseo());
+        return new Jugador(datos.getNombre(), pokemones, items, datos.getId());
+    }
+
+    private List<Item> obtenerItems(List<Integer> idsItems) {
         List<Item> items = new ArrayList<>();
 
-        for (int i = 0; i < itemsParseo.size(); i += 2){
-            Item item = obtenerItemPorId(itemsParseo.get(i));
-            int cantidad = (itemsParseo.get(i+1));
-            boolean sePuedeAgregarItem = true;
-            for (int j = 0 ; j < cantidad; j++) {
-                if (sePuedeAgregarItem) {
-                    items.add(item);
-                    sePuedeAgregarItem = chekearItem(item);
-                }
+        for (Integer id : idsItems) {
+            Item item = this.itemMap.get(id);
+            if (item != null) {
+                items.add(item.clonar());
             }
-            sePuedeAgregarItem = true;
         }
 
         return items;
     }
 
-    private boolean chekearItem(Item item){
-        if (item.getNombre() == "Pocion Molesta Alumnos"){
-            return false;
-        }
-        return true;
-    }
 
-    private Item obtenerItemPorId(int id) {
-        return itemMap.get(id);
-    }
-
-    private List<Pokemon> obtenerPokemones(List<Integer> pokemonesParseo){
+    private List<Pokemon> obtenerPokemones(List<Integer> idsPokemones) {
         List<Pokemon> pokemones = new ArrayList<>();
-        for (int i = 0; i < pokemonesParseo.size(); i++){
-            pokemones.add(obtenerPokemonPorId(pokemonesParseo.get(i)));
-        }
-        return pokemones;
-    }
 
-    public Pokemon obtenerPokemonPorId(int id) {
-        return pokemonMap.get(id);
+        for (Integer id : idsPokemones) {
+            // Obtén la instancia de Pokemon usando el método clonar
+            Pokemon pokemon = this.pokemonMap.get(id).clonar();
+            // Puedes ajustar cualquier otra propiedad que necesites aquí
+            pokemones.add(pokemon);
+        }
+
+        return pokemones;
     }
 }

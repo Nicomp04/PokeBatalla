@@ -46,4 +46,11 @@ public class Restaurador extends Item {
             logger.info("{} ha sido restaurado.", pokemonARestaurar);
             this.setUsos(this.usos - 1);
     }
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Restaurador clonedRestaurador = (Restaurador) super.clone();
+        // Realizar clonación profunda si es necesario
+        // clonedRestaurador.algunCampo = algo;
+        return clonedRestaurador;
+    }
 }

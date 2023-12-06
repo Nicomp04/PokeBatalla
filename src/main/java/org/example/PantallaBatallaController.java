@@ -1,16 +1,14 @@
 package org.example;
 
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.image.Image;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -18,13 +16,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.layout.*;
+import javafx.util.Duration;
+import org.example.Clima.Clima;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.PantallaCambiarPokemones;
 import org.example.Vista.PantallaItems;
-import org.example.Vista.PantallaCambiarPokemones;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,10 +35,6 @@ import java.util.Objects;
 public class PantallaBatallaController {
     @FXML
     private Stage stage;
-
-    private Image imagen1;
-
-    private Image imagen2;
 
     private List<Habilidad> habilidades = new ArrayList<>();
 
@@ -47,6 +45,15 @@ public class PantallaBatallaController {
 
     @FXML
     private ImageView jugadorPokemonImage;
+
+    @FXML
+    private Text textoDescripcion;
+
+    @FXML
+    private Clima climaActual;
+
+    @FXML
+    private ImageView ClimaActualImage;
 
     @FXML
     private ProgressBar jugadorSaludBar;
@@ -152,8 +159,9 @@ public class PantallaBatallaController {
         if (habilidadSeleccionada != null) {
             this.juego.getCampo().identificarAtacante(juego.getTurnoActivo().getId());
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
-
+            this.juego.habilitarTurno();
             ordenarEstados();
+            mostrarTextoTemporalmente(enemigoPokemon.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
         }
     }
 
@@ -167,10 +175,15 @@ public class PantallaBatallaController {
     }
 
     @FXML
-    private void cambiarPokemones(){
+    public void cambiarPokemones(){
+        Jugador jugadorActivo = this.juego.getTurnoActivo();
+        Jugador jugadorNoActivo = this.juego.getTurnoNoActivo();
         PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
-        pantallaCambiarPokemones.setStage(this.stage);
-        pantallaCambiarPokemones.mostrar(this.juego.getTurnoActivo());
+
+        Stage stage2 = new Stage();
+        pantallaCambiarPokemones.setStage(stage2, juego);
+        pantallaCambiarPokemones.mostrar(jugadorActivo);
+
     }
 
     @FXML
@@ -179,26 +192,48 @@ public class PantallaBatallaController {
         this.juego.habilitarTurno();
         this.stage.close();
     }
+
+    private void reproducirMusica(String url){
+        // Crear un objeto Media con el archivo de audio
+        Media sonido = new Media(new File(url).toURI().toString());
+
+        // Crear un reproductor de medios (MediaPlayer)
+        MediaPlayer mediaPlayer = new MediaPlayer(sonido);
+
+        // Configurar el MediaPlayer para reproducir de manera continua (si se desea)
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+
+        mediaPlayer.play();
+
+    }
+
     public void initialize() {
         this.juego = new Juego(this);
-        this.imagen1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/chari.gif")));
-        this.imagen2 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/oster.gif")));
+        this.textoDescripcion.setText(datosJugador());
         if ( Objects.equals(juego.getTurnoActivo(), juego.getJugador1())){
+            jugadorPokemon = juego.getJugador2().getPokemonActual();
             actualizarInterfaz(juego.getJugador2());
         }else{
             actualizarInterfaz(juego.getJugador1());
         }
+        reproducirMusica("src/main/resources/BattleTheme.mp3");
     }
 
     public void actualizarInterfaz(Jugador noActivo) {
+        climaActual = juego.getCampo().getClima();
         enemigoPokemon = noActivo.getPokemonActual();
         jugadorPokemon = juego.getTurnoActivo().getPokemonActual();
 
+        // Cargar la imagen desde el ClassLoader
         this.jugadorPokemonImage.setImage(jugadorPokemon.getImage());
         this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
         this.jugadorPokemonNombre.setText(jugadorPokemon.getNombre());
 
-        enemigoPokemonImage.setImage(enemigoPokemon.getImage());
+        ClimaActualImage.setImage(this.climaActual.getImage());
+        System.out.println(this.climaActual.nombre);
+        System.out.println(this.climaActual.getUrl());
+
+        enemigoPokemonImage.setImage(this.enemigoPokemon.getImage());
         enemigoSaludBar.setProgress((double)enemigoPokemon.getVidaActual() / enemigoPokemon.getVidaMaxima());
         enemigoPokemonNombre.setText(enemigoPokemon.getNombre());
 
@@ -209,12 +244,38 @@ public class PantallaBatallaController {
 
         habilidadesListView.setItems(FXCollections.observableArrayList());
         descripcionVBox.requestFocus();
-        }
-        public void ordenarEstados(){
-            this.juego.getCampo().validarEstadoEnvenenado(jugadorPokemon);
-            this.jugadorPokemon.restarTurnoEstados();
-            this.juego.habilitarTurno();
-        }
+    }
+
+    public void actualizarTexto(String nuevoTexto) {
+        this.textoDescripcion.setText(nuevoTexto);
+        descripcionVBox.setVisible(true);
+    }
+
+    public void mostrarTextoTemporalmente(String nuevoTexto) {
+        int duracionEnSegundos = 2;
+        actualizarTexto(nuevoTexto);
+        // Configuración de la animación para mostrar y ocultar el texto en la ventana
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, event -> {
+                    textoDescripcion.setText(nuevoTexto);
+                    botoneraVBox.setVisible(false);
+                }),
+                new KeyFrame(Duration.seconds(duracionEnSegundos), event -> {
+                    textoDescripcion.setText(datosJugador());
+                    botoneraVBox.setVisible(true);
+                })
+        );
+        timeline.setCycleCount(1); // La animación se ejecutará una vez
+        timeline.play();
+    }
+
+    private String datosJugador(){return ("Es el turno de " + juego.getTurnoActivo().getNombre() + ", Vamos " + juego.getTurnoActivo().getPokemonActual().getNombre() + "!!!");}
+
+    public void ordenarEstados(){
+        this.juego.getCampo().validarEstadoEnvenenado(jugadorPokemon);
+        this.jugadorPokemon.restarTurnoEstados();
+    }
+
     @FXML
     private void handleKeyPress(KeyEvent event) {
         if (event.getCode() == KeyCode.RIGHT) {
@@ -286,23 +347,4 @@ public class PantallaBatallaController {
         }
     }
 
-
-   /* public void usaSuTurnoContra(Jugador jugadorNoActivo) {
-        jugadorPokemon = juego.getTurnoActivo().getPokemonActual();
-        enemigoPokemon = jugadorNoActivo.getPokemonActual();
-
-        // Cargar la imagen desde el ClassLoader
-        //this.jugadorPokemonImage.setImage(this.imagen2);
-        this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
-        this.jugadorPokemonNombre.setText(jugadorPokemon.getNombre());
-
-        //enemigoPokemonImage.setImage(this.imagen1);
-        enemigoSaludBar.setProgress((double)enemigoPokemon.getVidaActual() / enemigoPokemon.getVidaMaxima());
-        enemigoPokemonNombre.setText(enemigoPokemon.getNombre());
-
-        habilidadesListView.setItems(FXCollections.observableArrayList());
-        descripcionVBox.requestFocus();
-    }*/
-
-    // Puedes agregar más métodos y lógica según sea necesario
 }

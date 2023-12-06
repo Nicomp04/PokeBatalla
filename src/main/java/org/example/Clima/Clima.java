@@ -1,5 +1,6 @@
 package org.example.Clima;
 
+import javafx.scene.image.Image;
 import org.example.Parsers.ParserClima;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;
@@ -15,13 +16,16 @@ public class Clima {
     public List<Tipo> tipos = new ArrayList<>();
     private TipoClima tipoClima;
     private int turnos;
+    private int id;
+    private String url;
 
 
-    public Clima(String nombre, TipoClima tipoClima, List<Tipo> tipos) {
+    public Clima(String nombre, TipoClima tipoClima, List<Tipo> tipos,String url) {
         this.nombre = nombre;
         this.tipos = tipos;
         this.tipoClima = tipoClima;
         this.turnos = 5;
+        this.url = url;
     }
 
     public Clima() {
@@ -42,13 +46,20 @@ public class Clima {
 
 
     public void cambiar(String clima){
-        ParserClima parser = new ParserClima("src/main/resources/Clima.json");
+        ParserClima parser = new ParserClima("src/main/resources/Climas.json");
         Clima nuevoClima = parser.getClima(clima);
         this.nombre = nuevoClima.getNombre();
         this.tipos = nuevoClima.getTipos();
         this.tipoClima = nuevoClima.getTipoClima();
         this.turnos = 5;
+        this.url = nuevoClima.getUrl();
+        this.id = nuevoClima.getId();
     }
+
+    private int getId() {
+        return id;
+    }
+
 
     private List<Tipo> getTipos() {
         return this.tipos;
@@ -57,7 +68,7 @@ public class Clima {
 
     public Clima sortearInicial(){
         Random random = new Random();
-        ParserClima parser = new ParserClima("src/main/resources/Clima.json");
+        ParserClima parser = new ParserClima("src/main/resources/Climas.json");
         double probabilidad = random.nextDouble();
 
         if (probabilidad < 2.0 / 3.0) {
@@ -68,8 +79,10 @@ public class Clima {
     }
 
     public void restarTurno(){
-        if(turnos > 0) {
+        if(turnos > 0 && (!Objects.equals(this.nombre, "Normal"))) {
             this.turnos--;
+        }else{
+            cambiar("Normal");
         }
     }
 
@@ -92,6 +105,12 @@ public class Clima {
     public boolean esClimaPeligroso(){
         return tipoClima == TipoClima.PELIGROSO;
     }
+
+    public String getUrl(){
+        return this.url;
+    }
+
+    public Image getImage() { return new Image(Objects.requireNonNull(getClass().getResourceAsStream(this.getUrl())));}
 
 }
 

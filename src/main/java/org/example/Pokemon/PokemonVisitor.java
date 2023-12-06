@@ -20,5 +20,10 @@ public class PokemonVisitor implements Visitor {
     public void visitModificacion(Modificacion modificacion, Pokemon atacante, Pokemon objetivo,Clima clima) {
         modificacion.usarEnPokemon(atacante, objetivo,clima);
     }
+
+    @Override
+    public void visitCambiaClima(CambiaClima cambiaClima, Pokemon atacante, Pokemon objetivo,Clima clima){
+        cambiaClima.usarEnPokemon(atacante, objetivo,clima);
+    }
     // Implementa otros métodos de visitas para cada tipo de habilidad si es necesario.
 }

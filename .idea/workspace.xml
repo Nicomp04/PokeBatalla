@@ -4,44 +4,185 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcf6fb8d-3d26-4f8a-a26f-d097993cf2e4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_11_23_17_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_11_23_17_09__Changes_.xml" afterDir="false" />
+    <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2023_11_25_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2023_11_25_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2023_11_25__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2023_11_25__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/CambiaClima.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/BattleTheme.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Climas.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Lluvia.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/arena.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/nada.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/niebla.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/rayos.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sol.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/viento.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test/ClimaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/ClimaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test/HabilidadesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/HabilidadesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Clima/Clima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Clima/Clima.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Clima/ClimaRefactor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controllers/JuegoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Habilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Habilidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/AtaqueX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/AtaqueX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/CuraTodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/CuraTodo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/DefensaX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/DefensaX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Restaurador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Restaurador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Item/Revivir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Item/Revivir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Jugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserClima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserClima.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserHabilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserHabilidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserPokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/PokemonVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/PokemonVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaCambiarPokemones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaCambiarPokemones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Clima.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Habilidades.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Habilidades.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Partida.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Partida.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/battleMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org.example/pantallaJuego.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org.example/pantallaJuego.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pantallaJuego1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pantallaJuego1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pokemones.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pokemones.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="1" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\htmlReport" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="module-info" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
+  &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="2Ys0ovbu25o4aNKnfSarjm2NU41" />
+  <component name="ProjectId" id="2WNF6Z9UTvnSDAbpxV9Pa9yTleB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Merging main",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_directory_selection": "C:/Users/nicol/OneDrive/Escritorio/Portfolio/PokeBatalla/src/main/java/org/example",
+    "last_opened_file_path": "C:/Users/nicol/Downloads/openjfx-21.0.1_windows-x64_bin-sdk/javafx-sdk-21.0.1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.31839082",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example" />
+      <recent name="org.example." />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources\org.example" />
+      <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources" />
+      <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources\images" />
+      <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources\org.example" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="PokeBatalla" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PokemonApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.PokemonApp" />
+      <module name="PokeBatalla" />
+      <option name="VM_PARAMETERS" value=" --module-path &quot;C:\Users\nicol\Downloads\openjfx-21.0.1_windows-x64_bin-sdk\javafx-sdk-21.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.main" />
       <module name="PokeBatalla" />
       <extension name="coverage">
@@ -54,26 +195,178 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HabilidadesTest.testCambioDeDefenzaDeUnPokemonPorHabilidad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PokeBatalla" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.HabilidadesTest" />
+      <option name="METHOD_NAME" value="testCambioDeDefenzaDeUnPokemonPorHabilidad" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HabilidadesTest.testCambioDeEstadoDeUnPokemonPorHabilidad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PokeBatalla" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.HabilidadesTest" />
+      <option name="METHOD_NAME" value="testCambioDeEstadoDeUnPokemonPorHabilidad" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.example.Parsers in PokeBatalla" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="PokeBatalla" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Parsers.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.Parsers" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.main" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.PokemonApp" />
+      <item itemvalue="JUnit.org.example.Parsers in PokeBatalla" />
+      <item itemvalue="JUnit.HabilidadesTest.testCambioDeDefenzaDeUnPokemonPorHabilidad" />
+      <item itemvalue="JUnit.HabilidadesTest.testCambioDeEstadoDeUnPokemonPorHabilidad" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main" />
+        <item itemvalue="JUnit.HabilidadesTest.testCambioDeEstadoDeUnPokemonPorHabilidad" />
+        <item itemvalue="JUnit.HabilidadesTest.testCambioDeDefenzaDeUnPokemonPorHabilidad" />
+        <item itemvalue="Application.PokemonApp" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dcf6fb8d-3d26-4f8a-a26f-d097993cf2e4" name="Changes" comment="" />
-      <created>1701299160269</created>
+      <changelist id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="" />
+      <created>1696564957452</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1701299160269</updated>
-      <workItem from="1701299163697" duration="516000" />
-      <workItem from="1701749899365" duration="6000" />
+      <updated>1696564957452</updated>
+      <workItem from="1696564960818" duration="73000" />
+      <workItem from="1696600215421" duration="7817000" />
+      <workItem from="1696624154812" duration="5224000" />
+      <workItem from="1698433545133" duration="26049000" />
+      <workItem from="1698506833348" duration="4966000" />
+      <workItem from="1698538356774" duration="6979000" />
+      <workItem from="1699039340866" duration="6807000" />
+      <workItem from="1699651431613" duration="255000" />
+      <workItem from="1699916856671" duration="4271000" />
+      <workItem from="1699972602190" duration="1681000" />
+      <workItem from="1699974564859" duration="1532000" />
+      <workItem from="1699976242678" duration="8281000" />
+      <workItem from="1701103662613" duration="639000" />
+      <workItem from="1701105575479" duration="441000" />
+      <workItem from="1701106030014" duration="593000" />
+      <workItem from="1701106664326" duration="4212000" />
+      <workItem from="1701111432044" duration="4115000" />
+      <workItem from="1701138847008" duration="5501000" />
+      <workItem from="1701193059731" duration="25811000" />
+      <workItem from="1701550254291" duration="4863000" />
+      <workItem from="1701632417957" duration="4069000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="RELOAD_CONTEXT" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java</url>
+          <line>49</line>
+          <properties class="org.example.PantallaCambiarPokemonesController" method="crearListaDePokemonesViewer">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java</url>
+          <line>78</line>
+          <properties class="org.example.PantallaCambiarPokemonesController" method="handleMouseClicked">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java</url>
+          <line>177</line>
+          <properties class="org.example.PantallaBatallaController" method="cambiarPokemones">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PokeBatalla$Test_in_PokeBatalla.ic" NAME="Test in PokeBatalla Coverage Results" MODIFIED="1699065262565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PokeBatalla$JugadorTest.ic" NAME="JugadorTest Coverage Results" MODIFIED="1698941495405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PokeBatalla$All_in_PokeBatalla.ic" NAME="All in PokeBatalla Coverage Results" MODIFIED="1699066008208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PokeBatalla$CampoTest_campoCargadoCorrectamente.ic" NAME="CampoTest.campoCargadoCorrectamente Coverage Results" MODIFIED="1698941527153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
   </component>
 </project>

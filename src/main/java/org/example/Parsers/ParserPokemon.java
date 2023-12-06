@@ -16,6 +16,8 @@ import java.util.Map;
 public class ParserPokemon {
     public Map<Integer, Pokemon> parsearPokemones(String nombreArchivo, RepositorioHabilidades repositorioHabilidades) {
         Map<Integer, Pokemon> pokemonesMap = new HashMap<>();
+        Map<Integer, Pokemon> plantillasPokemones = new HashMap<>();
+
         try {
             // Lee el contenido del archivo JSON
             String contenido = new String(Files.readAllBytes(Paths.get(nombreArchivo)));
@@ -43,10 +45,22 @@ public class ParserPokemon {
                     habilidades.add(habilidadesJSON.getInt(j));
                 }
 
-                Pokemon pokemon = new Pokemon(nombre, id, tipo, nivel, vidaMaxima, velocidad, defensa, ataque, habilidades, repositorioHabilidades, url);
+                // Verificar si ya existe una plantilla para esta especie de Pokémon
+                Pokemon plantilla = plantillasPokemones.get(id);
 
-                pokemonesMap.put(id,pokemon);
+                if (plantilla == null) {
+                    // Si no existe, crear una nueva plantilla y almacenarla en el mapa
+                    plantilla = new Pokemon(nombre, id, tipo, nivel, vidaMaxima, velocidad, defensa, ataque, habilidades, repositorioHabilidades, url);
+                    plantillasPokemones.put(id, plantilla);
+                }
 
+                // Clonar la plantilla para obtener una nueva instancia
+                Pokemon pokemon = plantilla.clonar();
+
+                // Puedes ajustar cualquier propiedad específica que necesites
+
+                // Almacenar la nueva instancia en el mapa
+                pokemonesMap.put(id, pokemon);
             }
         } catch (IOException e) {
             e.printStackTrace();

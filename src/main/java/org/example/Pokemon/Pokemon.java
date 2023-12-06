@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class Pokemon {
+public class Pokemon implements Cloneable {
     private String nombre;
     private int id;
     private int nivel;
@@ -149,4 +149,17 @@ public class Pokemon {
     public String getUrl(){return this.url;}
 
     public Image getImage() { return new Image(Objects.requireNonNull(getClass().getResourceAsStream(this.getUrl())));}
+
+    public Pokemon clonar() {
+            try {
+                return (Pokemon) clone();
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+                return null;
+            }
+    }
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }

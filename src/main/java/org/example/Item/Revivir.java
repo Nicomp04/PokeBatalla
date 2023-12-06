@@ -51,10 +51,11 @@ public class Revivir extends Item {
         return pokemonesMuertos;
     }
 
-
-
-    /*@Override
-    public void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo) { //Implementar revivir() en Pokemon.java (puede ser cambiado)
-        pokemonPropio.revivir();
-    }*/
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Revivir clonedRevivir = (Revivir) super.clone();
+        // Realizar clonación profunda si es necesario
+        // clonedRestaurador.algunCampo = algo;
+        return clonedRevivir;
+    }
 }

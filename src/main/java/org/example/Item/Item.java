@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Item {
+public abstract class Item implements Cloneable{
 
     protected int usos;
 
@@ -35,5 +35,23 @@ public abstract class Item {
     }
 
     public void setDesc(String desc) { this.desc = desc;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Item clonedItem = (Item) super.clone();
+        return clonedItem;
+    }
+
+
+    // Método para clonar un Item
+    public Item clonar() {
+        try {
+            return (Item) clone();
+        } catch (CloneNotSupportedException e) {
+            // Manejar la excepción si la clonación no es compatible
+            e.printStackTrace();
+            return null;
+        }
     }
 }

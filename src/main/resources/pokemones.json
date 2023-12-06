@@ -10,7 +10,7 @@
       "velocidad": 20,
       "defensa": 3,
       "ataque": 10,
-      "habilidades": [56,58, 78, 2],
+      "habilidades": [56, 58, 78, 95],
       "url": "/bulba.gif"
     },
     {
@@ -19,7 +19,7 @@
       "nivel": 6,
       "tipo": "Fuego",
       "historia": "Esta es una historia",
-      "vidaMaxima": 85,
+      "vidaMaxima": 88,
       "velocidad": 15,
       "defensa": 5,
       "ataque": 15,

@@ -1,10 +1,12 @@
 package org.example;
 
+import javafx.stage.Stage;
 import org.example.Habilidades.Habilidad;
 import org.example.Habilidades.RepositorioHabilidades;
 import org.example.Pokemon.Pokemon;
 
 import org.example.Vista.JuegoVista;
+import org.example.Vista.PantallaCambiarPokemones;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,6 +24,7 @@ public class Juego {
 
     private JuegoVista vista ;
     private PantallaBatallaController observador;
+
     private Jugador turnoNoActivo;
 
     public void notificarCambio(Jugador noActivo) {
@@ -34,6 +37,7 @@ public class Juego {
         this.jugador1 = j1;
         this.jugador2 = j2;
     }
+
     public Juego(PantallaBatallaController pantalla) {
         this.observador = pantalla;
         Generador gen = new Generador();
@@ -52,31 +56,9 @@ public class Juego {
 
         this.turnoActivo = definirPrimerTurno();
     }
-
     public Jugador getTurnoActivo(){return this.turnoActivo;}
 
-    /*public Juego() {
-        vista = new JuegoVista();
-        Generador gen = new Generador();
-
-        List<Jugador> jugadores = gen.generarPartida();
-        this.jugador1 = jugadores.get(0);
-        this.jugador2 = jugadores.get(1);
-
-        this.campoDeBatalla = new Campo(jugador1.getPokemonActual(), jugador2.getPokemonActual());
-
-        jugador1.entrarACampo(campoDeBatalla);
-        jugador2.entrarACampo(campoDeBatalla);
-
-        //jugador1.elegirPokemonActivo();
-        //jugador2.elegirPokemonActivo();
-
-        this.turnoActivo = definirPrimerTurno();
-
-        vista.mostrarJuegoInicializado();
-
-        this.habilitarTurno();
-    }*/
+    public Jugador getTurnoNoActivo(){return turnoNoActivo;}
 
     public Jugador definirPrimerTurno(){
         Pokemon pokemon1 = this.jugador1.getPokemonActual();//
@@ -114,12 +96,23 @@ public class Juego {
         if (turnoActivo.equals(jugador1)) {
             turnoActivo = jugador2;
             turnoNoActivo = jugador1;
+
             notificarCambio(turnoNoActivo);
         } else {
             turnoActivo = jugador1;
             turnoNoActivo = jugador2;
             notificarCambio(turnoNoActivo);
         }
+
+        if(turnoActivo.getPokemonActual().estaMuerto()){
+
+            Stage stage2 = new Stage();
+            observador.cambiarPokemones();
+            turnoActivo = jugador1;
+            turnoNoActivo = jugador2;
+        }
+
+
         if(!quedanPokemones() || seRindio()){
             Jugador perdedor = this.perdedor();
             notificarDerrota(perdedor);

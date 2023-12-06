@@ -46,7 +46,9 @@ public class ParserHabilidad {
                 } else if (estilo.equals("ModificacionDeDefensa")) {
                     habilidad = new ModificarDefensa(id, nombre, usos, estadistica, valor,tipo);
                 } else if (estilo.equals("ModificacionDeVelocidad")) {
-                    habilidad = new ModificarVelocidad(id, nombre, usos, estadistica, valor,tipo);
+                    habilidad = new ModificarVelocidad(id, nombre, usos, estadistica, valor, tipo);
+                }else if(estilo.equals("CambiaClima")){
+                    habilidad = new CambiaClima(id, nombre, usos, tipo);
                 } else{
                     habilidad = new Efecto(id, nombre, usos, estado, afectaAEnemigo, tipo);
                 }

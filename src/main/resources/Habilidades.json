@@ -7,7 +7,7 @@
     "tipo": "fuego",
     "estadistica": -1,
     "afectaAEnemigo": true,
-    "valor": 15,
+    "valor": 30,
     "estado": "PARALIZADO"
 
   },
@@ -54,7 +54,7 @@
   "estilo": "Efecto",
   "tipo": "veneno",
   "estadistica": -1,
-    "afectaAEnemigo": true,
+  "afectaAEnemigo": true,
   "valor": 15,
   "estado": "ENVENENADO"
 
@@ -75,7 +75,7 @@
     "nombre": "Despejar Clima",
     "id": 98,
     "usos": 10,
-    "estilo": "Efecto",
+    "estilo": "CambiaClima",
     "tipo": "Normal",
     "estadistica": -1,
     "afectaAEnemigo": false,
@@ -89,6 +89,32 @@
     "usos": 25,
     "estilo": "ModificacionDeDefensa",
     "tipo": "Normal",
+    "estadistica": -1,
+    "afectaAEnemigo": true,
+    "valor": 20,
+    "estado": "PARALIZADO"
+
+  },
+
+  {
+    "nombre": "Neblina",
+    "id": 55,
+    "usos": 5,
+    "estilo": "CambiaClima",
+    "tipo": "Niebla",
+    "estadistica": -1,
+    "afectaAEnemigo": true,
+    "valor": 20,
+    "estado": "PARALIZADO"
+
+  },
+
+  {
+    "nombre": "lluvia",
+    "id": 95,
+    "usos": 5,
+    "estilo": "CambiaClima",
+    "tipo": "Lluvia",
     "estadistica": -1,
     "afectaAEnemigo": true,
     "valor": 20,
