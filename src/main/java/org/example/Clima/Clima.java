@@ -60,22 +60,8 @@ public class Clima {
         return id;
     }
 
-
     private List<Tipo> getTipos() {
         return this.tipos;
-    }
-
-
-    public Clima sortearInicial(){
-        Random random = new Random();
-        ParserClima parser = new ParserClima("src/main/resources/Climas.json");
-        double probabilidad = random.nextDouble();
-
-        if (probabilidad < 2.0 / 3.0) {
-            return parser.getClima("Normal");
-        } else {
-            return  parser.climaAleatorio();
-        }
     }
 
     public void restarTurno(){

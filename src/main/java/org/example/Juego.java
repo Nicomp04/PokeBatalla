@@ -72,9 +72,6 @@ public class Juego {
     }
 
     public void ordenarEstados(){
-        Pokemon jugadorPokemon = this.getTurnoActivo().getPokemonActual();
-        this.campoDeBatalla.validarEstadoEnvenenado(jugadorPokemon);
-        jugadorPokemon.restarTurnoEstados();
         limpiarItems();
         this.habilitarTurno();
     }

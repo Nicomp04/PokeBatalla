@@ -1,18 +1,17 @@
 package org.example.Habilidades;
 
 import org.example.Clima.Clima;
-import org.example.Estado.Estados;
+import org.example.Estado.EstadoPokemon;
 import org.example.Pokemon.Pokemon;
 import org.example.Visitor;
 
 public class Efecto extends Habilidad{
-    private Estados estado;
+    private EstadoPokemon estado;
 
-    public Efecto(int id, String nombre, int usosDisponibles, Estados estado, boolean afectaAEnemigo, String tipo) {
+    public Efecto(int id, String nombre, EstadoPokemon estado, boolean afectaAEnemigo, String tipo) {
+        this.id = id;
         this.nombre = nombre;
-        this.usosDisponibles = usosDisponibles;
         this.estado = estado;
-        this.estado.setDuracion(usosDisponibles);
         this.afectaAEnemigo = afectaAEnemigo;
         this.tipo = tipo;
         this.usosMax = usosDisponibles;

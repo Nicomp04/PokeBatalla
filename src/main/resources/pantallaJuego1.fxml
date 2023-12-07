@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import java.net.URL?>
-<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaBatallaController" style="-fx-background-image:  url('/backgroundpoke.jpg');">
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" style="-fx-background-image:  url('/backgroundpoke.jpg');" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaBatallaController">
     <!-- Parte inferior e izquierda -->
-    <ImageView fx:id="jugadorPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="75.0" layoutY="400.0"/>
-    <ProgressBar fx:id="jugadorSaludBar" layoutX="80.0" layoutY="550.0" prefWidth="150.0"/>
+    <ImageView fx:id="jugadorPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="75.0" layoutY="400.0" />
+    <ImageView fx:id="enemigoPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="1300.0" layoutY="30.0" />
+    <ImageView fx:id="ClimaActualImage" fitHeight="1000" fitWidth="1500" pickOnBounds="true" preserveRatio="true" />
+
+    <ProgressBar fx:id="jugadorSaludBar" layoutX="80.0" layoutY="550.0" prefWidth="150.0" />
     <Text fx:id="jugadorPokemonNombre" layoutX="110.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0">
         <font>
             <Font name="System Bold" size="14.0" />
         </font>
     </Text>
-    <!-- ImageView para mostrar la imagen del clima -->
-
-    <ImageView fx:id="ClimaActualImage" fitWidth="1500" fitHeight="1000" pickOnBounds="true" preserveRatio="true"/>
 
     <!-- Parte Sup e Der -->
-    <ImageView fx:id="enemigoPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="1300.0" layoutY="30.0"/>
-    <ProgressBar fx:id="enemigoSaludBar" layoutX="1300.0" layoutY="200.0" prefWidth="150.0"/>
+    <ProgressBar fx:id="enemigoSaludBar" layoutX="1300.0" layoutY="200.0" prefWidth="150.0" />
     <Text fx:id="enemigoPokemonNombre" layoutX="1350.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0">
         <font>
             <Font name="System Bold" size="14.0" />
         </font>
     </Text>
 <!-- BOOTONERA -->
+
     <!-- Parte Inferior: Descripción y Botonera -->
     <HBox fx:id="parteInferiorHBox" spacing="400.0" alignment="CENTER"  prefWidth="1800" prefHeight="220.0" layoutY="650.0"  style="-fx-background-color: #333333;">
     </HBox>
@@ -48,7 +50,6 @@
             <ListView fx:id="habilidadesListView" onMouseClicked="#usarHabilidad"/>
             <Button fx:id="botonCancelarHabilidad" text="Cancelar" minWidth="100.0" minHeight="40.0" onAction="#cancelarEleccionHabilidad"/>
         </VBox>
-
 
         <!-- Botonera (Parte Derecha) -->
         <VBox fx:id="botoneraVBox" alignment="CENTER_RIGHT" layoutY="700" AnchorPane.rightAnchor="80.0">
@@ -87,5 +88,55 @@
             <Label fx:id="tipoLabel" text="Tipo: " textFill="white" style="-fx-font-size: 20px;" />
         </VBox>
 
+  <!-- informacion de estados pokemon (A Cambiar) -->
+    </HBox>
+   <HBox layoutX="94.0" layoutY="579.0" prefHeight="30.0" prefWidth="122.0">
+      <children>
+         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Confundido.png" />
+            </image>
+         </ImageView>
+         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Dormido.png" />
+            </image>
+         </ImageView>
+         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Envenenado.png" />
+            </image>
+         </ImageView>
+         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Paralizado.png" />
+            </image>
+         </ImageView>
+      </children>
+   </HBox>
+   <HBox layoutX="1314.0" layoutY="229.0" prefHeight="30.0" prefWidth="122.0">
+      <children>
+         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Confundido.png" />
+            </image>
+         </ImageView>
+         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Dormido.png" />
+            </image>
+         </ImageView>
+         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Envenenado.png" />
+            </image>
+         </ImageView>
+         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Paralizado.png" />
+            </image>
+         </ImageView>
+      </children>
+   </HBox>
 
 </AnchorPane>

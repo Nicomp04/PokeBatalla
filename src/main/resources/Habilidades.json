@@ -120,5 +120,17 @@
     "valor": 20,
     "estado": "PARALIZADO"
 
+  },
+  {
+  "nombre": "Tormenta de Arena",
+  "id": 23,
+  "usos": 5,
+  "estilo": "CambiaClima",
+  "tipo": "Tormenta de arena",
+  "estadistica": -1,
+  "afectaAEnemigo": true,
+  "valor": 20,
+  "estado": "PARALIZADO"
+
   }
 ]

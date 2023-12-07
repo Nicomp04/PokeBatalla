@@ -27,7 +27,7 @@
       "url": "/chari.gif"
     },
     {
-      "nombre": "Oster",
+      "nombre": "Shellder",
       "id": 6,
       "nivel": 16,
       "tipo": "Agua",
@@ -36,8 +36,21 @@
       "velocidad": 15,
       "defensa": 5,
       "ataque": 30,
-      "habilidades": [3, 98, 24],
+      "habilidades": [55, 15, 78, 23],
       "url": "/oster.gif"
+    },
+    {
+      "nombre": "Gengar",
+      "id": 25,
+      "nivel": 20,
+      "tipo": "Fantasma",
+      "historia": "Esta es una historia",
+      "vidaMaxima": 80,
+      "velocidad": 40,
+      "defensa": 30,
+      "ataque": 60,
+      "habilidades": [15, 24, 55],
+      "url": "/gengar.gif"
     }
   ]
 }

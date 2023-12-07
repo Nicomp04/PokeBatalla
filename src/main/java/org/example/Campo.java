@@ -1,10 +1,9 @@
 package org.example;
 
-import javafx.scene.image.ImageView;
 import org.example.Clima.Clima;
-import org.example.Clima.TipoClima;
-import org.example.Estado.Estados;
+import org.example.Estado.EstadoPokemon;
 import org.example.Habilidades.Habilidad;
+import org.example.Parsers.ParserClima;
 import org.example.Pokemon.Pokemon;
 import org.example.Pokemon.PokemonVisitor;
 import org.example.Vista.PokemonVista;
@@ -30,7 +29,19 @@ public class Campo {
         this.pokemonVista = new PokemonVista();
 
         Clima clima = new Clima();
-        this.clima = clima.sortearInicial();
+        this.clima = sortearInicial();
+    }
+
+    public Clima sortearInicial(){
+        Random random = new Random();
+        ParserClima parser = new ParserClima("src/main/resources/Climas.json");
+        double probabilidad = random.nextDouble();
+
+        if (probabilidad < 2.0 / 3.0) {
+            return parser.getClima("Normal");
+        } else {
+            return  parser.climaAleatorio();
+        }
     }
 
     public Pokemon getPokemonesActivos(int num) {
@@ -69,7 +80,7 @@ public class Campo {
         }
         campoVista.mostrarClima(clima);
         clima.restarTurno();
-    }*/
+    }
 
     public void usarHabilidad(Habilidad habilidad){
         boolean despierto;
@@ -77,44 +88,50 @@ public class Campo {
         boolean confundido;
         despierto = validarEstadoDespierto(pokemonAtacante.getEstados());
         paralizado = validarEstadoParalizado(pokemonAtacante.getEstados());
+        confundido = verQueTanConfundido(pokemonAtacante);
 
-        if (pokemonAtacante.getEstados().contains(Estados.CONFUNDIDO))
-            this.verQueTanConfundido(pokemonAtacante);
-
-        if (despierto && !paralizado){
+        if (despierto && !paralizado && !confundido){
             this.aplicarHabilidad(habilidad);
-
         }
+
         campoVista.mostrarClima(clima);
         clima.restarTurno();
     }
 
-    public void verQueTanConfundido(Pokemon pokemon) {
-        Random random = new Random();
-        double valorAleatorio = random.nextDouble();
+    */
 
-        if(valorAleatorio < 0.3){
-            double resto = ((pokemon.getVidaActual() * 15) / 100);
-            campoVista.mostrarConfundido(pokemon.getNombre(), resto);
-            pokemon.modificarHp(-resto);
+    private void eliminarEstadoAgotado(Pokemon pokemonAtacante){ //      MOVER A POKEMON
+
+        List<EstadoPokemon> estadosAgotados = new ArrayList<>();
+
+        for(EstadoPokemon estado: pokemonAtacante.getEstados()){
+            if(estado.seAgoto()){
+                estadosAgotados.add(estado);
+            }
+        }
+
+        for(EstadoPokemon estado: estadosAgotados){
+            System.out.println("Se quito el estado " + estado.getNombre());
+            pokemonAtacante.quitarEstado(estado);
         }
     }
 
-    public boolean validarEstadoParalizado(List<Estados> estados) {
-        return estados.contains(Estados.PARALIZADO);
-    }
+    public void usarHabilidad(Habilidad habilidad){
+        int baliza = 0;
 
-    public boolean validarEstadoDespierto(List<Estados> estados) {
-        return !estados.contains(Estados.DORMIDO);
-    }
-    public void validarEstadoEnvenenado(Pokemon pokemon) {
-        Random random = new Random();
-        double valorAleatorio = random.nextDouble();
-        if(pokemon.getEstados().contains((Estados.ENVENENADO))){
-            double resto = ((pokemon.getVidaActual() * 5) / 100);
-            pokemon.modificarHp(-resto);
-            campoVista.mostrarEnvenenado(pokemon.getNombre(), resto);
+        for(EstadoPokemon estado: pokemonAtacante.getEstados()){
+            estado.aplicarEfecto(pokemonAtacante);
+            baliza = baliza - estado.baliza();
         }
+
+        eliminarEstadoAgotado(pokemonAtacante);
+
+        if (baliza == 0){
+            this.aplicarHabilidad(habilidad);
+        }
+
+        campoVista.mostrarClima(clima);
+        clima.restarTurno();
     }
 
     private Habilidad elegirHabilidad(Pokemon pokemonAtacante) {

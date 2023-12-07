@@ -1,6 +1,6 @@
 package org.example.Vista;
 
-import org.example.Estado.Estados;
+import org.example.Estado.EstadoPokemon;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 
@@ -29,8 +29,8 @@ public class PokemonVista {
         mostrarMensaje("Nombre: " + pokemon.getNombre());
         mostrarMensaje("Tipo: " + pokemon.getTipo().getId());
         mostrarMensaje("Estados: ");
-        for (Estados estados : pokemon.getEstados())
-            mostrarMensaje(" - " + estados.name());
+        for (EstadoPokemon estados : pokemon.getEstados())
+            mostrarMensaje(" - " + estados.getNombre());
         mostrarMensaje("Vida: " + pokemon.getVidaActual());
         mostrarMensaje("Ataque: " + pokemon.getAtaque());
         mostrarMensaje("Defensa: " + pokemon.getDefensa());
