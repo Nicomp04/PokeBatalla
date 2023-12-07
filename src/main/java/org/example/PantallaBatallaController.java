@@ -125,7 +125,7 @@ public class PantallaBatallaController {
 
         habilidadesListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                mostrarDetallesHabilidad(obtenerHabilidadPorNombre(newValue, habilidades));
+                mostrarDetallesHabilidad(Objects.requireNonNull(obtenerHabilidadPorNombre(newValue, habilidades)));
             }
         });
     }
@@ -160,7 +160,6 @@ public class PantallaBatallaController {
             this.juego.getCampo().identificarAtacante(juego.getTurnoActivo().getId());
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
             this.juego.habilitarTurno();
-            ordenarEstados();
             mostrarTextoTemporalmente(enemigoPokemon.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
         }
     }
@@ -271,10 +270,6 @@ public class PantallaBatallaController {
 
     private String datosJugador(){return ("Es el turno de " + juego.getTurnoActivo().getNombre() + ", Vamos " + juego.getTurnoActivo().getPokemonActual().getNombre() + "!!!");}
 
-    public void ordenarEstados(){
-        this.juego.getCampo().validarEstadoEnvenenado(jugadorPokemon);
-        this.jugadorPokemon.restarTurnoEstados();
-    }
 
     @FXML
     private void handleKeyPress(KeyEvent event) {

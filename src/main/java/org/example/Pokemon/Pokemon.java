@@ -1,7 +1,6 @@
 package org.example.Pokemon;
 import javafx.scene.image.Image;
-import org.example.Estado.Estados;
-import org.example.Habilidades.Efecto;
+import org.example.Estado.EstadoPokemon;
 import org.example.Habilidades.Habilidad;
 import org.example.Habilidades.RepositorioHabilidades;
 import org.example.Tipo.*;
@@ -25,7 +24,7 @@ public class Pokemon {
     private int velocidad;
     private int defensa;
     private int ataque;
-    private List<Estados> estados = new ArrayList<>();
+    private List<EstadoPokemon> estados = new ArrayList<>();
     final Logger logger = LoggerFactory.getLogger(Pokemon.class);
 
     private TipoFactory tipoFactory;
@@ -78,7 +77,7 @@ public class Pokemon {
     public double getVidaMaxima(){
         return this.vidaMaxima;
     }
-    public List<Estados> getEstados(){return this.estados;}
+    public List<EstadoPokemon> getEstados(){return this.estados;}
     public void setDefensa(int porcentaje) {this.defensa = this.defensa - ((this.defensa * (-porcentaje))/100);}
     public void setAtaque(int porcentaje) {
         this.ataque = this.ataque - ((this.ataque * (-porcentaje))/100);
@@ -128,18 +127,9 @@ public class Pokemon {
         return this.habilidades.size();
     }
 
-    public void restarTurnoEstados() {
-        for (int i = 0 ; i < estados.size() ; i++) {
-            estados.get(i).restarTurno();
-            System.out.println(estados.get(i).getNombre() + estados.get(i).getDuracion());
-            if(estados.get(i).seAgoto())
-                quitarEstado(estados.get(i));
-        }
-    }
+    public void quitarEstado(EstadoPokemon estado){this.estados.remove(estado);}
 
-    public void quitarEstado(Estados estado){this.estados.remove(estado);}
-
-    public void agregarEstado(Estados estado) {
+    public void agregarEstado(EstadoPokemon estado) {
         if (!getEstados().contains(estado)){
             this.estados.add(estado);
         }else{

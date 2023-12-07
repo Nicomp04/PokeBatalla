@@ -170,18 +170,6 @@ public class Jugador {
         return HayPokemonesVivos;
     }
 
-    public void usarTurno(){
-        Pokemon pokemonActivo = getPokemonActual();
-
-        if (!(pokemonActivo.estaMuerto())){
-            elegirAccion();
-        }
-        else {
-            this.elegirPokemonActivo();
-        }
-        campoDeBatalla.validarEstadoEnvenenado(pokemonActivo);
-        pokemonActivo.restarTurnoEstados();
-    }
 
     public void setController(JugadorController jugadorControllerMock) {
         jugadorVista.setController(jugadorControllerMock);

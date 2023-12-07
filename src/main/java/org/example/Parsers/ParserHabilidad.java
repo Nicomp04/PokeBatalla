@@ -1,6 +1,6 @@
 package org.example.Parsers;
 import org.example.Clima.Clima;
-import org.example.Estado.Estados;
+import org.example.Estado.*;
 import org.example.Habilidades.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ParserHabilidad {
     public Map<Integer, Habilidad> parsearHabilidades(String nombreArchivo) {
@@ -33,8 +34,19 @@ public class ParserHabilidad {
                 int estadistica = jsonHabilidad.getInt("estadistica");
                 boolean afectaAEnemigo = jsonHabilidad.getBoolean("afectaAEnemigo");
                 int valor = jsonHabilidad.getInt("valor");
+
+
                 String estadoInt = jsonHabilidad.getString("estado");
-                Estados estado = Estados.valueOf(estadoInt);
+                EstadoPokemon estado = null;
+                if(Objects.equals(estadoInt, "PARALIZADO")){
+                    estado = new Paralizado();
+                }else if(Objects.equals(estadoInt, "ENVENENADO")){
+                    estado = new Envenenado();
+                }else if(Objects.equals(estadoInt, "CONFUNDIDO")){
+                    estado = new Confundido();
+                }else if(Objects.equals(estadoInt, "DORMIDO")){
+                    estado = new Dormido();
+                }
 
                 Habilidad habilidad; // ver de cambiar a algo mas escalable
                 if (estilo.equals("Ataque")) {
@@ -50,7 +62,7 @@ public class ParserHabilidad {
                 }else if(estilo.equals("CambiaClima")){
                     habilidad = new CambiaClima(id, nombre, usos, tipo);
                 } else{
-                    habilidad = new Efecto(id, nombre, usos, estado, afectaAEnemigo, tipo);
+                    habilidad = new Efecto(id, nombre, estado, afectaAEnemigo, tipo);
                 }
                 mapaHabilidades.put(id, habilidad);
             }

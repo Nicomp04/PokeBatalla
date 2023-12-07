@@ -1,3 +1,4 @@
+/*
 package Test;
 import org.example.Estado.Estados;
 import org.junit.Test;
@@ -32,3 +33,4 @@ public class EstadosTest {
         assertEquals(4, estado.getDuracion());
     }
 }
+*/

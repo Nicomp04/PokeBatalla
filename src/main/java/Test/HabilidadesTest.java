@@ -1,6 +1,7 @@
 package Test;
 
 import org.example.Clima.Clima;
+import org.example.Estado.*;
 import org.example.Estado.Estados;
 import org.example.Habilidades.*;
 import org.example.Parsers.ParserClima;
@@ -46,8 +47,9 @@ public class HabilidadesTest {
 
     @Test
     public void testCambioDeEstadoDeUnPokemonPorHabilidad(){
+        EstadoPokemon estado = new Confundido();
 
-        Habilidad habilidadTest = new Efecto(17, "Hidropulso", 5, Estados.CONFUNDIDO, true, "Agua");
+        Habilidad habilidadTest = new Efecto(17, "Hidropulso", estado, true, "Agua");
 
         Pokemon pokemonAtacante = new Pokemon("Blastoise",2,"Agua",20,200,40,50,80);
 
@@ -56,7 +58,7 @@ public class HabilidadesTest {
         Clima clima = new ParserClima("src/main/resources/Climas.json").getClima("Normal");
 
         habilidadTest.usarEnPokemon(pokemonAtacante, pokemonAtacado, clima);
-        boolean estadoEsperado = pokemonAtacado.getEstados().contains(Estados.CONFUNDIDO);
+        boolean estadoEsperado = pokemonAtacado.getEstados().contains(estado);
 
         assertTrue(estadoEsperado);
 
