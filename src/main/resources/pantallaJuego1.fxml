@@ -33,35 +33,59 @@
     </Text>
 <!-- BOOTONERA -->
     <!-- Parte Inferior: Descripción y Botonera -->
-    <HBox fx:id="parteInferiorHBox" spacing="400.0" alignment="CENTER"  prefWidth="1800" prefHeight="160.0" layoutY="650.0" style="-fx-background-color: #333333;">
-
+    <HBox fx:id="parteInferiorHBox" spacing="400.0" alignment="CENTER"  prefWidth="1800" prefHeight="220.0" layoutY="650.0"  style="-fx-background-color: #333333;">
+    </HBox>
         <!-- Descripción (Parte Izquierda) -->
-        <VBox fx:id="descripcionVBox" spacing="400.0" alignment="CENTER_RIGHT" layoutX="300">
-            <Text fx:id="textoDescripcion" lineSpacing="100" fill="white" layoutX="100" />
+        <VBox fx:id="descripcionVBox" alignment="CENTER" layoutX="100" layoutY="750" AnchorPane.leftAnchor="100.0">
+            <Text fx:id="textoDescripcion" lineSpacing="10" fill="white">
+                <font>
+                    <Font size="18" /> <!-- Ajusta el tamaño del texto aquí -->
+                </font>
+            </Text>
         </VBox>
-        <VBox fx:id="habilidadesVBox" visible="false" spacing="200.0" alignment="CENTER" layoutX="300">
-            <ListView fx:id="habilidadesListView" onMouseClicked="#usarHabilidad"></ListView>
+
+        <VBox fx:id="habilidadesVBox" spacing="20" visible="false" layoutY="670" prefHeight="180" alignment="CENTER" AnchorPane.leftAnchor="100.0">
+            <ListView fx:id="habilidadesListView" onMouseClicked="#usarHabilidad"/>
+            <Button fx:id="botonCancelarHabilidad" text="Cancelar" minWidth="100.0" minHeight="40.0" onAction="#cancelarEleccionHabilidad"/>
         </VBox>
+
 
         <!-- Botonera (Parte Derecha) -->
-        <VBox fx:id="botoneraVBox" spacing="100.0" alignment="CENTER_RIGHT">
+        <VBox fx:id="botoneraVBox" alignment="CENTER_RIGHT" layoutY="700" AnchorPane.rightAnchor="80.0">
             <HBox spacing="20.0" alignment="CENTER">
                 <VBox spacing="10.0" alignment="CENTER">
-                    <Button fx:id="luchaButton" text=" Lucha " minWidth="100.0" onAction="#elegirHabilidades" />
-                    <Button fx:id="mochilaButton" text=" Mochila " minWidth="100.0" onAction="#elegirItems" />
+                    <Button fx:id="luchaButton" text=" Lucha " minWidth="150.0" minHeight="50.0" onAction="#elegirHabilidades">
+                        <font>
+                            <Font size="18" />
+                        </font>
+                    </Button>
+                    <Button fx:id="mochilaButton" text=" Mochila " minWidth="150.0" minHeight="50.0" onAction="#elegirItems">
+                        <font>
+                            <Font size="18" />
+                        </font>
+                    </Button>
                 </VBox>
 
-                <!--Segundo bloque de botones (3 y 4)-->
+                <!-- Segundo bloque de botones (3 y 4) -->
                 <VBox spacing="10.0" alignment="CENTER">
-                    <Button fx:id="pokemonButton" text=" Pokemon " minWidth="100.0" onAction="#cambiarPokemones" />
-                    <Button fx:id="huirButton" text=" Huir " minWidth="100.0" onAction="#huir"/>
+                    <Button fx:id="pokemonButton" text=" Pokemon " minWidth="150.0" minHeight="50.0" onAction="#cambiarPokemones">
+                        <font>
+                            <Font size="18" /> <!-- Ajusta el tamaño del texto aquí -->
+                        </font>
+                    </Button>
+                    <Button fx:id="huirButton" text=" Huir " minWidth="150.0" minHeight="50.0" onAction="#huir">
+                        <font>
+                            <Font size="18" /> <!-- Ajusta el tamaño del texto aquí -->
+                        </font>
+                    </Button>
                 </VBox>
             </HBox>
         </VBox>
-        <VBox fx:id="detallesHabilidadVBox" visible="false" spacing="10.0" alignment="CENTER_RIGHT">
-            <Label fx:id="usosLabel" text="Usos restantes: "/>
-            <Label fx:id="tipoLabel" text="Tipo: " />
+
+        <VBox fx:id="detallesHabilidadVBox" visible="false" spacing="10.0" alignment="CENTER" layoutY="700" AnchorPane.rightAnchor="100.0">
+            <Label fx:id="usosLabel" text="Usos restantes: " textFill="white" style="-fx-font-size: 20px;"/>
+            <Label fx:id="tipoLabel" text="Tipo: " textFill="white" style="-fx-font-size: 20px;" />
         </VBox>
 
-    </HBox>
+
 </AnchorPane>

@@ -8,7 +8,6 @@ import org.example.Visitor;
 public class Efecto extends Habilidad{
     private Estados estado;
 
-
     public Efecto(int id, String nombre, int usosDisponibles, Estados estado, boolean afectaAEnemigo, String tipo) {
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
@@ -16,6 +15,7 @@ public class Efecto extends Habilidad{
         this.estado.setDuracion(usosDisponibles);
         this.afectaAEnemigo = afectaAEnemigo;
         this.tipo = tipo;
+        this.usosMax = usosDisponibles;
     }
 
     @Override
@@ -26,6 +26,26 @@ public class Efecto extends Habilidad{
     public void usarEnPokemon(Pokemon pokemonPropio, Pokemon objetivo, Clima clima) {
         if(afectaAEnemigo) {
             objetivo.agregarEstado(this.estado);
+        }
+        this.usosDisponibles = usosDisponibles - 1;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Efecto clonedAtaque = (Efecto) super.clone();
+        // Aquí puedes realizar copias profundas de propiedades si es necesario
+        return clonedAtaque;
+    }
+
+    // Método para clonar un Ataque
+    @Override
+    public Habilidad clonar() {
+        try {
+            return (Efecto) clone();
+        } catch (CloneNotSupportedException e) {
+            // Manejar la excepción si la clonación no es compatible
+            e.printStackTrace();
+            return null;
         }
     }
 }

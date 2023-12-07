@@ -92,6 +92,15 @@ public class Juego {
         }
     }
 
+    public void limpiarHabilidades() {
+        List<Habilidad> habilidades = turnoActivo.getPokemonActual().getHabilidades();
+        for(int i = 0 ; i < habilidades.size(); i++){
+            if (habilidades.get(i).getUsosDisponibles() <= 0){
+                turnoActivo.getPokemonActual().getHabilidades().remove(i);
+            }
+        }
+    }
+
     public void habilitarTurno(){
         if (turnoActivo.equals(jugador1)) {
             turnoActivo = jugador2;

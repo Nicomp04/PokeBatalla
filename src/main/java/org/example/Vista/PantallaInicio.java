@@ -10,6 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javafx.stage.WindowEvent;
 import org.example.Juego;
 import org.example.PantallaBatallaController;
 import org.example.main;
@@ -43,17 +44,18 @@ public class PantallaInicio extends VBox {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/pantallaJuego1.fxml"));
             Parent root = (Parent) loader.load();
-
+            Stage stage1 = new Stage();
             // Obtén el controlador de la pantalla de juego y establece el Stage y juego
             PantallaBatallaController pantallaBatallaController = loader.getController();
-            pantallaBatallaController.setStage(stage);
+            pantallaBatallaController.setStage(stage1);
 
             Scene scene = new Scene(root);
+            stage.close();
+            stage1.setTitle("Pantalla de Juego");
+            stage1.setFullScreen(true);
+            stage1.setScene(scene);
+            stage1.show();
 
-            stage.setTitle("Pantalla de Juego");
-            stage.setFullScreen(true);
-            stage.setScene(scene);
-            stage.show();
 
         } catch (IOException e) {
             e.printStackTrace();

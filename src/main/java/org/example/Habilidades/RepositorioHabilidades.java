@@ -23,8 +23,9 @@ public class RepositorioHabilidades {
     public List<Habilidad> cargarConjunto(List<Integer> habilidadesId) {
         List<Habilidad> habilidades = new ArrayList<>();
 
-        for (int i = 0 ; i < habilidadesId.size(); i++) {
-            habilidades.add(obtenerHabilidadPorId(habilidadesId.get(i)));
+        for (Integer habilidadId : habilidadesId) {
+            Habilidad habilidad = obtenerHabilidadPorId(habilidadId);
+            habilidades.add(habilidad.clonar());
         }
         return  habilidades;
     }

@@ -4,6 +4,7 @@ package org.example;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -108,6 +109,8 @@ public class PantallaBatallaController {
     @FXML
     private AnchorPane anchorPane;
 
+    private MediaPlayer mediaPlayer;
+
     @FXML
     private void elegirHabilidades() {
         // Mostra habilidades en la interfaz
@@ -147,9 +150,8 @@ public class PantallaBatallaController {
         return null; // Manejar el caso en el que no se encuentra la habilidad
     }
     private void mostrarDetallesHabilidad(Habilidad habilidad) {
-        usosLabel.setText("Usos restantes: " + habilidad.getUsosDisponibles());
+        usosLabel.setText("Usos restantes: " + habilidad.getUsosDisponibles() + "/" + habilidad.getUsosMax());
         tipoLabel.setText("Tipo: " + habilidad.getTipo());
-
     }
 
     @FXML
@@ -171,7 +173,6 @@ public class PantallaBatallaController {
         PantallaItems pantallaItems = new PantallaItems();
         pantallaItems.setStage(stage);
         pantallaItems.mostar(this.juego);
-
     }
 
     @FXML
@@ -198,13 +199,18 @@ public class PantallaBatallaController {
         Media sonido = new Media(new File(url).toURI().toString());
 
         // Crear un reproductor de medios (MediaPlayer)
-        MediaPlayer mediaPlayer = new MediaPlayer(sonido);
+        this.mediaPlayer = new MediaPlayer(sonido);
 
         // Configurar el MediaPlayer para reproducir de manera continua (si se desea)
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        this.mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
-        mediaPlayer.play();
+        this.mediaPlayer.play();
+    }
 
+    private void pararMusica() {
+        if (this.mediaPlayer != null) {
+            this.mediaPlayer.stop();
+        }
     }
 
     public void initialize() {
@@ -274,6 +280,7 @@ public class PantallaBatallaController {
     public void ordenarEstados(){
         this.juego.getCampo().validarEstadoEnvenenado(jugadorPokemon);
         this.jugadorPokemon.restarTurnoEstados();
+        this.juego.limpiarHabilidades();
     }
 
     @FXML
@@ -300,6 +307,10 @@ public class PantallaBatallaController {
                     huir();
                     break;
             }
+        } else if (event.getCode() == KeyCode.ESCAPE) {
+            // Cerrar la ventana y detener la música
+            stage.close();
+            pararMusica();
         }
 
         // Actualizar el foco según el índice seleccionado
@@ -323,8 +334,6 @@ public class PantallaBatallaController {
         }
     }
 
-
-
     public void setStage(Stage stage) {
         this.stage = stage;
     }
@@ -347,4 +356,10 @@ public class PantallaBatallaController {
         }
     }
 
+    public void cancelarEleccionHabilidad(ActionEvent actionEvent) {
+        descripcionVBox.setVisible(true);
+        botoneraVBox.setVisible(true);
+        habilidadesVBox.setVisible(false);
+        detallesHabilidadVBox.setVisible(false);
+    }
 }

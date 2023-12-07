@@ -4,7 +4,9 @@ import org.example.Clima.Clima;
 import org.example.Pokemon.Pokemon;
 
 public class ModificarHp extends Modificacion{
-    public ModificarHp(int id, String nombre, int usosDisponibles, int estadistica, int valor,String tipo) {
+    private int estadistica;
+
+    public ModificarHp(int id, String nombre, int usosDisponibles, int estadistica, int valor, String tipo) {
         super(id, nombre, usosDisponibles, valor, tipo);
     }
 
@@ -20,5 +22,25 @@ public class ModificarHp extends Modificacion{
         }
 
         objetivo.modificarHp(this.valor);
+        this.usosDisponibles = usosDisponibles - 1;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        ModificarHp clonedAtaque = (ModificarHp) super.clone();
+        // Aquí puedes realizar copias profundas de propiedades si es necesario
+        return clonedAtaque;
+    }
+
+    // Método para clonar un Ataque
+    @Override
+    public Habilidad clonar() {
+        try {
+            return (ModificarHp) clone();
+        } catch (CloneNotSupportedException e) {
+            // Manejar la excepción si la clonación no es compatible
+            e.printStackTrace();
+            return null;
+        }
     }
 }

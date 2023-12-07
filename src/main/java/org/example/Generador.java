@@ -64,12 +64,6 @@ public class Generador {
         return jugadores;
     }
 
-    private Jugador construirJugador(Jugador datos) {
-        List<Pokemon> pokemones = this.obtenerPokemones(datos.getPokemonesParseo());
-        List<Item> items = this.obtenerItems(datos.getItemsParseo());
-        return new Jugador(datos.getNombre(), pokemones, items, datos.getId());
-    }
-
     private List<Item> obtenerItems(List<Integer> idsItems) {
         List<Item> items = new ArrayList<>();
 
@@ -88,9 +82,8 @@ public class Generador {
         List<Pokemon> pokemones = new ArrayList<>();
 
         for (Integer id : idsPokemones) {
-            // Obtén la instancia de Pokemon usando el método clonar
             Pokemon pokemon = this.pokemonMap.get(id).clonar();
-            // Puedes ajustar cualquier otra propiedad que necesites aquí
+            pokemon.cargarHabilidades(this.repositorioHabilidades);
             pokemones.add(pokemon);
         }
 
