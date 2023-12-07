@@ -20,4 +20,12 @@ public class DefensaX extends Item {
     public List<Pokemon> posiblesPokemonesAAplicar(List<Pokemon> pokemones) {
         return pokemones;
     }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        DefensaX clonedDefensa = (DefensaX) super.clone();
+        // Realizar clonación profunda si es necesario
+        // clonedRestaurador.algunCampo = algo;
+        return clonedDefensa;
+    }
 }

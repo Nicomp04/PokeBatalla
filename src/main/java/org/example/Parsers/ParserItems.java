@@ -13,6 +13,8 @@ import java.util.Map;
 public class ParserItems {
     public Map<Integer, Item> parsearItems(String nombreArchivo) {
         Map<Integer, Item> mapaItem = new HashMap<>();
+        Map<Integer, Item> plantillasItems = new HashMap<>();
+
         try {
             // Lee el contenido del archivo JSON
             String contenido = new String(Files.readAllBytes(Paths.get(nombreArchivo)));
@@ -29,30 +31,18 @@ public class ParserItems {
                 String desc = jsonItem.getString("desc");
                 int valor = jsonItem.getInt("valor");
 
-                Item item;
-                if (estilo.equals("Restaurador")) {
-                    item = new Restaurador(nombre, valor);
-                    item.setUsos(2);
-                    item.setDesc(desc);
-                } else if (estilo.equals("CuraTodo")) {
-                    item = new CuraTodo();
-                    item.setUsos(2);
-                    item.setDesc(desc);
-                } else if (estilo.equals("Revivir")){
-                    item = new Revivir();
-                    item.setUsos(1);
-                    item.setDesc(desc);
-                } else if (estilo.equals("DefensaX")) {
-                    item = new DefensaX(valor);
-                    item.setUsos(1);
-                    item.setDesc(desc);
-                } else if (estilo.equals("AtaqueX")){
-                    item = new AtaqueX(valor);
-                    item.setUsos(1);
-                    item.setDesc(desc);
-                } else{
-                    item = null;
+                // Verificar si ya existe una plantilla para este tipo de Item
+                Item plantilla = plantillasItems.get(id);
+
+                if (plantilla == null) {
+                    // Si no existe, crear una nueva plantilla y almacenarla en el mapa
+                    plantilla = crearItemSegunEstilo(estilo, valor,nombre);
+                    plantillasItems.put(id, plantilla);
                 }
+
+                // Clonar la plantilla para obtener una nueva instancia
+                Item item = plantilla.clonar();
+                item.setDesc(desc);
 
                 mapaItem.put(id, item);
             }
@@ -61,5 +51,28 @@ public class ParserItems {
         }
 
         return mapaItem;
+    }
+
+    private Item crearItemSegunEstilo(String estilo, int valor, String nombre) {
+        Item item;
+        if (estilo.equals("Restaurador")) {
+            item = new Restaurador(nombre, valor);
+            item.setUsos(2);
+        } else if (estilo.equals("CuraTodo")) {
+            item = new CuraTodo();
+            item.setUsos(2);
+        } else if (estilo.equals("Revivir")) {
+            item = new Revivir();
+            item.setUsos(1);
+        } else if (estilo.equals("DefensaX")) {
+            item = new DefensaX(valor);
+            item.setUsos(1);
+        } else if (estilo.equals("AtaqueX")) {
+            item = new AtaqueX(valor);
+            item.setUsos(1);
+        } else {
+            item = null;
+        }
+        return item;
     }
 }

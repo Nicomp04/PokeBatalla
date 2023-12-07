@@ -15,6 +15,7 @@ public abstract class Modificacion extends Habilidad{
         this.atacaAEnemigo = false;
         this.afectaAEnemigo = true;
         this.tipo = tipo;
+        this.usosMax = usosDisponibles;
     }
 
     @Override

@@ -9,20 +9,21 @@ import org.example.Visitor;
 import java.util.Random;
 
 public class Ataque extends Habilidad {
-    private Tipo tipo;
+    private Tipo tipos;
     private int poder;
     private TipoFactory tipoFactory;
-
     private HabildadVista habilidadVista;
 
 
     public Ataque(int id, String nombre, int usosDisponibles, String tipo, int poder) {
         this.id = id;
-        this.tipo = TipoFactory.getTipo(tipo);
+        this.tipos = TipoFactory.getTipo(tipo);
         this.poder = poder;
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
         this.afectaAEnemigo = false;
+        this.tipo = tipo;
+        this.usosMax = usosDisponibles;
 
         this.habilidadVista = new HabildadVista();
     }
@@ -43,7 +44,7 @@ public class Ataque extends Habilidad {
     }
 
     public double mismoTipo(Tipo tipoDelPokemon){
-        if (tipoDelPokemon == this.tipo){
+        if (tipoDelPokemon == this.tipos){
             return 1.5;
         }
         return 1.0;
@@ -60,11 +61,29 @@ public class Ataque extends Habilidad {
         danio = danio * mismoTipo(atacante.getTipo()) * efectividad * rand();
 
         danio = danio + clima.mejoraPorTipo(atacante,danio);
+        this.usosDisponibles = usosDisponibles - 1;
         objetivo.serAtacado(danio);
         habilidadVista.mostarDanio(danio);
     }
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Ataque clonedAtaque = (Ataque) super.clone();
+        // Aquí puedes realizar copias profundas de propiedades si es necesario
+        return clonedAtaque;
+    }
 
+    // Método para clonar un Ataque
+    @Override
+    public Habilidad clonar() {
+        try {
+            return (Ataque) clone();
+        } catch (CloneNotSupportedException e) {
+            // Manejar la excepción si la clonación no es compatible
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     private double rand() {
         Random random = new Random();

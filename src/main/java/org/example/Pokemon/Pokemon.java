@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class Pokemon {
+public class Pokemon implements Cloneable {
     private String nombre;
     private int id;
     private int nivel;
@@ -31,7 +31,8 @@ public class Pokemon {
     private PokemonVista vista;
     private String url;
 
-    public List<Habilidad> habilidades = new ArrayList<>();
+    private List<Habilidad> habilidades = new ArrayList<>();
+    private List<Integer> habilidadesIds = new ArrayList<>();
 
     public Pokemon(String nombre, int id, String tipo, int nivel,   int vidaMaxima, int velocidad, int defensa, int ataque,List<Integer> habilidadesId, RepositorioHabilidades repositorioHabilidades, String url ){
         this.nombre = nombre;
@@ -43,7 +44,7 @@ public class Pokemon {
         this.velocidad = velocidad;
         this.defensa = defensa;
         this.ataque = ataque;
-        this.habilidades = repositorioHabilidades.cargarConjunto(habilidadesId);
+        this.habilidadesIds = habilidadesId;
         this.url = url;
 
         this.vista = new PokemonVista();
@@ -139,4 +140,21 @@ public class Pokemon {
     public String getUrl(){return this.url;}
 
     public Image getImage() { return new Image(Objects.requireNonNull(getClass().getResourceAsStream(this.getUrl())));}
+
+    public Pokemon clonar() {
+            try {
+                return (Pokemon) clone();
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+                return null;
+            }
+    }
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    public void cargarHabilidades(RepositorioHabilidades repositorio) {
+        habilidades = repositorio.cargarConjunto(habilidadesIds);
+    }
 }
