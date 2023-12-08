@@ -15,6 +15,7 @@ import java.util.Objects;
 
 
 public class Pokemon implements Cloneable {
+    private String colorBarra = "#00FF00";
     private String nombre;
     private int id;
     private int nivel;
@@ -166,5 +167,13 @@ public class Pokemon implements Cloneable {
 
     public void cargarHabilidades(RepositorioHabilidades repositorio) {
         habilidades = repositorio.cargarConjunto(habilidadesIds);
+    }
+
+    public String getColorBarra() {
+        return colorBarra;
+    }
+
+    public void setColorBarra(String colorBarra) {
+        this.colorBarra = colorBarra;
     }
 }

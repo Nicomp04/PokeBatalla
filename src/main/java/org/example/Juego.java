@@ -113,7 +113,7 @@ public class Juego {
             notificarCambio(turnoNoActivo);
         }
 
-        if(turnoActivo.getPokemonActual().estaMuerto()){
+        if(turnoActivo.getPokemonActual().estaMuerto() && turnoActivo.tienePokemones()){
 
             observador.cambiarPokemones();
             turnoActivo = jugador1;
