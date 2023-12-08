@@ -108,6 +108,7 @@ public class PantallaBatallaController {
     private Juego juego;
     @FXML
     private AnchorPane anchorPane;
+    private MediaPlayer mediaPlayer;
 
     @FXML
     private void elegirHabilidades() {
@@ -178,11 +179,11 @@ public class PantallaBatallaController {
     @FXML
     public void cambiarPokemones(){
         Jugador jugadorActivo = this.juego.getTurnoActivo();
-        Jugador jugadorNoActivo = this.juego.getTurnoNoActivo();
         PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
 
         Stage stage2 = new Stage();
         pantallaCambiarPokemones.setStage(stage2, juego);
+        botoneraVBox.setVisible(false);
         pantallaCambiarPokemones.mostrar(jugadorActivo);
 
     }
