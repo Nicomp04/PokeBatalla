@@ -1,8 +1,6 @@
 package org.example;
 
-import javafx.scene.image.ImageView;
 import org.example.Clima.Clima;
-import org.example.Clima.TipoClima;
 import org.example.Estado.Estados;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
@@ -153,7 +151,10 @@ public class Campo {
         return this.clima;
     }
 
-    public Pokemon getAtacado() {
+    public Pokemon getPokemonAtacado() {
         return this.pokemonAtacado;
+    }
+    public Pokemon getPokemonAtacante() {
+        return this.pokemonAtacante;
     }
 }

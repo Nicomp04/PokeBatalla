@@ -141,10 +141,11 @@ public class PantallaBatallaController {
         if (habilidadSeleccionada != null) {
 
             this.juego.getCampo().identificarAtacante(juego.getTurnoActivo().getId());
-            vidaPreviaPokemonAtacado = this.juego.getCampo().getAtacado().getVidaActual();
+            vidaPreviaPokemonAtacado = this.juego.getCampo().getPokemonAtacado().getVidaActual();
+            Pokemon pokemonAtacante = juego.getCampo().getPokemonAtacante();
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
             ordenarEstados();
-            mostrarTextoTemporalmente(enemigoPokemon.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
+            mostrarTextoTemporalmente(pokemonAtacante.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
         }
     }
 
@@ -266,13 +267,13 @@ public class PantallaBatallaController {
         return keyFrame;
     }
     private boolean pokemonFueDañado(){
-        double vidaActualPokemonAtacado = juego.getCampo().getAtacado().getVidaActual();
+        double vidaActualPokemonAtacado = juego.getCampo().getPokemonAtacado().getVidaActual();
         return (vidaActualPokemonAtacado < vidaPreviaPokemonAtacado);
     }
     private KeyFrame bajarVidaPokemonAtacado(int quitesDeVida, int i, double duracion) {
         double segundoActivacion = (duracion * i) /quitesDeVida;
-        double vidaActualPokemonAtacado = juego.getCampo().getAtacado().getVidaActual();
-        double vidaMaximaPokemonAtacado = juego.getCampo().getAtacado().getVidaMaxima();
+        double vidaActualPokemonAtacado = juego.getCampo().getPokemonAtacado().getVidaActual();
+        double vidaMaximaPokemonAtacado = juego.getCampo().getPokemonAtacado().getVidaMaxima();
         double parteDeVida = ((vidaPreviaPokemonAtacado - vidaActualPokemonAtacado) * i )/ quitesDeVida;
         KeyFrame keyFrame = new KeyFrame(Duration.seconds(segundoActivacion), event ->{
             enemigoSaludBar.setProgress((vidaPreviaPokemonAtacado - parteDeVida) / vidaMaximaPokemonAtacado);
@@ -282,9 +283,9 @@ public class PantallaBatallaController {
 
     private KeyFrame resetearTurno(double duracionEnSegundos){
         KeyFrame keyFrame = new KeyFrame(Duration.seconds(duracionEnSegundos), event ->{
-            textoDescripcion.setText(datosJugador());
             botoneraVBox.setVisible(true);
             this.juego.habilitarTurno();
+            textoDescripcion.setText(datosJugador());
         });
         return keyFrame;
     }
