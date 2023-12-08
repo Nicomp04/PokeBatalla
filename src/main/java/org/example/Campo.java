@@ -152,4 +152,8 @@ public class Campo {
     public Clima getClima() {
         return this.clima;
     }
+
+    public Pokemon getAtacado() {
+        return this.pokemonAtacado;
+    }
 }

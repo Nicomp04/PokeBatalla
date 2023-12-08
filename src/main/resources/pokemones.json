@@ -35,7 +35,7 @@
       "vidaMaxima": 85,
       "velocidad": 15,
       "defensa": 5,
-      "ataque": 30,
+      "ataque": 50,
       "habilidades": [3, 98, 24],
       "url": "/oster.gif"
     }

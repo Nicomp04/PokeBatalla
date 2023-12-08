@@ -36,79 +36,59 @@ import java.util.Objects;
 public class PantallaBatallaController {
     @FXML
     private Stage stage;
-
-    private List<Habilidad> habilidades = new ArrayList<>();
-
     @FXML
     private Pokemon jugadorPokemon = new Pokemon();
     @FXML
     private Pokemon enemigoPokemon = new Pokemon();
-
     @FXML
     private ImageView jugadorPokemonImage;
-
     @FXML
     private Text textoDescripcion;
-
     @FXML
     private Clima climaActual;
-
     @FXML
     private ImageView ClimaActualImage;
-
     @FXML
     private ProgressBar jugadorSaludBar;
-
     @FXML
     private Text jugadorPokemonNombre;
-
     @FXML
     private ImageView enemigoPokemonImage;
-
     @FXML
     private ProgressBar enemigoSaludBar;
-
     @FXML
     private Text enemigoPokemonNombre;
     @FXML
     private ListView<String> habilidadesListView = new ListView<>();
-
     @FXML
     private VBox detallesHabilidadVBox;
     @FXML
     private Label usosLabel;
     @FXML
     private Label tipoLabel;
-
     @FXML
     private HBox parteInferiorHBox ;
     @FXML
     private VBox descripcionVBox = new VBox();
-
     @FXML
     private VBox botoneraVBox;
-
     @FXML
     private Button luchaButton;
-
     @FXML
     private Button mochilaButton;
-
     @FXML
     private Button pokemonButton;
-
     @FXML
     private Button huirButton;
-
     @FXML
     private VBox habilidadesVBox;
-
-    private int selectedOptionIndex = 0;
-
-    private Juego juego;
     @FXML
     private AnchorPane anchorPane;
+    private int selectedOptionIndex = 0;
+    private Juego juego;
     private MediaPlayer mediaPlayer;
+    private double vidaPreviaPokemonAtacado;
+    private List<Habilidad> habilidades = new ArrayList<>();
 
     @FXML
     private void elegirHabilidades() {
@@ -159,9 +139,10 @@ public class PantallaBatallaController {
         Habilidad habilidadSeleccionada = obtenerHabilidadPorNombre(habilidadesListView.getSelectionModel().getSelectedItem(),habilidades);
 
         if (habilidadSeleccionada != null) {
+
             this.juego.getCampo().identificarAtacante(juego.getTurnoActivo().getId());
+            vidaPreviaPokemonAtacado = this.juego.getCampo().getAtacado().getVidaActual();
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
-            this.juego.habilitarTurno();
             ordenarEstados();
             mostrarTextoTemporalmente(enemigoPokemon.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
         }
@@ -259,21 +240,53 @@ public class PantallaBatallaController {
     }
 
     public void mostrarTextoTemporalmente(String nuevoTexto) {
-        int duracionEnSegundos = 2;
+        double duracionEnSegundos = 2;
         actualizarTexto(nuevoTexto);
-        // Configuración de la animación para mostrar y ocultar el texto en la ventana
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.ZERO, event -> {
-                    textoDescripcion.setText(nuevoTexto);
-                    botoneraVBox.setVisible(false);
-                }),
-                new KeyFrame(Duration.seconds(duracionEnSegundos), event -> {
-                    textoDescripcion.setText(datosJugador());
-                    botoneraVBox.setVisible(true);
-                })
-        );
+        Timeline timeline = new Timeline();
+
+        timeline.getKeyFrames().add(mostrarTexto(nuevoTexto));
+        if (pokemonFueDañado()){
+            int quitesDeVida = 10;
+            for (int i = 0; i < quitesDeVida; i ++){
+                timeline.getKeyFrames().add(bajarVidaPokemonAtacado(quitesDeVida, i, duracionEnSegundos));
+            }
+        }
+        timeline.getKeyFrames().add(resetearTurno(duracionEnSegundos));
+
         timeline.setCycleCount(1); // La animación se ejecutará una vez
         timeline.play();
+    }
+    private KeyFrame mostrarTexto (String nuevoTexto){
+        KeyFrame keyFrame = new KeyFrame(Duration.ZERO, event ->{
+            textoDescripcion.setText(nuevoTexto);
+            botoneraVBox.setVisible(false);
+            habilidadesVBox.setVisible(false);
+            detallesHabilidadVBox.setVisible(false);
+        });
+        return keyFrame;
+    }
+    private boolean pokemonFueDañado(){
+        double vidaActualPokemonAtacado = juego.getCampo().getAtacado().getVidaActual();
+        return (vidaActualPokemonAtacado < vidaPreviaPokemonAtacado);
+    }
+    private KeyFrame bajarVidaPokemonAtacado(int quitesDeVida, int i, double duracion) {
+        double segundoActivacion = (duracion * i) /quitesDeVida;
+        double vidaActualPokemonAtacado = juego.getCampo().getAtacado().getVidaActual();
+        double vidaMaximaPokemonAtacado = juego.getCampo().getAtacado().getVidaMaxima();
+        double parteDeVida = ((vidaPreviaPokemonAtacado - vidaActualPokemonAtacado) * i )/ quitesDeVida;
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(segundoActivacion), event ->{
+            enemigoSaludBar.setProgress((vidaPreviaPokemonAtacado - parteDeVida) / vidaMaximaPokemonAtacado);
+        });
+        return keyFrame;
+    }
+
+    private KeyFrame resetearTurno(double duracionEnSegundos){
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(duracionEnSegundos), event ->{
+            textoDescripcion.setText(datosJugador());
+            botoneraVBox.setVisible(true);
+            this.juego.habilitarTurno();
+        });
+        return keyFrame;
     }
 
     private String datosJugador(){return ("Es el turno de " + juego.getTurnoActivo().getNombre() + ", Vamos " + juego.getTurnoActivo().getPokemonActual().getNombre() + "!!!");}
