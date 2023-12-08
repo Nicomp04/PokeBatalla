@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2023_11_25_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2023_11_25__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Generador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Ataque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/CambiaClima.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/CambiaClima.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Efecto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Habilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Habilidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Modificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/Modificacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarAtaque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarAtaque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarDefensa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarDefensa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarHp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarHp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarVelocidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/ModificarVelocidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/RepositorioHabilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Habilidades/RepositorioHabilidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserHabilidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Parsers/ParserHabilidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pantallaJuego1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pantallaJuego1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Franco3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -82,10 +65,10 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;juancpuch4&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/nicol/OneDrive/Escritorio/Portfolio/PokeBatalla/src/main/java/org/example&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicol/Downloads/openjfx-21.0.1_windows-x64_bin-sdk/javafx-sdk-21.0.1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jc/IdeaProjects/PokeBatalla/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -103,6 +86,7 @@
       <recent name="org.example." />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites" />
       <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources\org.example" />
       <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources\images" />
     </key>
@@ -149,7 +133,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.main" />
       <module name="PokeBatalla" />
       <extension name="coverage">
@@ -220,6 +204,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.main" />
         <item itemvalue="JUnit.HabilidadesTest.testCambioDeEstadoDeUnPokemonPorHabilidad" />
         <item itemvalue="JUnit.HabilidadesTest.testCambioDeDefenzaDeUnPokemonPorHabilidad" />
         <item itemvalue="Application.PokemonApp" />
@@ -255,8 +240,7 @@
       <workItem from="1701138847008" duration="5501000" />
       <workItem from="1701193059731" duration="25811000" />
       <workItem from="1701550254291" duration="4863000" />
-      <workItem from="1701632417957" duration="4069000" />
-      <workItem from="1701882515022" duration="12042000" />
+      <workItem from="1701632417957" duration="12272000" />
     </task>
     <servers />
   </component>
@@ -287,13 +271,46 @@
           <option name="timeStamp" value="2" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java</url>
-          <line>49</line>
-          <properties class="org.example.PantallaCambiarPokemonesController" method="crearListaDePokemonesViewer">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Juego.java</url>
+          <line>95</line>
+          <properties class="org.example.Juego" method="habilitarTurno">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java</url>
+          <line>177</line>
+          <properties class="org.example.PantallaBatallaController" method="cambiarPokemones">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java</url>
+          <line>277</line>
+          <properties class="org.example.PantallaBatallaController" method="handleKeyPress">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java</url>
+          <line>294</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java</url>
+          <line>121</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -303,14 +320,14 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PokeBatalla$Test_in_PokeBatalla.ic" NAME="Test in PokeBatalla Coverage Results" MODIFIED="1699065262565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>Test.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/PokeBatalla$JugadorTest.ic" NAME="JugadorTest Coverage Results" MODIFIED="1698941495405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PokeBatalla$All_in_PokeBatalla.ic" NAME="All in PokeBatalla Coverage Results" MODIFIED="1699066008208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PokeBatalla$CampoTest_campoCargadoCorrectamente.ic" NAME="CampoTest.campoCargadoCorrectamente Coverage Results" MODIFIED="1698941527153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PokeBatalla$Test_in_PokeBatalla.ic" NAME="Test in PokeBatalla Coverage Results" MODIFIED="1699065262565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
   </component>

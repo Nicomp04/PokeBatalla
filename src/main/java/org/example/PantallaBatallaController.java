@@ -109,8 +109,6 @@ public class PantallaBatallaController {
     @FXML
     private AnchorPane anchorPane;
 
-    private MediaPlayer mediaPlayer;
-
     @FXML
     private void elegirHabilidades() {
         // Mostra habilidades en la interfaz
@@ -150,8 +148,9 @@ public class PantallaBatallaController {
         return null; // Manejar el caso en el que no se encuentra la habilidad
     }
     private void mostrarDetallesHabilidad(Habilidad habilidad) {
-        usosLabel.setText("Usos restantes: " + habilidad.getUsosDisponibles() + "/" + habilidad.getUsosMax());
+        usosLabel.setText("Usos restantes: " + habilidad.getUsosDisponibles());
         tipoLabel.setText("Tipo: " + habilidad.getTipo());
+
     }
 
     @FXML
@@ -173,6 +172,7 @@ public class PantallaBatallaController {
         PantallaItems pantallaItems = new PantallaItems();
         pantallaItems.setStage(stage);
         pantallaItems.mostar(this.juego);
+
     }
 
     @FXML
