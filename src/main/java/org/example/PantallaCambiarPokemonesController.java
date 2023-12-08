@@ -1,8 +1,9 @@
 package org.example;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
@@ -13,13 +14,11 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import org.example.Pokemon.Pokemon;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class PantallaCambiarPokemonesController {
 
@@ -43,6 +42,8 @@ public class PantallaCambiarPokemonesController {
     private Rectangle colorRectangulo2;
     @FXML
     private Rectangle colorRectangulo3;
+    @FXML
+    private Label textoAccion;
     private ImageView pokemonImage = new ImageView();
     private ProgressBar pokemosnSaludBar = new ProgressBar();
     private StackPane[] listaPokemones;
@@ -98,7 +99,6 @@ public class PantallaCambiarPokemonesController {
             informacionPokemon.getChildren().add(pokemosnSaludBar);
             informacionPokemon.getChildren().add(porcentajeVida);
             this.listaPokemones[i].getChildren().add(informacionPokemon);
-
         }
     }
 
@@ -108,18 +108,60 @@ public class PantallaCambiarPokemonesController {
         String identificador = stackPane.getId();
         identificarPocision(identificador);
 
-        if (pos < jugador.getPokemones().size() && pos != -1 && !jugador.getPokemones().get(pos).estaMuerto()){
-            this.stage.close();
+        boolean posicionValida = pos < jugador.getPokemones().size() && pos != -1;
+
+        if ( posicionValida && !jugador.getPokemones().get(pos).estaMuerto()){
             jugador.elegirPokemon(pos);
-            stage.close();
+            mostrarTextoSeleccionado(jugador.getPokemonActual());
             juego.habilitarTurno();
         }
     }
+
+    private void mostrarTextoSeleccionado(Pokemon pokemonActual) {
+
+        Timeline timeline = new Timeline(
+            new KeyFrame(Duration.ZERO, event -> {
+                this.textoAccion.setText("Seleccionaste a " + pokemonActual.getNombre() + "\nA LUCHAR !");
+                Image imagen = new Image(jugador.getPokemonActual().getUrl());
+                this.jugadorImagen.setImage(imagen);
+                this.pokemonNombre.setText(pokemonActual.getNombre());
+                double porcentajeVidaActual = (jugador.getPokemonActual().getVidaActual() / jugador.getPokemonActual().getVidaMaxima());
+                this.vidaPokemon.setProgress(porcentajeVidaActual);
+                this.textoAccion.setVisible(true);
+            }),
+            new KeyFrame(Duration.seconds(2), event -> {
+                this.textoAccion.setVisible(false);
+                this.stage.close();
+            })
+        );
+        timeline.setCycleCount(1);
+        timeline.play();
+    }
+
+    private void mostrarTextoInformativo(){
+        if (pos < jugador.getPokemones().size() && pos != -1){
+
+            Pokemon pokemon = jugador.getPokemones().get(pos);
+            if (pokemon.estaMuerto()){
+                textoAccion.setText("No puedes seleccionar a " + pokemon.getNombre() + "\nEsta Muerto =(");
+            }
+            //if esta envenenado
+            else{
+                textoAccion.setText("Estas por seleccionar a " + pokemon.getNombre());
+            }
+            textoAccion.setVisible(true);
+        }
+        else {
+            textoAccion.setVisible(false);
+        }
+    }
+
 
     public void handleMouseEntered(MouseEvent mouseEvent){
         StackPane stackPane = (StackPane) mouseEvent.getSource();
         String identificador = stackPane.getId();
         identificarPocision(identificador);
+        mostrarTextoInformativo();
 
         if (pos == 0) {colorRectangulo0.setFill(Color.LIGHTBLUE);}
         else if (pos == 1) {colorRectangulo1.setFill(Color.LIGHTBLUE);}
@@ -138,7 +180,6 @@ public class PantallaCambiarPokemonesController {
         else if (pos == 2) {colorRectangulo2.setFill(Color.GREY);}
         else if (pos == 3) {colorRectangulo3.setFill(Color.DIMGRAY);}
     }
-
 
     private void identificarPocision(String identificador){
         if (identificador.equals("0")){this.pos = 0;}

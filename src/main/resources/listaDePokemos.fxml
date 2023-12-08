@@ -5,6 +5,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.shape.Rectangle?>
@@ -70,8 +71,13 @@
         </HBox>
         <!-- Texto con el contexto de lo que esta pasando -->
         <StackPane>
-            <Label fx:id="textoAccion" />
             <Rectangle height="50" width="600" fill="black" AnchorPane.bottomAnchor="0.0" />
+            <Label fx:id="textoAccion" textFill="white" StackPane.alignment="CENTER_LEFT" alignment="CENTER_LEFT" maxHeight="100" minWidth="300" style="-fx-font-size: 15px;">
+                <font>
+                    <Font name="Visitor" size="16"/>
+                </font>
+            </Label>
+
         </StackPane>
     </VBox>
 </AnchorPane>
