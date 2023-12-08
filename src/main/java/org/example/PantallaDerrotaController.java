@@ -33,7 +33,7 @@ public class PantallaDerrotaController {
 
             stage.setTitle("Pantalla de Juego");
             stage.setFullScreen(true);
-            stage.setMaxHeight(870);
+            stage.setMaxHeight(880);
             stage.setMaxWidth(1470);
             stage.setScene(scene);
             stage.show();

@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Campo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaDerrotaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaDerrotaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +284,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java</url>
-          <line>292</line>
+          <line>306</line>
           <properties class="org.example.PantallaBatallaController" method="datosJugador">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -291,7 +293,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java</url>
-          <line>242</line>
+          <line>256</line>
           <properties class="org.example.PantallaBatallaController" method="mostrarTextoTemporalmente">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

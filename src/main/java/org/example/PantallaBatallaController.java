@@ -165,7 +165,6 @@ public class PantallaBatallaController {
 
         Stage stage2 = new Stage();
         pantallaCambiarPokemones.setStage(stage2, juego);
-        botoneraVBox.setVisible(false);
         pantallaCambiarPokemones.mostrar(jugadorActivo);
 
     }
@@ -216,6 +215,7 @@ public class PantallaBatallaController {
         // Cargar la imagen desde el ClassLoader
         this.jugadorPokemonImage.setImage(jugadorPokemon.getImage());
         this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
+        cambiarColorSalludBar(jugadorSaludBar, jugadorPokemon);
         this.jugadorPokemonNombre.setText(jugadorPokemon.getNombre());
 
         ClimaActualImage.setImage(this.climaActual.getImage());
@@ -224,6 +224,7 @@ public class PantallaBatallaController {
 
         enemigoPokemonImage.setImage(this.enemigoPokemon.getImage());
         enemigoSaludBar.setProgress((double)enemigoPokemon.getVidaActual() / enemigoPokemon.getVidaMaxima());
+        cambiarColorSalludBar(enemigoSaludBar, enemigoPokemon);
         enemigoPokemonNombre.setText(enemigoPokemon.getNombre());
 
         descripcionVBox.setVisible(true);
@@ -235,6 +236,19 @@ public class PantallaBatallaController {
         descripcionVBox.requestFocus();
     }
 
+    private void cambiarColorSalludBar (ProgressBar progressBar, Pokemon pokemon) {
+        double vidaActual = pokemon.getVidaActual();
+        double vidaMaxima = pokemon.getVidaMaxima();
+        if (vidaMaxima == vidaActual){
+            progressBar.setStyle("-fx-accent: green;");
+        }
+        else if (vidaMaxima * 0.3 < vidaActual){
+            progressBar.setStyle("-fx-accent: yellow;");
+        }
+        else {
+            progressBar.setStyle("-fx-accent: red;");
+        }
+    }
     public void actualizarTexto(String nuevoTexto) {
         this.textoDescripcion.setText(nuevoTexto);
         descripcionVBox.setVisible(true);
@@ -277,6 +291,7 @@ public class PantallaBatallaController {
         double parteDeVida = ((vidaPreviaPokemonAtacado - vidaActualPokemonAtacado) * i )/ quitesDeVida;
         KeyFrame keyFrame = new KeyFrame(Duration.seconds(segundoActivacion), event ->{
             enemigoSaludBar.setProgress((vidaPreviaPokemonAtacado - parteDeVida) / vidaMaximaPokemonAtacado);
+            cambiarColorSalludBar(enemigoSaludBar, enemigoPokemon);
         });
         return keyFrame;
     }

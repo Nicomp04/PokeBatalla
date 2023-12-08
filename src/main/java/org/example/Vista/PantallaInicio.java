@@ -53,7 +53,7 @@ public class PantallaInicio extends VBox {
             stage.close();
             stage1.setTitle("Pantalla de Juego");
             stage1.setFullScreen(true);
-            stage1.setMaxHeight(870);
+            stage1.setMaxHeight(880);
             stage1.setMaxWidth(1470);
             stage1.setScene(scene);
             stage1.show();

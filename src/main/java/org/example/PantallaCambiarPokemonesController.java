@@ -189,5 +189,8 @@ public class PantallaCambiarPokemonesController {
         else{this.pos = -1;}
     }
 
+    public void cancelarAccion(){
+        stage.close();
+    }
 
 }
