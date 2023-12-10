@@ -167,7 +167,6 @@ public class PantallaBatallaController {
             vidaPreviaPokemonAtacado = this.juego.getCampo().getPokemonAtacado().getVidaActual();
             Pokemon pokemonAtacante = juego.getCampo().getPokemonAtacante();
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
-            this.juego.habilitarTurno();
             mostrarTextoTemporalmente(enemigoPokemon.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
         }
     }

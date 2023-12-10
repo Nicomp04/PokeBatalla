@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.Clima.Clima
+import org.example.Clima.Clima;
 import org.example.Estado.EstadoPokemon;
 import org.example.Habilidades.Habilidad;
 import org.example.Parsers.ParserClima;
