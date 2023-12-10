@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
 import org.example.Clima.Clima;
+import org.example.Estado.EstadoPokemon;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.PantallaCambiarPokemones;
@@ -29,9 +30,7 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class PantallaBatallaController {
     @FXML
@@ -90,6 +89,30 @@ public class PantallaBatallaController {
     private double vidaPreviaPokemonAtacado;
     private List<Habilidad> habilidades = new ArrayList<>();
 
+    public HBox estadosAtacante;
+
+    public HBox estadosAtacado;
+
+    public void mostrarEstados(Pokemon pokemon, HBox barra){
+
+        barra.getChildren().clear();
+        Set<EstadoPokemon> estadosAgregados = new HashSet<>();
+
+        for (EstadoPokemon estado : pokemon.getEstados()) {
+            ImageView imageView = new ImageView(estado.getUrl());
+
+            if (!estadosAgregados.contains(estado)){
+                imageView.setFitHeight(30);
+                imageView.setFitWidth(30);
+                barra.getChildren().add(imageView);
+                estadosAgregados.add(estado);
+            }
+            else{
+                estadosAgregados.remove(estado);
+            }
+        }
+    }
+
     @FXML
     private void elegirHabilidades() {
         // Mostra habilidades en la interfaz
@@ -107,7 +130,7 @@ public class PantallaBatallaController {
 
         habilidadesListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                mostrarDetallesHabilidad(obtenerHabilidadPorNombre(newValue, habilidades));
+                mostrarDetallesHabilidad(Objects.requireNonNull(obtenerHabilidadPorNombre(newValue, habilidades)));
             }
         });
     }
@@ -144,8 +167,8 @@ public class PantallaBatallaController {
             vidaPreviaPokemonAtacado = this.juego.getCampo().getPokemonAtacado().getVidaActual();
             Pokemon pokemonAtacante = juego.getCampo().getPokemonAtacante();
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
-            ordenarEstados();
-            mostrarTextoTemporalmente(pokemonAtacante.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
+            this.juego.habilitarTurno();
+            mostrarTextoTemporalmente(enemigoPokemon.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
         }
     }
 
@@ -211,6 +234,9 @@ public class PantallaBatallaController {
         climaActual = juego.getCampo().getClima();
         enemigoPokemon = noActivo.getPokemonActual();
         jugadorPokemon = juego.getTurnoActivo().getPokemonActual();
+
+        mostrarEstados(jugadorPokemon, estadosAtacante);
+        mostrarEstados(enemigoPokemon, estadosAtacado);
 
         // Cargar la imagen desde el ClassLoader
         this.jugadorPokemonImage.setImage(jugadorPokemon.getImage());
@@ -316,12 +342,6 @@ public class PantallaBatallaController {
     }
 
     private String datosJugador(){return ("Es el turno de " + juego.getTurnoActivo().getNombre() + ", Vamos " + juego.getTurnoActivo().getPokemonActual().getNombre() + "!!!");}
-
-    public void ordenarEstados(){
-        this.juego.getCampo().validarEstadoEnvenenado(jugadorPokemon);
-        this.jugadorPokemon.restarTurnoEstados();
-        this.juego.limpiarHabilidades();
-    }
 
     @FXML
     private void handleKeyPress(KeyEvent event) {

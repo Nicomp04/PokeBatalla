@@ -24,7 +24,7 @@
 
   },
   {
-    "nombre": "Confundir",
+    "nombre": "Rayo Confuso",
     "id": 58,
     "usos": 3,
     "estilo": "Efecto",
@@ -48,7 +48,7 @@
 
   },
   {
-  "nombre": "Veneno",
+  "nombre": "Polvo Veneno",
   "id": 24,
   "usos": 10,
   "estilo": "Efecto",
@@ -58,7 +58,7 @@
   "valor": 15,
   "estado": "ENVENENADO"
 
-},
+  },
   {
     "nombre": "Latigazo Cepa",
     "id": 2,
@@ -118,6 +118,42 @@
     "estadistica": -1,
     "afectaAEnemigo": true,
     "valor": 20,
+    "estado": "PARALIZADO"
+
+  },
+  {
+  "nombre": "Tormenta de Arena",
+  "id": 23,
+  "usos": 5,
+  "estilo": "CambiaClima",
+  "tipo": "Tormenta de arena",
+  "estadistica": -1,
+  "afectaAEnemigo": true,
+  "valor": 20,
+  "estado": "PARALIZADO"
+
+  },
+  {
+    "nombre": "Bostezo",
+    "id": 18,
+    "usos": 10,
+    "estilo": "Efecto",
+    "tipo": "dormir",
+    "estadistica": -1,
+    "afectaAEnemigo": true,
+    "valor": 15,
+    "estado": "DORMIDO"
+
+  },
+  {
+    "nombre": "Paralizador",
+    "id": 19,
+    "usos": 10,
+    "estilo": "Efecto",
+    "tipo": "dormir",
+    "estadistica": -1,
+    "afectaAEnemigo": true,
+    "valor": 15,
     "estado": "PARALIZADO"
 
   }

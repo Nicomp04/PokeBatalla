@@ -27,7 +27,7 @@
       "url": "/chari.gif"
     },
     {
-      "nombre": "Oster",
+      "nombre": "Shellder",
       "id": 6,
       "nivel": 16,
       "tipo": "Agua",
@@ -38,6 +38,32 @@
       "ataque": 50,
       "habilidades": [3, 98, 24],
       "url": "/oster.gif"
+    },
+    {
+      "nombre": "Gengar",
+      "id": 25,
+      "nivel": 20,
+      "tipo": "Fantasma",
+      "historia": "Esta es una historia",
+      "vidaMaxima": 80,
+      "velocidad": 40,
+      "defensa": 30,
+      "ataque": 60,
+      "habilidades": [15, 24, 55],
+      "url": "/gengar.gif"
+    },
+    {
+      "nombre": "Weepinbell",
+      "id": 18,
+      "nivel": 20,
+      "tipo": "Planta",
+      "historia": "Esta es una historia",
+      "vidaMaxima": 45,
+      "velocidad": 68,
+      "defensa": 70,
+      "ataque": 55,
+      "habilidades": [18, 19, 24, 58],
+      "url": "/weepinbell.gif"
     }
   ]
 }

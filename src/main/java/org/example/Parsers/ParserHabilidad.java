@@ -1,6 +1,6 @@
 package org.example.Parsers;
 
-import org.example.Estado.Estados;
+import org.example.Estado.*;
 import org.example.Habilidades.*;
 import org.example.Habilidades.Habilidad;
 
@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ParserHabilidad {
     public Map<Integer, Habilidad> parsearHabilidades(String nombreArchivo) {
@@ -35,6 +36,7 @@ public class ParserHabilidad {
 
                 // Utiliza la clase base y sus extensiones según el estilo
                 Habilidad habilidad = crearHabilidadSegunEstilo(id, nombre, usos, estilo, tipo, jsonHabilidad);
+
                 mapaHabilidades.put(id, habilidad);
             }
         } catch (IOException e) {
@@ -87,8 +89,16 @@ public class ParserHabilidad {
     }
 
     private Habilidad crearEfecto(int id, String nombre, int usos, String estado, boolean afectaAEnemigo, String tipo) {
-        Estados estadoEnum = Estados.valueOf(estado);
-        return new Efecto(id, nombre, usos, estadoEnum, afectaAEnemigo, tipo);
+
+        EstadoPokemon estadoNuevo = switch (estado) {
+            case "PARALIZADO" -> new Paralizado();
+            case "ENVENENADO" -> new Envenenado();
+            case "CONFUNDIDO" -> new Confundido();
+            case "DORMIDO" -> new Dormido();
+            default -> null;
+        };
+
+        return new Efecto(id, nombre, estadoNuevo, afectaAEnemigo, tipo);
     }
 
 }
