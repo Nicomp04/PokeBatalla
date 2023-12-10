@@ -35,80 +35,59 @@ import java.util.*;
 public class PantallaBatallaController {
     @FXML
     private Stage stage;
-
-    private List<Habilidad> habilidades = new ArrayList<>();
-
     @FXML
     private Pokemon jugadorPokemon = new Pokemon();
     @FXML
     private Pokemon enemigoPokemon = new Pokemon();
-
     @FXML
     private ImageView jugadorPokemonImage;
-
     @FXML
     private Text textoDescripcion;
-
     @FXML
     private Clima climaActual;
-
     @FXML
     private ImageView ClimaActualImage;
-
     @FXML
     private ProgressBar jugadorSaludBar;
-
     @FXML
     private Text jugadorPokemonNombre;
-
     @FXML
     private ImageView enemigoPokemonImage;
-
     @FXML
     private ProgressBar enemigoSaludBar;
-
     @FXML
     private Text enemigoPokemonNombre;
     @FXML
     private ListView<String> habilidadesListView = new ListView<>();
-
     @FXML
     private VBox detallesHabilidadVBox;
     @FXML
     private Label usosLabel;
     @FXML
     private Label tipoLabel;
-
     @FXML
     private HBox parteInferiorHBox ;
     @FXML
     private VBox descripcionVBox = new VBox();
-
     @FXML
     private VBox botoneraVBox;
-
     @FXML
     private Button luchaButton;
-
     @FXML
     private Button mochilaButton;
-
     @FXML
     private Button pokemonButton;
-
     @FXML
     private Button huirButton;
-
     @FXML
     private VBox habilidadesVBox;
-
-    private int selectedOptionIndex = 0;
-
-    private Juego juego;
     @FXML
     private AnchorPane anchorPane;
-
+    private int selectedOptionIndex = 0;
+    private Juego juego;
     private MediaPlayer mediaPlayer;
+    private double vidaPreviaPokemonAtacado;
+    private List<Habilidad> habilidades = new ArrayList<>();
 
     public HBox estadosAtacante;
 
@@ -173,8 +152,9 @@ public class PantallaBatallaController {
         return null; // Manejar el caso en el que no se encuentra la habilidad
     }
     private void mostrarDetallesHabilidad(Habilidad habilidad) {
-        usosLabel.setText("Usos restantes: " + habilidad.getUsosDisponibles() + "/" + habilidad.getUsosMax());
+        usosLabel.setText("Usos restantes: " + habilidad.getUsosDisponibles());
         tipoLabel.setText("Tipo: " + habilidad.getTipo());
+
     }
 
     @FXML
@@ -182,7 +162,10 @@ public class PantallaBatallaController {
         Habilidad habilidadSeleccionada = obtenerHabilidadPorNombre(habilidadesListView.getSelectionModel().getSelectedItem(),habilidades);
 
         if (habilidadSeleccionada != null) {
+
             this.juego.getCampo().identificarAtacante(juego.getTurnoActivo().getId());
+            vidaPreviaPokemonAtacado = this.juego.getCampo().getPokemonAtacado().getVidaActual();
+            Pokemon pokemonAtacante = juego.getCampo().getPokemonAtacante();
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
             this.juego.habilitarTurno();
             mostrarTextoTemporalmente(enemigoPokemon.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
@@ -195,12 +178,12 @@ public class PantallaBatallaController {
         PantallaItems pantallaItems = new PantallaItems();
         pantallaItems.setStage(stage);
         pantallaItems.mostar(this.juego);
+
     }
 
     @FXML
     public void cambiarPokemones(){
         Jugador jugadorActivo = this.juego.getTurnoActivo();
-        Jugador jugadorNoActivo = this.juego.getTurnoNoActivo();
         PantallaCambiarPokemones pantallaCambiarPokemones = new PantallaCambiarPokemones();
 
         Stage stage2 = new Stage();
@@ -258,15 +241,17 @@ public class PantallaBatallaController {
         // Cargar la imagen desde el ClassLoader
         this.jugadorPokemonImage.setImage(jugadorPokemon.getImage());
         this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
+        this.jugadorSaludBar.setStyle("-fx-accent: " + this.jugadorPokemon.getColorBarra() + ";");
         this.jugadorPokemonNombre.setText(jugadorPokemon.getNombre());
 
         ClimaActualImage.setImage(this.climaActual.getImage());
         System.out.println(this.climaActual.nombre);
         System.out.println(this.climaActual.getUrl());
 
-        enemigoPokemonImage.setImage(this.enemigoPokemon.getImage());
-        enemigoSaludBar.setProgress((double)enemigoPokemon.getVidaActual() / enemigoPokemon.getVidaMaxima());
-        enemigoPokemonNombre.setText(enemigoPokemon.getNombre());
+        this.enemigoPokemonImage.setImage(this.enemigoPokemon.getImage());
+        this.enemigoSaludBar.setProgress((double)enemigoPokemon.getVidaActual() / enemigoPokemon.getVidaMaxima());
+        this.enemigoSaludBar.setStyle("-fx-accent: " + enemigoPokemon.getColorBarra() + ";");
+        this.enemigoPokemonNombre.setText(enemigoPokemon.getNombre());
 
         descripcionVBox.setVisible(true);
         botoneraVBox.setVisible(true);
@@ -277,27 +262,83 @@ public class PantallaBatallaController {
         descripcionVBox.requestFocus();
     }
 
+
     public void actualizarTexto(String nuevoTexto) {
         this.textoDescripcion.setText(nuevoTexto);
         descripcionVBox.setVisible(true);
     }
 
     public void mostrarTextoTemporalmente(String nuevoTexto) {
-        int duracionEnSegundos = 2;
+        double duracionEnSegundos = 2;
         actualizarTexto(nuevoTexto);
-        // Configuración de la animación para mostrar y ocultar el texto en la ventana
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.ZERO, event -> {
-                    textoDescripcion.setText(nuevoTexto);
-                    botoneraVBox.setVisible(false);
-                }),
-                new KeyFrame(Duration.seconds(duracionEnSegundos), event -> {
-                    textoDescripcion.setText(datosJugador());
-                    botoneraVBox.setVisible(true);
-                })
-        );
+        Timeline timeline = new Timeline();
+
+        timeline.getKeyFrames().add(mostrarTexto(nuevoTexto));
+        if (pokemonFueDañado()){
+            int quitesDeVida = 30;
+            for (int i = 0; i < quitesDeVida; i ++){
+                timeline.getKeyFrames().add(bajarVidaPokemonAtacado(quitesDeVida, i, duracionEnSegundos));
+            }
+        }
+        timeline.getKeyFrames().add(resetearTurno(duracionEnSegundos));
+
         timeline.setCycleCount(1); // La animación se ejecutará una vez
         timeline.play();
+    }
+    private KeyFrame mostrarTexto (String nuevoTexto){
+        KeyFrame keyFrame = new KeyFrame(Duration.ZERO, event ->{
+            textoDescripcion.setText(nuevoTexto);
+            botoneraVBox.setVisible(false);
+            habilidadesVBox.setVisible(false);
+            detallesHabilidadVBox.setVisible(false);
+        });
+        return keyFrame;
+    }
+    private boolean pokemonFueDañado(){
+        double vidaActualPokemonAtacado = juego.getCampo().getPokemonAtacado().getVidaActual();
+        return (vidaActualPokemonAtacado < vidaPreviaPokemonAtacado);
+    }
+    private KeyFrame bajarVidaPokemonAtacado(int quitesDeVida, int i, double duracion) {
+        double segundoActivacion = (duracion * i) / quitesDeVida;
+        double vidaActualPokemonAtacado = juego.getCampo().getPokemonAtacado().getVidaActual();
+        double vidaMaximaPokemonAtacado = juego.getCampo().getPokemonAtacado().getVidaMaxima();
+        double parteDeVida = ((vidaPreviaPokemonAtacado - vidaActualPokemonAtacado) * i) / quitesDeVida;
+
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(segundoActivacion), event -> {
+            double porcentajeVida = (vidaPreviaPokemonAtacado - parteDeVida) / vidaMaximaPokemonAtacado;
+            cambiarColorSaludBar(enemigoSaludBar, enemigoPokemon, porcentajeVida);
+            enemigoSaludBar.setProgress(porcentajeVida);
+        });
+        return keyFrame;
+    }
+
+    private void cambiarColorSaludBar(ProgressBar progressBar, Pokemon pokemon, double porcentajeVida) {
+        pokemon.setColorBarra(calcularEstiloPorcentajeVida(porcentajeVida));
+
+        progressBar.setStyle("-fx-accent: " + pokemon.getColorBarra() + ";");
+    }
+
+    private String calcularEstiloPorcentajeVida(double porcentajeVida) {
+        // Interpolación lineal entre verde y rojo
+        double r = Math.min(1.0, 2.0 - 2.0 * porcentajeVida);
+        double g = Math.min(1.0, 2.0 * porcentajeVida);
+        double b = 0.0;
+
+        // Convertir valores a códigos de color hexadecimal
+        String colorHex = String.format("#%02X%02X%02X",
+                (int) (r * 255), (int) (g * 255), (int) (b * 255));
+
+        return colorHex;
+    }
+
+
+    private KeyFrame resetearTurno(double duracionEnSegundos){
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(duracionEnSegundos), event ->{
+            botoneraVBox.setVisible(true);
+            this.juego.habilitarTurno();
+            textoDescripcion.setText(datosJugador());
+        });
+        return keyFrame;
     }
 
     private String datosJugador(){return ("Es el turno de " + juego.getTurnoActivo().getNombre() + ", Vamos " + juego.getTurnoActivo().getPokemonActual().getNombre() + "!!!");}
@@ -370,6 +411,7 @@ public class PantallaBatallaController {
             derrotaStage.setTitle("Pantalla de Derrota");
             derrotaStage.setScene(scene);
             derrotaStage.show();
+            this.stage.close();
         } catch (IOException e) {
             e.printStackTrace(); // Manejar la excepción según tus necesidades
         }

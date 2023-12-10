@@ -5,6 +5,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.shape.Rectangle?>
@@ -13,51 +14,71 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.PantallaCambiarPokemonesController"
             prefHeight="400.0" prefWidth="600.0">
-    <HBox>
-        <VBox>
-            <!-- Parte izquierda con imagen -->
-            <ImageView fx:id="jugadorImagen" fitHeight="300.0" fitWidth="300.0" layoutX="75.0" layoutY="500.0"/>
-            <StackPane>
-                <children>
-                    <Rectangle  height="100" width="300" fill="indianred" AnchorPane.topAnchor="0.0" />
-                    <VBox alignment="CENTER">
-                        <Label fx:id="jugadorNombre" alignment="BOTTOM_CENTER" maxHeight="100" minWidth="300"/>
-                        <Label fx:id="pokemonNombre" alignment="BOTTOM_CENTER" maxHeight="100" minWidth="300" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
-                        <ProgressBar fx:id="vidaPokemon" />
-                    </VBox>
-                </children>
-            </StackPane>
-        </VBox>
+    <VBox>
+        <HBox>
+            <VBox>
+                <!-- Parte izquierda con imagen -->
+                <StackPane>
+                    <ImageView fx:id="fondoImageView" fitHeight="300.0" fitWidth="300.0">
+                        <image>
+                            <Image url="/gris rallas.jpg" />
+                        </image>
+                    </ImageView>
+                    <ImageView fx:id="jugadorImagen" fitHeight="300.0" fitWidth="300.0" layoutX="75.0" layoutY="500.0"/>
+                </StackPane>
+                <StackPane>
+                    <children>
+                        <Rectangle  height="100" width="300" fill="lightgrey" AnchorPane.topAnchor="0.0" />
+                        <VBox alignment="CENTER">
+                            <Label fx:id="jugadorNombre" alignment="BOTTOM_CENTER" maxHeight="100" minWidth="300"/>
+                            <Label fx:id="pokemonNombre" alignment="BOTTOM_CENTER" maxHeight="100" minWidth="300" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                            <ProgressBar fx:id="vidaPokemon" />
+                        </VBox>
+                    </children>
+                </StackPane>
+            </VBox>
 
-        <VBox fx:id="listaPokemonsVBox">
-            <!-- Parte derecha con rectángulos en posiciones específicas -->
-            <!-- Rectángulo en la parte superior -->
-            <StackPane onMouseClicked="#handleMouseClicked" fx:id="0">
-                <children>
-                    <Rectangle  height="100" width="300" fill="grey" AnchorPane.topAnchor="0.0" />
-                </children>
-            </StackPane>
+            <VBox fx:id="listaPokemonsVBox">
+                <!-- Parte derecha con rectángulos en posiciones específicas -->
+                <!-- Rectángulo en la parte superior -->
+                <StackPane onMouseClicked="#handleMouseClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handelMouseExited" fx:id="0">
+                    <children>
+                        <Rectangle fx:id="colorRectangulo0" height="100" width="300" fill="grey" AnchorPane.topAnchor="0.0" />
+                    </children>
+                </StackPane>
 
-            <!-- Rectángulo en el centro -->
-            <StackPane onMouseClicked="#handleMouseClicked" fx:id="1">
-                <children>
-                    <Rectangle  height="100" width="300" fill="whitesmoke"/>
-                </children>
-            </StackPane>
+                <!-- Rectángulo en el centro -->
+                <StackPane onMouseClicked="#handleMouseClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handelMouseExited" fx:id="1">
+                    <children>
+                        <Rectangle fx:id="colorRectangulo1" height="100" width="300" fill="dimgrey"/>
+                    </children>
+                </StackPane>
 
-            <!-- Rectángulo en el centro -->
-            <StackPane onMouseClicked="#handleMouseClicked" fx:id="2">
-                <children>
-                    <Rectangle  height="100" width="300" fill="grey" AnchorPane.bottomAnchor="0.0" />
-                </children>
-            </StackPane>
+                <!-- Rectángulo en el centro -->
+                <StackPane onMouseClicked="#handleMouseClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handelMouseExited" fx:id="2">
+                    <children>
+                        <Rectangle fx:id="colorRectangulo2" height="100" width="300" fill="grey" AnchorPane.bottomAnchor="0.0" />
+                    </children>
+                </StackPane>
 
-            <!-- Rectángulo en la parte inferior -->
-            <StackPane onMouseClicked="#handleMouseClicked" fx:id="3">
-                <children>
-                    <Rectangle  height="100" width="300" fill="whitesmoke" AnchorPane.bottomAnchor="0.0" />
-                </children>
-            </StackPane>
-        </VBox>
-    </HBox>
+                <!-- Rectángulo en la parte inferior -->
+                <StackPane onMouseClicked="#handleMouseClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handelMouseExited" fx:id="3">
+                    <children>
+                        <Rectangle fx:id="colorRectangulo3" height="100" width="300" fill="dimgrey" AnchorPane.bottomAnchor="0.0" />
+                    </children>
+                </StackPane>
+            </VBox>
+        </HBox>
+        <!-- Texto con el contexto de lo que esta pasando -->
+        <StackPane>
+            <Rectangle height="50" width="600" fill="black" AnchorPane.bottomAnchor="0.0" />
+            <Label fx:id="textoAccion" textFill="white" StackPane.alignment="CENTER_LEFT" alignment="CENTER_LEFT" maxHeight="100" minWidth="300" style="-fx-font-size: 15px;">
+                <font>
+                    <Font name="Visitor" size="16"/>
+                </font>
+            </Label>
+            <Button fx:id="canelarBoton" text="cancelar" onAction="#cancelarAccion" maxHeight="-Infinity" StackPane.alignment="BOTTOM_RIGHT"/>
+
+        </StackPane>
+    </VBox>
 </AnchorPane>

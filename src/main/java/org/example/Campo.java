@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.Clima.Clima;
+import org.example.Clima.Clima
 import org.example.Estado.EstadoPokemon;
 import org.example.Habilidades.Habilidad;
 import org.example.Parsers.ParserClima;
@@ -59,48 +59,7 @@ public class Campo {
         }
     }
 
-
-    /*public void usarHabilidad(int idAtacante){
-        boolean despierto;
-        boolean paralizado;
-        boolean confundido;
-
-        identificarAtacante(idAtacante);
-        pokemonAtacante.mostrarHabilidades();
-        Habilidad habilidad = this.elegirHabilidad(pokemonAtacante);
-
-        despierto = validarEstadoDespierto(pokemonAtacante.getEstados());
-        paralizado = validarEstadoParalizado(pokemonAtacante.getEstados());
-
-        if (pokemonAtacante.getEstados().contains(Estados.CONFUNDIDO))
-            this.verQueTanConfundido(pokemonAtacante);
-
-        if (despierto && !paralizado){
-            this.aplicarHabilidad(habilidad);
-        }
-        campoVista.mostrarClima(clima);
-        clima.restarTurno();
-    }
-
-    public void usarHabilidad(Habilidad habilidad){
-        boolean despierto;
-        boolean paralizado;
-        boolean confundido;
-        despierto = validarEstadoDespierto(pokemonAtacante.getEstados());
-        paralizado = validarEstadoParalizado(pokemonAtacante.getEstados());
-        confundido = verQueTanConfundido(pokemonAtacante);
-
-        if (despierto && !paralizado && !confundido){
-            this.aplicarHabilidad(habilidad);
-        }
-
-        campoVista.mostrarClima(clima);
-        clima.restarTurno();
-    }
-
-    */
-
-    private void eliminarEstadoAgotado(Pokemon pokemonAtacante){ //      MOVER A POKEMON
+    private void eliminarEstadoAgotado(Pokemon pokemonAtacante){
 
         List<EstadoPokemon> estadosAgotados = new ArrayList<>();
 
@@ -168,5 +127,12 @@ public class Campo {
 
     public Clima getClima() {
         return this.clima;
+    }
+
+    public Pokemon getPokemonAtacado() {
+        return this.pokemonAtacado;
+    }
+    public Pokemon getPokemonAtacante() {
+        return this.pokemonAtacante;
     }
 }
