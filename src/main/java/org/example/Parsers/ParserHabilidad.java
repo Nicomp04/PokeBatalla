@@ -1,7 +1,5 @@
 package org.example.Parsers;
 
-import org.example.Estado.Estados;
-import org.example.Clima.Clima;
 import org.example.Estado.*;
 import org.example.Habilidades.*;
 import org.example.Habilidades.Habilidad;
@@ -35,45 +33,10 @@ public class ParserHabilidad {
                 int usos = jsonHabilidad.getInt("usos");
                 String estilo = jsonHabilidad.getString("estilo");
                 String tipo = jsonHabilidad.getString("tipo");
-//main
 
                 // Utiliza la clase base y sus extensiones según el estilo
                 Habilidad habilidad = crearHabilidadSegunEstilo(id, nombre, usos, estilo, tipo, jsonHabilidad);
-//=======
-                int estadistica = jsonHabilidad.getInt("estadistica");
-                boolean afectaAEnemigo = jsonHabilidad.getBoolean("afectaAEnemigo");
-                int valor = jsonHabilidad.getInt("valor");
 
-
-                String estadoInt = jsonHabilidad.getString("estado");
-                EstadoPokemon estado = null;
-                if(Objects.equals(estadoInt, "PARALIZADO")){
-                    estado = new Paralizado();
-                }else if(Objects.equals(estadoInt, "ENVENENADO")){
-                    estado = new Envenenado();
-                }else if(Objects.equals(estadoInt, "CONFUNDIDO")){
-                    estado = new Confundido();
-                }else if(Objects.equals(estadoInt, "DORMIDO")){
-                    estado = new Dormido();
-                }
-
-                Habilidad habilidad; // ver de cambiar a algo mas escalable
-                if (estilo.equals("Ataque")) {
-                    habilidad = new Ataque(id, nombre, usos, tipo, valor);
-                } else if (estilo.equals("ModificacionDeAtaque")) {
-                    habilidad = new ModificarAtaque(id, nombre, usos, estadistica, valor,tipo);
-                } else if (estilo.equals("ModificacionDeVida")) {
-                    habilidad = new ModificarHp(id, nombre, usos, estadistica, valor,tipo);
-                } else if (estilo.equals("ModificacionDeDefensa")) {
-                    habilidad = new ModificarDefensa(id, nombre, usos, estadistica, valor,tipo);
-                } else if (estilo.equals("ModificacionDeVelocidad")) {
-                    habilidad = new ModificarVelocidad(id, nombre, usos, estadistica, valor, tipo);
-                }else if(estilo.equals("CambiaClima")){
-                    habilidad = new CambiaClima(id, nombre, usos, tipo);
-                } else{
-                    habilidad = new Efecto(id, nombre, estado, afectaAEnemigo, tipo);
-                }
-//Franco2
                 mapaHabilidades.put(id, habilidad);
             }
         } catch (IOException e) {
@@ -126,8 +89,16 @@ public class ParserHabilidad {
     }
 
     private Habilidad crearEfecto(int id, String nombre, int usos, String estado, boolean afectaAEnemigo, String tipo) {
-        Estados estadoEnum = Estados.valueOf(estado);
-        return new Efecto(id, nombre, usos, estadoEnum, afectaAEnemigo, tipo);
+
+        EstadoPokemon estadoNuevo = switch (estado) {
+            case "PARALIZADO" -> new Paralizado();
+            case "ENVENENADO" -> new Envenenado();
+            case "CONFUNDIDO" -> new Confundido();
+            case "DORMIDO" -> new Dormido();
+            default -> null;
+        };
+
+        return new Efecto(id, nombre, estadoNuevo, afectaAEnemigo, tipo);
     }
 
 }

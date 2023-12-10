@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -19,7 +18,7 @@
     <ImageView fx:id="ClimaActualImage" fitHeight="1000" fitWidth="1500" pickOnBounds="true" preserveRatio="true" />
 
     <ProgressBar fx:id="jugadorSaludBar" layoutX="80.0" layoutY="550.0" prefWidth="150.0" />
-    <Text fx:id="jugadorPokemonNombre" layoutX="110.0" layoutY="600.0" strokeType="OUTSIDE" strokeWidth="0.0">
+    <Text fx:id="jugadorPokemonNombre" layoutX="110.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0">
         <font>
             <Font name="System Bold" size="14.0" />
         </font>
@@ -27,7 +26,7 @@
 
     <!-- Parte Sup e Der -->
     <ProgressBar fx:id="enemigoSaludBar" layoutX="1300.0" layoutY="200.0" prefWidth="150.0" />
-    <Text fx:id="enemigoPokemonNombre" layoutX="1350.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0">
+    <Text fx:id="enemigoPokemonNombre" layoutX="1325.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.0">
         <font>
             <Font name="System Bold" size="14.0" />
         </font>
@@ -35,32 +34,32 @@
 <!-- BOOTONERA -->
 
     <!-- Parte Inferior: Descripción y Botonera -->
-    <HBox fx:id="parteInferiorHBox" spacing="400.0" alignment="CENTER"  prefWidth="1800" prefHeight="220.0" layoutY="650.0"  style="-fx-background-color: #333333;">
+    <HBox fx:id="parteInferiorHBox" alignment="CENTER" layoutY="650.0" prefHeight="220.0" prefWidth="1800" spacing="400.0" style="-fx-background-color: #333333;">
     </HBox>
         <!-- Descripción (Parte Izquierda) -->
         <VBox fx:id="descripcionVBox" alignment="CENTER" layoutX="100" layoutY="750" AnchorPane.leftAnchor="100.0">
-            <Text fx:id="textoDescripcion" lineSpacing="10" fill="white">
+            <Text fx:id="textoDescripcion" fill="white" lineSpacing="10">
                 <font>
                     <Font size="18" /> <!-- Ajusta el tamaño del texto aquí -->
                 </font>
             </Text>
         </VBox>
 
-        <VBox fx:id="habilidadesVBox" spacing="20" visible="false" layoutY="670" prefHeight="180" alignment="CENTER" AnchorPane.leftAnchor="100.0">
-            <ListView fx:id="habilidadesListView" onMouseClicked="#usarHabilidad"/>
-            <Button fx:id="botonCancelarHabilidad" text="Cancelar" minWidth="100.0" minHeight="40.0" onAction="#cancelarEleccionHabilidad"/>
+        <VBox fx:id="habilidadesVBox" alignment="CENTER" layoutY="670" prefHeight="180" spacing="20" visible="false" AnchorPane.leftAnchor="100.0">
+            <ListView fx:id="habilidadesListView" onMouseClicked="#usarHabilidad" />
+            <Button fx:id="botonCancelarHabilidad" minHeight="40.0" minWidth="100.0" onAction="#cancelarEleccionHabilidad" text="Cancelar" />
         </VBox>
 
         <!-- Botonera (Parte Derecha) -->
         <VBox fx:id="botoneraVBox" alignment="CENTER_RIGHT" layoutY="700" AnchorPane.rightAnchor="80.0">
-            <HBox spacing="20.0" alignment="CENTER">
-                <VBox spacing="10.0" alignment="CENTER">
-                    <Button fx:id="luchaButton" text=" Lucha " minWidth="150.0" minHeight="50.0" onAction="#elegirHabilidades">
+            <HBox alignment="CENTER" spacing="20.0">
+                <VBox alignment="CENTER" spacing="10.0">
+                    <Button fx:id="luchaButton" minHeight="50.0" minWidth="150.0" onAction="#elegirHabilidades" text=" Lucha ">
                         <font>
                             <Font size="18" />
                         </font>
                     </Button>
-                    <Button fx:id="mochilaButton" text=" Mochila " minWidth="150.0" minHeight="50.0" onAction="#elegirItems">
+                    <Button fx:id="mochilaButton" minHeight="50.0" minWidth="150.0" onAction="#elegirItems" text=" Mochila ">
                         <font>
                             <Font size="18" />
                         </font>
@@ -68,13 +67,13 @@
                 </VBox>
 
                 <!-- Segundo bloque de botones (3 y 4) -->
-                <VBox spacing="10.0" alignment="CENTER">
-                    <Button fx:id="pokemonButton" text=" Pokemon " minWidth="150.0" minHeight="50.0" onAction="#cambiarPokemones">
+                <VBox alignment="CENTER" spacing="10.0">
+                    <Button fx:id="pokemonButton" minHeight="50.0" minWidth="150.0" onAction="#cambiarPokemones" text=" Pokemon ">
                         <font>
                             <Font size="18" /> <!-- Ajusta el tamaño del texto aquí -->
                         </font>
                     </Button>
-                    <Button fx:id="huirButton" text=" Huir " minWidth="150.0" minHeight="50.0" onAction="#huir">
+                    <Button fx:id="huirButton" minHeight="50.0" minWidth="150.0" onAction="#huir" text=" Huir ">
                         <font>
                             <Font size="18" /> <!-- Ajusta el tamaño del texto aquí -->
                         </font>
@@ -83,60 +82,14 @@
             </HBox>
         </VBox>
 
-        <VBox fx:id="detallesHabilidadVBox" visible="false" spacing="10.0" alignment="CENTER" layoutY="700" AnchorPane.rightAnchor="100.0">
-            <Label fx:id="usosLabel" text="Usos restantes: " textFill="white" style="-fx-font-size: 20px;"/>
-            <Label fx:id="tipoLabel" text="Tipo: " textFill="white" style="-fx-font-size: 20px;" />
+        <VBox fx:id="detallesHabilidadVBox" alignment="CENTER" layoutY="700" spacing="10.0" visible="false" AnchorPane.rightAnchor="100.0">
+            <Label fx:id="usosLabel" style="-fx-font-size: 20px;" text="Usos restantes: " textFill="white" />
+            <Label fx:id="tipoLabel" style="-fx-font-size: 20px;" text="Tipo: " textFill="white" />
         </VBox>
 
   <!-- informacion de estados pokemon (A Cambiar) -->
-    </HBox>
-   <HBox layoutX="94.0" layoutY="579.0" prefHeight="30.0" prefWidth="122.0">
-      <children>
-         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@Confundido.png" />
-            </image>
-         </ImageView>
-         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@Dormido.png" />
-            </image>
-         </ImageView>
-         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@Envenenado.png" />
-            </image>
-         </ImageView>
-         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@Paralizado.png" />
-            </image>
-         </ImageView>
-      </children>
-   </HBox>
-   <HBox layoutX="1314.0" layoutY="229.0" prefHeight="30.0" prefWidth="122.0">
-      <children>
-         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@Confundido.png" />
-            </image>
-         </ImageView>
-         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@Dormido.png" />
-            </image>
-         </ImageView>
-         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@Envenenado.png" />
-            </image>
-         </ImageView>
-         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@Paralizado.png" />
-            </image>
-         </ImageView>
-      </children>
-   </HBox>
+    <HBox fx:id="estadosAtacante" layoutX="89.0" layoutY="598.0" prefHeight="30.0" prefWidth="122.0" />
+    <HBox fx:id="estadosAtacado" layoutX="1314.0" layoutY="254.0" prefHeight="30.0" prefWidth="122.0" />
+    <!-- ... tu contenido existente ... -->
 
 </AnchorPane>

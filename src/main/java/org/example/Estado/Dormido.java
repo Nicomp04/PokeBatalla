@@ -1,5 +1,6 @@
 package org.example.Estado;
 
+import javafx.scene.image.Image;
 import org.example.Pokemon.Pokemon;
 
 import java.util.Random;
@@ -44,5 +45,9 @@ public class Dormido implements EstadoPokemon {
     }
     public boolean seAgoto(){
         return this.duracion >= 4;
+    }
+    @Override
+    public Image getUrl(){
+        return new Image("Dormido.png");
     }
 }

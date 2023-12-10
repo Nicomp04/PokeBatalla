@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
 import org.example.Clima.Clima;
+import org.example.Estado.EstadoPokemon;
 import org.example.Habilidades.Habilidad;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.PantallaCambiarPokemones;
@@ -29,9 +30,7 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class PantallaBatallaController {
     @FXML
@@ -110,6 +109,30 @@ public class PantallaBatallaController {
     private AnchorPane anchorPane;
 
     private MediaPlayer mediaPlayer;
+
+    public HBox estadosAtacante;
+
+    public HBox estadosAtacado;
+
+    public void mostrarEstados(Pokemon pokemon, HBox barra){
+
+        barra.getChildren().clear();
+        Set<EstadoPokemon> estadosAgregados = new HashSet<>();
+
+        for (EstadoPokemon estado : pokemon.getEstados()) {
+            ImageView imageView = new ImageView(estado.getUrl());
+
+            if (!estadosAgregados.contains(estado)){
+                imageView.setFitHeight(30);
+                imageView.setFitWidth(30);
+                barra.getChildren().add(imageView);
+                estadosAgregados.add(estado);
+            }
+            else{
+                estadosAgregados.remove(estado);
+            }
+        }
+    }
 
     @FXML
     private void elegirHabilidades() {
@@ -228,6 +251,9 @@ public class PantallaBatallaController {
         climaActual = juego.getCampo().getClima();
         enemigoPokemon = noActivo.getPokemonActual();
         jugadorPokemon = juego.getTurnoActivo().getPokemonActual();
+
+        mostrarEstados(jugadorPokemon, estadosAtacante);
+        mostrarEstados(enemigoPokemon, estadosAtacado);
 
         // Cargar la imagen desde el ClassLoader
         this.jugadorPokemonImage.setImage(jugadorPokemon.getImage());

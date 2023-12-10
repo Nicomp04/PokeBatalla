@@ -2,7 +2,6 @@ package Test;
 
 import org.example.Clima.Clima;
 import org.example.Estado.*;
-import org.example.Estado.Estados;
 import org.example.Habilidades.*;
 import org.example.Parsers.ParserClima;
 import org.example.Pokemon.Pokemon;

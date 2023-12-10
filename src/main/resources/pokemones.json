@@ -51,6 +51,19 @@
       "ataque": 60,
       "habilidades": [15, 24, 55],
       "url": "/gengar.gif"
+    },
+    {
+      "nombre": "Weepinbell",
+      "id": 18,
+      "nivel": 20,
+      "tipo": "Planta",
+      "historia": "Esta es una historia",
+      "vidaMaxima": 45,
+      "velocidad": 68,
+      "defensa": 70,
+      "ataque": 55,
+      "habilidades": [18, 19, 24, 58],
+      "url": "/weepinbell.gif"
     }
   ]
 }

@@ -1,5 +1,6 @@
 package org.example.Estado;
 
+import javafx.scene.image.Image;
 import org.example.Pokemon.Pokemon;
 
 public class Envenenado implements EstadoPokemon {
@@ -36,5 +37,9 @@ public class Envenenado implements EstadoPokemon {
 
     public void setAgotado(boolean agotado) {
         this.agotado = agotado;
+    }
+    @Override
+    public Image getUrl(){
+        return new Image("Envenenado.png");
     }
 }
