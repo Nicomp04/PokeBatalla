@@ -36,13 +36,15 @@ public class PantallaCambiarPokemonesController {
     @FXML
     private ProgressBar vidaPokemon;
     @FXML
-    private Rectangle colorRectangulo0;
-    @FXML
     private Rectangle colorRectangulo1;
     @FXML
     private Rectangle colorRectangulo2;
     @FXML
     private Rectangle colorRectangulo3;
+    @FXML
+    private Rectangle colorRectangulo4;
+    @FXML
+    private Rectangle colorRectangulo5;
     @FXML
     private Label textoAccion;
     @FXML
@@ -218,10 +220,11 @@ public class PantallaCambiarPokemonesController {
             mostrarTextoAccion();
             mostrarTextoInformativo();
 
-            if (pos == 1) {colorRectangulo0.setFill(Color.LIGHTBLUE);}
-            else if (pos == 2) {colorRectangulo1.setFill(Color.LIGHTBLUE);}
-            else if (pos == 3) {colorRectangulo2.setFill(Color.LIGHTBLUE);}
-            else if (pos == 4) {colorRectangulo3.setFill(Color.LIGHTBLUE);}
+            if (pos == 1) {colorRectangulo1.setFill(Color.LIGHTBLUE);}
+            else if (pos == 2) {colorRectangulo2.setFill(Color.LIGHTBLUE);}
+            else if (pos == 3) {colorRectangulo3.setFill(Color.LIGHTBLUE);}
+            else if (pos == 4) {colorRectangulo4.setFill(Color.LIGHTBLUE);}
+            else if (pos == 5) {colorRectangulo5.setFill(Color.LIGHTBLUE);}
         }
 
     }
@@ -232,10 +235,12 @@ public class PantallaCambiarPokemonesController {
             String identificador = stackPane.getId();
             identificarPocision(identificador);
 
-            if (pos == 1) {colorRectangulo0.setFill(Color.GREY);}
-            else if (pos == 2) {colorRectangulo1.setFill(Color.DIMGRAY);}
-            else if (pos == 3) {colorRectangulo2.setFill(Color.GREY);}
-            else if (pos == 4) {colorRectangulo3.setFill(Color.DIMGRAY);}
+            if (pos == 1) {colorRectangulo1.setFill(Color.GREY);}
+            else if (pos == 2) {colorRectangulo2.setFill(Color.DIMGRAY);}
+            else if (pos == 3) {colorRectangulo3.setFill(Color.GREY);}
+            else if (pos == 4) {colorRectangulo4.setFill(Color.DIMGRAY);}
+            else if (pos == 5) {colorRectangulo5.setFill(Color.GREY);}
+
         }
 
     }
@@ -245,6 +250,8 @@ public class PantallaCambiarPokemonesController {
         else if (identificador.equals("2")){this.pos = 2;}
         else if (identificador.equals("3")){this.pos = 3;}
         else if (identificador.equals("4")){this.pos = 4;}
+        else if (identificador.equals("5")){this.pos = 5;}
+
         else{this.pos = -1;}
     }
 

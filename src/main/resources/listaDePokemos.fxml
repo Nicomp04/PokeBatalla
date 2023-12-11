@@ -45,28 +45,35 @@
                 <!-- Rectángulo en la parte superior -->
                 <StackPane onMouseClicked="#handleMouseClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handelMouseExited" fx:id="1">
                     <children>
-                        <Rectangle fx:id="colorRectangulo0" height="100" width="300" fill="grey" AnchorPane.topAnchor="0.0" />
+                        <Rectangle fx:id="colorRectangulo1" height="80" width="300" fill="grey" AnchorPane.topAnchor="0.0" />
                     </children>
                 </StackPane>
 
-                <!-- Rectángulo en el centro -->
+                <!-- Rectángulo en el centro superior -->
                 <StackPane onMouseClicked="#handleMouseClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handelMouseExited" fx:id="2">
                     <children>
-                        <Rectangle fx:id="colorRectangulo1" height="100" width="300" fill="dimgrey"/>
+                        <Rectangle fx:id="colorRectangulo2" height="80" width="300" fill="dimgrey"/>
                     </children>
                 </StackPane>
 
                 <!-- Rectángulo en el centro -->
                 <StackPane onMouseClicked="#handleMouseClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handelMouseExited" fx:id="3">
                     <children>
-                        <Rectangle fx:id="colorRectangulo2" height="100" width="300" fill="grey" AnchorPane.bottomAnchor="0.0" />
+                        <Rectangle fx:id="colorRectangulo3" height="80" width="300" fill="grey" AnchorPane.bottomAnchor="0.0" />
                     </children>
                 </StackPane>
 
-                <!-- Rectángulo en la parte inferior -->
+                <!-- Rectángulo en la centro inferior -->
                 <StackPane onMouseClicked="#handleMouseClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handelMouseExited" fx:id="4">
                     <children>
-                        <Rectangle fx:id="colorRectangulo3" height="100" width="300" fill="dimgrey" AnchorPane.bottomAnchor="0.0" />
+                        <Rectangle fx:id="colorRectangulo4" height="80" width="300" fill="dimgrey" AnchorPane.bottomAnchor="0.0" />
+                    </children>
+                </StackPane>
+
+                <!-- Rectángulo en la inferior -->
+                <StackPane onMouseClicked="#handleMouseClicked" onMouseEntered="#handleMouseEntered" onMouseExited="#handelMouseExited" fx:id="5">
+                    <children>
+                        <Rectangle fx:id="colorRectangulo5" height="80" width="300" fill="dimgrey" AnchorPane.bottomAnchor="0.0" />
                     </children>
                 </StackPane>
             </VBox>
