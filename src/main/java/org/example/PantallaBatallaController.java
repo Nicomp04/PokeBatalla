@@ -167,7 +167,7 @@ public class PantallaBatallaController {
             vidaPreviaPokemonAtacado = this.juego.getCampo().getPokemonAtacado().getVidaActual();
             Pokemon pokemonAtacante = juego.getCampo().getPokemonAtacante();
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
-            mostrarTextoTemporalmente(enemigoPokemon.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
+            mostrarTextoTemporalmente(pokemonAtacante.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
         }
     }
 
@@ -188,6 +188,7 @@ public class PantallaBatallaController {
         Stage stage2 = new Stage();
         pantallaCambiarPokemones.setStage(stage2, juego);
         pantallaCambiarPokemones.mostrar(jugadorActivo);
+        actualizarTexto("Es el turno de " + jugadorActivo.getNombre());
 
     }
 
@@ -259,6 +260,7 @@ public class PantallaBatallaController {
 
         habilidadesListView.setItems(FXCollections.observableArrayList());
         descripcionVBox.requestFocus();
+        actualizarTexto(datosJugador());
     }
 
 
@@ -335,7 +337,6 @@ public class PantallaBatallaController {
         KeyFrame keyFrame = new KeyFrame(Duration.seconds(duracionEnSegundos), event ->{
             botoneraVBox.setVisible(true);
             this.juego.habilitarTurno();
-            textoDescripcion.setText(datosJugador());
         });
         return keyFrame;
     }

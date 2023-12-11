@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_11_23_17_09_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_11_23_17_09__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Juego.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaBatallaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pokemon/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PantallaCambiarPokemonesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listaDePokemos.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +66,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "juancpuch4",
     "jdk.selected.JAVA_MODULE": "17",
     "last_directory_selection": "C:/Users/nicol/OneDrive/Escritorio/Portfolio/PokeBatalla/src/main/java/org/example",
     "last_opened_file_path": "/home/jc/IdeaProjects/PokeBatalla/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites",
@@ -281,14 +279,14 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PokeBatalla$Test_in_PokeBatalla.ic" NAME="Test in PokeBatalla Coverage Results" MODIFIED="1699065262565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>Test.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/PokeBatalla$JugadorTest.ic" NAME="JugadorTest Coverage Results" MODIFIED="1698941495405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PokeBatalla$All_in_PokeBatalla.ic" NAME="All in PokeBatalla Coverage Results" MODIFIED="1699066008208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/PokeBatalla$CampoTest_campoCargadoCorrectamente.ic" NAME="CampoTest.campoCargadoCorrectamente Coverage Results" MODIFIED="1698941527153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PokeBatalla$Test_in_PokeBatalla.ic" NAME="Test in PokeBatalla Coverage Results" MODIFIED="1699065262565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
   </component>
