@@ -9,6 +9,10 @@ module PokeBatalla {
     requires junit;
     requires org.mockito;
     requires javafx.media;
+    requires java.desktop;
 
     exports org.example;
+    exports Test;
+    exports org.example.Controller;
+    opens org.example.Controller;
 }

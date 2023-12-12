@@ -1,36 +1,28 @@
-/*
 package Test;
-import org.example.Estado.Estados;
+
+import org.example.Estado.*;
 import org.junit.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertEquals;
 
 public class EstadosTest {
+
     @Test
-    public void testSetDuracion() {
-        Estados.DORMIDO.setDuracion(3);
-        assertEquals(3, Estados.DORMIDO.getDuracion());
+    public void restarTurno_Dormido() {
+        Dormido dormido = new Dormido();
+        assertEquals(0, dormido.getDuracion());
+
+        dormido.restarTurno();
+        assertEquals(1, dormido.getDuracion());
     }
 
     @Test
-    public void testGetNombre() {
-        assertEquals("DORMIDO", Estados.DORMIDO.getNombre());
-        assertEquals("PARALIZADO", Estados.PARALIZADO.getNombre());
-        assertEquals("ENVENENADO", Estados.ENVENENADO.getNombre());
-        assertEquals("CONFUNDIDO", Estados.CONFUNDIDO.getNombre());
+    public void restarTurno_Confundido() {
+        Confundido confundido = new Confundido();
+        assertEquals(3, confundido.getDuracion());
+
+        confundido.restarTurno();
+        assertEquals(2, confundido.getDuracion());
     }
 
-    @Test
-    public void testRestarTurno(){
-        Estados estado = Estados.CONFUNDIDO;
-        estado.setDuracion(5);
-        assertEquals(5, estado.getDuracion());
-        estado.restarTurno();
-        assertEquals(4, estado.getDuracion());
-    }
 }
-*/

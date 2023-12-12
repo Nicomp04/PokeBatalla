@@ -166,4 +166,8 @@ public class Pokemon implements Cloneable {
     public void setColorBarra(String colorBarra) {
         this.colorBarra = colorBarra;
     }
+
+    public void setEstado(List<EstadoPokemon> estado) {
+        this.estados = estado;
+    }
 }

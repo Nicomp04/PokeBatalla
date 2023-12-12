@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane"  prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaDerrotaController">
+<AnchorPane id="AnchorPane"  prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.PantallaDerrotaController">
     <VBox alignment="CENTER" spacing="20.0" layoutX="200.0" layoutY="100.0">
         <Label text="¡Has sido derrotado!" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
         <Label fx:id="datosDerrotaLabel" style="-fx-font-size: 18px;" />

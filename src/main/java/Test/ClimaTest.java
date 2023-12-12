@@ -22,13 +22,15 @@ public class ClimaTest {
     public void cambiarClima(){
         Clima clima = new Clima("Normal", TipoClima.NORMAL, null, null);
 
-        clima.cambiar("Soleado");
+        Clima climaNuevo = new Clima("Soleado", TipoClima.NORMAL, null, null);
+
+        clima.cambiar(climaNuevo);
 
         assertEquals("Soleado", clima.getNombre());
     }
     @Test
     public void climaGastaTurnos(){
-        Clima clima = new Clima("Normal", TipoClima.NORMAL, null, null);
+        Clima clima = new Clima("Soleado", TipoClima.NORMAL, null, null);
 
         clima.restarTurno();
 
@@ -50,7 +52,7 @@ public class ClimaTest {
 
         Clima clima = new Clima("Soleado", TipoClima.NORMAL, list, null);
 
-        Pokemon pokemon = new Pokemon("charizard",1,"fuego",10,10,10,10,10);
+        Pokemon pokemon = new Pokemon("charizard",1,"Fuego",10,10,10,10,10);
         double esperado = 100 + clima.mejoraPorTipo(pokemon,100);
 
         assertEquals(110.0,esperado);

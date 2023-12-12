@@ -11,13 +11,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" style="-fx-background-image:  url('/backgroundpoke.jpg');" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaBatallaController">
+<AnchorPane id="AnchorPane" style="-fx-background-image:  url('/backgroundpoke.jpg');" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.PantallaBatallaController">
     <!-- Parte inferior e izquierda -->
     <ImageView fx:id="jugadorPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="75.0" layoutY="400.0" />
     <ImageView fx:id="enemigoPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="1300.0" layoutY="30.0" />
     <ImageView fx:id="ClimaActualImage" fitHeight="1000" fitWidth="1500" pickOnBounds="true" preserveRatio="true" />
 
     <ProgressBar fx:id="jugadorSaludBar" layoutX="80.0" layoutY="550.0" prefWidth="150.0" />
+    <Text fx:id="vidaAtacante" layoutX="252.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" fill="white">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Text>
     <Text fx:id="jugadorPokemonNombre" layoutX="110.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0">
         <font>
             <Font name="System Bold" size="14.0" />

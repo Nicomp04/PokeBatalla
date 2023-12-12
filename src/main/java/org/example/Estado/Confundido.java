@@ -44,8 +44,8 @@ public class Confundido implements EstadoPokemon {
     public String getNombre(){
         return "Confundido";
     }
-    public String getDuracion(){
-        return Integer.toString(duracion);
+    public int getDuracion(){
+        return duracion;
     }
     public boolean seAgoto(){
         return this.duracion <= 0;

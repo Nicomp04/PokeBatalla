@@ -1,21 +1,18 @@
-package org.example;
+package org.example.Controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.util.Callback;
 import javafx.util.StringConverter;
 import org.example.Item.Item;
+import org.example.Juego;
+import org.example.Jugador;
 import org.example.Pokemon.Pokemon;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 public class PantallaItemsController {

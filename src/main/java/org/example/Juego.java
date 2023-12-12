@@ -1,16 +1,14 @@
 package org.example;
 
-import javafx.stage.Stage;
+import org.example.Controller.PantallaBatallaController;
 import org.example.Habilidades.Habilidad;
 import org.example.Habilidades.RepositorioHabilidades;
 import org.example.Pokemon.Pokemon;
 
 import org.example.Vista.JuegoVista;
-import org.example.Vista.PantallaCambiarPokemones;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.temporal.JulianFields;
 import java.util.List;
 
 public class Juego {

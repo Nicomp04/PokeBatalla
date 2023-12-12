@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaBatallaController" style="-fx-background-color: blue;">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.PantallaBatallaController" style="-fx-background-color: blue;">
     <!-- Parte inferior e izquierda -->
     <ImageView fx:id="jugadorPokemonImage" fitHeight="150.0" fitWidth="150.0" layoutX="50.0" layoutY="200.0"/>
     <ProgressBar fx:id="jugadorPokemonHealthBar" layoutX="50.0" layoutY="360.0" prefWidth="150.0"/>

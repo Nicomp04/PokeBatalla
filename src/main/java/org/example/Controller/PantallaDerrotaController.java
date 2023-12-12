@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import org.example.Jugador;
 
 import java.io.IOException;
 
@@ -22,7 +23,7 @@ public class PantallaDerrotaController {
     @FXML
     private void volverAJugar() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/pantallaJuego1.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Styles/pantallaJuego1.fxml"));
             Parent root = (Parent) loader.load();
 
             // Obtén el controlador de la pantalla de juego y establece el Stage y juego

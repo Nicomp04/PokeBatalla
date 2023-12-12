@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Controller;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.JugadorVista;
 

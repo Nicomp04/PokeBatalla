@@ -6,13 +6,13 @@ import org.example.Visitor;
 
 public class CambiaClima extends Habilidad{
 
-    private String climaCambiar;
+    private Clima climaCambiar;
 
-    public CambiaClima(int id, String nombre, int usosDisponibles, String tipo) {
+    public CambiaClima(int id, String nombre,Clima clima, int usosDisponibles, String tipo) {
         this.id = id;
         this.nombre = nombre;
         this.usosDisponibles = usosDisponibles;
-        this.climaCambiar = tipo;
+        this.climaCambiar = clima;
         this.tipo = tipo;
         this.usosMax = usosDisponibles;
     }

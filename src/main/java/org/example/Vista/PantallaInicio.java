@@ -1,19 +1,14 @@
 package org.example.Vista;
 
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import javafx.stage.WindowEvent;
-import org.example.Juego;
-import org.example.PantallaBatallaController;
-import org.example.main;
+import org.example.Controller.PantallaBatallaController;
 
 import java.io.IOException;
 
@@ -42,7 +37,7 @@ public class PantallaInicio extends VBox {
 
     private void cambiarAPantallaJuego() throws IOException {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/pantallaJuego1.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Styles/pantallaJuego1.fxml"));
             Parent root = (Parent) loader.load();
             Stage stage1 = new Stage();
             // Obtén el controlador de la pantalla de juego y establece el Stage y juego

@@ -2,7 +2,7 @@ package org.example.Vista;
 
 import org.example.Item.Item;
 import org.example.Jugador;
-import org.example.JugadorController;
+import org.example.Controller.JugadorController;
 import org.example.Pokemon.Pokemon;
 
 import java.util.List;

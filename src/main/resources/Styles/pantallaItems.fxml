@@ -10,7 +10,7 @@
 <?import javafx.util.Callback?>
 <?import javafx.util.StringConverter?>
 <?import javafx.scene.image.ImageView?>
-<AnchorPane id="AnchorPane" prefHeight="400" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PantallaItemsController" style="-fx-background-color: grey;">
+<AnchorPane id="AnchorPane" prefHeight="400" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.PantallaItemsController" style="-fx-background-color: grey;">
 
     <ImageView fx:id="mochi" layoutY="100"/>
     <!-- Sección Central -->

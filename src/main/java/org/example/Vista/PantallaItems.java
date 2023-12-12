@@ -5,8 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.Juego;
-import org.example.PantallaBatallaController;
-import org.example.PantallaItemsController;
+import org.example.Controller.PantallaItemsController;
 
 import java.io.IOException;
 
@@ -20,7 +19,7 @@ public class PantallaItems {
 
     public void mostar(Juego juego){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/pantallaItems.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Styles/pantallaItems.fxml"));
             Parent root = (Parent) loader.load();
 
             // Obtén el controlador de la pantalla de juego y establece el Stage y juego

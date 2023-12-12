@@ -2,7 +2,6 @@ package Test;
 
 import org.example.Juego;
 import org.example.Jugador;
-import org.example.JugadorController;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

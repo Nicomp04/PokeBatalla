@@ -28,8 +28,8 @@ public class Envenenado implements EstadoPokemon {
     public String getNombre(){
         return "Envenenado";
     }
-    public String getDuracion(){
-        return "-";
+    public int getDuracion(){
+        return -1;
     }
     public boolean seAgoto(){
         return false;

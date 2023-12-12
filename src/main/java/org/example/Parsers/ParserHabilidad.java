@@ -1,5 +1,6 @@
 package org.example.Parsers;
 
+import org.example.Clima.Clima;
 import org.example.Estado.*;
 import org.example.Habilidades.*;
 import org.example.Habilidades.Habilidad;
@@ -85,7 +86,9 @@ public class ParserHabilidad {
     }
 
     private Habilidad crearCambiaClima(int id, String nombre, int usos, String tipo) {
-        return new CambiaClima(id, nombre, usos, tipo);
+        ParserClima parser = new ParserClima("src/main/resources/Climas.json");
+        Clima clima = parser.getClima(tipo);
+        return new CambiaClima(id, nombre, clima,usos,tipo);
     }
 
     private Habilidad crearEfecto(int id, String nombre, int usos, String estado, boolean afectaAEnemigo, String tipo) {

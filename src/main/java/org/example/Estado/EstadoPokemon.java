@@ -8,7 +8,7 @@ public interface EstadoPokemon {
     int baliza();
     void restarTurno();
     String getNombre();
-    String getDuracion();
+    int getDuracion();
     boolean seAgoto();
     Image getUrl();
 }

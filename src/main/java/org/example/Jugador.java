@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.Controller.JugadorController;
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.JugadorVista;

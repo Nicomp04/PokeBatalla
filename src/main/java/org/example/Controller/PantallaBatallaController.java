@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Controller;
 
 
 import javafx.animation.KeyFrame;
@@ -21,6 +21,8 @@ import javafx.util.Duration;
 import org.example.Clima.Clima;
 import org.example.Estado.EstadoPokemon;
 import org.example.Habilidades.Habilidad;
+import org.example.Juego;
+import org.example.Jugador;
 import org.example.Pokemon.Pokemon;
 import org.example.Vista.PantallaCambiarPokemones;
 import org.example.Vista.PantallaItems;
@@ -83,6 +85,8 @@ public class PantallaBatallaController {
     private VBox habilidadesVBox;
     @FXML
     private AnchorPane anchorPane;
+    @FXML
+    private Text vidaAtacante;
     private int selectedOptionIndex = 0;
     private Juego juego;
     private MediaPlayer mediaPlayer;
@@ -243,6 +247,7 @@ public class PantallaBatallaController {
         this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
         this.jugadorSaludBar.setStyle("-fx-accent: " + this.jugadorPokemon.getColorBarra() + ";");
         this.jugadorPokemonNombre.setText(jugadorPokemon.getNombre());
+        this.vidaAtacante.setText(String.format("%.2f", jugadorPokemon.getVidaActual()) + "/" + String.format("%.2f", jugadorPokemon.getVidaMaxima()));
 
         ClimaActualImage.setImage(this.climaActual.getImage());
         System.out.println(this.climaActual.nombre);
@@ -400,7 +405,7 @@ public class PantallaBatallaController {
 
     public void mostrarDerrota(Jugador perdedor) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/pantallaDerrota.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Styles/pantallaDerrota.fxml"));
             Parent root = loader.load();
 
             PantallaDerrotaController derrotaController = loader.getController();

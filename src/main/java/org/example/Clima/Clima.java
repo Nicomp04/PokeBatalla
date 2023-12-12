@@ -1,14 +1,12 @@
 package org.example.Clima;
 
 import javafx.scene.image.Image;
-import org.example.Parsers.ParserClima;
 import org.example.Pokemon.Pokemon;
 import org.example.Tipo.Tipo;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Random;
 
 public class Clima {
 
@@ -29,7 +27,7 @@ public class Clima {
     }
 
     public Clima() {
-
+        this.url = "src/main/resources/nada.png";
     }
 
     public int getTurno() {
@@ -45,9 +43,7 @@ public class Clima {
     }
 
 
-    public void cambiar(String clima){
-        ParserClima parser = new ParserClima("src/main/resources/Climas.json");
-        Clima nuevoClima = parser.getClima(clima);
+    public void cambiar(Clima nuevoClima){
         this.nombre = nuevoClima.getNombre();
         this.tipos = nuevoClima.getTipos();
         this.tipoClima = nuevoClima.getTipoClima();
@@ -68,7 +64,8 @@ public class Clima {
         if(turnos > 0 && (!Objects.equals(this.nombre, "Normal"))) {
             this.turnos--;
         }else{
-            cambiar("Normal");
+            Clima normal = new Clima("Normal",TipoClima.NORMAL, new ArrayList<>(), "/nada.png");
+            cambiar(normal);
         }
     }
 
@@ -96,7 +93,7 @@ public class Clima {
         return this.url;
     }
 
-    public Image getImage() { return new Image(Objects.requireNonNull(getClass().getResourceAsStream(this.getUrl())));}
+    public Image getImage() { return new Image(this.url);}
 
 }
 

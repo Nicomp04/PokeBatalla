@@ -23,7 +23,7 @@ public class Dormido implements EstadoPokemon {
     @Override
     public void aplicarEfecto(Pokemon pokemon) {
         Random rand = new Random();
-        double probDespertar = 0.25 + this.duracion * 0.25;
+        double probDespertar = 0.25 + (this.duracion * 0.25);
         if (rand.nextDouble() <= probDespertar || this.duracion >= 4) {
             System.out.println("¡El Pokémon se ha despertado!");
             this.baliza = 0;
@@ -40,8 +40,8 @@ public class Dormido implements EstadoPokemon {
     public String getNombre(){
         return "Dormido";
     }
-    public String getDuracion(){
-        return Integer.toString(duracion);
+    public int getDuracion(){
+        return duracion;
     }
     public boolean seAgoto(){
         return this.duracion >= 4;
@@ -49,5 +49,9 @@ public class Dormido implements EstadoPokemon {
     @Override
     public Image getUrl(){
         return new Image("Dormido.png");
+    }
+
+    public void setDuracion(int i) {
+        this.duracion = i;
     }
 }
