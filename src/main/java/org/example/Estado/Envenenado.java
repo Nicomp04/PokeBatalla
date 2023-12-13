@@ -5,9 +5,11 @@ import org.example.Pokemon.Pokemon;
 
 public class Envenenado implements EstadoPokemon {
     private boolean agotado;
+    private String mensaje;
 
     public Envenenado(){
         agotado = false;
+        this.mensaje = null;
     }
 
     @Override
@@ -19,7 +21,7 @@ public class Envenenado implements EstadoPokemon {
     public void aplicarEfecto(Pokemon pokemon) {
         double veneno = (5 * pokemon.getVidaMaxima()) / 100;
         pokemon.modificarHp(-veneno);
-        System.out.println("el veneno causa efecto a " + pokemon.getNombre());
+        this.mensaje = "el veneno causa efecto a " + pokemon.getNombre() + ", Pierde: " + String.format("%.2f", veneno) + " PS";
     }
 
     public void restarTurno(){
@@ -41,5 +43,10 @@ public class Envenenado implements EstadoPokemon {
     @Override
     public Image getUrl(){
         return new Image("Envenenado.png");
+    }
+
+    @Override
+    public String getMensaje(){
+        return this.mensaje;
     }
 }

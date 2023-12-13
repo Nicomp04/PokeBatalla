@@ -10,9 +10,11 @@ public class Dormido implements EstadoPokemon {
     private int baliza;
 
     private boolean agotado;
+    private String mensaje;
 
     public Dormido() {
         this.duracion = 0;
+        this.mensaje = null;
     }
 
     @Override
@@ -25,10 +27,10 @@ public class Dormido implements EstadoPokemon {
         Random rand = new Random();
         double probDespertar = 0.25 + (this.duracion * 0.25);
         if (rand.nextDouble() <= probDespertar || this.duracion >= 4) {
-            System.out.println("¡El Pokémon se ha despertado!");
+            this.mensaje = "¡El Pokémon se ha despertado!";
             this.baliza = 0;
         } else {
-            System.out.println("El Pokémon sigue dormido.");
+            this.mensaje = "El Pokémon sigue dormido.";
             this.baliza = 1;
         }
         restarTurno();
@@ -53,5 +55,9 @@ public class Dormido implements EstadoPokemon {
 
     public void setDuracion(int i) {
         this.duracion = i;
+    }
+    @Override
+    public String getMensaje(){
+        return this.mensaje;
     }
 }

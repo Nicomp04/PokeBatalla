@@ -11,5 +11,6 @@ public interface EstadoPokemon {
     int getDuracion();
     boolean seAgoto();
     Image getUrl();
+    String getMensaje();
 }
 

@@ -172,6 +172,18 @@ public class PantallaBatallaController {
             Pokemon pokemonAtacante = juego.getCampo().getPokemonAtacante();
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
             mostrarTextoTemporalmente(pokemonAtacante.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
+            mostrarTextoEstados(pokemonAtacante);
+        }
+    }
+
+    public void mostrarTextoEstados(Pokemon pokemon){
+        Timeline timeline = new Timeline();
+        for(EstadoPokemon estado: pokemon.getEstados()){
+            //mostrarTextoTemporalmente(estado.getMensaje());
+            timeline.getKeyFrames().add(mostrarTexto(estado.getMensaje(), 2));
+            timeline.setCycleCount(1);
+            timeline.play();
+            resetearTurno(2);
         }
     }
 
@@ -276,7 +288,7 @@ public class PantallaBatallaController {
         actualizarTexto(nuevoTexto);
         Timeline timeline = new Timeline();
 
-        timeline.getKeyFrames().add(mostrarTexto(nuevoTexto));
+        timeline.getKeyFrames().add(mostrarTexto(nuevoTexto, 0));
         if (pokemonFueDañado()){
             int quitesDeVida = 30;
             for (int i = 0; i < quitesDeVida; i ++){
@@ -288,8 +300,8 @@ public class PantallaBatallaController {
         timeline.setCycleCount(1);
         timeline.play();
     }
-    private KeyFrame mostrarTexto (String nuevoTexto){
-        KeyFrame keyFrame = new KeyFrame(Duration.ZERO, event ->{
+    private KeyFrame mostrarTexto (String nuevoTexto, double duracion){
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(duracion), event ->{
             textoDescripcion.setText(nuevoTexto);
             botoneraVBox.setVisible(false);
             habilidadesVBox.setVisible(false);

@@ -9,8 +9,10 @@ public class Paralizado implements EstadoPokemon{
     private int baliza;
 
     private boolean agotado;
+    private String mensaje;
 
     public Paralizado() {
+        this.mensaje = null;
     }
 
     @Override
@@ -22,10 +24,10 @@ public class Paralizado implements EstadoPokemon{
     public void aplicarEfecto(Pokemon pokemon) {
         Random rand = new Random();
         if (rand.nextDouble() <= 0.5) {
-            System.out.println("¡El Pokémon está paralizado y no puede realizar la habilidad seleccionada!");
+            this.mensaje = "¡El Pokémon está paralizado y no puede realizar la habilidad seleccionada!";
             this.baliza = 1;
         } else {
-            System.out.println("El Pokémon realiza la habilidad seleccionada.");
+            this.mensaje = "El Pokémon resistio la paralisis.";
             this.baliza = 0;
         }
     }
@@ -50,5 +52,10 @@ public class Paralizado implements EstadoPokemon{
     @Override
     public Image getUrl(){
         return new Image("Paralizado.png");
+    }
+
+    @Override
+    public String getMensaje(){
+        return this.mensaje;
     }
 }
