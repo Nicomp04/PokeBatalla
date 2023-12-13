@@ -38,8 +38,6 @@ public class AtaqueX extends Item {
     @Override
     protected Object clone() throws CloneNotSupportedException {
         AtaqueX clonedAtaque = (AtaqueX) super.clone();
-        // Realizar clonación profunda si es necesario
-        // clonedRestaurador.algunCampo = algo;
         return clonedAtaque;
     }
 }

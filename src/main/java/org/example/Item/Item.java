@@ -24,7 +24,6 @@ public abstract class Item implements Cloneable{
 
     public boolean seAcabo(){return this.usos <= 0;}
 
-   // public abstract void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo);
     public abstract void aplicarItem(Pokemon pokemon);
     public abstract JSONObject getJSON();
     public abstract List<Pokemon> posiblesPokemonesAAplicar(List<Pokemon> pokemones);
@@ -46,12 +45,11 @@ public abstract class Item implements Cloneable{
     }
 
 
-    // Método para clonar un Item
+
     public Item clonar() {
         try {
             return (Item) clone();
         } catch (CloneNotSupportedException e) {
-            // Manejar la excepción si la clonación no es compatible
             e.printStackTrace();
             return null;
         }

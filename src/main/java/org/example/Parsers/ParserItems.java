@@ -16,13 +16,11 @@ public class ParserItems {
         Map<Integer, Item> plantillasItems = new HashMap<>();
 
         try {
-            // Lee el contenido del archivo JSON
             String contenido = new String(Files.readAllBytes(Paths.get(nombreArchivo)));
 
-            // Parsear el JSON
+
             JSONArray jsonItems = new JSONArray(contenido);
 
-            // Recorrer los items en el array JSON
             for (int i = 0; i < jsonItems.length(); i++) {
                 JSONObject jsonItem = jsonItems.getJSONObject(i);
                 String nombre = jsonItem.getString("nombre");
@@ -31,7 +29,6 @@ public class ParserItems {
                 String desc = jsonItem.getString("desc");
                 int valor = jsonItem.getInt("valor");
 
-                // Verificar si ya existe una plantilla para este tipo de Item
                 Item plantilla = plantillasItems.get(id);
 
                 if (plantilla == null) {

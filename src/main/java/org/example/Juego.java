@@ -55,9 +55,6 @@ public class Juego {
         jugador1.entrarACampo(campoDeBatalla);
         jugador2.entrarACampo(campoDeBatalla);
 
-        //jugador1.elegirPokemonActivo();
-        //jugador2.elegirPokemonActivo();
-
         this.turnoActivo = definirPrimerTurno();
     }
     public Jugador getTurnoActivo(){return this.turnoActivo;}
@@ -144,7 +141,6 @@ public class Juego {
             jugador.getItems().forEach((item) -> itemsJson.put(String.valueOf(item.getId()), item.getUsos()));
             jugadorJson.put("items", itemsJson);
 
-            // Construir el array JSON para los Pokémon
             JSONArray pokemonsJson = new JSONArray();
             for (Pokemon pokemon : jugador.getPokemones()) {
                 JSONObject pokemonJson = new JSONObject();
@@ -155,7 +151,6 @@ public class Juego {
             }
             jugadorJson.put("pokemons", pokemonsJson);
 
-            // Agregar el objeto jugador al array principal
             jsonArray.put(jugadorJson);
         }
 
@@ -167,18 +162,11 @@ public class Juego {
         }
     }
 
-
-
     private void notificarDerrota(Jugador perdedor) {
         if (observador != null) {
             observador.mostrarDerrota(perdedor);
         }
     }
-        /*Jugador perdedor = this.perdedor();
-        if(perdedor.seRindio())
-            vista.mostrarCobarde(perdedor);
-        vista.mostarPerdedor(perdedor.getNombre());*/
-
 
     public Jugador perdedor(){
         if (jugador1.seRindio() || !jugador1.tienePokemones()){
@@ -203,6 +191,5 @@ public class Juego {
 
     public Campo getCampo() {return this.campoDeBatalla;}
 
-    public void setTurnoActivo(Jugador jugador2) {this.turnoActivo = jugador2;}
 
 }

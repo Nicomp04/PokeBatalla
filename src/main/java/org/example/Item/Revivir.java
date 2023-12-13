@@ -19,16 +19,6 @@ public class Revivir extends Item {
 
     }
 
-
-   /* public boolean aplicarItem(Pokemon pokemon){
-        if (pokemon.estaMuerto()){
-            logger.info("\nEl pokemon esta no esta muerto, no podes revivir\n"+
-                    "Elegi otro pokemon \n");
-            return false;
-        }
-        pokemon.revivir();
-        return true;
-    }*/
     @Override
     public void aplicarItem(Pokemon pokemon) {
             pokemon.revivir();
@@ -64,8 +54,7 @@ public class Revivir extends Item {
     @Override
     protected Object clone() throws CloneNotSupportedException {
         Revivir clonedRevivir = (Revivir) super.clone();
-        // Realizar clonación profunda si es necesario
-        // clonedRestaurador.algunCampo = algo;
+
         return clonedRevivir;
     }
 }

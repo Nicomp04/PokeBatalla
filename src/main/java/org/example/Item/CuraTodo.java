@@ -33,8 +33,7 @@ public class CuraTodo extends Item {
     @Override
     protected Object clone() throws CloneNotSupportedException {
         CuraTodo clonedCura = (CuraTodo) super.clone();
-        // Realizar clonación profunda si es necesario
-        // clonedRestaurador.algunCampo = algo;
+
         return clonedCura;
     }
 }

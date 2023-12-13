@@ -34,8 +34,7 @@ public class DefensaX extends Item {
     @Override
     protected Object clone() throws CloneNotSupportedException {
         DefensaX clonedDefensa = (DefensaX) super.clone();
-        // Realizar clonación profunda si es necesario
-        // clonedRestaurador.algunCampo = algo;
+
         return clonedDefensa;
     }
 }

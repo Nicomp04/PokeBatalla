@@ -153,7 +153,7 @@ public class PantallaBatallaController {
                 return habilidad;
             }
         }
-        return null; // Manejar el caso en el que no se encuentra la habilidad
+        return null;
     }
     private void mostrarDetallesHabilidad(Habilidad habilidad) {
         usosLabel.setText("Usos restantes: " + habilidad.getUsosDisponibles());
@@ -204,13 +204,11 @@ public class PantallaBatallaController {
     }
 
     private void reproducirMusica(String url){
-        // Crear un objeto Media con el archivo de audio
+
         Media sonido = new Media(new File(url).toURI().toString());
 
-        // Crear un reproductor de medios (MediaPlayer)
         this.mediaPlayer = new MediaPlayer(sonido);
 
-        // Configurar el MediaPlayer para reproducir de manera continua (si se desea)
         this.mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 
         this.mediaPlayer.play();
@@ -242,7 +240,6 @@ public class PantallaBatallaController {
         mostrarEstados(jugadorPokemon, estadosAtacante);
         mostrarEstados(enemigoPokemon, estadosAtacado);
 
-        // Cargar la imagen desde el ClassLoader
         this.jugadorPokemonImage.setImage(jugadorPokemon.getImage());
         this.jugadorSaludBar.setProgress((double) jugadorPokemon.getVidaActual() /jugadorPokemon.getVidaMaxima());
         this.jugadorSaludBar.setStyle("-fx-accent: " + this.jugadorPokemon.getColorBarra() + ";");
@@ -288,7 +285,7 @@ public class PantallaBatallaController {
         }
         timeline.getKeyFrames().add(resetearTurno(duracionEnSegundos));
 
-        timeline.setCycleCount(1); // La animación se ejecutará una vez
+        timeline.setCycleCount(1);
         timeline.play();
     }
     private KeyFrame mostrarTexto (String nuevoTexto){
@@ -325,12 +322,11 @@ public class PantallaBatallaController {
     }
 
     private String calcularEstiloPorcentajeVida(double porcentajeVida) {
-        // Interpolación lineal entre verde y rojo
+
         double r = Math.min(1.0, 2.0 - 2.0 * porcentajeVida);
         double g = Math.min(1.0, 2.0 * porcentajeVida);
         double b = 0.0;
 
-        // Convertir valores a códigos de color hexadecimal
         String colorHex = String.format("#%02X%02X%02X",
                 (int) (r * 255), (int) (g * 255), (int) (b * 255));
 
@@ -351,13 +347,10 @@ public class PantallaBatallaController {
     @FXML
     private void handleKeyPress(KeyEvent event) {
         if (event.getCode() == KeyCode.RIGHT) {
-            // Moverse a la derecha (incrementar el índice)
             selectedOptionIndex = (selectedOptionIndex + 1) % 4;
         } else if (event.getCode() == KeyCode.LEFT) {
-            // Moverse a la izquierda (decrementar el índice)
             selectedOptionIndex = (selectedOptionIndex - 1 + 4) % 4;
         } else if (event.getCode() == KeyCode.ENTER) {
-            // Realizar la acción correspondiente al botón seleccionado
             switch (selectedOptionIndex) {
                 case 0:
                     elegirHabilidades();
@@ -378,7 +371,6 @@ public class PantallaBatallaController {
             pararMusica();
         }
 
-        // Actualizar el foco según el índice seleccionado
         updateFocus();
     }
 
@@ -418,7 +410,7 @@ public class PantallaBatallaController {
             derrotaStage.show();
             this.stage.close();
         } catch (IOException e) {
-            e.printStackTrace(); // Manejar la excepción según tus necesidades
+            e.printStackTrace();
         }
     }
 

@@ -59,8 +59,6 @@ public class Restaurador extends Item {
     @Override
     protected Object clone() throws CloneNotSupportedException {
         Restaurador clonedRestaurador = (Restaurador) super.clone();
-        // Realizar clonación profunda si es necesario
-        // clonedRestaurador.algunCampo = algo;
         return clonedRestaurador;
     }
 }

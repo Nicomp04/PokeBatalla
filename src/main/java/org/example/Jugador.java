@@ -109,56 +109,8 @@ public class Jugador {
         }
     }
 
-    public void elegirAccion(){
-        int accionElegida = jugadorVista.mostrarOpciones(this);
-        campoDeBatalla.climaAfecta();
-        switch (accionElegida){
-            case 1:
-                //campoDeBatalla.usarHabilidad();
-                break;
-            case 2:
-                this.usarItem();
-                break;
-            case 3:
-                this.elegirPokemonActivo();
-                break;
-            case 4:
-                this.escapar();
-                break;
-        }
-    }
-
     public void escapar() {this.rendirse = true;}
 
-    private void usarItem() {
-        int accionElegida = jugadorVista.elegirItem(items);
-        Item itemElegido;
-        switch (accionElegida){
-            case 1:
-                itemElegido = items.get(0);
-              //  this.aplicarItem(itemElegido,id);
-                break;
-            case 2:
-                itemElegido = items.get(1);
-               // this.aplicarItem(itemElegido,id);
-                break;
-            case 3:
-                itemElegido = items.get(2);
-               // this.aplicarItem(itemElegido,id);
-                break;
-            case 4:
-                itemElegido = items.get(3);
-               // this.aplicarItem(itemElegido,id);
-                break;
-            case 5:
-                break;
-        }
-    }
-   /* private void aplicarItem(Item itemElegido, int id) {
-        itemElegido.aplicarItem(pokemon);
-        if(itemElegido.seAcabo())
-            this.items.remove(itemElegido);
-    }*/
 
     private boolean HayPokemonesVivos() {
         boolean HayPokemonesVivos = false;
