@@ -19,13 +19,10 @@ public class ParserHabilidad {
     public Map<Integer, Habilidad> parsearHabilidades(String nombreArchivo) {
         Map<Integer, Habilidad> mapaHabilidades = new HashMap<>();
         try {
-            // Lee el contenido del archivo JSON
             String contenido = new String(Files.readAllBytes(Paths.get(nombreArchivo)));
 
-            // Parsear el JSON
             JSONArray jsonHabilidades = new JSONArray(contenido);
 
-            // Recorrer las habilidades en el array JSON
             for (int i = 0; i < jsonHabilidades.length(); i++) {
                 JSONObject jsonHabilidad = jsonHabilidades.getJSONObject(i);
 
@@ -35,7 +32,6 @@ public class ParserHabilidad {
                 String estilo = jsonHabilidad.getString("estilo");
                 String tipo = jsonHabilidad.getString("tipo");
 
-                // Utiliza la clase base y sus extensiones según el estilo
                 Habilidad habilidad = crearHabilidadSegunEstilo(id, nombre, usos, estilo, tipo, jsonHabilidad);
 
                 mapaHabilidades.put(id, habilidad);
@@ -101,7 +97,7 @@ public class ParserHabilidad {
             default -> null;
         };
 
-        return new Efecto(id, nombre, estadoNuevo, afectaAEnemigo, tipo);
+        return new Efecto(id, nombre, estadoNuevo, usos, afectaAEnemigo, tipo);
     }
 
 }

@@ -1,15 +1,16 @@
 package org.example.Item;
 
 import org.example.Pokemon.Pokemon;
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Item implements Cloneable{
 
     protected int usos;
+    protected int id;
 
     protected String nombre;
     protected boolean usado = false;
@@ -25,6 +26,7 @@ public abstract class Item implements Cloneable{
 
    // public abstract void aplicarItem(Pokemon pokemonPropio, Pokemon pokemonObjetivo);
     public abstract void aplicarItem(Pokemon pokemon);
+    public abstract JSONObject getJSON();
     public abstract List<Pokemon> posiblesPokemonesAAplicar(List<Pokemon> pokemones);
 
     public int getUsos() {return this.usos;}
@@ -54,4 +56,6 @@ public abstract class Item implements Cloneable{
             return null;
         }
     }
+
+    public Object getId() {return this.id;}
 }

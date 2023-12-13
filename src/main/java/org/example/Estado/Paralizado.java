@@ -33,6 +33,7 @@ public class Paralizado implements EstadoPokemon{
     public void restarTurno(){
         //restara un turno si se desea implementar
     }
+
     public String getNombre(){
         return "Envenenado";
     }

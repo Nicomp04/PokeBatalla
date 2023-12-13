@@ -4,11 +4,17 @@ import org.example.Controller.PantallaBatallaController;
 import org.example.Habilidades.Habilidad;
 import org.example.Habilidades.RepositorioHabilidades;
 import org.example.Pokemon.Pokemon;
+import org.example.Item.*;
 
 import org.example.Vista.JuegoVista;
+import org.json.JSONArray;
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Juego {
@@ -119,8 +125,49 @@ public class Juego {
         if(!quedanPokemones() || seRindio()){
             Jugador perdedor = this.perdedor();
             notificarDerrota(perdedor);
+            crearInforme();
         }
     }
+
+    public void crearInforme(){
+        List<Jugador> jugadores = new ArrayList<>();
+        jugadores.add(this.jugador1);
+        jugadores.add(this.jugador2);
+
+        JSONArray jsonArray = new JSONArray();
+        for (Jugador jugador : jugadores) {
+            JSONObject jugadorJson = new JSONObject();
+            jugadorJson.put("nombre", jugador.getNombre());
+            jugadorJson.put("ganador", !jugador.seRindio());
+
+            JSONObject itemsJson = new JSONObject();
+            jugador.getItems().forEach((item) -> itemsJson.put(String.valueOf(item.getId()), item.getUsos()));
+            jugadorJson.put("items", itemsJson);
+
+            // Construir el array JSON para los Pokémon
+            JSONArray pokemonsJson = new JSONArray();
+            for (Pokemon pokemon : jugador.getPokemones()) {
+                JSONObject pokemonJson = new JSONObject();
+                pokemonJson.put("id", pokemon.getId());
+                pokemonJson.put("vidaRestante", pokemon.getVidaActual());
+                pokemonJson.put("estado", pokemon.getEstados());
+                pokemonsJson.put(pokemonJson);
+            }
+            jugadorJson.put("pokemons", pokemonsJson);
+
+            // Agregar el objeto jugador al array principal
+            jsonArray.put(jugadorJson);
+        }
+
+        // Escribir el JSON en un archivo
+        try (FileWriter fileWriter = new FileWriter("src/main/resources/informe.json")) {
+            fileWriter.write(jsonArray.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     private void notificarDerrota(Jugador perdedor) {
         if (observador != null) {

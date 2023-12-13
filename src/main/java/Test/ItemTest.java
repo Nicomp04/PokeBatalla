@@ -21,7 +21,7 @@ public class ItemTest {
 
         PokemonVista vista = mock(PokemonVista.class);
 
-        Item pocion = new Restaurador("Pocion", 10);
+        Item pocion = new Restaurador(1,"Pocion", 10);
 
         Pokemon pokemon1 = new Pokemon("Blastoise",2,"Agua",20,200,40,50,80);
 
@@ -55,7 +55,7 @@ public class ItemTest {
 
         PokemonVista vista = mock(PokemonVista.class);
 
-        Item revivir = new Revivir();
+        Item revivir = new Revivir(1);
 
         Pokemon pokemon1 = new Pokemon("Blastoise",2,"Agua",20,200,40,50,80);
 

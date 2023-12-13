@@ -35,12 +35,10 @@ public class ParserItems {
                 Item plantilla = plantillasItems.get(id);
 
                 if (plantilla == null) {
-                    // Si no existe, crear una nueva plantilla y almacenarla en el mapa
-                    plantilla = crearItemSegunEstilo(estilo, valor,nombre);
+                    plantilla = crearItemSegunEstilo(id,estilo, valor,nombre);
                     plantillasItems.put(id, plantilla);
                 }
 
-                // Clonar la plantilla para obtener una nueva instancia
                 Item item = plantilla.clonar();
                 item.setDesc(desc);
 
@@ -53,22 +51,22 @@ public class ParserItems {
         return mapaItem;
     }
 
-    private Item crearItemSegunEstilo(String estilo, int valor, String nombre) {
+    private Item crearItemSegunEstilo(int id,String estilo, int valor, String nombre) {
         Item item;
         if (estilo.equals("Restaurador")) {
-            item = new Restaurador(nombre, valor);
+            item = new Restaurador(id,nombre, valor);
             item.setUsos(2);
         } else if (estilo.equals("CuraTodo")) {
-            item = new CuraTodo();
+            item = new CuraTodo(id);
             item.setUsos(2);
         } else if (estilo.equals("Revivir")) {
-            item = new Revivir();
+            item = new Revivir(id);
             item.setUsos(1);
         } else if (estilo.equals("DefensaX")) {
-            item = new DefensaX(valor);
+            item = new DefensaX(id, valor);
             item.setUsos(1);
         } else if (estilo.equals("AtaqueX")) {
-            item = new AtaqueX(valor);
+            item = new AtaqueX(id, valor);
             item.setUsos(1);
         } else {
             item = null;

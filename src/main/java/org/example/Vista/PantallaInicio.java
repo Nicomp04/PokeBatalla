@@ -40,14 +40,14 @@ public class PantallaInicio extends VBox {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Styles/pantallaJuego1.fxml"));
             Parent root = (Parent) loader.load();
             Stage stage1 = new Stage();
-            // Obtén el controlador de la pantalla de juego y establece el Stage y juego
+
             PantallaBatallaController pantallaBatallaController = loader.getController();
             pantallaBatallaController.setStage(stage1);
 
             Scene scene = new Scene(root);
             stage.close();
             stage1.setTitle("Pantalla de Juego");
-            stage1.setFullScreen(true);
+            //stage1.setFullScreen(true);
             stage1.setMaxHeight(880);
             stage1.setMaxWidth(1470);
             stage1.setScene(scene);

@@ -65,6 +65,10 @@ public class Pokemon implements Cloneable {
         this.ataque = ataque;
     }
 
+    public int getId(){
+        return this.id;
+    }
+
     public String getNombre(){
         return this.nombre;
     }
@@ -157,6 +161,13 @@ public class Pokemon implements Cloneable {
 
     public void cargarHabilidades(RepositorioHabilidades repositorio) {
         habilidades = repositorio.cargarConjunto(habilidadesIds);
+    }
+
+    public void limpiarHabilidades(){
+        for (int i=0; i< habilidades.size();i++){
+            if (habilidades.get(i).getUsosDisponibles() <= 0)
+                habilidades.remove(i);
+        }
     }
 
     public String getColorBarra() {

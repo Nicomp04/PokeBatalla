@@ -119,7 +119,7 @@ public class PantallaBatallaController {
 
     @FXML
     private void elegirHabilidades() {
-        // Mostra habilidades en la interfaz
+        this.jugadorPokemon.limpiarHabilidades();
         this.habilidades = jugadorPokemon.getHabilidades();
         List<String> habilidadesNombres = this.habilidadesNombre(habilidades);
         habilidadesListView.getItems().setAll(habilidadesNombres);

@@ -2,6 +2,7 @@ package org.example.Item;
 
 import org.example.Item.Item;
 import org.example.Pokemon.Pokemon;
+import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +12,8 @@ public class Restaurador extends Item {
 
     private int hp;
 
-    public Restaurador(String nombre ,int hp) {
-
+    public Restaurador(int id,String nombre ,int hp) {
+        this.id = id;
         this.hp = hp;
         this.nombre = nombre;
     }
@@ -46,6 +47,15 @@ public class Restaurador extends Item {
             logger.info("{} ha sido restaurado.", pokemonARestaurar);
             this.setUsos(this.usos - 1);
     }
+
+    @Override
+    public JSONObject getJSON() {
+        JSONObject jsonItem = new JSONObject();
+        jsonItem.put("id", id);
+        jsonItem.put("usos", getUsos());
+        return jsonItem;
+    }
+
     @Override
     protected Object clone() throws CloneNotSupportedException {
         Restaurador clonedRestaurador = (Restaurador) super.clone();

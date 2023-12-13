@@ -8,10 +8,11 @@ import org.example.Visitor;
 public class Efecto extends Habilidad{
     private EstadoPokemon estado;
 
-    public Efecto(int id, String nombre, EstadoPokemon estado, boolean afectaAEnemigo, String tipo) {
+    public Efecto(int id, String nombre, EstadoPokemon estado, int usos, boolean afectaAEnemigo, String tipo) {
         this.id = id;
         this.nombre = nombre;
         this.estado = estado;
+        this.usosDisponibles = usos;
         this.afectaAEnemigo = afectaAEnemigo;
         this.tipo = tipo;
         this.usosMax = usosDisponibles;

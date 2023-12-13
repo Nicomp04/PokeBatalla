@@ -3,6 +3,7 @@ package org.example.Item;
 import org.example.Item.Item;
 import org.example.Jugador;
 import org.example.Pokemon.Pokemon;
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,7 +13,8 @@ import java.util.Scanner;
 
 public class Revivir extends Item {
     final Logger logger = LoggerFactory.getLogger(Revivir.class);
-    public Revivir(){
+    public Revivir(int id){
+        this.id = id;
         this.nombre = "Revivir";
 
     }
@@ -33,6 +35,14 @@ public class Revivir extends Item {
             logger.info("{} ha sido revivido.", pokemon);
             this.setUsos(this.usos - 1);
      }
+
+    @Override
+    public JSONObject getJSON() {
+        JSONObject jsonItem = new JSONObject();
+        jsonItem.put("id", id);
+        jsonItem.put("usos", getUsos());
+        return jsonItem;
+    }
 
     @Override
     public List<Pokemon> posiblesPokemonesAAplicar(List<Pokemon> pokemones) {

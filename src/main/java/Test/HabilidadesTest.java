@@ -48,7 +48,7 @@ public class HabilidadesTest {
     public void testCambioDeEstadoDeUnPokemonPorHabilidad(){
         EstadoPokemon estado = new Confundido();
 
-        Habilidad habilidadTest = new Efecto(17, "Hidropulso", estado, true, "Agua");
+        Habilidad habilidadTest = new Efecto(17, "Hidropulso", estado, 1, true, "Agua");
 
         Pokemon pokemonAtacante = new Pokemon("Blastoise",2,"Agua",20,200,40,50,80);
 

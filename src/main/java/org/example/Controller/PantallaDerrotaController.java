@@ -18,6 +18,7 @@ public class PantallaDerrotaController {
 
     public void setDatosDerrota(Jugador perdedor) {
         datosDerrotaLabel.setText(perdedor.getNombre() + " te fuiste derrotado!");
+
     }
 
     @FXML

@@ -1,12 +1,14 @@
 package org.example.Item;
 
 import org.example.Pokemon.Pokemon;
+import org.json.simple.JSONObject;
 
 import java.util.List;
 
 public class DefensaX extends Item {
     private int porcentaje;
-    public DefensaX(int valor){
+    public DefensaX(int id, int valor){
+        this.id = id;
         this.porcentaje = valor;
         this.nombre = "DefensaX";
     }
@@ -14,6 +16,14 @@ public class DefensaX extends Item {
     public void aplicarItem(Pokemon pokemon) {
         pokemon.setDefensa(this.porcentaje);
         this.setUsos(this.usos - 1);
+    }
+
+    @Override
+    public JSONObject getJSON() {
+        JSONObject jsonItem = new JSONObject();
+        jsonItem.put("id", id);
+        jsonItem.put("usos", getUsos());
+        return jsonItem;
     }
 
     @Override
