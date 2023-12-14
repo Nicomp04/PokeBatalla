@@ -172,18 +172,15 @@ public class PantallaBatallaController {
             Pokemon pokemonAtacante = juego.getCampo().getPokemonAtacante();
             this.juego.getCampo().usarHabilidad(habilidadSeleccionada);
             mostrarTextoTemporalmente(pokemonAtacante.getNombre() + " a usado " + habilidadSeleccionada.getNombre());
-            mostrarTextoEstados(pokemonAtacante);
         }
     }
 
-    public void mostrarTextoEstados(Pokemon pokemon){
+    public void mostrarTextoEstados(Pokemon pokemon, double duracion){
         Timeline timeline = new Timeline();
+
         for(EstadoPokemon estado: pokemon.getEstados()){
-            //mostrarTextoTemporalmente(estado.getMensaje());
+            actualizarTexto(estado.getMensaje());
             timeline.getKeyFrames().add(mostrarTexto(estado.getMensaje(), 2));
-            timeline.setCycleCount(1);
-            timeline.play();
-            resetearTurno(2);
         }
     }
 
@@ -295,6 +292,13 @@ public class PantallaBatallaController {
                 timeline.getKeyFrames().add(bajarVidaPokemonAtacado(quitesDeVida, i, duracionEnSegundos));
             }
         }
+
+        for(EstadoPokemon estado: this.jugadorPokemon.getEstados()){
+            duracionEnSegundos = duracionEnSegundos + 2;
+            timeline.getKeyFrames().add(mostrarTexto(estado.getMensaje(), duracionEnSegundos));
+        }
+        duracionEnSegundos = duracionEnSegundos + 2;
+
         timeline.getKeyFrames().add(resetearTurno(duracionEnSegundos));
 
         timeline.setCycleCount(1);
