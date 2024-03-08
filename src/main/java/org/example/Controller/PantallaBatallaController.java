@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -418,6 +419,7 @@ public class PantallaBatallaController {
 
             PantallaDerrotaController derrotaController = loader.getController();
             derrotaController.setDatosDerrota(perdedor);
+
 
             Scene scene = new Scene(root, 600, 400);
             Stage derrotaStage = new Stage();

@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="" />
+    <list default="true" id="b958f6d3-0f5d-4d88-841f-1fafa4fb903d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/derrota.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/inicio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/PantallaBatallaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/PantallaBatallaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vista/PantallaInicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/informe.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/informe.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +73,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
     "last_directory_selection": "C:/Users/nicol/OneDrive/Escritorio/Portfolio/PokeBatalla/src/main/java/org/example",
-    "last_opened_file_path": "/home/jc/IdeaProjects/PokeBatalla/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites",
+    "last_opened_file_path": "C:/Users/nicol/OneDrive/Escritorio/Portfolio/PokeBatalla/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -72,7 +81,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.31839082",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -82,6 +91,7 @@
       <recent name="org.example." />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/PokeBatalla Sprites/PokeBatalla Sprites" />
       <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources\org.example" />
       <recent name="C:\Users\nicol\OneDrive\Escritorio\Portfolio\PokeBatalla\src\main\resources\images" />
@@ -237,6 +247,8 @@
       <workItem from="1701193059731" duration="25811000" />
       <workItem from="1701550254291" duration="4863000" />
       <workItem from="1701632417957" duration="12272000" />
+      <workItem from="1709863538480" duration="1384000" />
+      <workItem from="1709939017845" duration="1679000" />
     </task>
     <servers />
   </component>
@@ -274,14 +286,14 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PokeBatalla$All_in_PokeBatalla.ic" NAME="All in PokeBatalla Coverage Results" MODIFIED="1699066008208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/PokeBatalla$CampoTest_campoCargadoCorrectamente.ic" NAME="CampoTest.campoCargadoCorrectamente Coverage Results" MODIFIED="1698941527153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PokeBatalla$Test_in_PokeBatalla.ic" NAME="Test in PokeBatalla Coverage Results" MODIFIED="1699065262565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/PokeBatalla$JugadorTest.ic" NAME="JugadorTest Coverage Results" MODIFIED="1698941495405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/PokeBatalla$Test_in_PokeBatalla.ic" NAME="Test in PokeBatalla Coverage Results" MODIFIED="1699065262565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/PokeBatalla$All_in_PokeBatalla.ic" NAME="All in PokeBatalla Coverage Results" MODIFIED="1699066008208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PokeBatalla$CampoTest_campoCargadoCorrectamente.ic" NAME="CampoTest.campoCargadoCorrectamente Coverage Results" MODIFIED="1698941527153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
   </component>

@@ -21,6 +21,7 @@ public class PantallaInicio extends VBox {
         super();
         this.stage = new Stage();
 
+
         btnInicio = new Button("Iniciar Juego");
         btnInicio.setOnAction(e -> {
             System.out.println("¡Juego Iniciado!");
@@ -48,8 +49,7 @@ public class PantallaInicio extends VBox {
             stage.close();
             stage1.setTitle("Pantalla de Juego");
             //stage1.setFullScreen(true);
-            stage1.setMaxHeight(880);
-            stage1.setMaxWidth(1470);
+            stage1.setFullScreen(true);
             stage1.setScene(scene);
             stage1.show();
 
